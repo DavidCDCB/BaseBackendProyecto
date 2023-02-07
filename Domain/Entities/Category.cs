@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewProtoNet.Models
+namespace Domain.Entities
 {
     public class Category
     {

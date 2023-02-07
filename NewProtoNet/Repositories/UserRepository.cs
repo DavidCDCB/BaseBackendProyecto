@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NewProtoNet.Data;
+﻿using NewProtoNet.Data;
 using NewProtoNet.Interfaces;
-using NewProtoNet.Models;
+using Domain.Entities;
+using Domain.DTOs;
+
+// La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
 namespace NewProtoNet.Repositories
 {

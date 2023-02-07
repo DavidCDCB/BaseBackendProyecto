@@ -1,4 +1,4 @@
-﻿namespace NewProtoNet.Models
+﻿namespace Domain.DTOs
 {
     public class UserDTO
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 // https://www.entityframeworktutorial.net/code-first/column-dataannotations-attribute-in-code-first.aspx
-namespace NewProtoNet.Models
+namespace Domain.Entities
 {
     public class User
     {

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.DTOs;
+using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.Interfaces;
-using NewProtoNet.Models;
 
 namespace NewProtoNet.Controllers
 {

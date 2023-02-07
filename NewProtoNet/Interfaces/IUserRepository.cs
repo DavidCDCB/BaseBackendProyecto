@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NewProtoNet.Models;
+﻿using Domain.Entities;
+using Domain.DTOs;
 
 namespace NewProtoNet.Interfaces
 {

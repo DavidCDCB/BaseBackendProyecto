@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NewProtoNet.Models;
-using System.Diagnostics;
-
+using Domain.Entities;
 
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
 
