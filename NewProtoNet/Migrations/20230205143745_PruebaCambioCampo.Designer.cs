@@ -10,7 +10,7 @@ using NewProtoNet.Data;
 
 namespace NewProtoNet.Migrations
 {
-    [DbContext(typeof(UserDbContext))]
+    [DbContext(typeof(BaseDbContext))]
     [Migration("20230205143745_PruebaCambioCampo")]
     partial class PruebaCambioCampo
     {

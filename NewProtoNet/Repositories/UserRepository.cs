@@ -7,9 +7,9 @@ namespace NewProtoNet.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserDbContext dbContext;
+        private readonly BaseDbContext dbContext;
 
-        public UserRepository(UserDbContext dbContext)
+        public UserRepository(BaseDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
-builder.Services.AddDbContext<UserDbContext>(options => 
+builder.Services.AddDbContext<BaseDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectString")));
 
 var app = builder.Build();
