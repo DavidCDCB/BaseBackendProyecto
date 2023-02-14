@@ -5,6 +5,8 @@ using Domain.Entities;
 
 // Add-Migration "Segunda"
 // Update-database
+// dotnet ef migrations add InitialCreate
+// dotnet ef database update
 
 // https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relationship-in-code-first.aspx
 // https://geeksarray.com/blog/how-to-configure-entity-relationships-using-fluent-api-in-entity-framework

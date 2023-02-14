@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NewProtoNet.Data;
 
@@ -11,16 +10,14 @@ using NewProtoNet.Data;
 namespace NewProtoNet.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    partial class BaseDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.13")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("CourseUser", b =>
                 {
@@ -37,44 +34,41 @@ namespace NewProtoNet.Migrations
                     b.ToTable("UserCourses", (string)null);
                 });
 
-            modelBuilder.Entity("NewProtoNet.Models.Category", b =>
+            modelBuilder.Entity("Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("NewProtoNet.Models.Course", b =>
+            modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Level")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -83,21 +77,19 @@ namespace NewProtoNet.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("NewProtoNet.Models.User", b =>
+            modelBuilder.Entity("Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<long>("Phone")
                         .HasColumnType("bigint");
@@ -109,22 +101,22 @@ namespace NewProtoNet.Migrations
 
             modelBuilder.Entity("CourseUser", b =>
                 {
-                    b.HasOne("NewProtoNet.Models.Course", null)
+                    b.HasOne("Domain.Entities.Course", null)
                         .WithMany()
                         .HasForeignKey("CoursesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NewProtoNet.Models.User", null)
+                    b.HasOne("Domain.Entities.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NewProtoNet.Models.Course", b =>
+            modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
-                    b.HasOne("NewProtoNet.Models.Category", "Category")
+                    b.HasOne("Domain.Entities.Category", "Category")
                         .WithMany("Course")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -132,7 +124,7 @@ namespace NewProtoNet.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("NewProtoNet.Models.Category", b =>
+            modelBuilder.Entity("Domain.Entities.Category", b =>
                 {
                     b.Navigation("Course");
                 });

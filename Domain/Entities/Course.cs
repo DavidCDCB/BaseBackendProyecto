@@ -18,6 +18,6 @@ namespace Domain.Entities
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public ICollection<User>? Users { get; set; }
     }
 }

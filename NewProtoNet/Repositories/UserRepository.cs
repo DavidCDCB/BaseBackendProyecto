@@ -32,7 +32,8 @@ namespace NewProtoNet.Repositories
             {
                 FullName = user.FullName,
                 Email = user.Email,
-                Phone = user.Phone
+                Phone = user.Phone,
+                Courses = user.Courses
             };
 
             await this.dbContext.Users.AddAsync(usuario);
@@ -43,7 +44,7 @@ namespace NewProtoNet.Repositories
 
         async Task<User> IUserRepository.UpdateUser(int id, UserDTO user)
         {
-            var encontrado = await this.dbContext.Users.FindAsync(id);
+            User? encontrado = await this.dbContext.Users.FindAsync(id);
             if (encontrado == null)
             {
                 return encontrado;
@@ -59,7 +60,7 @@ namespace NewProtoNet.Repositories
 
         async Task<User> IUserRepository.DeleteUser(int id)
         {
-            var encontrado = await this.dbContext.Users.FindAsync(id);
+            User? encontrado = await this.dbContext.Users.FindAsync(id);
             if (encontrado == null)
             {
                 return encontrado;

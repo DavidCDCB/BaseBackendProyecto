@@ -1,5 +1,6 @@
 ﻿using Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NewProtoNet.Interfaces;
 
 namespace NewProtoNet.Controllers
@@ -36,6 +37,20 @@ namespace NewProtoNet.Controllers
             return Ok(encontrado);
         }
 
+        /*
+        {
+          "fullName": "Completo",
+          "email": "string",
+          "phone": 0,
+          "courses": [
+            {
+              "name": "string",
+              "level": "string",
+              "description": "string",
+            }
+          ]
+        }
+         */
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO user)
         {

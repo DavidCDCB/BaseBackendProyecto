@@ -6,8 +6,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Configuración para permitir el almacenamiento de elementos JSON anidados
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
     x.JsonSerializerOptions.WriteIndented = true;
@@ -18,6 +17,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 
+// Configuración promiscua de los CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
@@ -28,10 +28,20 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Se establece la inyección de dependencias para desacoplar el medio de persistencia
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
+// Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
+/*
 builder.Services.AddDbContext<BaseDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectString")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectString"))
+);*/
+
+builder.Services.AddDbContext<BaseDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DBConnectStringMySQL2");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 var app = builder.Build();
 
