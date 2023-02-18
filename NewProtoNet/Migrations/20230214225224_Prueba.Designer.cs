@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NewProtoNet.Data;
 
@@ -10,9 +11,10 @@ using NewProtoNet.Data;
 namespace NewProtoNet.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230214225224_Prueba")]
+    partial class Prueba
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,78 +99,6 @@ namespace NewProtoNet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Email = "Melvin.Schaden@hotmail.com",
-                            FullName = "Melvin Schaden",
-                            Phone = 1852L
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Email = "Taylor_Hansen@hotmail.com",
-                            FullName = "Taylor Hansen",
-                            Phone = 2534L
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Email = "Sylvia.Boyer31@hotmail.com",
-                            FullName = "Sylvia Boyer",
-                            Phone = 7622L
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Email = "Leah.Hagenes@gmail.com",
-                            FullName = "Leah Hagenes",
-                            Phone = 7955L
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Email = "Pablo.Mayert53@hotmail.com",
-                            FullName = "Pablo Mayert",
-                            Phone = 906L
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Email = "Ronnie.Ward@gmail.com",
-                            FullName = "Ronnie Ward",
-                            Phone = 8791L
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Email = "Erin_Ortiz15@hotmail.com",
-                            FullName = "Erin Ortiz",
-                            Phone = 3342L
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Email = "Eula_Kessler41@gmail.com",
-                            FullName = "Eula Kessler",
-                            Phone = 197L
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Email = "Edwin.Cummerata14@hotmail.com",
-                            FullName = "Edwin Cummerata",
-                            Phone = 5177L
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Email = "Ramon.Keeling@gmail.com",
-                            FullName = "Ramon Keeling",
-                            Phone = 7522L
-                        });
                 });
 
             modelBuilder.Entity("CourseUser", b =>

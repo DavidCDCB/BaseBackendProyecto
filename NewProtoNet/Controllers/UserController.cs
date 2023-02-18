@@ -1,8 +1,10 @@
-﻿using Domain.DTOs;
+﻿using Bogus;
+using Domain.DTOs;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NewProtoNet.Interfaces;
 
+// https://localhost:7204/swagger/index.html
 namespace NewProtoNet.Controllers
 {
     [ApiController]
@@ -16,6 +18,13 @@ namespace NewProtoNet.Controllers
         {
             //this.dbContext = dbContext;
             this.userRepository = userRepository;
+        }
+
+
+        [HttpGet("seed/{size}")]
+        public IActionResult SeedData(int size)
+        {
+            return Ok(this.userRepository.SeedUsers(size));
         }
 
         [HttpGet]

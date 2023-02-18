@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.DTOs;
+using Bogus;
 
 namespace NewProtoNet.Interfaces
 {
@@ -10,5 +11,6 @@ namespace NewProtoNet.Interfaces
         Task<User> PostUser(UserDTO user);
         Task<User> UpdateUser(int id, UserDTO user);
         Task<User> DeleteUser(int id);
+        List<User> SeedUsers(int size);
     }
 }

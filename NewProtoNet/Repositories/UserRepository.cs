@@ -2,6 +2,8 @@
 using NewProtoNet.Interfaces;
 using Domain.Entities;
 using Domain.DTOs;
+using Bogus;
+using Microsoft.EntityFrameworkCore;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
@@ -14,6 +16,23 @@ namespace NewProtoNet.Repositories
         public UserRepository(BaseDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        List<User> IUserRepository.SeedUsers(int size)
+        {
+            int ids = 1;
+            Faker<User> fakeData = new Faker<User>()
+                .RuleFor(m => m.Id, f => ids++)
+                .RuleFor(m => m.FullName, f => f.Person.FullName)
+                .RuleFor(m => m.Email, f => f.Person.Email)
+                .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
+
+            this.dbContext.RemoveRange(dbContext.Users);
+
+            List<User> seedData = fakeData.Generate(size);
+            this.dbContext.AddRange(seedData);
+            this.dbContext.SaveChanges();
+            return seedData;
         }
 
         IEnumerable<User> IUserRepository.GetUsers()
