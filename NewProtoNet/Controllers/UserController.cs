@@ -1,6 +1,4 @@
-﻿using Bogus;
-using Domain.DTOs;
-using Domain.Entities;
+﻿using Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.Interfaces;
 

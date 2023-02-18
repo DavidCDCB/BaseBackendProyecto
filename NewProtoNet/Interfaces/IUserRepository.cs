@@ -1,6 +1,5 @@
 ﻿using Domain.Entities;
 using Domain.DTOs;
-using Bogus;
 
 namespace NewProtoNet.Interfaces
 {

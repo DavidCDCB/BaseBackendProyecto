@@ -5,7 +5,7 @@ using NewProtoNet.Interfaces;
 
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
 
-// Add-Migration "Segunda"
+// Add-Migration "Nombre"
 // Update-database
 // dotnet ef migrations add InitialCreate
 // dotnet ef database update
@@ -34,6 +34,7 @@ namespace NewProtoNet.Data
         public DbSet<Course>? Courses { get; set; }
         public DbSet<Category>? Categories { get; set; }
 
+        // Se define cada una de la relaciones en cada migración
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             
@@ -48,8 +49,8 @@ namespace NewProtoNet.Data
                 .WithMany(s => s.Users)
                 .UsingEntity(j => j.ToTable("UserCourses"));
 
-
-            modelBuilder.Entity<User>().HasData(this.SeedUsers());
+            // Se usa en caso de usar datos por defecto cuando se hace una migración
+            //modelBuilder.Entity<User>().HasData(this.SeedUsers());
         }
 
         List<User> SeedUsers()
