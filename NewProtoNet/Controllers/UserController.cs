@@ -6,15 +6,13 @@ using NewProtoNet.Interfaces;
 namespace NewProtoNet.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] // api/User
+    [Route("api/[controller]")] // https://localhost:7204/api/User
     public class UserController : Controller
     {
-        //private readonly UserDbContext dbContext;
         private readonly IUserRepository userRepository;
 
         public UserController(IUserRepository userRepository)
         {
-            //this.dbContext = dbContext;
             this.userRepository = userRepository;
         }
 
@@ -45,6 +43,7 @@ namespace NewProtoNet.Controllers
         }
 
         /*
+         * Inserción de datos anidados
         {
           "fullName": "Completo",
           "email": "string",

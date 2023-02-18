@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Bogus;
-using NewProtoNet.Interfaces;
 
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
 
