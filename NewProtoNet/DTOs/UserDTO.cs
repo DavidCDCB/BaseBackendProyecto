@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Domain.DTOs
+namespace NewProtoNet.DTOs
 {
     public class UserDTO
     {

@@ -38,13 +38,13 @@ namespace NewProtoNet.Data
         {
             
             modelBuilder.Entity<Category>()
-                .HasMany<Course>(g => g.Course)
+                .HasMany(g => g.Course)
                 .WithOne(g => g.Category)
                 .HasForeignKey(s => s.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<User>()
-                .HasMany<Course>(c => c.Courses)
+                .HasMany(c => c.Courses)
                 .WithMany(s => s.Users)
                 .UsingEntity(j => j.ToTable("UserCourses"));
 

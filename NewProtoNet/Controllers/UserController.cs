@@ -1,4 +1,4 @@
-﻿using Domain.DTOs;
+﻿using NewProtoNet.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.Interfaces;
 

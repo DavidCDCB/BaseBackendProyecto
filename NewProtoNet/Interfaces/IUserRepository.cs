@@ -1,5 +1,5 @@
 ﻿using Domain.Entities;
-using Domain.DTOs;
+using NewProtoNet.DTOs;
 
 namespace NewProtoNet.Interfaces
 {

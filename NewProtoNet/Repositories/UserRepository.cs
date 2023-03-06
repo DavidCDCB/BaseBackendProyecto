@@ -1,9 +1,8 @@
 ﻿using NewProtoNet.Data;
 using NewProtoNet.Interfaces;
 using Domain.Entities;
-using Domain.DTOs;
+using NewProtoNet.DTOs;
 using Bogus;
-using Microsoft.EntityFrameworkCore;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
