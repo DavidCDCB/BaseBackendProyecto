@@ -3,11 +3,12 @@ using Domain.Entities;
 using Bogus;
 
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
+// https://stackoverflow.com/questions/11904571/ef-migrations-rollback-last-applied-migration
 
 // Add-Migration "Nombre"
 // get-migration
 // remove-migration
-// Update-databases
+// Update-database
 // dotnet ef migrations add InitialCreate
 // dotnet ef database update
 
@@ -51,13 +52,14 @@ namespace NewProtoNet.Data
         .UsingEntity(j => j.ToTable("UserCourses"));
 
       // Se usa en caso de usar datos por defecto cuando se hace una migración
-      //modelBuilder.Entity<User>().HasData(this.SeedUsers());
+      modelBuilder.Entity<User>().HasData(this.SeedUsers());
     }
 
+    // https://github.com/bchavez/Bogus
     List<User> SeedUsers()
     {
       int ids = 1;
-      Faker<User> fakeData = new Faker<User>()
+      Faker<User> fakeData = new Faker<User>("es_MX")
         .RuleFor(m => m.Id, f => ids++)
         .RuleFor(m => m.FullName, f => f.Person.FullName)
         .RuleFor(m => m.Email, f => f.Person.Email)
