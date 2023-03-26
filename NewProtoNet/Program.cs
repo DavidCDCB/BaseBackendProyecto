@@ -39,7 +39,7 @@ builder.Services.AddDbContext<BaseDbContext>(options =>
 
 builder.Services.AddDbContext<BaseDbContext>(options =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("DBConnectStringMySQL3");
+    var connectionString = builder.Configuration.GetConnectionString("LocalDBConnectStringMySQL");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
