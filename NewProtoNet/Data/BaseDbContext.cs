@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Bogus;
 
+// Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
 // https://stackoverflow.com/questions/11904571/ef-migrations-rollback-last-applied-migration
 
@@ -12,13 +13,16 @@ using Bogus;
 // dotnet ef migrations add InitialCreate
 // dotnet ef database update
 
+// Relaciones entre entidades:
 // https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relationship-in-code-first.aspx
 // https://geeksarray.com/blog/how-to-configure-entity-relationships-using-fluent-api-in-entity-framework
 // https://learn.microsoft.com/en-us/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key
 
+// Consulta e inserción en entidades relacionadas
 // https://learn.microsoft.com/en-us/ef/core/saving/related-data?source=recommendations
 // https://learn.microsoft.com/en-us/ef/core/querying/related-data/eager?source=recommendations
 
+// Ejemplos para insertar datos dalsos desde las migraciones
 // https://khalidabuhakmeh.com/seed-entity-framework-core-with-bogus
 // https://coderethinked.com/how-to-generate-fake-data-in-csharp/
 // https://www.learnentityframeworkcore.com/migrations/seeding
