@@ -3,6 +3,7 @@ using NewProtoNet.Interfaces;
 using Domain.Entities;
 using NewProtoNet.DTOs;
 using Bogus;
+using Microsoft.EntityFrameworkCore;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
@@ -35,15 +36,16 @@ namespace NewProtoNet.Repositories
       return seedData;
     }
 
-    IEnumerable<User> IUserRepository.GetUsers()
+    async Task<List<User>> IUserRepository.GetUsers()
     {
-      return this.dbContext.Users;
+      return await this.dbContext.Users!.ToListAsync();
     }
 
-    async Task<User> IUserRepository.GetUser(int id)
+    async Task<User?> IUserRepository.GetUser(int id)
     {
       Console.WriteLine("OKss");
-      return await dbContext.Users.FindAsync(id);
+      User? user = await dbContext.Users!.FirstOrDefaultAsync(m => m.Id == id);
+      return (user != null) ? user : null;
     }
 
     async Task<User> IUserRepository.PostUser(UserDTO user)
@@ -56,7 +58,7 @@ namespace NewProtoNet.Repositories
         Courses = user.Courses
       };
 
-      await this.dbContext.Users.AddAsync(usuario);
+      await this.dbContext.Users!.AddAsync(usuario);
       await this.dbContext.SaveChangesAsync();
 
       return usuario;
@@ -64,7 +66,7 @@ namespace NewProtoNet.Repositories
 
     async Task<User> IUserRepository.UpdateUser(int id, UserDTO user)
     {
-      User? encontrado = await this.dbContext.Users.FindAsync(id);
+      User? encontrado = await this.dbContext.Users!.FindAsync(id);
       if (encontrado == null)
       {
         return encontrado;
@@ -80,13 +82,12 @@ namespace NewProtoNet.Repositories
 
     async Task<User> IUserRepository.DeleteUser(int id)
     {
-      User? encontrado = await dbContext.Users.FindAsync(id);
-      if (encontrado == null)
+      User? encontrado = await dbContext.Users!.FindAsync(id);
+      if (encontrado != null)
       {
-        return encontrado;
+        this.dbContext.Remove(encontrado);
+        this.dbContext.SaveChanges();
       }
-      this.dbContext.Remove(encontrado);
-      this.dbContext.SaveChanges();
       return encontrado;
     }
 

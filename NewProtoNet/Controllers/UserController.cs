@@ -25,14 +25,14 @@ namespace NewProtoNet.Controllers
     }
 
     [HttpGet]
-    public IActionResult GetUsers()
+    public async Task<ActionResult> GetUsers()
     {
       Console.WriteLine("OK");
-      return Ok(this.userRepository.GetUsers());
+      return Ok(await this.userRepository.GetUsers());
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetUser(int id)
+    public async Task<ActionResult> GetUser(int id)
     {
       User encontrado = await this.userRepository.GetUser(id);
 
