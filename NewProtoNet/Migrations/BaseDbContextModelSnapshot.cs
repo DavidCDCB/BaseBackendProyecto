@@ -7,7 +7,7 @@ using NewProtoNet.Data;
 
 #nullable disable
 
-namespace NewProtoNet.Migrations
+namespace RestServer.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
     partial class BaseDbContextModelSnapshot : ModelSnapshot
@@ -31,10 +31,10 @@ namespace NewProtoNet.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("UserCourses", (string)null);
+                    b.ToTable("CourseUser");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Entities.Base.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,7 +49,7 @@ namespace NewProtoNet.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Course", b =>
+            modelBuilder.Entity("Domain.Entities.Base.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace NewProtoNet.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("Domain.Entities.User", b =>
+            modelBuilder.Entity("Domain.Entities.Base.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,106 +97,88 @@ namespace NewProtoNet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Email = "Antonio.Aguilera93@gmail.com",
-                            FullName = "Antonio Aguilera",
-                            Phone = 7603L
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Email = "Carmen.Kanaria@yahoo.com",
-                            FullName = "Carmen Kanaria",
-                            Phone = 2625L
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Email = "Gregorio84@nearbpo.com",
-                            FullName = "Gregorio Aponte",
-                            Phone = 8483L
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Email = "XimenaGuadalupe.Garay4@hotmail.com",
-                            FullName = "Ximena Guadalupe Garay",
-                            Phone = 5013L
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Email = "Esteban.Altamirano@gmail.com",
-                            FullName = "Esteban Altamirano",
-                            Phone = 1826L
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Email = "Santiago49@nearbpo.com",
-                            FullName = "Santiago Murillo",
-                            Phone = 9930L
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Email = "Rosario_Cerda@hotmail.com",
-                            FullName = "Rosario Cerda",
-                            Phone = 4154L
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Email = "Raquel45@hotmail.com",
-                            FullName = "Raquel Lugo",
-                            Phone = 3740L
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Email = "Gonzalo.Vera8@corpfolder.com",
-                            FullName = "Gonzalo Vera",
-                            Phone = 4013L
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Email = "DulceMaria39@gmail.com",
-                            FullName = "Dulce María Canales",
-                            Phone = 8561L
-                        });
+            modelBuilder.Entity("Domain.Entities.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("clients");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Request", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("requests");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Service", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("services");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Supplier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("suppliers");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Vehicle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vehicles");
                 });
 
             modelBuilder.Entity("CourseUser", b =>
                 {
-                    b.HasOne("Domain.Entities.Course", null)
+                    b.HasOne("Domain.Entities.Base.Course", null)
                         .WithMany()
                         .HasForeignKey("CoursesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.User", null)
+                    b.HasOne("Domain.Entities.Base.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Entities.Course", b =>
+            modelBuilder.Entity("Domain.Entities.Base.Course", b =>
                 {
-                    b.HasOne("Domain.Entities.Category", "Category")
+                    b.HasOne("Domain.Entities.Base.Category", "Category")
                         .WithMany("Course")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Entities.Base.Category", b =>
                 {
                     b.Navigation("Course");
                 });

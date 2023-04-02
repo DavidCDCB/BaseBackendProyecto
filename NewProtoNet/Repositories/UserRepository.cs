@@ -1,15 +1,15 @@
 ﻿using NewProtoNet.Data;
 using NewProtoNet.Interfaces;
-using Domain.Entities;
 using NewProtoNet.DTOs;
 using Bogus;
 using Microsoft.EntityFrameworkCore;
+using Domain.Entities.Base;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
 namespace NewProtoNet.Repositories
 {
-  public class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
   {
     private readonly BaseDbContext dbContext;
 

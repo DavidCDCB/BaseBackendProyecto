@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
 using NewProtoNet.Data;
+using Domain.Entities.Base;
 
 namespace NewProtoNet.Controllers
 {

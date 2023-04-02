@@ -1,12 +1,12 @@
 ﻿using NewProtoNet.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.Interfaces;
-using Domain.Entities;
+using Domain.Entities.Base;
 
 // https://localhost:7204/swagger/index.html
 namespace NewProtoNet.Controllers
 {
-  [ApiController]
+    [ApiController]
   [Route("api/[controller]")] // https://localhost:7204/api/User
   public class UserController : Controller
   {

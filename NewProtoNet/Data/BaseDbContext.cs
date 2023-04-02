@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
 using Bogus;
+using Domain.Entities.Base;
+using Domain.Entities;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -36,6 +37,14 @@ namespace NewProtoNet.Data
     {
     }
 
+
+    public DbSet<Client>? clients { get; set; }
+    public DbSet<Vehicle>? vehicles { get; set; }
+    public DbSet<Request>? requests { get; set; }
+    public DbSet<Service>? services { get; set; }
+    public DbSet<Supplier>? suppliers { get; set; }
+
+
     public DbSet<User>? Users { get; set; }
     public DbSet<Course>? Courses { get; set; }
     public DbSet<Category>? Categories { get; set; }
@@ -43,7 +52,7 @@ namespace NewProtoNet.Data
     // Se define cada una de la relaciones en cada migración
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
+      /*
       modelBuilder.Entity<Category>()
         .HasMany(g => g.Course)
         .WithOne(g => g.Category)
@@ -56,7 +65,7 @@ namespace NewProtoNet.Data
         .UsingEntity(j => j.ToTable("UserCourses"));
 
       // Se usa en caso de usar datos por defecto cuando se hace una migración
-      modelBuilder.Entity<User>().HasData(this.SeedUsers());
+      modelBuilder.Entity<User>().HasData(this.SeedUsers());*/
     }
 
     // https://github.com/bchavez/Bogus

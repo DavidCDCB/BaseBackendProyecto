@@ -1,9 +1,9 @@
-﻿using Domain.Entities;
+﻿using Domain.Entities.Base;
 using NewProtoNet.DTOs;
 
 namespace NewProtoNet.Interfaces
 {
-  public interface IUserRepository
+    public interface IUserRepository
   {
     Task<List<User>> GetUsers();
     Task<User> GetUser(int id);
