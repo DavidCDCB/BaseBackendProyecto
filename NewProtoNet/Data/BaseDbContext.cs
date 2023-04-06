@@ -37,13 +37,11 @@ namespace NewProtoNet.Data
     {
     }
 
-
-    public DbSet<Client>? clients { get; set; }
-    public DbSet<Vehicle>? vehicles { get; set; }
-    public DbSet<Request>? requests { get; set; }
-    public DbSet<Service>? services { get; set; }
-    public DbSet<Supplier>? suppliers { get; set; }
-
+    public DbSet<Client>? Clients { get; set; }
+    public DbSet<Vehicle>? Vehicles { get; set; }
+    public DbSet<Request>? Requests { get; set; }
+    public DbSet<Service>? Services { get; set; }
+    public DbSet<Supplier>? Suppliers { get; set; }
 
     public DbSet<User>? Users { get; set; }
     public DbSet<Course>? Courses { get; set; }
@@ -52,13 +50,31 @@ namespace NewProtoNet.Data
     // Se define cada una de la relaciones en cada migración
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      /*
-      modelBuilder.Entity<Category>()
-        .HasMany(g => g.Course)
-        .WithOne(g => g.Category)
-        .HasForeignKey(s => s.CategoryId)
-        .OnDelete(DeleteBehavior.Cascade);
+      // Cliente->Vehiculos
+      modelBuilder.Entity<Client>()
+        .HasMany(v => v.Vehicles)
+        .WithOne(c => c.Client);
 
+      // Cliente->Solicitudes
+      modelBuilder.Entity<Client>()
+        .HasMany(v => v.Requests)
+        .WithOne(c => c.Client);
+
+      // Servicio->Solicitudes
+      modelBuilder.Entity<Service>()
+        .HasMany(v => v.Requests)
+        .WithOne(c => c.Service);
+
+      // Preveedor->Compras
+      // ...
+
+      modelBuilder.Entity<Client>().HasData(this.SeedClients());
+      modelBuilder.Entity<Supplier>().HasData(this.SeedSuppliers());
+      modelBuilder.Entity<Vehicle>().HasData(this.SeedVehicles());
+      modelBuilder.Entity<Service>().HasData(this.SeedServices());
+      modelBuilder.Entity<Request>().HasData(this.SeedRequests());
+
+      /*
       modelBuilder.Entity<User>()
         .HasMany(c => c.Courses)
         .WithMany(s => s.Users)
@@ -69,15 +85,73 @@ namespace NewProtoNet.Data
     }
 
     // https://github.com/bchavez/Bogus
-    List<User> SeedUsers()
+    List<Client> SeedClients()
     {
       int ids = 1;
-      Faker<User> fakeData = new Faker<User>("es_MX")
+      Faker<Client> fakeData = new Faker<Client>("es_MX")
         .RuleFor(m => m.Id, f => ids++)
-        .RuleFor(m => m.FullName, f => f.Person.FullName)
+        .RuleFor(m => m.Name, f => f.Person.FirstName)
+        .RuleFor(m => m.Surname, f => f.Person.LastName)
+        .RuleFor(m => m.Phone, f => f.Person.Phone)
         .RuleFor(m => m.Email, f => f.Person.Email)
-        .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
-      return fakeData.Generate(10);
+        .RuleFor(m => m.Address, f => f.Person.Address.Street)
+        .RuleFor(m => m.Type, f => f.Lorem.Word());
+      return fakeData.Generate(100);
+    }
+
+    List<Supplier> SeedSuppliers()
+    {
+      int ids = 1;
+      Faker<Supplier> fakeData = new Faker<Supplier>("es_MX")
+        .RuleFor(m => m.Id, f => ids++)
+        .RuleFor(m => m.Nit, f => f.Random.Number(100, 1000).ToString())
+        .RuleFor(m => m.Name, f => f.Person.FirstName)
+        .RuleFor(m => m.SurName, f => f.Person.LastName)
+        .RuleFor(m => m.Phone, f => f.Person.Phone)
+        .RuleFor(m => m.Email, f => f.Person.Email)
+        .RuleFor(m => m.Address, f => f.Person.Address.Street)
+        .RuleFor(m => m.Company, f => f.Company.CompanyName());
+      return fakeData.Generate(100);
+    }
+
+    List<Vehicle> SeedVehicles()
+    {
+      int ids = 1;
+      var years = new[] { "2020", "2021", "2019", "2018", "2015" };
+      Faker<Vehicle> fakeData = new Faker<Vehicle>("es_MX")
+        .RuleFor(m => m.Id, f => ids++)
+        .RuleFor(m => m.Plate, f => f.Vehicle.Vin())
+        .RuleFor(m => m.Model, f => f.Vehicle.Model())
+        .RuleFor(m => m.Year, f => f.PickRandom(years))
+        .RuleFor(m => m.Description, f => f.Vehicle.Type())
+        .RuleFor(m => m.Color, f => f.Commerce.Color())
+        .RuleFor(m => m.ClientId, f => f.Random.Number(1,99));
+      return fakeData.Generate(100);
+    }
+
+    List<Service> SeedServices()
+    {
+      int ids = 1;
+      Faker<Service> fakeData = new Faker<Service>("es_MX")
+        .RuleFor(m => m.Id, f => ids++)
+        .RuleFor(m => m.Name, f => f.Lorem.Word())
+        .RuleFor(m => m.Category, f => f.Lorem.Word())
+        .RuleFor(m => m.Description, f => f.Lorem.Sentence(5))
+        .RuleFor(m => m.Price, f => (double)f.Finance.Amount());
+      return fakeData.Generate(100);
+    }
+
+    List<Request> SeedRequests()
+    {
+      int ids = 1;
+      var states = new[] { "Activo", "Terminado"};
+      Faker<Request> fakeData = new Faker<Request>("es_MX")
+        .RuleFor(m => m.Id, f => ids++)
+        .RuleFor(m => m.StarDate, f => DateOnly.FromDateTime(f.Date.Past()))
+        .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Past()))
+        .RuleFor(m => m.State, f => f.PickRandom(states))
+        .RuleFor(m => m.ServiceId, f => f.Random.Number(1, 99));
+      return fakeData.Generate(100);
     }
   }
 }

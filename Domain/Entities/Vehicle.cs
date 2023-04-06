@@ -8,6 +8,18 @@ namespace Domain.Entities
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
+    [Required]
+    public string? Plate { get; set; }
+    [Required]
+    public string? Model { get; set; }
+    [Required]
+    public string? Year { get; set; }
+    public string? Description { get; set; }
+    [Required]
+    public string? Color { get; set; }
 
+
+    public int? ClientId { get; set; }
+    public Client? Client { get; set; }
   }
 }
