@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-  public class Purchase
+    public class Purchase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,5 +20,5 @@ namespace Domain.Entities
         public int? ProductId { get; set; }
         public Product? Product { get; set; }
 
-  }
+    }
 }

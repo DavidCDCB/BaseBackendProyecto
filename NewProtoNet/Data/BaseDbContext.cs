@@ -36,39 +36,18 @@ namespace NewProtoNet.Data
     {
     }
 
-    public DbSet<User>? Users { get; set; }
-    public DbSet<Report>? Courses { get; set; }
-    public DbSet<Category>? Categories { get; set; }
+        public DbSet<User>? Users { get; set; }
+        public DbSet<Report>? Reports { get; set; }
+        public DbSet<Administrator>? Administrators { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<Purchase>? Purchases { get; set; }
+        public DbSet<Recepcionist>? Recepcionists { get; set; }
 
-    // Se define cada una de la relaciones en cada migración
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        // Se define cada una de la relaciones en cada migración
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
-      modelBuilder.Entity<Category>()
-        .HasMany(g => g.Course)
-        .WithOne(g => g.Category)
-        .HasForeignKey(s => s.CategoryId)
-        .OnDelete(DeleteBehavior.Cascade);
 
-      modelBuilder.Entity<User>()
-        .HasMany(c => c.Courses)
-        .WithMany(s => s.Users)
-        .UsingEntity(j => j.ToTable("UserCourses"));
-
-      // Se usa en caso de usar datos por defecto cuando se hace una migración
-      modelBuilder.Entity<User>().HasData(this.SeedUsers());
+        }
     }
-
-    // https://github.com/bchavez/Bogus
-    List<User> SeedUsers()
-    {
-      int ids = 1;
-      Faker<User> fakeData = new Faker<User>("es_MX")
-        .RuleFor(m => m.Id, f => ids++)
-        .RuleFor(m => m.FullName, f => f.Person.FullName)
-        .RuleFor(m => m.Email, f => f.Person.Email)
-        .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
-      return fakeData.Generate(10);
-    }
-  }
-}
