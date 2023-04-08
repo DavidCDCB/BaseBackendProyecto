@@ -37,7 +37,7 @@ namespace NewProtoNet.Data
     }
 
     public DbSet<User>? Users { get; set; }
-    public DbSet<Course>? Courses { get; set; }
+    public DbSet<Report>? Courses { get; set; }
     public DbSet<Category>? Categories { get; set; }
 
     // Se define cada una de la relaciones en cada migración
