@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Inconvenients
+    public class Inconvenient
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,10 +23,11 @@ namespace Domain.Entities
         public int ServiceRequesedId { get; set; }
         [Required]
         public bool Seen { get; set; }
-
+        [Required]
         public string? Description { get; set; }
-
-        public ICollection<Request>? Requests { get; set; }
+        [Required]
+        public int? RequestedID { get; set; }
+        public Request? Request { get; set; }
 
     }
 }

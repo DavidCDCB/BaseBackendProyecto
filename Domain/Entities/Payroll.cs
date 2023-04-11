@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Payrolls
+    public class Payroll
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -24,8 +24,12 @@ namespace Domain.Entities
         [Required]
         public double? Deductions { get; set; }
         [Required]
-        public double? Settlement { get; set;}
+        public double? Settlement { get; set; }
 
-        public ICollection<Request>? Requests { get; set; }
+        
+        public ICollection<Mechanic>? Mechanic { get; set; }
+
+        //public ICollection<Recepcionist>? Recepcionist { get; set; }
+
     }
 }
