@@ -26,7 +26,7 @@ namespace Domain.Entities
         [Required]
         public string? Description { get; set; }
         [Required]
-        public int? RequestedID { get; set; }
+        public int? RequestID { get; set; }
         public Request? Request { get; set; }
 
     }
