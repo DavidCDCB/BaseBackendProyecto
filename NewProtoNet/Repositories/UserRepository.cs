@@ -1,5 +1,5 @@
-﻿using NewProtoNet.Data;
-using NewProtoNet.Interfaces;
+﻿using RestServer.Data;
+using RestServer.Interfaces;
 using NewProtoNet.DTOs;
 using Bogus;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using Domain.Entities.Base;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
-namespace NewProtoNet.Repositories
+namespace RestServer.Repositories
 {
     public class UserRepository : IUserRepository
   {

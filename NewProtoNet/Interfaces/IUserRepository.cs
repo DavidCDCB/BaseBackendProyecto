@@ -1,7 +1,7 @@
 ﻿using Domain.Entities.Base;
 using NewProtoNet.DTOs;
 
-namespace NewProtoNet.Interfaces
+namespace RestServer.Interfaces
 {
     public interface IUserRepository
   {
