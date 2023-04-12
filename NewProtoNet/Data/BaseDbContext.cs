@@ -3,6 +3,7 @@ using Bogus;
 using Domain.Entities.Base;
 using Domain.Entities;
 using System.Security.Policy;
+using System.Data;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -181,8 +182,8 @@ namespace NewProtoNet.Data
             var roles = new[] { "Master", "Junior", "Aprendiz" };
             var commision = new[] { 20, 30, 40 };
             Faker<Mechanic> fakeData = new Faker<Mechanic>("es_MX")
-                .RuleFor(m => m.Id, f => ids++)
-                .RuleFor(m => m.Name, f => f.Person.FirstName)
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Name, f => f.Person.FirstName)
               .RuleFor(m => m.SurName, f => f.Person.LastName)
               .RuleFor(m => m.Phone, f => f.Person.Phone)
               .RuleFor(m => m.Role, f => f.PickRandom(roles))
@@ -195,8 +196,22 @@ namespace NewProtoNet.Data
         }
 
         // TODO: falta semilla payroll
+        //.RuleFor(m => m.Date, f => DateOnly.FromDateTime(f.Date.Past()))
+        List<Inconvenient> SeedInconvenients()
+        {
+            int ids = 1;
+            var states = new[] { "Mecanico", "Financiero", "Social", "Tiempo" };
+            Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
 
-
+              .RuleFor(m => m.State, f => f.PickRandom(states))
+              .RuleFor(m => m.DaysDelay, f => f.Random.Number(1, 20))
+              .RuleFor(m => m.ServiceRequesedId, f => f.Random.Number(1, 99))
+              .RuleFor(m => m.Seen, f => f.Random.Bool())
+              .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
+              .RuleFor(m => m.RequestID, f => f.Random.Number(1, 99));
+            return fakeData.Generate(100);
+        }
 
         // TODO: falta semilla Inconvenient
     }

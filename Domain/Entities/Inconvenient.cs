@@ -14,7 +14,7 @@ namespace Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
         [Required]
         public string? State { get; set; }
         [Required]
