@@ -197,22 +197,21 @@ namespace NewProtoNet.Data
 
         // TODO: falta semilla payroll
         //.RuleFor(m => m.Date, f => DateOnly.FromDateTime(f.Date.Past()))
-        List<Inconvenient> SeedInconvenients()
-        {
-            int ids = 1;
-            var states = new[] { "Mecanico", "Financiero", "Social", "Tiempo" };
-            Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
+        //List<Inconvenient> SeedInconvenients()
+        //{
+        //    int ids = 1;
+        //    var states = new[] { "Mecanico", "Financiero", "Social", "Tiempo" };
+        //    Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
+        //      .RuleFor(m => m.Id, f => ids++)
+        //      .RuleFor(m => m.Date, f => DateOnly.FromDateTime(f.Date.Past()))
+        //      .RuleFor(m => m.State, f => f.PickRandom(states))
+        //      .RuleFor(m => m.DaysDelay, f => f.Random.Number(1, 20))
+        //      .RuleFor(m => m.ServiceRequesedId, f => f.Random.Number(1, 99))
+        //      .RuleFor(m => m.Seen, f => f.Random.Bool())
+        //      .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
+        //      .RuleFor(m => m.RequestID, f => f.Random.Number(1, 99));
+        //    return fakeData.Generate(100);
+        //}
 
-              .RuleFor(m => m.State, f => f.PickRandom(states))
-              .RuleFor(m => m.DaysDelay, f => f.Random.Number(1, 20))
-              .RuleFor(m => m.ServiceRequesedId, f => f.Random.Number(1, 99))
-              .RuleFor(m => m.Seen, f => f.Random.Bool())
-              .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
-              .RuleFor(m => m.RequestID, f => f.Random.Number(1, 99));
-            return fakeData.Generate(100);
-        }
-
-        // TODO: falta semilla Inconvenient
     }
 }
