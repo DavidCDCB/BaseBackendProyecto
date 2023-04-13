@@ -14,5 +14,8 @@ namespace Domain.Entities
         public string? Password { get; set; }
         [Required]
         public string? Role { get; set; }
+
+        public Administrator? Administrator { get; set; }
+        public Recepcionist? Recepcionist { get; set; }
     }
 }

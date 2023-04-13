@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace NewProtoNet.Migrations
+namespace RestServer.Migrations
 {
     public partial class Prueba : Migration
     {

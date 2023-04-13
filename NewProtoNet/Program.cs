@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using NewProtoNet.Data;
-using NewProtoNet.Interfaces;
-using NewProtoNet.Repositories;
+using RestServer.Data;
+using RestServer.Interfaces;
+using RestServer.Repositories;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +29,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Se establece la inyección de dependencias para desacoplar el medio de persistencia
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+//builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 // Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
 /*

@@ -9,16 +9,23 @@ namespace Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public float? buyoutPrice { get; set; }
+        public float? purchasePrice { get; set; }
+        [Required]
+        public float? salePrice { get; set; }
         [Required]
         public int? Quantity { get; set; }
         [Required]
         public string? Description { get; set; }
         [Required]
         public string? Code { get; set; }
+        [Required]
+        public DateOnly? datePurchase { get; set; }
 
         public int? ProductId { get; set; }
         public Product? Product { get; set; }
+
+        public int? SupplierId { get; set; }
+        public Supplier? Supplier { get; set; }
 
     }
 }

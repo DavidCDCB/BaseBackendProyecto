@@ -15,11 +15,13 @@ namespace Domain.Entities
         [Required]
         public string? Brand { get; set; }
         [Required]
-        public float? Price { get; set; }
+        public float? salePrice { get; set; }
         [Required]
         public int? Quantity { get; set; }
         [Required]
         public string? Description { get; set; }
+
+        public ICollection<Purchase>? Purchases { get; set; }
 
     }
 }

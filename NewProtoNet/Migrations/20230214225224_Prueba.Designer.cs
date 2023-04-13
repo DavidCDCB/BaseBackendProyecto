@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NewProtoNet.Data;
+using RestServer.Data;
 
 #nullable disable
 
-namespace NewProtoNet.Migrations
+namespace RestServer.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
     [Migration("20230214225224_Prueba")]

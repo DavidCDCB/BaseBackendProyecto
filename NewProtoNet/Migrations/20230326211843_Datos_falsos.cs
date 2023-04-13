@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace NewProtoNet.Migrations
+namespace RestServer.Migrations
 {
     public partial class Datos_falsos : Migration
     {

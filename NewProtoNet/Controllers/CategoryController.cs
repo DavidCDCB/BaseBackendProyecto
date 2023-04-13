@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NewProtoNet.Controllers
+namespace RestServer.Controllers
 {
   [ApiController]
   [Route("api/[controller]")] // api/Category

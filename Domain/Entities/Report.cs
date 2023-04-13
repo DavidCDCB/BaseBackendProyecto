@@ -10,9 +10,6 @@ namespace Domain.Entities
         public int Id { get; set; }
         [Required]
         public string? Type { get; set; }
-        [Required]
 
-        public int? AdministratorId { get; set; }
-        public Administrator? Administrator { get; set; }
     }
 }
