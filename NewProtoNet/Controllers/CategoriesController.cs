@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using NewProtoNet.Data;
+using RestServer.Data;
 using Domain.Entities.Base;
 
-namespace NewProtoNet.Controllers
+namespace RestServer.Controllers
 {
     public class CategoriesController : Controller
     {
