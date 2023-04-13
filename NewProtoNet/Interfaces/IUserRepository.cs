@@ -1,5 +1,5 @@
 ﻿using Domain.Entities.Base;
-using NewProtoNet.DTOs;
+using RestServer.DTOs;
 
 namespace RestServer.Interfaces
 {
