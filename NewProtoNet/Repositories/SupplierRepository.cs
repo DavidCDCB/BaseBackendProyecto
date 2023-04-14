@@ -1,4 +1,6 @@
 ﻿using Domain.Entities;
+using Domain.Entities.Base;
+using Microsoft.EntityFrameworkCore;
 using RestServer.Data;
 using RestServer.DTOs;
 using RestServer.Interfaces;
@@ -15,29 +17,66 @@ namespace RestServer.Repositories
       this.dbContext = dbContext;
     }
 
-    Task<List<Supplier>> ISupplierRepository.GetSuppliers()
+    async Task<List<Supplier>> ISupplierRepository.GetSuppliers()
     {
-      throw new NotImplementedException();
+      return await this.dbContext.Suppliers!.ToListAsync();
     }
 
-    public Task<Supplier> GetSupplier(int id)
+    async Task<Supplier?> ISupplierRepository.GetSupplier(int id)
     {
-      throw new NotImplementedException();
+      Supplier? supplier = await dbContext.Suppliers!.FirstOrDefaultAsync(m => m.Id == id);
+      return (supplier != null) ? supplier : null;
     }
 
-    public Task<Supplier> PostSupplier(UserDTO user)
+    async Task<Supplier> ISupplierRepository.PostSupplier(SupplierDTO supplierDTO)
     {
-      throw new NotImplementedException();
+      Supplier supplier = new Supplier()
+      {
+        Name = supplierDTO.Name,
+        SurName = supplierDTO.SurName,
+        Nit = supplierDTO.Nit,
+        Company = supplierDTO.Company,
+        Phone = supplierDTO.Phone,
+        Email = supplierDTO.Email,
+        Address = supplierDTO.Address,
+
+      };
+
+      await this.dbContext.Suppliers!.AddAsync(supplier);
+      await this.dbContext.SaveChangesAsync();
+
+      return supplier;
     }
 
-    public Task<Supplier> UpdateSupplier(int id, UserDTO user)
+    async Task<Supplier?> ISupplierRepository.UpdateSupplier(int id, SupplierDTO supplier)
     {
-      throw new NotImplementedException();
+      Supplier? encontrado = await this.dbContext.Suppliers!.FindAsync(id);
+      if (encontrado == null)
+      {
+        return encontrado;
+      }
+
+      encontrado.Name = supplier.Name;
+      encontrado.SurName = supplier.SurName;
+      encontrado.Company = supplier.Company;
+      encontrado.Nit = supplier.Nit;
+      encontrado.Phone = supplier.Phone;
+      encontrado.Email = supplier.Email;
+      encontrado.Address = supplier.Address;
+      await this.dbContext.SaveChangesAsync();
+
+      return encontrado;
     }
 
-    public Task<Supplier> DeleteSupplierr(int id)
+    async Task<Supplier> ISupplierRepository.DeleteSupplier(int id)
     {
-      throw new NotImplementedException();
+      Supplier? encontrado = await dbContext.Suppliers!.FindAsync(id);
+      if (encontrado != null)
+      {
+        this.dbContext.Remove(encontrado);
+        this.dbContext.SaveChanges();
+      }
+      return encontrado!;
     }
 
   }

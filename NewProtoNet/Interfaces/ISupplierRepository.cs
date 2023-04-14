@@ -6,9 +6,9 @@ namespace RestServer.Interfaces
   public interface ISupplierRepository
   {
     Task<List<Supplier>> GetSuppliers();
-    Task<Supplier> GetSupplier(int id);
-    Task<Supplier> PostSupplier(UserDTO user);
-    Task<Supplier> UpdateSupplier(int id, UserDTO user);
-    Task<Supplier> DeleteSupplierr(int id);
+    Task<Supplier?> GetSupplier(int id);
+    Task<Supplier> PostSupplier(SupplierDTO user);
+    Task<Supplier> UpdateSupplier(int id, SupplierDTO user);
+    Task<Supplier> DeleteSupplier(int id);
   }
 }
