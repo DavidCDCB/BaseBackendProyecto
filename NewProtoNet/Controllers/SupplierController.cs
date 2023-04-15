@@ -1,13 +1,12 @@
 ﻿using RestServer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
-using Domain.Entities.Base;
 using Domain.Entities;
 
 namespace RestServer.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")] // https://localhost:7204/api/User
+  [Route("api/[controller]")]
   public class SupplierController : Controller
   {
     private readonly ISupplierRepository supplierRepository;
@@ -52,7 +51,7 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutSupplier(int id, SupplierDTO supplierDTO)
     {
-      Supplier actualizado = await this.supplierRepository.UpdateSupplier(id, supplierDTO);
+      Supplier? actualizado = await this.supplierRepository.UpdateSupplier(id, supplierDTO);
 
       if (actualizado == null)
       {
@@ -64,7 +63,7 @@ namespace RestServer.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveSupplier(int id)
     {
-      Supplier eliminado = await this.supplierRepository.DeleteSupplier(id);
+      Supplier? eliminado = await this.supplierRepository.DeleteSupplier(id);
 
       if (eliminado == null)
       {
