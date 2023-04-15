@@ -26,12 +26,12 @@ namespace RestServer.Migrations
                     b.Property<int>("CoursesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
+                    b.Property<int>("usersId")
                         .HasColumnType("int");
 
-                    b.HasKey("CoursesId", "UsersId");
+                    b.HasKey("CoursesId", "usersId");
 
-                    b.HasIndex("UsersId");
+                    b.HasIndex("usersId");
 
                     b.ToTable("UserCourses", (string)null);
                 });
@@ -98,7 +98,7 @@ namespace RestServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("CourseUser", b =>
@@ -111,7 +111,7 @@ namespace RestServer.Migrations
 
                     b.HasOne("Domain.Entities.User", null)
                         .WithMany()
-                        .HasForeignKey("UsersId")
+                        .HasForeignKey("usersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

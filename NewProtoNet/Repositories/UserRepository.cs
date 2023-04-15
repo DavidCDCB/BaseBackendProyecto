@@ -18,7 +18,7 @@ namespace RestServer.Repositories
     //    //    this.dbContext = dbContext;
     //    //}
 
-    //    //List<User> IUserRepository.SeedUsers(int size)
+    //    //List<User> IUserRepository.Seedusers(int size)
     //    //{
     //    //    int ids = 1;
     //    //    Faker<User> fakeData = new Faker<User>()
@@ -27,7 +27,7 @@ namespace RestServer.Repositories
     //    //        .RuleFor(m => m.Password, f => f.Person.Password)              
     //    //        .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
 
-    //    //    this.dbContext.RemoveRange(dbContext.Users);
+    //    //    this.dbContext.RemoveRange(dbContext.users);
 
     //    //    List<User> seedData = fakeData.Generate(size);
 
@@ -36,15 +36,15 @@ namespace RestServer.Repositories
     //    //    return seedData;
     //    //}
 
-    //    //async Task<List<User>> IUserRepository.GetUsers()
+    //    //async Task<List<User>> IUserRepository.Getusers()
     //    //{
-    //    //    return await this.dbContext.Users!.ToListAsync();
+    //    //    return await this.dbContext.users!.ToListAsync();
     //    //}
 
     //    //async Task<User?> IUserRepository.GetUser(int id)
     //    //{
     //    //    Console.WriteLine("OKss");
-    //    //    User? user = await dbContext.Users!.FirstOrDefaultAsync(m => m.Id == id);
+    //    //    User? user = await dbContext.users!.FirstOrDefaultAsync(m => m.Id == id);
     //    //    return (user != null) ? user : null;
     //    //}
 
@@ -58,7 +58,7 @@ namespace RestServer.Repositories
     //    //        Courses = user.Courses
     //    //    };
 
-    //    //    await this.dbContext.Users!.AddAsync(usuario);
+    //    //    await this.dbContext.users!.AddAsync(usuario);
     //    //    await this.dbContext.SaveChangesAsync();
 
     //    //    return usuario;
@@ -66,7 +66,7 @@ namespace RestServer.Repositories
 
     //    //async Task<User> IUserRepository.UpdateUser(int id, UserDTO user)
     //    //{
-    //    //    User? encontrado = await this.dbContext.Users!.FindAsync(id);
+    //    //    User? encontrado = await this.dbContext.users!.FindAsync(id);
     //    //    if (encontrado == null)
     //    //    {
     //    //        return encontrado;
@@ -82,7 +82,7 @@ namespace RestServer.Repositories
 
     //    //async Task<User> IUserRepository.DeleteUser(int id)
     //    //{
-    //    //    User? encontrado = await dbContext.Users!.FindAsync(id);
+    //    //    User? encontrado = await dbContext.users!.FindAsync(id);
     //    //    if (encontrado != null)
     //    //    {
     //    //        this.dbContext.Remove(encontrado);

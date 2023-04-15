@@ -21,14 +21,14 @@ namespace RestServer.Controllers
   //  [HttpGet("seed/{size}")]
   //  public IActionResult SeedData(int size)
   //  {
-  //    return Ok(this.userRepository.SeedUsers(size));
+  //    return Ok(this.userRepository.Seedusers(size));
   //  }
 
   //  [HttpGet]
-  //  public async Task<ActionResult> GetUsers()
+  //  public async Task<ActionResult> Getusers()
   //  {
   //    Console.WriteLine("OK");
-  //    return Ok(await this.userRepository.GetUsers());
+  //    return Ok(await this.userRepository.Getusers());
   //  }
 
   //  [HttpGet("{id}")]

@@ -3,29 +3,32 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Purchase
+    public class products
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
         public int Id { get; set; }
         [Required]
-        public float? purchasePrice { get; set; }
+        [Column("name")]
+        public string? Name { get; set; }
         [Required]
-        public float? salePrice { get; set; }
-        [Required]
-        public int? Quantity { get; set; }
-        [Required]
-        public string? Description { get; set; }
-        [Required]
+        [Column("code")]
         public string? Code { get; set; }
         [Required]
-        public DateOnly? datePurchase { get; set; }
+        [Column("brand")]
+        public string? Brand { get; set; }
+        [Required]
+        [Column("saleprice")]
+        public float? salePrice { get; set; }
+        [Required]
+        [Column("quantity")]
+        public int? Quantity { get; set; }
+        [Required]
+        [Column("description")]
+        public string? Description { get; set; }
 
-        public int? ProductId { get; set; }
-        public Product? Product { get; set; }
-
-        public int? SupplierId { get; set; }
-        public Supplier? Supplier { get; set; }
+        public ICollection<purchases>? purchases { get; set; }
 
     }
 }

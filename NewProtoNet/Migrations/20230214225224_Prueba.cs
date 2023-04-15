@@ -28,7 +28,7 @@ namespace RestServer.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -41,7 +41,7 @@ namespace RestServer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -76,11 +76,11 @@ namespace RestServer.Migrations
                 columns: table => new
                 {
                     CoursesId = table.Column<int>(type: "int", nullable: false),
-                    UsersId = table.Column<int>(type: "int", nullable: false)
+                    usersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserCourses", x => new { x.CoursesId, x.UsersId });
+                    table.PrimaryKey("PK_UserCourses", x => new { x.CoursesId, x.usersId });
                     table.ForeignKey(
                         name: "FK_UserCourses_Courses_CoursesId",
                         column: x => x.CoursesId,
@@ -88,9 +88,9 @@ namespace RestServer.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserCourses_Users_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "Users",
+                        name: "FK_UserCourses_users_usersId",
+                        column: x => x.usersId,
+                        principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -102,9 +102,9 @@ namespace RestServer.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserCourses_UsersId",
+                name: "IX_UserCourses_usersId",
                 table: "UserCourses",
-                column: "UsersId");
+                column: "usersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -116,7 +116,7 @@ namespace RestServer.Migrations
                 name: "Courses");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users");
 
             migrationBuilder.DropTable(
                 name: "Categories");
