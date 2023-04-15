@@ -8,7 +8,7 @@ namespace RestServer.Interfaces
     Task<List<Supplier>> GetSuppliers();
     Task<Supplier?> GetSupplier(int id);
     Task<Supplier> PostSupplier(SupplierDTO user);
-    Task<Supplier> UpdateSupplier(int id, SupplierDTO user);
-    Task<Supplier> DeleteSupplier(int id);
+    Task<Supplier?> UpdateSupplier(int id, SupplierDTO user);
+    Task<Supplier?> DeleteSupplier(int id);
   }
 }
