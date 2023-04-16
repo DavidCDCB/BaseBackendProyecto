@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using RestServer.Data;
 using RestServer.DTOs;
 using RestServer.Interfaces;
+using System.Drawing.Printing;
 
 namespace RestServer.Repositories
 {
@@ -66,7 +67,7 @@ namespace RestServer.Repositories
       return encontrado;
     }
 
-    async Task<Supplier> ISupplierRepository.DeleteSupplier(int id)
+    async Task<Supplier?> ISupplierRepository.DeleteSupplier(int id)
     {
       Supplier? encontrado = await dbContext.Suppliers!.FindAsync(id);
       if (encontrado != null)
@@ -77,5 +78,12 @@ namespace RestServer.Repositories
       return encontrado!;
     }
 
+    async Task<List<Supplier>> ISupplierRepository.GetByPage(int page)
+    {
+      const int pageSize = 10;
+      List<Supplier> suppliers = await this.dbContext.Suppliers!.ToListAsync();
+      int totalPages = (int)Math.Ceiling((double)suppliers.Count / pageSize);
+      return (page <= totalPages) ? suppliers.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Supplier>();
+    }
   }
 }

@@ -42,9 +42,10 @@ namespace RestServer.Controllers
       {
         return Ok(await this.ServiceRepository.PostService(ServiceDTO));
       }
-      catch (Exception)
+      catch (Exception e)
       {
-        return BadRequest();
+        Console.WriteLine(e);
+        return BadRequest(e);
       }
     }
 

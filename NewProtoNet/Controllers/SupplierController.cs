@@ -22,6 +22,13 @@ namespace RestServer.Controllers
       return Ok(await this.supplierRepository.GetSuppliers());
     }
 
+    [HttpGet("page/{num}")]
+    public async Task<ActionResult> GetSuppliersByPage(int num)
+    {
+      List<Supplier> suppliers = await this.supplierRepository.GetByPage(num);
+      return suppliers.Count > 0 ? Ok(suppliers) : NoContent();
+    }
+
     [HttpGet("{id}")]
     public async Task<ActionResult> GetSupplier(int id)
     {
@@ -42,9 +49,10 @@ namespace RestServer.Controllers
       {
         return Ok(await this.supplierRepository.PostSupplier(supplierDTO));
       }
-      catch (Exception)
+      catch (Exception e)
       {
-        return BadRequest();
+        Console.WriteLine(e);
+        return BadRequest(e);
       }
     }
 

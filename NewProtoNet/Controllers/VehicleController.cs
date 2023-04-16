@@ -48,9 +48,10 @@ namespace RestServer.Controllers
       {
         return Ok(await this.VehicleRepository.PostVehicle(VehicleDTO));
       }
-      catch (Exception)
+      catch (Exception e)
       {
-        return BadRequest();
+        Console.WriteLine(e);
+        return BadRequest(e);
       }
     }
 
