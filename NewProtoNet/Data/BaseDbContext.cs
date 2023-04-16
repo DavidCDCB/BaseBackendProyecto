@@ -148,9 +148,10 @@ namespace RestServer.Data
       Faker<Request> fakeData = new Faker<Request>("es_MX")
         .RuleFor(m => m.Id, f => ids++)
         .RuleFor(m => m.StarDate, f => DateOnly.FromDateTime(f.Date.Past()))
-        .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Past()))
+        .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Future()))
         .RuleFor(m => m.State, f => f.PickRandom(states))
-        .RuleFor(m => m.ServiceId, f => f.Random.Number(1, 99));
+        .RuleFor(m => m.ServiceId, f => f.Random.Number(1, 99))
+        .RuleFor(m => m.ClientId, f => f.Random.Number(1, 99));
       return fakeData.Generate(100);
     }
   }
