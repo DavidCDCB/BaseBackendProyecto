@@ -9,23 +9,23 @@ namespace RestServer.Controllers
   [Route("api/[controller]")]
   public class RequestController : Controller
   {
-    private readonly IRequestRepository RequestRepository;
+    private readonly IRequestRepository requestRepository;
 
-    public RequestController(IRequestRepository RequestRepository)
+    public RequestController(IRequestRepository requestRepository)
     {
-      this.RequestRepository = RequestRepository;
+      this.requestRepository = requestRepository;
     }
 
     [HttpGet]
     public async Task<ActionResult> GetRequests()
     {
-      return Ok(await this.RequestRepository.GetRequests());
+      return Ok(await this.requestRepository.GetRequests());
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult> GetRequest(int id)
     {
-      RequestDTO? encontrado = await this.RequestRepository.GetRequest(id);
+      RequestDTO? encontrado = await this.requestRepository.GetRequest(id);
 
       if (encontrado == null)
       {
@@ -38,13 +38,13 @@ namespace RestServer.Controllers
     [HttpGet("service/{id}")]
     public async Task<ActionResult> GetRequestByService(int id)
     {
-      return Ok(await this.RequestRepository.GetRequestsByService(id));
+      return Ok(await this.requestRepository.GetRequestsByService(id));
     }
 
     [HttpGet("client/{id}")]
     public async Task<ActionResult> GetRequestByClient(int id)
     {
-      return Ok(await this.RequestRepository.GetRequestsByClient(id));
+      return Ok(await this.requestRepository.GetRequestsByClient(id));
     }
 
     [HttpPost]
@@ -52,7 +52,7 @@ namespace RestServer.Controllers
     {
       try
       {
-        return Ok(await this.RequestRepository.PostRequest(RequestDTO));
+        return Ok(await this.requestRepository.PostRequest(RequestDTO));
       }
       catch (Exception e)
       {
@@ -64,7 +64,7 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutRequest(int id, RequestDTO RequestDTO)
     {
-      RequestDTO? actualizado = await this.RequestRepository.UpdateRequest(id, RequestDTO);
+      RequestDTO? actualizado = await this.requestRepository.UpdateRequest(id, RequestDTO);
 
       if (actualizado == null)
       {
@@ -76,7 +76,7 @@ namespace RestServer.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveRequest(int id)
     {
-      RequestDTO? eliminado = await this.RequestRepository.DeleteRequest(id);
+      RequestDTO? eliminado = await this.requestRepository.DeleteRequest(id);
 
       if (eliminado == null)
       {

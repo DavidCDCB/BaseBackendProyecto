@@ -9,23 +9,30 @@ namespace RestServer.Controllers
   [Route("api/[controller]")]
   public class ClientController : Controller
   {
-    private readonly IClientRepository ClientRepository;
+    private readonly IClientRepository clientRepository;
 
-    public ClientController(IClientRepository ClientRepository)
+    public ClientController(IClientRepository clientRepository)
     {
-      this.ClientRepository = ClientRepository;
+      this.clientRepository = clientRepository;
     }
 
     [HttpGet]
     public async Task<ActionResult> GetClients()
     {
-      return Ok(await this.ClientRepository.GetClients());
+      return Ok(await this.clientRepository.GetClients());
+    }
+
+    [HttpGet("page/{num}")]
+    public async Task<ActionResult> GetSuppliersByPage(int num)
+    {
+      List<Client> clients = await this.clientRepository.GetByPage(num);
+      return clients.Count > 0 ? Ok(clients) : NoContent();
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult> GetClient(int id)
     {
-      Client? encontrado = await this.ClientRepository.GetClient(id);
+      Client? encontrado = await this.clientRepository.GetClient(id);
 
       if (encontrado == null)
       {
@@ -40,7 +47,7 @@ namespace RestServer.Controllers
     {
       try
       {
-        return Ok(await this.ClientRepository.PostClient(ClientDTO));
+        return Ok(await this.clientRepository.PostClient(ClientDTO));
       }
       catch (Exception e)
       {
@@ -52,7 +59,7 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutClient(int id, ClientDTO ClientDTO)
     {
-      Client? actualizado = await this.ClientRepository.UpdateClient(id, ClientDTO);
+      Client? actualizado = await this.clientRepository.UpdateClient(id, ClientDTO);
 
       if (actualizado == null)
       {
@@ -64,7 +71,7 @@ namespace RestServer.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveClient(int id)
     {
-      Client? eliminado = await this.ClientRepository.DeleteClient(id);
+      Client? eliminado = await this.clientRepository.DeleteClient(id);
 
       if (eliminado == null)
       {

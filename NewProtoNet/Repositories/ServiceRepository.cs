@@ -70,5 +70,13 @@ namespace RestServer.Repositories
       }
       return encontrado;
     }
+
+    async Task<List<Service>> IServiceRepository.GetByPage(int page)
+    {
+      const int pageSize = 10;
+      List<Service> services = await this.dbContext.Services!.ToListAsync();
+      int totalPages = (int)Math.Ceiling((double)services.Count / pageSize);
+      return (page <= totalPages) ? services.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Service>();
+    }
   }
 }

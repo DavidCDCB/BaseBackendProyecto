@@ -6,6 +6,7 @@ namespace RestServer.Interfaces
   public interface IClientRepository
   {
     Task<List<Client>> GetClients();
+    Task<List<Client>> GetByPage(int page);
     Task<Client?> GetClient(int id);
     Task<Client> PostClient(ClientDTO user);
     Task<Client?> UpdateClient(int id, ClientDTO user);

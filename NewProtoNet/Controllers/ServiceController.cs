@@ -9,23 +9,30 @@ namespace RestServer.Controllers
   [Route("api/[controller]")]
   public class ServiceController : Controller
   {
-    private readonly IServiceRepository ServiceRepository;
+    private readonly IServiceRepository serviceRepository;
 
-    public ServiceController(IServiceRepository ServiceRepository)
+    public ServiceController(IServiceRepository serviceRepository)
     {
-      this.ServiceRepository = ServiceRepository;
+      this.serviceRepository = serviceRepository;
     }
 
     [HttpGet]
     public async Task<ActionResult> GetServices()
     {
-      return Ok(await this.ServiceRepository.GetServices());
+      return Ok(await this.serviceRepository.GetServices());
+    }
+
+    [HttpGet("page/{num}")]
+    public async Task<ActionResult> GetSuppliersByPage(int num)
+    {
+      List<Service> services = await this.serviceRepository.GetByPage(num);
+      return services.Count > 0 ? Ok(services) : NoContent();
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult> GetService(int id)
     {
-      Service? encontrado = await this.ServiceRepository.GetService(id);
+      Service? encontrado = await this.serviceRepository.GetService(id);
 
       if (encontrado == null)
       {
@@ -40,7 +47,7 @@ namespace RestServer.Controllers
     {
       try
       {
-        return Ok(await this.ServiceRepository.PostService(ServiceDTO));
+        return Ok(await this.serviceRepository.PostService(ServiceDTO));
       }
       catch (Exception e)
       {
@@ -52,7 +59,7 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutService(int id, ServiceDTO ServiceDTO)
     {
-      Service? actualizado = await this.ServiceRepository.UpdateService(id, ServiceDTO);
+      Service? actualizado = await this.serviceRepository.UpdateService(id, ServiceDTO);
 
       if (actualizado == null)
       {
@@ -64,7 +71,7 @@ namespace RestServer.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveService(int id)
     {
-      Service? eliminado = await this.ServiceRepository.DeleteService(id);
+      Service? eliminado = await this.serviceRepository.DeleteService(id);
 
       if (eliminado == null)
       {
