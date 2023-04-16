@@ -38,7 +38,6 @@ namespace RestServer.Repositories
         Phone = supplierDTO.Phone,
         Email = supplierDTO.Email,
         Address = supplierDTO.Address,
-
       };
 
       await this.dbContext.Suppliers!.AddAsync(supplier);
