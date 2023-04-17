@@ -14,7 +14,7 @@ namespace Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public DateTime? Date { get; set; }
+        public DateOnly? DateAct { get; set; }
         [Required]
         public string? State { get; set; }
         [Required]
@@ -25,7 +25,6 @@ namespace Domain.Entities
         public bool Seen { get; set; }
         [Required]
         public string? Description { get; set; }
-        [Required]
         public int? RequestID { get; set; }
         public Request? Request { get; set; }
 

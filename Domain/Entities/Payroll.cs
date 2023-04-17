@@ -14,9 +14,9 @@ namespace Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public DateTime? StarDate { get; set; }
+        public DateOnly? StarDate { get; set; }
         [Required]
-        public DateTime? EndDate { get; set; }
+        public DateOnly? EndDate { get; set; }
         [Required]
         public string? Description { get; set; }
         [Required]
@@ -27,7 +27,7 @@ namespace Domain.Entities
         public double? Settlement { get; set; }
 
         
-        public ICollection<Mechanic>? Mechanic { get; set; }
+        public ICollection<Mechanic>? Mechanics { get; set; }
 
         //public ICollection<Recepcionist>? Recepcionist { get; set; }
 

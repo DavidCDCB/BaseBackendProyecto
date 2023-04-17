@@ -32,8 +32,8 @@ namespace Domain.Entities
         [Required]
         public int? UserId { get; set; }
 
-        public ICollection<Payroll>? Payroll { get; set; }
-        public ICollection<Request>? Request { get; set; } 
+        public ICollection<Payroll>? Payrolls { get; set; }
+        public ICollection<Request>? Requests { get; set; } 
 
     }
 }

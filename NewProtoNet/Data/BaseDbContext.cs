@@ -79,18 +79,18 @@ namespace NewProtoNet.Data
             modelBuilder.Entity<Request>()
               .HasMany(c => c.Mechanics)
               .WithMany(s => s.Requests)
-              .UsingEntity(j => j.ToTable("UserCourses"));
+              .UsingEntity(j => j.ToTable("RequestMechanic"));
 
             //mechanic -> payroll
             //TODO: relacion de muchos a muchos
             modelBuilder.Entity<Mechanic>()
               .HasMany(c => c.Payrolls)
               .WithMany(s => s.Mechanics)
-              .UsingEntity(j => j.ToTable("UserCourses"));
+              .UsingEntity(j => j.ToTable("PayrollMechanic"));
 
             //request -> inconvenients
             modelBuilder.Entity<Request>()
-                .HasMany(v => v.Inconvenient)
+                .HasMany(v => v.Inconvenients)
                 .WithOne(c => c.Request);
 
 
@@ -205,36 +205,35 @@ namespace NewProtoNet.Data
             return fakeData.Generate(100);
         }
 
-        // TODO: falta semilla payroll
-        //.RuleFor(m => m.Date, f => DateOnly.FromDateTime(f.Date.Past()))
         List<Inconvenient> SeedInconvenients()
         {
             int ids = 1;
             var states = new[] { "Mecanico", "Financiero", "Social", "Tiempo" };
             Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Date, f => DateOnly.FromDateTime(f.Date.Past()))
+              .RuleFor(m => m.DateAct, f => DateOnly.FromDateTime(f.Date.Past()))
               .RuleFor(m => m.State, f => f.PickRandom(states))
               .RuleFor(m => m.DaysDelay, f => f.Random.Number(1, 20))
               .RuleFor(m => m.ServiceRequesedId, f => f.Random.Number(1, 99))
               .RuleFor(m => m.Seen, f => f.Random.Bool())
               .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
               .RuleFor(m => m.RequestID, f => f.Random.Number(1, 99));
-            return fakeData.Generate(100);
+            return fakedata.Generate(100);
         }
 
-        List<Inconvenient> SeedPayrolls()
+        List<Payroll> SeedPayrolls()
         {
             int ids = 1;
-            Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
+            Faker<Payroll> fakedata = new Faker<Payroll>("es_MX")
                 .RuleFor(m => m.Id, f => ids++)
                 .RuleFor(m => m.StarDate, f => DateOnly.FromDateTime(f.Date.Past()))
                 .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Past()))
                 .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
                 .RuleFor(m => m.Accruals, f => (double)f.Finance.Amount())
                 .RuleFor(m => m.Deductions, f => (double)f.Finance.Amount())
-                .RuleFor(m => m.Settlement, f => (double)f.Finance.Amount())
-            return fakeData.Generate(100);
+                .RuleFor(m => m.Settlement, f => (double)f.Finance.Amount());
+            return fakedata.Generate(100);
 
         }
     }
+}
