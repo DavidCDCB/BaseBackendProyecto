@@ -30,6 +30,9 @@ builder.Services.AddSwaggerGen();
 
 // Se establece la inyección de dependencias para desacoplar el medio de persistencia
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IMechanicRepository, MechanicRepository>();
+builder.Services.AddTransient<IPayrollRepository, PayrollRepository>();
+builder.Services.AddTransient<IInconvenientRepository, InconvenientRepository>();
 
 // Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
 /*
