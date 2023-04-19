@@ -1,7 +1,6 @@
 ﻿using NewProtoNet.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.Interfaces;
-using Domain.Entities.Base;
 using Domain.Entities;
 
 // https://localhost:7204/swagger/index.html
