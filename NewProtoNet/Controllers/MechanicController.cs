@@ -1,9 +1,9 @@
 ﻿using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using NewProtoNet.DTOs;
-using RestServer.Interfaces;
+using NewProtoNet.Interfaces;
 
-namespace RestServer.Controllers
+namespace NewProtoNet.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]// https://localhost:7204/api/Mechanic

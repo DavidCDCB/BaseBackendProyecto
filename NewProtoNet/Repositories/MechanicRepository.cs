@@ -3,7 +3,7 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using NewProtoNet.Data;
 using NewProtoNet.DTOs;
-using RestServer.Interfaces;
+using NewProtoNet.Interfaces;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 

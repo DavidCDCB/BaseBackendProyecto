@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using NewProtoNet.DTOs;
 
-namespace RestServer.Interfaces
+namespace NewProtoNet.Interfaces
 {
     public interface IMechanicRepository
     {
