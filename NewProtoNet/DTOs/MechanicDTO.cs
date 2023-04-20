@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace NewProtoNet.DTOs
+namespace RestServer.DTOs
 {
     public class MechanicDTO
     {

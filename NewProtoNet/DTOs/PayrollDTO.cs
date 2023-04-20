@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Entities.Base;
 
-namespace NewProtoNet.DTOs
+namespace RestServer.DTOs
 {
     public class PayrollDTO
     {

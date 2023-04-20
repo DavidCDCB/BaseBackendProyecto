@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
-using NewProtoNet.DTOs;
+using RestServer.DTOs;
 
-namespace NewProtoNet.Interfaces
+namespace RestServer.Interfaces
 {
     public interface IInconvenientRepository
   {

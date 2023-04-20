@@ -1,13 +1,13 @@
-﻿using NewProtoNet.Data;
-using NewProtoNet.Interfaces;
-using NewProtoNet.DTOs;
+﻿using RestServer.Data;
+using RestServer.Interfaces;
+using RestServer.DTOs;
 using Bogus;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
-namespace NewProtoNet.Repositories
+namespace RestServer.Repositories
 {
     public class InconvenientRepository : IInconvenientRepository
     {

@@ -1,10 +1,10 @@
-﻿using NewProtoNet.DTOs;
+﻿using RestServer.DTOs;
 using Microsoft.AspNetCore.Mvc;
-using NewProtoNet.Interfaces;
+using RestServer.Interfaces;
 using Domain.Entities.Base;
 
 // https://localhost:7204/swagger/index.html
-namespace NewProtoNet.Controllers
+namespace RestServer.Controllers
 {
     [ApiController]
   [Route("api/[controller]")] // https://localhost:7204/api/User

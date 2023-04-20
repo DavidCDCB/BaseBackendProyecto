@@ -31,7 +31,7 @@ using System.Data;
 // https://www.learnentityframeworkcore.com/migrations/seeding
 // https://medium.com/scrum-and-coke/quick-proof-of-concept-asp-net-core-web-api-using-swashbuckle-aspnetcore-and-bogus-19977c84d4a2
 
-namespace NewProtoNet.Data
+namespace RestServer.Data
 {
     public class BaseDbContext : DbContext
     {

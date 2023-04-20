@@ -1,13 +1,13 @@
 ﻿using Bogus;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using NewProtoNet.Data;
-using NewProtoNet.DTOs;
-using NewProtoNet.Interfaces;
+using RestServer.Data;
+using RestServer.DTOs;
+using RestServer.Interfaces;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
-namespace NewProtoNet.Repositories
+namespace RestServer.Repositories
 {
     public class MechanicRepository : IMechanicRepository
     {
