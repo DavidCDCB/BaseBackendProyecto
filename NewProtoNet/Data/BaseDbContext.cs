@@ -37,52 +37,52 @@ namespace RestServer.Data
         {
         }
 
-        public DbSet<users>? users { get; set; }
-        public DbSet<reports>? reports { get; set; }
-        public DbSet<administrators>? administrators { get; set; }
-        public DbSet<products>? products { get; set; }
-        public DbSet<purchases>? purchases { get; set; }
-        public DbSet<recepcionists>? recepcionists { get; set; }
-        public DbSet<suppliers>? suppliers { get; set; }
+        public DbSet<User>? Users { get; set; }
+        public DbSet<Report>? Reports { get; set; }
+        public DbSet<Administrator>? Administrators { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<Purchase>? Purchases { get; set; }
+        public DbSet<Recepcionist>? Recepcionists { get; set; }
+        public DbSet<Supplier>? Suppliers { get; set; }
 
 
         // Se define cada una de la relaciones en cada migración
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // administrador -> usuario
-            modelBuilder.Entity<administrators>()
+            modelBuilder.Entity<Administrator>()
                 .HasOne(v => v.User)
                 .WithOne(c => c.Administrator);
 
             // recepcionista -> usuario
-            modelBuilder.Entity<recepcionists>()
+            modelBuilder.Entity<Recepcionist>()
                 .HasOne(v => v.User)
                 .WithOne(c => c.Recepcionist);
 
-            modelBuilder.Entity<products>()
+            modelBuilder.Entity<Product>()
                 .HasMany(v => v.purchases)
                 .WithOne(c => c.Product);
 
-            modelBuilder.Entity<suppliers>()
+            modelBuilder.Entity<Supplier>()
                 .HasMany(v => v.purchases)
                 .WithOne(c => c.Supplier);
 
-            modelBuilder.Entity<users>().HasData(this.Seedusers());
-            modelBuilder.Entity<suppliers>().HasData(this.Seedsuppliers());
-            modelBuilder.Entity<reports>().HasData(this.Seedreports());
-            modelBuilder.Entity<administrators>().HasData(this.Seedadministrators());
-            modelBuilder.Entity<recepcionists>().HasData(this.Seedrecepcionists());
-            modelBuilder.Entity<products>().HasData(this.Seedproducts());
-            modelBuilder.Entity<purchases>().HasData(this.Seedpurchases());
+            modelBuilder.Entity<User>().HasData(this.SeedUsers());
+            modelBuilder.Entity<Supplier>().HasData(this.SeedSuppliers());
+            modelBuilder.Entity<Report>().HasData(this.SeedReports());
+            modelBuilder.Entity<Administrator>().HasData(this.SeedAdministrators());
+            modelBuilder.Entity<Recepcionist>().HasData(this.SeedRecepcionists());
+            modelBuilder.Entity<Product>().HasData(this.SeedProducts());
+            modelBuilder.Entity<Purchase>().HasData(this.SeedPurchases());
 
         }
 
 
-        List<users> Seedusers()
+        List<User> SeedUsers()
         {
             int ids = 1;
             var rol = new[] { "Recepcionist", "Administrator", "Mechanic" };
-            Faker<users> fakeData = new Faker<users>("es_MX")
+            Faker<User> fakeData = new Faker<User>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Email, f => f.Person.Email)
               .RuleFor(m => m.Password, f => f.Lorem.Word())
@@ -90,10 +90,10 @@ namespace RestServer.Data
             return fakeData.Generate(100);
         }
 
-        List<suppliers> Seedsuppliers()
+        List<Supplier> SeedSuppliers()
         {
             int ids = 1;
-            Faker<suppliers> fakeData = new Faker<suppliers>("es_MX")
+            Faker<Supplier> fakeData = new Faker<Supplier>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Nit, f => f.Person.Nif())
               .RuleFor(m => m.Name, f => f.Person.FirstName)
@@ -105,31 +105,31 @@ namespace RestServer.Data
             return fakeData.Generate(100);
         }
 
-        List<reports> Seedreports()
+        List<Report> SeedReports()
         {
             int ids = 1;
             var types = new[] { "Nómina", "Inventario", "Clientes", "Vehiculos" };
-            Faker<reports> fakeData = new Faker<reports>("es_MX")
+            Faker<Report> fakeData = new Faker<Report>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Type, f => f.PickRandom(types));
             return fakeData.Generate(100);
         }
 
-        List<administrators> Seedadministrators()
+        List<Administrator> SeedAdministrators()
         {
             int ids = 1;
-            Faker<administrators> fakeData = new Faker<administrators>("es_MX")
+            Faker<Administrator> fakeData = new Faker<Administrator>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Name, f => f.Person.FirstName)
-              .RuleFor(m => m.SurName, f => f.Person.LastName)
+              .RuleFor(m => m.Surname, f => f.Person.LastName)
               .RuleFor(m => m.Phone, f => f.Person.Phone);
             return fakeData.Generate(100);
         }
 
-        List<recepcionists> Seedrecepcionists()
+        List<Recepcionist> SeedRecepcionists()
         {
             int ids = 1;
-            Faker<recepcionists> fakeData = new Faker<recepcionists>("es_MX")
+            Faker<Recepcionist> fakeData = new Faker<Recepcionist>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Name, f => f.Person.FirstName)
               .RuleFor(m => m.Surname, f => f.Person.LastName)
@@ -140,10 +140,10 @@ namespace RestServer.Data
             return fakeData.Generate(100);
         }
 
-        List<products> Seedproducts()
+        List<Product> SeedProducts()
         {
             int ids = 1;
-            Faker<products> fakeData = new Faker<products>("es_MX")
+            Faker<Product> fakeData = new Faker<Product>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Name, f => f.Commerce.ProductName())
               .RuleFor(m => m.Code, f => f.Commerce.Ean13())
@@ -154,10 +154,10 @@ namespace RestServer.Data
             return fakeData.Generate(100);
         }
 
-        List<purchases> Seedpurchases()
+        List<Purchase> SeedPurchases()
         {
             int ids = 1;
-            Faker<purchases> fakeData = new Faker<purchases>("es_MX")
+            Faker<Purchase> fakeData = new Faker<Purchase>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.purchasePrice, f => f.Random.Float(100000, 500000))
               .RuleFor(m => m.salePrice, f => f.Random.Float(100000, 500000))

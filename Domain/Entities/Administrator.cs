@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class administrators
+    [Table("administrators")]
+    public class Administrator
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,13 +15,13 @@ namespace Domain.Entities
         public string? Name { get; set; }
         [Required]
         [Column("surname")]
-        public string? SurName { get; set; }
+        public string? Surname { get; set; }
         [Required]
         [Column("phone")]
         public string? Phone { get; set; }
 
         [Column("userid")]
         public int? UserId { get; set; }
-        public users? User { get; set; }
+        public User? User { get; set; }
     }
 }

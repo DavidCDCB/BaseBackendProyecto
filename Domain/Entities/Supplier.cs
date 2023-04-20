@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class suppliers
+    [Table("suppliers")]
+    public class Supplier
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -32,6 +33,6 @@ namespace Domain.Entities
         public string? Address { get; set; }
 
 
-        public ICollection<purchases>? purchases { get; set; }
+        public ICollection<Purchase>? purchases { get; set; }
     }
 }

@@ -1,95 +1,83 @@
-﻿using RestServer.Data;
-using RestServer.Interfaces;
-using Domain.Entities;
-using RestServer.DTOs;
-using Bogus;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-
-// La lógica de negocio debe estar en la capa de aplicacion sin usar el context
+using RestServer.Data;
+using RestServer.DTOs;
+using RestServer.Interfaces;
+using System.Drawing.Printing;
 
 namespace RestServer.Repositories
 {
-    //public class UserRepository : IUserRepository
-    //{
-    //    //private readonly BaseDbContext dbContext;
+    public class UserRepository : IUserRepository
+    {
 
-    //    //public UserRepository(BaseDbContext dbContext)
-    //    //{
-    //    //    this.dbContext = dbContext;
-    //    //}
+        private readonly BaseDbContext dbContext;
 
-    //    //List<User> IUserRepository.Seedusers(int size)
-    //    //{
-    //    //    int ids = 1;
-    //    //    Faker<User> fakeData = new Faker<User>()
-    //    //        .RuleFor(m => m.Id, f => ids++)
-    //    //        .RuleFor(m => m.Email, f => f.Person.Email)
-    //    //        .RuleFor(m => m.Password, f => f.Person.Password)              
-    //    //        .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
+        public UserRepository(BaseDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
 
-    //    //    this.dbContext.RemoveRange(dbContext.users);
+        async Task<List<User>> IUserRepository.GetUsers()
+        {
+            return await this.dbContext.Users!.ToListAsync();
+        }
 
-    //    //    List<User> seedData = fakeData.Generate(size);
+        async Task<User?> IUserRepository.GetUser(int id)
+        {
+            User? User = await dbContext.Users!.FirstOrDefaultAsync(m => m.Id == id);
+            return (User != null) ? User : null;
+        }
 
-    //    //    this.dbContext.AddRange(seedData);
-    //    //    this.dbContext.SaveChanges();
-    //    //    return seedData;
-    //    //}
+        async Task<User> IUserRepository.PostUser(UserDTO UserDTO)
+        {
+            User User = new User()
+            {
+                Id = UserDTO.Id,
+                Email = UserDTO.Email,
+                Password = UserDTO.Password,
+                Role = UserDTO.Role,
+            };
 
-    //    //async Task<List<User>> IUserRepository.Getusers()
-    //    //{
-    //    //    return await this.dbContext.users!.ToListAsync();
-    //    //}
+            await this.dbContext.Users!.AddAsync(User);
+            await this.dbContext.SaveChangesAsync();
 
-    //    //async Task<User?> IUserRepository.GetUser(int id)
-    //    //{
-    //    //    Console.WriteLine("OKss");
-    //    //    User? user = await dbContext.users!.FirstOrDefaultAsync(m => m.Id == id);
-    //    //    return (user != null) ? user : null;
-    //    //}
+            return User;
+        }
 
-    //    //async Task<User> IUserRepository.PostUser(UserDTO user)
-    //    //{
-    //    //    User usuario = new User()
-    //    //    {
-    //    //        FullName = user.FullName,
-    //    //        Email = user.Email,
-    //    //        Phone = user.Phone,
-    //    //        Courses = user.Courses
-    //    //    };
+        async Task<User?> IUserRepository.UpdateUser(int id, UserDTO User)
+        {
+            User? encontrado = await this.dbContext.Users!.FindAsync(id);
+            if (encontrado == null)
+            {
+                return encontrado;
+            }
 
-    //    //    await this.dbContext.users!.AddAsync(usuario);
-    //    //    await this.dbContext.SaveChangesAsync();
+            encontrado.Id = User.Id;
+            encontrado.Email = User.Email;
+            encontrado.Password = User.Password;
+            encontrado.Role = User.Role;
+            await this.dbContext.SaveChangesAsync();
 
-    //    //    return usuario;
-    //    //}
+            return encontrado;
+        }
 
-    //    //async Task<User> IUserRepository.UpdateUser(int id, UserDTO user)
-    //    //{
-    //    //    User? encontrado = await this.dbContext.users!.FindAsync(id);
-    //    //    if (encontrado == null)
-    //    //    {
-    //    //        return encontrado;
-    //    //    }
+        async Task<User?> IUserRepository.DeleteUser(int id)
+        {
+            User? encontrado = await dbContext.Users!.FindAsync(id);
+            if (encontrado != null)
+            {
+                this.dbContext.Remove(encontrado);
+                this.dbContext.SaveChanges();
+            }
+            return encontrado!;
+        }
 
-    //    //    encontrado.FullName = user.FullName;
-    //    //    encontrado.Email = user.Email;
-    //    //    encontrado.Phone = user.Phone;
-    //    //    await this.dbContext.SaveChangesAsync();
-
-    //    //    return encontrado;
-    //    //}
-
-    //    //async Task<User> IUserRepository.DeleteUser(int id)
-    //    //{
-    //    //    User? encontrado = await dbContext.users!.FindAsync(id);
-    //    //    if (encontrado != null)
-    //    //    {
-    //    //        this.dbContext.Remove(encontrado);
-    //    //        this.dbContext.SaveChanges();
-    //    //    }
-    //    //    return encontrado;
-    //    //}
-
-    //}
+        async Task<List<User>> IUserRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<User> Users = await this.dbContext.Users!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)Users.Count / pageSize);
+            return (page <= totalPages) ? Users.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<User>();
+        }
+    }
 }

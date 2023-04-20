@@ -19,7 +19,7 @@ namespace RestServer.Migrations
                 .HasAnnotation("ProductVersion", "6.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Domain.Entities.administrators", b =>
+            modelBuilder.Entity("Domain.Entities.Administrator", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace RestServer.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("phone");
 
-                    b.Property<string>("SurName")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("surname");
@@ -56,706 +56,706 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Rebeca",
-                            Phone = "527.916.931",
-                            SurName = "Arriaga"
+                            Name = "Irene",
+                            Phone = "596529269",
+                            Surname = "Prado"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Arturo",
-                            Phone = "5233-225-311",
-                            SurName = "Kyra"
+                            Name = "Leticia",
+                            Phone = "5489-445-533",
+                            Surname = "Huixtlacatl"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Rosalia",
-                            Phone = "571.990.679",
-                            SurName = "Palomino"
+                            Name = "Estela",
+                            Phone = "5305-315-366",
+                            Surname = "Xacon"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Daniela",
-                            Phone = "583.970.788",
-                            SurName = "Villareal"
+                            Name = "Javier",
+                            Phone = "509441799",
+                            Surname = "Trejo"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Rosalia",
-                            Phone = "539 583 422",
-                            SurName = "Águilar"
+                            Name = "Ivanna",
+                            Phone = "5074-281-334",
+                            Surname = "Báez"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Jose Daniel",
-                            Phone = "514 409 964",
-                            SurName = "Casas"
+                            Name = "Esperanza",
+                            Phone = "5569-513-379",
+                            Surname = "Barreto"
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Carlos",
-                            Phone = "506255311",
-                            SurName = "Coronado"
+                            Name = "Antonia",
+                            Phone = "5063-283-324",
+                            Surname = "Trujillo"
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Juan Carlos",
-                            Phone = "5791-995-240",
-                            SurName = "Zamarripa"
+                            Name = "Salvador",
+                            Phone = "569368751",
+                            Surname = "Esquibel"
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Sergio",
-                            Phone = "512 149 669",
-                            SurName = "Calderón"
+                            Name = "Mariano",
+                            Phone = "5751-635-495",
+                            Surname = "Zambrano"
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Israel",
-                            Phone = "568 260 559",
-                            SurName = "Caraballo"
+                            Name = "Hernán",
+                            Phone = "504782562",
+                            Surname = "Escalante"
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Alan",
-                            Phone = "542 884 380",
-                            SurName = "Espino"
+                            Name = "Regina",
+                            Phone = "5354-029-943",
+                            Surname = "Arce"
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Rosa",
-                            Phone = "555 271 418",
-                            SurName = "Báez"
+                            Name = "Estela",
+                            Phone = "529 425 543",
+                            Surname = "Echevarría"
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Teresa",
-                            Phone = "554.643.792",
-                            SurName = "Aragón"
+                            Name = "María Elena",
+                            Phone = "580 589 804",
+                            Surname = "Pedraza"
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Alberto",
-                            Phone = "5790-757-539",
-                            SurName = "Rosales"
+                            Name = "Luis Ángel",
+                            Phone = "526 513 432",
+                            Surname = "Sosa"
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Fernando",
-                            Phone = "512.800.217",
-                            SurName = "Meza"
+                            Name = "Mateo",
+                            Phone = "551 874 848",
+                            Surname = "Frías"
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Julia",
-                            Phone = "5519-284-874",
-                            SurName = "Estévez"
+                            Name = "Anita",
+                            Phone = "524.000.060",
+                            Surname = "Frías"
                         },
                         new
                         {
                             Id = 17,
-                            Name = "Margarita",
-                            Phone = "548 752 353",
-                            SurName = "Sánchez"
+                            Name = "Isabela",
+                            Phone = "552 454 344",
+                            Surname = "Rodrígez"
                         },
                         new
                         {
                             Id = 18,
-                            Name = "Francisco",
-                            Phone = "5080-218-508",
-                            SurName = "Jaramillo"
+                            Name = "Paulina",
+                            Phone = "571.246.418",
+                            Surname = "Alcaraz"
                         },
                         new
                         {
                             Id = 19,
-                            Name = "Paulina",
-                            Phone = "599 978 601",
-                            SurName = "Ramírez"
+                            Name = "Abigail",
+                            Phone = "564 827 593",
+                            Surname = "Bravo"
                         },
                         new
                         {
                             Id = 20,
-                            Name = "Benjamín",
-                            Phone = "518512725",
-                            SurName = "Espinal"
+                            Name = "María de los Ángeles",
+                            Phone = "505 847 469",
+                            Surname = "Camacho"
                         },
                         new
                         {
                             Id = 21,
-                            Name = "Melissa",
-                            Phone = "506 693 196",
-                            SurName = "Vargas"
+                            Name = "Lucas",
+                            Phone = "506960466",
+                            Surname = "Kadar rodriguez"
                         },
                         new
                         {
                             Id = 22,
-                            Name = "Elizabeth",
-                            Phone = "5575-471-399",
-                            SurName = "Chávez"
+                            Name = "Estefanía",
+                            Phone = "581 472 067",
+                            Surname = "Mascareñas"
                         },
                         new
                         {
                             Id = 23,
-                            Name = "María de los Ángeles",
-                            Phone = "575.665.930",
-                            SurName = "Nájera"
+                            Name = "María Teresa",
+                            Phone = "5874-351-429",
+                            Surname = "Solano"
                         },
                         new
                         {
                             Id = 24,
-                            Name = "Alondra Romina",
-                            Phone = "528.983.879",
-                            SurName = "Trejo"
+                            Name = "Santiago",
+                            Phone = "571989025",
+                            Surname = "Flores"
                         },
                         new
                         {
                             Id = 25,
-                            Name = "Isaac",
-                            Phone = "592329531",
-                            SurName = "Kanzaki"
+                            Name = "Victoria",
+                            Phone = "532.147.588",
+                            Surname = "Aponte"
                         },
                         new
                         {
                             Id = 26,
-                            Name = "Mauricio",
-                            Phone = "555062748",
-                            SurName = "Negrete"
+                            Name = "Lucia",
+                            Phone = "559.958.857",
+                            Surname = "Huixtlacatl"
                         },
                         new
                         {
                             Id = 27,
-                            Name = "Ana Sofía",
-                            Phone = "545675301",
-                            SurName = "Jiménez"
+                            Name = "Clemente",
+                            Phone = "597.224.634",
+                            Surname = "Trujillo"
                         },
                         new
                         {
                             Id = 28,
-                            Name = "Isaac",
-                            Phone = "537 035 658",
-                            SurName = "Kortajarena"
+                            Name = "Laura",
+                            Phone = "503.895.412",
+                            Surname = "Palomo"
                         },
                         new
                         {
                             Id = 29,
-                            Name = "Luis",
-                            Phone = "5747-258-398",
-                            SurName = "Negrón"
+                            Name = "Carla",
+                            Phone = "571.137.476",
+                            Surname = "Alarcón"
                         },
                         new
                         {
                             Id = 30,
-                            Name = "María Cristina",
-                            Phone = "531083082",
-                            SurName = "Aguirre"
+                            Name = "María de los Ángeles",
+                            Phone = "5803-858-011",
+                            Surname = "Alba"
                         },
                         new
                         {
                             Id = 31,
-                            Name = "Jacobo",
-                            Phone = "5806-928-856",
-                            SurName = "Páez"
+                            Name = "José Luis",
+                            Phone = "5802-625-266",
+                            Surname = "Toro"
                         },
                         new
                         {
                             Id = 32,
-                            Name = "Martín",
-                            Phone = "597 821 279",
-                            SurName = "Guevara"
+                            Name = "Blanca",
+                            Phone = "556 134 498",
+                            Surname = "Gracia"
                         },
                         new
                         {
                             Id = 33,
-                            Name = "José Miguel",
-                            Phone = "538.781.735",
-                            SurName = "Bonilla"
+                            Name = "Enrique",
+                            Phone = "538 899 406",
+                            Surname = "Alvarez"
                         },
                         new
                         {
                             Id = 34,
-                            Name = "Patricio",
-                            Phone = "532 188 038",
-                            SurName = "Vigil"
+                            Name = "Ana Luisa",
+                            Phone = "564940297",
+                            Surname = "Gutiérrez"
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Emilio",
-                            Phone = "5682-366-130",
-                            SurName = "Escalante"
+                            Name = "Arturo",
+                            Phone = "504.918.959",
+                            Surname = "Apodaca"
                         },
                         new
                         {
                             Id = 36,
-                            Name = "Alicia",
-                            Phone = "5364-092-348",
-                            SurName = "Saldaña"
+                            Name = "Juan Carlos",
+                            Phone = "560.439.145",
+                            Surname = "Razo"
                         },
                         new
                         {
                             Id = 37,
-                            Name = "Anita",
-                            Phone = "5387-492-174",
-                            SurName = "Barela"
+                            Name = "Elisa",
+                            Phone = "5334-657-256",
+                            Surname = "Karan"
                         },
                         new
                         {
                             Id = 38,
-                            Name = "Clemente",
-                            Phone = "577 274 255",
-                            SurName = "Cornejo"
+                            Name = "Manuel",
+                            Phone = "591 047 244",
+                            Surname = "Salinas"
                         },
                         new
                         {
                             Id = 39,
-                            Name = "Emmanuel",
-                            Phone = "546.140.455",
-                            SurName = "Mota"
+                            Name = "Monserrat",
+                            Phone = "582.155.318",
+                            Surname = "Colón"
                         },
                         new
                         {
                             Id = 40,
-                            Name = "Jimena",
-                            Phone = "507.308.294",
-                            SurName = "Colunga"
+                            Name = "Raúl",
+                            Phone = "584078774",
+                            Surname = "Valadez"
                         },
                         new
                         {
                             Id = 41,
-                            Name = "Isabela",
-                            Phone = "5176-172-519",
-                            SurName = "Sedillo"
+                            Name = "Alejandra",
+                            Phone = "598.488.060",
+                            Surname = "Bustamante"
                         },
                         new
                         {
                             Id = 42,
-                            Name = "Magdalena",
-                            Phone = "508 781 480",
-                            SurName = "Gastélum"
+                            Name = "Olivia",
+                            Phone = "526.305.465",
+                            Surname = "Villa"
                         },
                         new
                         {
                             Id = 43,
-                            Name = "Micaela",
-                            Phone = "534.981.634",
-                            SurName = "Rodríquez"
+                            Name = "Guillermina",
+                            Phone = "597 138 758",
+                            Surname = "Zavala"
                         },
                         new
                         {
                             Id = 44,
-                            Name = "Cristina",
-                            Phone = "5589-561-965",
-                            SurName = "Torres"
+                            Name = "Anita",
+                            Phone = "515.730.148",
+                            Surname = "Valles"
                         },
                         new
                         {
                             Id = 45,
-                            Name = "Rodrigo",
-                            Phone = "570 766 845",
-                            SurName = "Soria"
+                            Name = "María Guadalupe",
+                            Phone = "521722319",
+                            Surname = "Ruiz"
                         },
                         new
                         {
                             Id = 46,
-                            Name = "Juana",
-                            Phone = "558 022 321",
-                            SurName = "Khalid"
+                            Name = "Yaretzi",
+                            Phone = "512 882 732",
+                            Surname = "Quesada"
                         },
                         new
                         {
                             Id = 47,
-                            Name = "Julio",
-                            Phone = "563.281.575",
-                            SurName = "Mondragón"
+                            Name = "Catalina",
+                            Phone = "516 677 838",
+                            Surname = "Armijo"
                         },
                         new
                         {
                             Id = 48,
-                            Name = "Estela",
-                            Phone = "560 548 611",
-                            SurName = "Benítez"
+                            Name = "Valentina",
+                            Phone = "5903-536-999",
+                            Surname = "Esparza"
                         },
                         new
                         {
                             Id = 49,
-                            Name = "María Cristina",
-                            Phone = "553 597 129",
-                            SurName = "Cavazos"
+                            Name = "Concepción",
+                            Phone = "514.754.327",
+                            Surname = "Herrera"
                         },
                         new
                         {
                             Id = 50,
-                            Name = "Rodrigo",
-                            Phone = "546555140",
-                            SurName = "Alejandro"
+                            Name = "Vanessa",
+                            Phone = "542.678.146",
+                            Surname = "Barreto"
                         },
                         new
                         {
                             Id = 51,
-                            Name = "Victor Manuel",
-                            Phone = "5574-812-471",
-                            SurName = "Holguín"
+                            Name = "Jaime",
+                            Phone = "526 725 940",
+                            Surname = "Rodríquez"
                         },
                         new
                         {
                             Id = 52,
-                            Name = "Francisca",
-                            Phone = "515.151.710",
-                            SurName = "Galván"
+                            Name = "Francisco Javier",
+                            Phone = "586.076.539",
+                            Surname = "Chavarría"
                         },
                         new
                         {
                             Id = 53,
-                            Name = "Benito",
-                            Phone = "501 879 365",
-                            SurName = "Fonseca"
+                            Name = "Lilia",
+                            Phone = "517 805 420",
+                            Surname = "Menchaca"
                         },
                         new
                         {
                             Id = 54,
-                            Name = "Patricia",
-                            Phone = "564 429 346",
-                            SurName = "Rodarte"
+                            Name = "Magdalena",
+                            Phone = "517794181",
+                            Surname = "Perea"
                         },
                         new
                         {
                             Id = 55,
-                            Name = "Ana Sofía",
-                            Phone = "503.971.022",
-                            SurName = "Rojo"
+                            Name = "Adán",
+                            Phone = "587 944 905",
+                            Surname = "Ulloa"
                         },
                         new
                         {
                             Id = 56,
-                            Name = "Julio",
-                            Phone = "5702-787-793",
-                            SurName = "Salcedo"
+                            Name = "Olivia",
+                            Phone = "5646-389-449",
+                            Surname = "Krasnova"
                         },
                         new
                         {
                             Id = 57,
-                            Name = "Julio César",
-                            Phone = "535730090",
-                            SurName = "Cintrón"
+                            Name = "Elsa",
+                            Phone = "542103776",
+                            Surname = "Guardado"
                         },
                         new
                         {
                             Id = 58,
-                            Name = "Melany",
-                            Phone = "5950-176-808",
-                            SurName = "Vergara"
+                            Name = "Julio",
+                            Phone = "5031-500-856",
+                            Surname = "Gracia"
                         },
                         new
                         {
                             Id = 59,
-                            Name = "Alexander",
-                            Phone = "511 984 875",
-                            SurName = "Peralta"
+                            Name = "Daniela",
+                            Phone = "546081974",
+                            Surname = "Coronado"
                         },
                         new
                         {
                             Id = 60,
-                            Name = "María José",
-                            Phone = "558 940 387",
-                            SurName = "Palacios"
+                            Name = "Alexander",
+                            Phone = "560.121.000",
+                            Surname = "Cortés"
                         },
                         new
                         {
                             Id = 61,
-                            Name = "Homero",
-                            Phone = "566682247",
-                            SurName = "Perales"
+                            Name = "Soledad",
+                            Phone = "510 670 957",
+                            Surname = "Jimínez"
                         },
                         new
                         {
                             Id = 62,
-                            Name = "Gael",
-                            Phone = "558.414.190",
-                            SurName = "Peralta"
+                            Name = "Leonor",
+                            Phone = "5770-973-050",
+                            Surname = "Salcido"
                         },
                         new
                         {
                             Id = 63,
-                            Name = "Inés",
-                            Phone = "505.394.183",
-                            SurName = "Bahena"
+                            Name = "Gerardo",
+                            Phone = "530.560.412",
+                            Surname = "Baca"
                         },
                         new
                         {
                             Id = 64,
-                            Name = "Mariano",
-                            Phone = "5716-300-368",
-                            SurName = "Guzmán"
+                            Name = "Fernando",
+                            Phone = "515 884 996",
+                            Surname = "Parra"
                         },
                         new
                         {
                             Id = 65,
-                            Name = "Lola",
-                            Phone = "5259-933-024",
-                            SurName = "Vélez"
+                            Name = "Olivia",
+                            Phone = "5417-893-286",
+                            Surname = "Llamas"
                         },
                         new
                         {
                             Id = 66,
-                            Name = "Daniela",
-                            Phone = "5390-523-383",
-                            SurName = "Caraballo"
+                            Name = "Tadeo",
+                            Phone = "5611-365-577",
+                            Surname = "Delatorre"
                         },
                         new
                         {
                             Id = 67,
-                            Name = "Eduardo",
-                            Phone = "550935060",
-                            SurName = "Pérez"
+                            Name = "Óscar",
+                            Phone = "581 339 183",
+                            Surname = "Sepúlveda"
                         },
                         new
                         {
                             Id = 68,
-                            Name = "Armando",
-                            Phone = "521 630 958",
-                            SurName = "Pantoja"
+                            Name = "Marisol",
+                            Phone = "527.990.558",
+                            Surname = "Zayas"
                         },
                         new
                         {
                             Id = 69,
-                            Name = "Mateo",
-                            Phone = "583 514 071",
-                            SurName = "Mena"
+                            Name = "Irene",
+                            Phone = "580 162 603",
+                            Surname = "Marín"
                         },
                         new
                         {
                             Id = 70,
-                            Name = "Julio",
-                            Phone = "550.754.270",
-                            SurName = "Kano"
+                            Name = "Felipe",
+                            Phone = "519.291.309",
+                            Surname = "Bañuelos"
                         },
                         new
                         {
                             Id = 71,
-                            Name = "Fernando Javier",
-                            Phone = "548478280",
-                            SurName = "Delgadillo"
+                            Name = "Juan Pablo",
+                            Phone = "510 029 839",
+                            Surname = "Ojeda"
                         },
                         new
                         {
                             Id = 72,
-                            Name = "Carla",
-                            Phone = "537067957",
-                            SurName = "Quiroz"
+                            Name = "Naomi",
+                            Phone = "588.102.638",
+                            Surname = "Jasso"
                         },
                         new
                         {
                             Id = 73,
-                            Name = "David",
-                            Phone = "560 215 192",
-                            SurName = "Monroy"
+                            Name = "Jaime",
+                            Phone = "505.678.837",
+                            Surname = "Pacheco"
                         },
                         new
                         {
                             Id = 74,
-                            Name = "Elías",
-                            Phone = "584189584",
-                            SurName = "Palacios"
+                            Name = "Joaquín",
+                            Phone = "565490369",
+                            Surname = "Matías"
                         },
                         new
                         {
                             Id = 75,
-                            Name = "Dulce María",
-                            Phone = "550.278.774",
-                            SurName = "Matos"
+                            Name = "Pilar",
+                            Phone = "5041-834-128",
+                            Surname = "Jáquez"
                         },
                         new
                         {
                             Id = 76,
-                            Name = "Horacio",
-                            Phone = "552.553.060",
-                            SurName = "Quiroz"
+                            Name = "Fernando Javier",
+                            Phone = "505936735",
+                            Surname = "Alfaro"
                         },
                         new
                         {
                             Id = 77,
-                            Name = "Óscar",
-                            Phone = "546.552.587",
-                            SurName = "Paredes"
+                            Name = "Nicole",
+                            Phone = "5142-855-546",
+                            Surname = "Padilla"
                         },
                         new
                         {
                             Id = 78,
-                            Name = "Carlota",
-                            Phone = "531037330",
-                            SurName = "Ybarra"
+                            Name = "Miguel Ángel",
+                            Phone = "5630-765-986",
+                            Surname = "Briones"
                         },
                         new
                         {
                             Id = 79,
-                            Name = "Caridad",
-                            Phone = "530.276.049",
-                            SurName = "Karen"
+                            Name = "Óscar",
+                            Phone = "5009-801-830",
+                            Surname = "Merino"
                         },
                         new
                         {
                             Id = 80,
-                            Name = "Blanca",
-                            Phone = "591 883 956",
-                            SurName = "Lemus"
+                            Name = "Natalia",
+                            Phone = "5106-589-580",
+                            Surname = "Rangel"
                         },
                         new
                         {
                             Id = 81,
-                            Name = "Antonia",
-                            Phone = "529.390.693",
-                            SurName = "Vigil"
+                            Name = "Jaime",
+                            Phone = "513589388",
+                            Surname = "Tovar"
                         },
                         new
                         {
                             Id = 82,
-                            Name = "Sebastian",
-                            Phone = "526.095.904",
-                            SurName = "Reyes"
+                            Name = "Juan",
+                            Phone = "5418-296-128",
+                            Surname = "Leyva"
                         },
                         new
                         {
                             Id = 83,
-                            Name = "Mario",
-                            Phone = "5481-651-877",
-                            SurName = "Carranza"
+                            Name = "Brandon",
+                            Phone = "5876-445-828",
+                            Surname = "Araña"
                         },
                         new
                         {
                             Id = 84,
-                            Name = "Natalia",
-                            Phone = "536.343.741",
-                            SurName = "Delao"
+                            Name = "Mónica",
+                            Phone = "5950-221-574",
+                            Surname = "Salazar"
                         },
                         new
                         {
                             Id = 85,
-                            Name = "Sancho",
-                            Phone = "5073-642-978",
-                            SurName = "Kamat"
+                            Name = "Ángel Daniel",
+                            Phone = "528775117",
+                            Surname = "Carmona"
                         },
                         new
                         {
                             Id = 86,
-                            Name = "Andrés",
-                            Phone = "515509601",
-                            SurName = "Alfaro"
+                            Name = "Kevin",
+                            Phone = "588 381 561",
+                            Surname = "Balderas"
                         },
                         new
                         {
                             Id = 87,
-                            Name = "Camila",
-                            Phone = "532 646 712",
-                            SurName = "Rincón"
+                            Name = "Pablo",
+                            Phone = "516.175.993",
+                            Surname = "Sepúlveda"
                         },
                         new
                         {
                             Id = 88,
-                            Name = "Ángel Daniel",
-                            Phone = "554 036 980",
-                            SurName = "Irizarry"
+                            Name = "Eloisa",
+                            Phone = "545.443.060",
+                            Surname = "Cervantes"
                         },
                         new
                         {
                             Id = 89,
-                            Name = "Abril",
-                            Phone = "502836929",
-                            SurName = "Nevárez"
+                            Name = "Jerónimo",
+                            Phone = "502137830",
+                            Surname = "Carmona"
                         },
                         new
                         {
                             Id = 90,
-                            Name = "Jennifer",
-                            Phone = "5789-755-033",
-                            SurName = "Rodrígez"
+                            Name = "Cristina",
+                            Phone = "537608571",
+                            Surname = "Zúñiga"
                         },
                         new
                         {
                             Id = 91,
-                            Name = "Roberto",
-                            Phone = "597.198.129",
-                            SurName = "Prado"
+                            Name = "Gonzalo",
+                            Phone = "531040699",
+                            Surname = "Véliz"
                         },
                         new
                         {
                             Id = 92,
-                            Name = "Julio",
-                            Phone = "556714678",
-                            SurName = "Lugo"
+                            Name = "Leticia",
+                            Phone = "5106-523-080",
+                            Surname = "Hinojosa"
                         },
                         new
                         {
                             Id = 93,
-                            Name = "Dolores",
-                            Phone = "569.960.646",
-                            SurName = "Pabón"
+                            Name = "María de Jesús",
+                            Phone = "588580393",
+                            Surname = "Mares"
                         },
                         new
                         {
                             Id = 94,
-                            Name = "Carlota",
-                            Phone = "5007-868-770",
-                            SurName = "Rosas"
+                            Name = "Santiago",
+                            Phone = "5173-190-708",
+                            Surname = "Quiros"
                         },
                         new
                         {
                             Id = 95,
-                            Name = "Natalia",
-                            Phone = "578 783 193",
-                            SurName = "Domínguez"
+                            Name = "Guadalupe",
+                            Phone = "560 228 735",
+                            Surname = "Zamora"
                         },
                         new
                         {
                             Id = 96,
-                            Name = "Francisco Javier",
-                            Phone = "500633027",
-                            SurName = "Apodaca"
+                            Name = "Emmanuel",
+                            Phone = "5695-640-178",
+                            Surname = "Acosta"
                         },
                         new
                         {
                             Id = 97,
-                            Name = "Armando",
-                            Phone = "594481088",
-                            SurName = "Roque"
+                            Name = "Rebeca",
+                            Phone = "546 986 904",
+                            Surname = "Guillen"
                         },
                         new
                         {
                             Id = 98,
-                            Name = "Monserrat",
-                            Phone = "515.585.685",
-                            SurName = "Villagómez"
+                            Name = "Jorge Luis",
+                            Phone = "563194246",
+                            Surname = "Gurule"
                         },
                         new
                         {
                             Id = 99,
-                            Name = "Adán",
-                            Phone = "560 652 801",
-                            SurName = "Huerta"
+                            Name = "Rocio",
+                            Phone = "5794-746-466",
+                            Surname = "Matías"
                         },
                         new
                         {
                             Id = 100,
-                            Name = "Arturo",
-                            Phone = "595.510.283",
-                            SurName = "Alemán"
+                            Name = "Blanca",
+                            Phone = "504.064.909",
+                            Surname = "Zepeda"
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.products", b =>
+            modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -800,1006 +800,1006 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Brand = "Inteligente",
-                            Code = "9265782997684",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Práctica Caucho Teclado",
-                            Quantity = 2,
-                            salePrice = 568516.44f
+                            Brand = "Sabrosa",
+                            Code = "2063785046852",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Fantástico Madera Guantes",
+                            Quantity = 24,
+                            salePrice = 612260.44f
                         },
                         new
                         {
                             Id = 2,
-                            Brand = "Elegante",
-                            Code = "8508111529677",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Sin marca Plástico Queso",
-                            Quantity = 34,
-                            salePrice = 663022.75f
+                            Brand = "Sin marca",
+                            Code = "0263587064562",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Fantástico Cotton Ratón",
+                            Quantity = 35,
+                            salePrice = 477710.22f
                         },
                         new
                         {
                             Id = 3,
-                            Brand = "Increíble",
-                            Code = "3209303206509",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Práctica Cotton Bike",
-                            Quantity = 13,
-                            salePrice = 591302.8f
+                            Brand = "Práctica",
+                            Code = "4199043474698",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Name = "Increíble Madera Ensalada",
+                            Quantity = 60,
+                            salePrice = 648608.4f
                         },
                         new
                         {
                             Id = 4,
-                            Brand = "Práctica",
-                            Code = "1788078086292",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Hecho a mano Hormigón Pantalones",
-                            Quantity = 19,
-                            salePrice = 471698.28f
+                            Brand = "Artesanal",
+                            Code = "1441344165151",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Hecho a mano Frozen Toallas",
+                            Quantity = 65,
+                            salePrice = 551917.8f
                         },
                         new
                         {
                             Id = 5,
-                            Brand = "Sabrosa",
-                            Code = "2260218966804",
+                            Brand = "Artesanal",
+                            Code = "0034369335749",
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Rústico Plástico Pantalones",
-                            Quantity = 13,
-                            salePrice = 541637.4f
+                            Name = "Pequeño Caucho Guantes",
+                            Quantity = 65,
+                            salePrice = 539183.8f
                         },
                         new
                         {
                             Id = 6,
-                            Brand = "Sin marca",
-                            Code = "7158901653054",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Increíble Fresco Pescado",
-                            Quantity = 65,
-                            salePrice = 522121.66f
+                            Brand = "Inteligente",
+                            Code = "4347727869579",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Pequeño Fresco Pelota",
+                            Quantity = 9,
+                            salePrice = 585176.5f
                         },
                         new
                         {
                             Id = 7,
-                            Brand = "Elegante",
-                            Code = "7926678671416",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Fantástico Granito Queso",
-                            Quantity = 62,
-                            salePrice = 378840.97f
+                            Brand = "Inteligente",
+                            Code = "2918564396157",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Rústico Fresco Camisa",
+                            Quantity = 24,
+                            salePrice = 671380.4f
                         },
                         new
                         {
                             Id = 8,
-                            Brand = "Inteligente",
-                            Code = "8571886918526",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Sin marca Cotton Computadora",
-                            Quantity = 46,
-                            salePrice = 616230.4f
+                            Brand = "Gorgeous",
+                            Code = "9845599716731",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Name = "Inteligente Hormigón Bike",
+                            Quantity = 10,
+                            salePrice = 567829.56f
                         },
                         new
                         {
                             Id = 9,
-                            Brand = "Elegante",
-                            Code = "1348701955991",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Ergonómico Caucho Mesa",
-                            Quantity = 58,
-                            salePrice = 490576.9f
+                            Brand = "Ergonómico",
+                            Code = "5941195590707",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Elegante Acero Pescado",
+                            Quantity = 46,
+                            salePrice = 335401.47f
                         },
                         new
                         {
                             Id = 10,
-                            Brand = "Sabrosa",
-                            Code = "9675900574152",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Sin marca Frozen Zapatos",
-                            Quantity = 45,
-                            salePrice = 610971.94f
+                            Brand = "Gorgeous",
+                            Code = "4432822853278",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Rústico Hormigón Pantalones",
+                            Quantity = 19,
+                            salePrice = 554610.2f
                         },
                         new
                         {
                             Id = 11,
-                            Brand = "Gorgeous",
-                            Code = "3096919027662",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Elegante Metal Bike",
-                            Quantity = 20,
-                            salePrice = 431887.88f
+                            Brand = "Refinado",
+                            Code = "7241741416344",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Hecho a mano Madera Presidente",
+                            Quantity = 53,
+                            salePrice = 343157.53f
                         },
                         new
                         {
                             Id = 12,
-                            Brand = "Genérica",
-                            Code = "3972959652234",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Fantástico Acero Pollo",
-                            Quantity = 45,
-                            salePrice = 642032.44f
+                            Brand = "Hecho a mano",
+                            Code = "7505370931747",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Elegante Caucho Jabón",
+                            Quantity = 29,
+                            salePrice = 461161.25f
                         },
                         new
                         {
                             Id = 13,
-                            Brand = "Rústico",
-                            Code = "5683481030497",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Ergonómico Granito Teclado",
-                            Quantity = 67,
-                            salePrice = 461452.44f
+                            Brand = "Fantástico",
+                            Code = "9847812464757",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Gorgeous Acero Pantalones",
+                            Quantity = 54,
+                            salePrice = 643940.1f
                         },
                         new
                         {
                             Id = 14,
-                            Brand = "Genérica",
-                            Code = "0592295188216",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Artesanal Caucho Guantes",
-                            Quantity = 3,
-                            salePrice = 447508.47f
+                            Brand = "Increíble",
+                            Code = "0287311737492",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Licencia Madera Queso",
+                            Quantity = 51,
+                            salePrice = 432855.62f
                         },
                         new
                         {
                             Id = 15,
-                            Brand = "Inteligente",
-                            Code = "1429833289625",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Elegante Madera Pantalones",
-                            Quantity = 48,
-                            salePrice = 454654.75f
+                            Brand = "Sabrosa",
+                            Code = "5533380230330",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Pequeño Fresco Presidente",
+                            Quantity = 78,
+                            salePrice = 635892.3f
                         },
                         new
                         {
                             Id = 16,
-                            Brand = "Elegante",
-                            Code = "9747720346674",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Sabrosa Metal Pizza",
-                            Quantity = 35,
-                            salePrice = 302406.12f
+                            Brand = "Pequeño",
+                            Code = "1597431280358",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Elegante Metal Presidente",
+                            Quantity = 72,
+                            salePrice = 525443.75f
                         },
                         new
                         {
                             Id = 17,
-                            Brand = "Hecho a mano",
-                            Code = "9530463071329",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Refinado Plástico Guantes",
-                            Quantity = 36,
-                            salePrice = 423431.75f
+                            Brand = "Licencia",
+                            Code = "8049970498686",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Refinado Plástico Tocino",
+                            Quantity = 26,
+                            salePrice = 336567.06f
                         },
                         new
                         {
                             Id = 18,
-                            Brand = "Práctica",
-                            Code = "5876860176644",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Práctica Granito Auto",
-                            Quantity = 50,
-                            salePrice = 601913.44f
+                            Brand = "Fantástico",
+                            Code = "6493929089203",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Sin marca Plástico Sombrero",
+                            Quantity = 28,
+                            salePrice = 682690.5f
                         },
                         new
                         {
                             Id = 19,
-                            Brand = "Elegante",
-                            Code = "0419609053384",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Ergonómico Granito Zapatos",
-                            Quantity = 50,
-                            salePrice = 456383.34f
+                            Brand = "Genérica",
+                            Code = "7700475124753",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Pequeño Granito Queso",
+                            Quantity = 5,
+                            salePrice = 541937.7f
                         },
                         new
                         {
                             Id = 20,
                             Brand = "Pequeño",
-                            Code = "3794821500265",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Artesanal Madera Jabón",
+                            Code = "7110650615318",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Rústico Madera Tocino",
                             Quantity = 51,
-                            salePrice = 490366.9f
+                            salePrice = 662837f
                         },
                         new
                         {
                             Id = 21,
-                            Brand = "Genérica",
-                            Code = "4483669988302",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Sin marca Metal Tocino",
-                            Quantity = 24,
-                            salePrice = 406113.9f
+                            Brand = "Gorgeous",
+                            Code = "5507906925642",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Sin marca Hormigón Camisa",
+                            Quantity = 80,
+                            salePrice = 699921.2f
                         },
                         new
                         {
                             Id = 22,
-                            Brand = "Elegante",
-                            Code = "4605399852696",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Artesanal Fresco Pantalones",
-                            Quantity = 64,
-                            salePrice = 368364.06f
+                            Brand = "Hecho a mano",
+                            Code = "8936749448815",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Práctica Acero Pelota",
+                            Quantity = 43,
+                            salePrice = 640212.44f
                         },
                         new
                         {
                             Id = 23,
-                            Brand = "Pequeño",
-                            Code = "0049759154831",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Genérica Caucho Pescado",
-                            Quantity = 59,
-                            salePrice = 613669f
+                            Brand = "Rústico",
+                            Code = "7354716033559",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Genérica Cotton Mesa",
+                            Quantity = 48,
+                            salePrice = 499115.5f
                         },
                         new
                         {
                             Id = 24,
-                            Brand = "Práctica",
-                            Code = "2142203877626",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Práctica Metal Ratón",
-                            Quantity = 11,
-                            salePrice = 545365f
+                            Brand = "Pequeño",
+                            Code = "4003757156040",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Práctica Plástico Teclado",
+                            Quantity = 10,
+                            salePrice = 385667.78f
                         },
                         new
                         {
                             Id = 25,
-                            Brand = "Fantástico",
-                            Code = "2971121140594",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Ergonómico Frozen Pantalones",
+                            Brand = "Increíble",
+                            Code = "8181762335288",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Genérica Hormigón Bike",
                             Quantity = 80,
-                            salePrice = 594806.4f
+                            salePrice = 482233.06f
                         },
                         new
                         {
                             Id = 26,
-                            Brand = "Gorgeous",
-                            Code = "9375623111206",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Pequeño Fresco Tocino",
-                            Quantity = 37,
-                            salePrice = 462899.2f
+                            Brand = "Sin marca",
+                            Code = "8879094086052",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Licencia Acero Camisa",
+                            Quantity = 73,
+                            salePrice = 562110.3f
                         },
                         new
                         {
                             Id = 27,
-                            Brand = "Refinado",
-                            Code = "5912514984750",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Sabrosa Granito Embutidos",
-                            Quantity = 22,
-                            salePrice = 638085.75f
+                            Brand = "Sin marca",
+                            Code = "4582926748205",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Fantástico Caucho Tocino",
+                            Quantity = 42,
+                            salePrice = 622320.06f
                         },
                         new
                         {
                             Id = 28,
-                            Brand = "Genérica",
-                            Code = "1679719530604",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Increíble Plástico Queso",
-                            Quantity = 31,
-                            salePrice = 336662.03f
+                            Brand = "Inteligente",
+                            Code = "2063594057681",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Licencia Soft Bike",
+                            Quantity = 17,
+                            salePrice = 567894.9f
                         },
                         new
                         {
                             Id = 29,
-                            Brand = "Rústico",
-                            Code = "5188816897054",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Rústico Plástico Tuna",
-                            Quantity = 66,
-                            salePrice = 453378.12f
+                            Brand = "Fantástico",
+                            Code = "3159326857540",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Ergonómico Frozen Bike",
+                            Quantity = 21,
+                            salePrice = 629015.94f
                         },
                         new
                         {
                             Id = 30,
-                            Brand = "Fantástico",
-                            Code = "0619770519416",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Práctica Soft Tuna",
-                            Quantity = 58,
-                            salePrice = 510358.8f
+                            Brand = "Genérica",
+                            Code = "7565445958161",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Genérica Granito Presidente",
+                            Quantity = 43,
+                            salePrice = 636871.75f
                         },
                         new
                         {
                             Id = 31,
-                            Brand = "Ergonómico",
-                            Code = "9346049084603",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Pequeño Fresco Presidente",
-                            Quantity = 71,
-                            salePrice = 393134.1f
+                            Brand = "Artesanal",
+                            Code = "9419366279882",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Ergonómico Frozen Pelota",
+                            Quantity = 25,
+                            salePrice = 348239.78f
                         },
                         new
                         {
                             Id = 32,
-                            Brand = "Increíble",
-                            Code = "2773008185649",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Inteligente Metal Sombrero",
-                            Quantity = 38,
-                            salePrice = 586273.94f
+                            Brand = "Fantástico",
+                            Code = "0056539696948",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Artesanal Acero Presidente",
+                            Quantity = 3,
+                            salePrice = 537829.4f
                         },
                         new
                         {
                             Id = 33,
-                            Brand = "Refinado",
-                            Code = "5346460919427",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Refinado Cotton Pizza",
-                            Quantity = 70,
-                            salePrice = 310238.8f
+                            Brand = "Fantástico",
+                            Code = "3658845240418",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Fantástico Cotton Bike",
+                            Quantity = 28,
+                            salePrice = 364333.84f
                         },
                         new
                         {
                             Id = 34,
-                            Brand = "Licencia",
-                            Code = "9613336118984",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Genérica Madera Zapatos",
-                            Quantity = 72,
-                            salePrice = 521857.1f
+                            Brand = "Gorgeous",
+                            Code = "0405093285042",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Name = "Increíble Acero Pantalones",
+                            Quantity = 11,
+                            salePrice = 537490.2f
                         },
                         new
                         {
                             Id = 35,
-                            Brand = "Elegante",
-                            Code = "0714744703287",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Increíble Hormigón Toallas",
-                            Quantity = 7,
-                            salePrice = 426050.28f
+                            Brand = "Licencia",
+                            Code = "3953912516480",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Artesanal Fresco Bike",
+                            Quantity = 9,
+                            salePrice = 690061.6f
                         },
                         new
                         {
                             Id = 36,
-                            Brand = "Elegante",
-                            Code = "3367966879536",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Rústico Plástico Camisa",
-                            Quantity = 24,
-                            salePrice = 679562.25f
+                            Brand = "Increíble",
+                            Code = "8422525116387",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Increíble Soft Toallas",
+                            Quantity = 36,
+                            salePrice = 562932.06f
                         },
                         new
                         {
                             Id = 37,
-                            Brand = "Refinado",
-                            Code = "2227568828206",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Increíble Caucho Embutidos",
-                            Quantity = 12,
-                            salePrice = 644575.06f
+                            Brand = "Elegante",
+                            Code = "9299179294001",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Name = "Elegante Hormigón Ratón",
+                            Quantity = 50,
+                            salePrice = 528965.6f
                         },
                         new
                         {
                             Id = 38,
-                            Brand = "Licencia",
-                            Code = "9648000624010",
+                            Brand = "Hecho a mano",
+                            Code = "0929852124200",
                             Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Genérica Fresco Pollo",
-                            Quantity = 13,
-                            salePrice = 445649.72f
+                            Name = "Práctica Cotton Bike",
+                            Quantity = 64,
+                            salePrice = 610498.7f
                         },
                         new
                         {
                             Id = 39,
-                            Brand = "Sin marca",
-                            Code = "5027078222672",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Inteligente Granito Bike",
-                            Quantity = 23,
-                            salePrice = 449285.28f
+                            Brand = "Ergonómico",
+                            Code = "8868545159070",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Sin marca Cotton Pescado",
+                            Quantity = 48,
+                            salePrice = 509540.4f
                         },
                         new
                         {
                             Id = 40,
-                            Brand = "Licencia",
-                            Code = "4760135435165",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Artesanal Acero Presidente",
-                            Quantity = 74,
-                            salePrice = 513960.94f
+                            Brand = "Fantástico",
+                            Code = "5843390527789",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Pequeño Caucho Ensalada",
+                            Quantity = 58,
+                            salePrice = 500100.22f
                         },
                         new
                         {
                             Id = 41,
-                            Brand = "Rústico",
-                            Code = "6025926821939",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Práctica Frozen Pizza",
-                            Quantity = 34,
-                            salePrice = 340845.78f
+                            Brand = "Práctica",
+                            Code = "1934690909130",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Refinado Hormigón Jabón",
+                            Quantity = 79,
+                            salePrice = 629777.6f
                         },
                         new
                         {
                             Id = 42,
-                            Brand = "Hecho a mano",
-                            Code = "7987864336472",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Refinado Cotton Queso",
-                            Quantity = 36,
-                            salePrice = 527671.06f
+                            Brand = "Genérica",
+                            Code = "9774230896849",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Genérica Cotton Camisa",
+                            Quantity = 69,
+                            salePrice = 636489.94f
                         },
                         new
                         {
                             Id = 43,
-                            Brand = "Increíble",
-                            Code = "7821088552556",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Artesanal Acero Queso",
-                            Quantity = 11,
-                            salePrice = 584213.2f
+                            Brand = "Fantástico",
+                            Code = "7942345829355",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Sabrosa Plástico Zapatos",
+                            Quantity = 47,
+                            salePrice = 495668.5f
                         },
                         new
                         {
                             Id = 44,
-                            Brand = "Gorgeous",
-                            Code = "0029111030478",
+                            Brand = "Ergonómico",
+                            Code = "3455230277970",
                             Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Elegante Frozen Bike",
-                            Quantity = 10,
-                            salePrice = 521565.4f
+                            Name = "Increíble Fresco Ensalada",
+                            Quantity = 63,
+                            salePrice = 663401.56f
                         },
                         new
                         {
                             Id = 45,
-                            Brand = "Ergonómico",
-                            Code = "0466495231198",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Gorgeous Cotton Zapatos",
-                            Quantity = 49,
-                            salePrice = 625250.56f
+                            Brand = "Inteligente",
+                            Code = "7273081446873",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Increíble Plástico Tocino",
+                            Quantity = 46,
+                            salePrice = 508900.5f
                         },
                         new
                         {
                             Id = 46,
-                            Brand = "Rústico",
-                            Code = "2476982235071",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Artesanal Acero Ensalada",
-                            Quantity = 18,
-                            salePrice = 543587.06f
+                            Brand = "Sabrosa",
+                            Code = "9455744014041",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Name = "Increíble Plástico Teclado",
+                            Quantity = 66,
+                            salePrice = 315879.7f
                         },
                         new
                         {
                             Id = 47,
-                            Brand = "Inteligente",
-                            Code = "1357930055198",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Increíble Metal Ratón",
-                            Quantity = 29,
-                            salePrice = 512145.62f
+                            Brand = "Pequeño",
+                            Code = "9309080332997",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Práctica Granito Pizza",
+                            Quantity = 68,
+                            salePrice = 569925.4f
                         },
                         new
                         {
                             Id = 48,
-                            Brand = "Refinado",
-                            Code = "9436246614946",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Refinado Granito Computadora",
-                            Quantity = 12,
-                            salePrice = 538742.44f
+                            Brand = "Elegante",
+                            Code = "7912532075629",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Elegante Metal Bike",
+                            Quantity = 47,
+                            salePrice = 510596.3f
                         },
                         new
                         {
                             Id = 49,
-                            Brand = "Rústico",
-                            Code = "0372833979410",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Hecho a mano Acero Pollo",
-                            Quantity = 14,
-                            salePrice = 563521.8f
+                            Brand = "Inteligente",
+                            Code = "0129718135177",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Refinado Fresco Ensalada",
+                            Quantity = 50,
+                            salePrice = 316396.12f
                         },
                         new
                         {
                             Id = 50,
-                            Brand = "Licencia",
-                            Code = "5865448854708",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Artesanal Cotton Camisa",
-                            Quantity = 14,
-                            salePrice = 464674.62f
+                            Brand = "Increíble",
+                            Code = "9968508872851",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Fantástico Metal Embutidos",
+                            Quantity = 54,
+                            salePrice = 518188.12f
                         },
                         new
                         {
                             Id = 51,
-                            Brand = "Hecho a mano",
-                            Code = "5942784091261",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Hecho a mano Acero Presidente",
-                            Quantity = 65,
-                            salePrice = 374404.84f
+                            Brand = "Pequeño",
+                            Code = "2297319974346",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Name = "Práctica Granito Pantalones",
+                            Quantity = 3,
+                            salePrice = 573099.2f
                         },
                         new
                         {
                             Id = 52,
-                            Brand = "Genérica",
-                            Code = "0018445876005",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Sin marca Metal Sombrero",
-                            Quantity = 12,
-                            salePrice = 336838.06f
+                            Brand = "Sabrosa",
+                            Code = "1990347821316",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Genérica Granito Queso",
+                            Quantity = 58,
+                            salePrice = 372953.38f
                         },
                         new
                         {
                             Id = 53,
-                            Brand = "Gorgeous",
-                            Code = "1729080554232",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Name = "Pequeño Fresco Tocino",
-                            Quantity = 6,
-                            salePrice = 465637.6f
+                            Brand = "Inteligente",
+                            Code = "8255243111705",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Increíble Plástico Pescado",
+                            Quantity = 2,
+                            salePrice = 455414.53f
                         },
                         new
                         {
                             Id = 54,
-                            Brand = "Licencia",
-                            Code = "0680455766197",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Fantástico Frozen Teclado",
-                            Quantity = 41,
-                            salePrice = 638205f
+                            Brand = "Pequeño",
+                            Code = "4574225043020",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Refinado Hormigón Camisa",
+                            Quantity = 5,
+                            salePrice = 483200.78f
                         },
                         new
                         {
                             Id = 55,
-                            Brand = "Genérica",
-                            Code = "0657735307159",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Licencia Plástico Camisa",
-                            Quantity = 25,
-                            salePrice = 641184.06f
+                            Brand = "Increíble",
+                            Code = "3425975120411",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Ergonómico Fresco Auto",
+                            Quantity = 58,
+                            salePrice = 398478.4f
                         },
                         new
                         {
                             Id = 56,
-                            Brand = "Inteligente",
-                            Code = "0157624816408",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Rústico Caucho Pantalones",
-                            Quantity = 18,
-                            salePrice = 393055f
+                            Brand = "Ergonómico",
+                            Code = "8028028061492",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Ergonómico Caucho Presidente",
+                            Quantity = 23,
+                            salePrice = 551689f
                         },
                         new
                         {
                             Id = 57,
-                            Brand = "Elegante",
-                            Code = "6495422029151",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Hecho a mano Granito Teclado",
-                            Quantity = 46,
-                            salePrice = 407697.84f
+                            Brand = "Sin marca",
+                            Code = "4686910156684",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Refinado Fresco Pelota",
+                            Quantity = 59,
+                            salePrice = 441153.06f
                         },
                         new
                         {
                             Id = 58,
-                            Brand = "Sabrosa",
-                            Code = "8646108548512",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Increíble Granito Queso",
-                            Quantity = 24,
-                            salePrice = 688439.1f
+                            Brand = "Rústico",
+                            Code = "5734907488658",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Práctica Caucho Ratón",
+                            Quantity = 45,
+                            salePrice = 522175.3f
                         },
                         new
                         {
                             Id = 59,
-                            Brand = "Licencia",
-                            Code = "2945095882620",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Sabrosa Cotton Pescado",
-                            Quantity = 33,
-                            salePrice = 363127.78f
+                            Brand = "Ergonómico",
+                            Code = "8226592470447",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Licencia Frozen Tuna",
+                            Quantity = 31,
+                            salePrice = 533535.75f
                         },
                         new
                         {
                             Id = 60,
-                            Brand = "Increíble",
-                            Code = "4303389939203",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Sabrosa Madera Camisa",
-                            Quantity = 27,
-                            salePrice = 457544.78f
+                            Brand = "Hecho a mano",
+                            Code = "3811884793158",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Práctica Metal Mesa",
+                            Quantity = 76,
+                            salePrice = 482994.7f
                         },
                         new
                         {
                             Id = 61,
-                            Brand = "Rústico",
-                            Code = "6503015735584",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Gorgeous Metal Zapatos",
-                            Quantity = 57,
-                            salePrice = 439266.1f
+                            Brand = "Hecho a mano",
+                            Code = "0922784408493",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Genérica Soft Mesa",
+                            Quantity = 17,
+                            salePrice = 514167.62f
                         },
                         new
                         {
                             Id = 62,
-                            Brand = "Hecho a mano",
-                            Code = "4837783661014",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Artesanal Granito Bike",
-                            Quantity = 26,
-                            salePrice = 381344.03f
+                            Brand = "Genérica",
+                            Code = "8581166930131",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Name = "Inteligente Cotton Embutidos",
+                            Quantity = 56,
+                            salePrice = 314231.28f
                         },
                         new
                         {
                             Id = 63,
-                            Brand = "Elegante",
-                            Code = "6300423044402",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Increíble Madera Tocino",
-                            Quantity = 68,
-                            salePrice = 475094.53f
+                            Brand = "Pequeño",
+                            Code = "9037062837252",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Sin marca Granito Teclado",
+                            Quantity = 28,
+                            salePrice = 456328.12f
                         },
                         new
                         {
                             Id = 64,
-                            Brand = "Práctica",
-                            Code = "9851706330233",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Hecho a mano Cotton Pelota",
-                            Quantity = 37,
-                            salePrice = 506307.97f
+                            Brand = "Sin marca",
+                            Code = "2463021170042",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Name = "Práctica Fresco Bike",
+                            Quantity = 68,
+                            salePrice = 457625.56f
                         },
                         new
                         {
                             Id = 65,
-                            Brand = "Hecho a mano",
-                            Code = "2262185858175",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Ergonómico Acero Camisa",
-                            Quantity = 18,
-                            salePrice = 616278.4f
+                            Brand = "Refinado",
+                            Code = "6280615427605",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Name = "Sabrosa Frozen Tocino",
+                            Quantity = 42,
+                            salePrice = 335844.7f
                         },
                         new
                         {
                             Id = 66,
-                            Brand = "Práctica",
-                            Code = "6687451035023",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Ergonómico Madera Mesa",
-                            Quantity = 7,
-                            salePrice = 408636f
+                            Brand = "Sabrosa",
+                            Code = "8760438663490",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Licencia Plástico Auto",
+                            Quantity = 37,
+                            salePrice = 595591.8f
                         },
                         new
                         {
                             Id = 67,
-                            Brand = "Inteligente",
-                            Code = "9617510082399",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Artesanal Acero Presidente",
-                            Quantity = 58,
-                            salePrice = 444276.78f
+                            Brand = "Increíble",
+                            Code = "7322192114796",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Fantástico Fresco Camisa",
+                            Quantity = 47,
+                            salePrice = 427363.1f
                         },
                         new
                         {
                             Id = 68,
-                            Brand = "Sin marca",
-                            Code = "1809666438337",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Inteligente Soft Tocino",
-                            Quantity = 21,
-                            salePrice = 478825.78f
+                            Brand = "Refinado",
+                            Code = "5009154890876",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Name = "Ergonómico Frozen Computadora",
+                            Quantity = 57,
+                            salePrice = 452067.2f
                         },
                         new
                         {
                             Id = 69,
-                            Brand = "Fantástico",
-                            Code = "5751226706058",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Name = "Increíble Granito Guantes",
-                            Quantity = 64,
-                            salePrice = 627242.06f
+                            Brand = "Artesanal",
+                            Code = "4663727213809",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Sin marca Hormigón Jabón",
+                            Quantity = 34,
+                            salePrice = 448740.53f
                         },
                         new
                         {
                             Id = 70,
-                            Brand = "Licencia",
-                            Code = "7712030264408",
+                            Brand = "Genérica",
+                            Code = "1396050336749",
                             Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Práctica Metal Pelota",
-                            Quantity = 37,
-                            salePrice = 691876.1f
+                            Name = "Sin marca Granito Camisa",
+                            Quantity = 19,
+                            salePrice = 565635.8f
                         },
                         new
                         {
                             Id = 71,
-                            Brand = "Fantástico",
-                            Code = "1708069624784",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Increíble Fresco Pollo",
-                            Quantity = 23,
-                            salePrice = 382354.94f
+                            Brand = "Increíble",
+                            Code = "9168490063422",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Fantástico Caucho Jabón",
+                            Quantity = 6,
+                            salePrice = 399576.16f
                         },
                         new
                         {
                             Id = 72,
-                            Brand = "Elegante",
-                            Code = "2575594399246",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Hecho a mano Fresco Auto",
-                            Quantity = 29,
-                            salePrice = 617411.7f
+                            Brand = "Rústico",
+                            Code = "3893110979789",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Hecho a mano Cotton Pelota",
+                            Quantity = 66,
+                            salePrice = 521855.12f
                         },
                         new
                         {
                             Id = 73,
-                            Brand = "Licencia",
-                            Code = "3982886112510",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Sabrosa Frozen Auto",
-                            Quantity = 33,
-                            salePrice = 627777.8f
+                            Brand = "Fantástico",
+                            Code = "5406144688428",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Rústico Fresco Camisa",
+                            Quantity = 65,
+                            salePrice = 462096.25f
                         },
                         new
                         {
                             Id = 74,
-                            Brand = "Licencia",
-                            Code = "0236806734997",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Ergonómico Metal Tuna",
-                            Quantity = 22,
-                            salePrice = 693602.56f
+                            Brand = "Rústico",
+                            Code = "9904451327871",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Hecho a mano Granito Queso",
+                            Quantity = 2,
+                            salePrice = 633111.44f
                         },
                         new
                         {
                             Id = 75,
-                            Brand = "Gorgeous",
-                            Code = "0635478947580",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Gorgeous Metal Auto",
-                            Quantity = 30,
-                            salePrice = 376316.56f
+                            Brand = "Elegante",
+                            Code = "0190161121864",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Ergonómico Cotton Tuna",
+                            Quantity = 46,
+                            salePrice = 505440.88f
                         },
                         new
                         {
                             Id = 76,
-                            Brand = "Increíble",
-                            Code = "8888922724271",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Name = "Ergonómico Madera Pescado",
-                            Quantity = 73,
-                            salePrice = 337396.12f
+                            Brand = "Hecho a mano",
+                            Code = "6135385660205",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Pequeño Caucho Sombrero",
+                            Quantity = 11,
+                            salePrice = 489177.8f
                         },
                         new
                         {
                             Id = 77,
-                            Brand = "Artesanal",
-                            Code = "6169545119135",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Increíble Plástico Pantalones",
-                            Quantity = 9,
-                            salePrice = 594910.44f
+                            Brand = "Fantástico",
+                            Code = "3406408647545",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Licencia Plástico Tocino",
+                            Quantity = 4,
+                            salePrice = 445409.8f
                         },
                         new
                         {
                             Id = 78,
-                            Brand = "Increíble",
-                            Code = "9591668401762",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Sin marca Frozen Presidente",
-                            Quantity = 64,
-                            salePrice = 622618f
+                            Brand = "Gorgeous",
+                            Code = "1363779690636",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Pequeño Cotton Presidente",
+                            Quantity = 56,
+                            salePrice = 339561.84f
                         },
                         new
                         {
                             Id = 79,
-                            Brand = "Artesanal",
-                            Code = "4840408567073",
+                            Brand = "Inteligente",
+                            Code = "6107244105738",
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Increíble Hormigón Ensalada",
-                            Quantity = 15,
-                            salePrice = 401966.97f
+                            Name = "Increíble Plástico Ratón",
+                            Quantity = 18,
+                            salePrice = 696429.4f
                         },
                         new
                         {
                             Id = 80,
-                            Brand = "Rústico",
-                            Code = "1582870228481",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Increíble Hormigón Tocino",
-                            Quantity = 79,
-                            salePrice = 376512.3f
+                            Brand = "Licencia",
+                            Code = "5450349587819",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Ergonómico Plástico Pizza",
+                            Quantity = 75,
+                            salePrice = 612362.4f
                         },
                         new
                         {
                             Id = 81,
-                            Brand = "Sin marca",
-                            Code = "5202887702212",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Práctica Frozen Ensalada",
-                            Quantity = 25,
-                            salePrice = 477004.78f
+                            Brand = "Increíble",
+                            Code = "5918699592353",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Refinado Granito Bike",
+                            Quantity = 23,
+                            salePrice = 410970.44f
                         },
                         new
                         {
                             Id = 82,
-                            Brand = "Artesanal",
-                            Code = "1400294910204",
+                            Brand = "Rústico",
+                            Code = "3933071144038",
                             Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Name = "Elegante Metal Guantes",
-                            Quantity = 60,
-                            salePrice = 648427f
+                            Name = "Hecho a mano Acero Computadora",
+                            Quantity = 2,
+                            salePrice = 363142.3f
                         },
                         new
                         {
                             Id = 83,
-                            Brand = "Genérica",
-                            Code = "6567399115448",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Ergonómico Madera Pelota",
-                            Quantity = 10,
-                            salePrice = 524510.3f
+                            Brand = "Increíble",
+                            Code = "4870415021039",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Name = "Elegante Granito Camisa",
+                            Quantity = 24,
+                            salePrice = 387388.25f
                         },
                         new
                         {
                             Id = 84,
-                            Brand = "Licencia",
-                            Code = "9341588717036",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Elegante Granito Bike",
-                            Quantity = 35,
-                            salePrice = 615105.4f
+                            Brand = "Genérica",
+                            Code = "6712165935199",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Gorgeous Cotton Computadora",
+                            Quantity = 5,
+                            salePrice = 627715.3f
                         },
                         new
                         {
                             Id = 85,
-                            Brand = "Práctica",
-                            Code = "4812998407459",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Name = "Fantástico Fresco Pelota",
-                            Quantity = 15,
-                            salePrice = 647740.06f
+                            Brand = "Rústico",
+                            Code = "6962587062700",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Licencia Acero Tocino",
+                            Quantity = 44,
+                            salePrice = 572914.75f
                         },
                         new
                         {
                             Id = 86,
-                            Brand = "Elegante",
-                            Code = "7378374105373",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Pequeño Acero Guantes",
-                            Quantity = 59,
-                            salePrice = 308358.62f
+                            Brand = "Inteligente",
+                            Code = "0834844495384",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Inteligente Madera Queso",
+                            Quantity = 47,
+                            salePrice = 383291.47f
                         },
                         new
                         {
                             Id = 87,
-                            Brand = "Inteligente",
-                            Code = "4718619148780",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Sabrosa Madera Camisa",
-                            Quantity = 76,
-                            salePrice = 517475.56f
+                            Brand = "Licencia",
+                            Code = "4795229769901",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Name = "Increíble Acero Pollo",
+                            Quantity = 19,
+                            salePrice = 374097.2f
                         },
                         new
                         {
                             Id = 88,
-                            Brand = "Increíble",
-                            Code = "9547671147296",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Name = "Artesanal Fresco Ensalada",
-                            Quantity = 16,
-                            salePrice = 640401.75f
+                            Brand = "Refinado",
+                            Code = "3841072030253",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Name = "Práctica Fresco Presidente",
+                            Quantity = 46,
+                            salePrice = 370066.22f
                         },
                         new
                         {
                             Id = 89,
-                            Brand = "Fantástico",
-                            Code = "9535707366247",
+                            Brand = "Sabrosa",
+                            Code = "8629448448070",
                             Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Name = "Artesanal Acero Ratón",
+                            Name = "Fantástico Cotton Mesa",
                             Quantity = 17,
-                            salePrice = 601042.06f
+                            salePrice = 453319.94f
                         },
                         new
                         {
                             Id = 90,
-                            Brand = "Gorgeous",
-                            Code = "1860453377994",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Inteligente Metal Pantalones",
-                            Quantity = 41,
-                            salePrice = 419442.5f
+                            Brand = "Inteligente",
+                            Code = "8615136672865",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Práctica Fresco Bike",
+                            Quantity = 14,
+                            salePrice = 697872.06f
                         },
                         new
                         {
                             Id = 91,
-                            Brand = "Pequeño",
-                            Code = "0017854424432",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Fantástico Plástico Presidente",
-                            Quantity = 67,
-                            salePrice = 402873.6f
+                            Brand = "Rústico",
+                            Code = "8003434422433",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Name = "Inteligente Cotton Presidente",
+                            Quantity = 44,
+                            salePrice = 444734.84f
                         },
                         new
                         {
                             Id = 92,
                             Brand = "Hecho a mano",
-                            Code = "0545648878791",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Name = "Elegante Caucho Tocino",
-                            Quantity = 4,
-                            salePrice = 440252.6f
+                            Code = "4469329656927",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Name = "Genérica Soft Queso",
+                            Quantity = 24,
+                            salePrice = 398149.34f
                         },
                         new
                         {
                             Id = 93,
-                            Brand = "Sabrosa",
-                            Code = "6372472357710",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Sabrosa Hormigón Computadora",
-                            Quantity = 53,
-                            salePrice = 671931.06f
+                            Brand = "Elegante",
+                            Code = "1462819357932",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Name = "Rústico Madera Pollo",
+                            Quantity = 3,
+                            salePrice = 363117.44f
                         },
                         new
                         {
                             Id = 94,
-                            Brand = "Sabrosa",
-                            Code = "4402024116303",
+                            Brand = "Fantástico",
+                            Code = "7169405491936",
                             Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Ergonómico Acero Pescado",
-                            Quantity = 1,
-                            salePrice = 642524.75f
+                            Name = "Elegante Hormigón Bike",
+                            Quantity = 24,
+                            salePrice = 450221.8f
                         },
                         new
                         {
                             Id = 95,
-                            Brand = "Práctica",
-                            Code = "2688122878363",
+                            Brand = "Increíble",
+                            Code = "9356579856366",
                             Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Name = "Refinado Madera Tuna",
-                            Quantity = 45,
-                            salePrice = 517879.5f
+                            Name = "Artesanal Granito Sombrero",
+                            Quantity = 79,
+                            salePrice = 556362.8f
                         },
                         new
                         {
                             Id = 96,
-                            Brand = "Sin marca",
-                            Code = "3278582829808",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Name = "Increíble Caucho Bike",
-                            Quantity = 8,
-                            salePrice = 653797.6f
+                            Brand = "Elegante",
+                            Code = "0058006221684",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Name = "Sabrosa Frozen Sombrero",
+                            Quantity = 43,
+                            salePrice = 606608.94f
                         },
                         new
                         {
                             Id = 97,
-                            Brand = "Rústico",
-                            Code = "9659682596175",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Name = "Artesanal Madera Sombrero",
-                            Quantity = 79,
-                            salePrice = 677646f
+                            Brand = "Licencia",
+                            Code = "2317726475424",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Genérica Madera Pelota",
+                            Quantity = 49,
+                            salePrice = 663829.56f
                         },
                         new
                         {
                             Id = 98,
-                            Brand = "Ergonómico",
-                            Code = "5803412114724",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Name = "Refinado Fresco Computadora",
-                            Quantity = 58,
-                            salePrice = 302730.22f
+                            Brand = "Refinado",
+                            Code = "9065316806440",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Name = "Práctica Plástico Tocino",
+                            Quantity = 7,
+                            salePrice = 423041.7f
                         },
                         new
                         {
                             Id = 99,
-                            Brand = "Pequeño",
-                            Code = "5284615476923",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Name = "Increíble Granito Teclado",
-                            Quantity = 40,
-                            salePrice = 471013.12f
+                            Brand = "Artesanal",
+                            Code = "5896472009277",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Name = "Hecho a mano Hormigón Auto",
+                            Quantity = 33,
+                            salePrice = 357393.84f
                         },
                         new
                         {
                             Id = 100,
-                            Brand = "Refinado",
-                            Code = "5551354997331",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Name = "Artesanal Caucho Pantalones",
-                            Quantity = 78,
-                            salePrice = 613340.2f
+                            Brand = "Ergonómico",
+                            Code = "6571250411419",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Name = "Elegante Acero Pantalones",
+                            Quantity = 22,
+                            salePrice = 657682.25f
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.purchases", b =>
+            modelBuilder.Entity("Domain.Entities.Purchase", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1856,1006 +1856,1006 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Code = "9925834871286",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 53,
-                            datePurchase = new DateOnly(2022, 6, 12),
-                            purchasePrice = 373442.56f,
-                            salePrice = 296363.78f
+                            Code = "3372799547194",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Quantity = 58,
+                            datePurchase = new DateOnly(2022, 12, 8),
+                            purchasePrice = 311945.44f,
+                            salePrice = 356198.38f
                         },
                         new
                         {
                             Id = 2,
-                            Code = "9395479612412",
+                            Code = "6497356826813",
                             Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 45,
-                            datePurchase = new DateOnly(2022, 7, 6),
-                            purchasePrice = 140443.72f,
-                            salePrice = 303773.66f
+                            Quantity = 8,
+                            datePurchase = new DateOnly(2022, 5, 2),
+                            purchasePrice = 180502.94f,
+                            salePrice = 249129.55f
                         },
                         new
                         {
                             Id = 3,
-                            Code = "1876295525820",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 69,
-                            datePurchase = new DateOnly(2022, 11, 5),
-                            purchasePrice = 456286.2f,
-                            salePrice = 455310.3f
+                            Code = "7671116444014",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 46,
+                            datePurchase = new DateOnly(2022, 8, 6),
+                            purchasePrice = 284418.03f,
+                            salePrice = 155278.72f
                         },
                         new
                         {
                             Id = 4,
-                            Code = "4012514210536",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 67,
-                            datePurchase = new DateOnly(2023, 1, 6),
-                            purchasePrice = 456123.03f,
-                            salePrice = 146815.39f
+                            Code = "9275168511366",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 29,
+                            datePurchase = new DateOnly(2022, 5, 1),
+                            purchasePrice = 195215.88f,
+                            salePrice = 299687f
                         },
                         new
                         {
                             Id = 5,
-                            Code = "5565922594440",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 63,
-                            datePurchase = new DateOnly(2023, 1, 23),
-                            purchasePrice = 473339.44f,
-                            salePrice = 291873.4f
+                            Code = "3909571419426",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 32,
+                            datePurchase = new DateOnly(2022, 8, 29),
+                            purchasePrice = 230365.83f,
+                            salePrice = 251435.06f
                         },
                         new
                         {
                             Id = 6,
-                            Code = "4342360590781",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 36,
-                            datePurchase = new DateOnly(2022, 5, 18),
-                            purchasePrice = 359771.16f,
-                            salePrice = 197166.92f
+                            Code = "8891970073925",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 1,
+                            datePurchase = new DateOnly(2022, 5, 13),
+                            purchasePrice = 388957.28f,
+                            salePrice = 424785.3f
                         },
                         new
                         {
                             Id = 7,
-                            Code = "5658994815442",
+                            Code = "1529879809020",
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 12,
-                            datePurchase = new DateOnly(2022, 12, 30),
-                            purchasePrice = 152040.81f,
-                            salePrice = 121961.79f
+                            Quantity = 16,
+                            datePurchase = new DateOnly(2022, 9, 16),
+                            purchasePrice = 352010.4f,
+                            salePrice = 438486.16f
                         },
                         new
                         {
                             Id = 8,
-                            Code = "2252118796544",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 58,
-                            datePurchase = new DateOnly(2022, 12, 9),
-                            purchasePrice = 271422.53f,
-                            salePrice = 299165.1f
+                            Code = "5421828697442",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Quantity = 49,
+                            datePurchase = new DateOnly(2022, 7, 9),
+                            purchasePrice = 445074.94f,
+                            salePrice = 244420.22f
                         },
                         new
                         {
                             Id = 9,
-                            Code = "2214722984946",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 34,
-                            datePurchase = new DateOnly(2022, 7, 28),
-                            purchasePrice = 435792.75f,
-                            salePrice = 342359.97f
+                            Code = "1856170633963",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 33,
+                            datePurchase = new DateOnly(2022, 12, 26),
+                            purchasePrice = 140210.11f,
+                            salePrice = 321838.72f
                         },
                         new
                         {
                             Id = 10,
-                            Code = "3530294849476",
+                            Code = "2722221096553",
                             Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 12,
-                            datePurchase = new DateOnly(2023, 2, 25),
-                            purchasePrice = 408902.1f,
-                            salePrice = 165639.67f
+                            Quantity = 39,
+                            datePurchase = new DateOnly(2022, 8, 29),
+                            purchasePrice = 318901.72f,
+                            salePrice = 160777.03f
                         },
                         new
                         {
                             Id = 11,
-                            Code = "4881668472813",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 3,
-                            datePurchase = new DateOnly(2023, 2, 21),
-                            purchasePrice = 320420.94f,
-                            salePrice = 329730.62f
+                            Code = "4029014668712",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 69,
+                            datePurchase = new DateOnly(2023, 3, 7),
+                            purchasePrice = 299034.97f,
+                            salePrice = 377890.44f
                         },
                         new
                         {
                             Id = 12,
-                            Code = "7898480237794",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 47,
-                            datePurchase = new DateOnly(2022, 7, 16),
-                            purchasePrice = 338949.1f,
-                            salePrice = 336012.03f
+                            Code = "7648967082689",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 62,
+                            datePurchase = new DateOnly(2022, 9, 9),
+                            purchasePrice = 417546.94f,
+                            salePrice = 234086.75f
                         },
                         new
                         {
                             Id = 13,
-                            Code = "2865486696141",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 27,
-                            datePurchase = new DateOnly(2022, 10, 26),
-                            purchasePrice = 366031.94f,
-                            salePrice = 120769.4f
+                            Code = "3920736892984",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 67,
+                            datePurchase = new DateOnly(2022, 8, 20),
+                            purchasePrice = 212119.12f,
+                            salePrice = 293037.28f
                         },
                         new
                         {
                             Id = 14,
-                            Code = "6291474129050",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 37,
-                            datePurchase = new DateOnly(2022, 6, 20),
-                            purchasePrice = 326189.94f,
-                            salePrice = 446062.16f
+                            Code = "7177271529882",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 29,
+                            datePurchase = new DateOnly(2022, 10, 30),
+                            purchasePrice = 120245.1f,
+                            salePrice = 497944.25f
                         },
                         new
                         {
                             Id = 15,
-                            Code = "6791107027642",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 17,
-                            datePurchase = new DateOnly(2022, 11, 23),
-                            purchasePrice = 407472.5f,
-                            salePrice = 147096.06f
+                            Code = "5439685693538",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 63,
+                            datePurchase = new DateOnly(2022, 8, 10),
+                            purchasePrice = 169137.39f,
+                            salePrice = 405648.4f
                         },
                         new
                         {
                             Id = 16,
-                            Code = "7231466369711",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 59,
-                            datePurchase = new DateOnly(2022, 7, 12),
-                            purchasePrice = 252092.47f,
-                            salePrice = 280401.56f
+                            Code = "5754299611342",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 74,
+                            datePurchase = new DateOnly(2022, 10, 17),
+                            purchasePrice = 155797.42f,
+                            salePrice = 448674.4f
                         },
                         new
                         {
                             Id = 17,
-                            Code = "8152494908200",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 61,
-                            datePurchase = new DateOnly(2023, 3, 9),
-                            purchasePrice = 405297.34f,
-                            salePrice = 269401.12f
+                            Code = "8758907917595",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 20,
+                            datePurchase = new DateOnly(2023, 4, 15),
+                            purchasePrice = 496004.28f,
+                            salePrice = 115358.33f
                         },
                         new
                         {
                             Id = 18,
-                            Code = "5262131748892",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 2,
-                            datePurchase = new DateOnly(2023, 1, 9),
-                            purchasePrice = 313745.22f,
-                            salePrice = 183716.94f
+                            Code = "5537772271482",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 37,
+                            datePurchase = new DateOnly(2023, 4, 1),
+                            purchasePrice = 382266.1f,
+                            salePrice = 265291.16f
                         },
                         new
                         {
                             Id = 19,
-                            Code = "1736522421793",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Code = "3974388187042",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
                             Quantity = 4,
-                            datePurchase = new DateOnly(2022, 10, 9),
-                            purchasePrice = 277225.53f,
-                            salePrice = 486816.8f
+                            datePurchase = new DateOnly(2022, 5, 26),
+                            purchasePrice = 101300.35f,
+                            salePrice = 493157.53f
                         },
                         new
                         {
                             Id = 20,
-                            Code = "5657070629690",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 66,
-                            datePurchase = new DateOnly(2022, 12, 24),
-                            purchasePrice = 384867f,
-                            salePrice = 271100.97f
+                            Code = "8467633498765",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 36,
+                            datePurchase = new DateOnly(2022, 8, 4),
+                            purchasePrice = 476013.88f,
+                            salePrice = 234017.72f
                         },
                         new
                         {
                             Id = 21,
-                            Code = "5738784367006",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 6,
-                            datePurchase = new DateOnly(2022, 9, 18),
-                            purchasePrice = 382889.34f,
-                            salePrice = 491271.06f
+                            Code = "9057834058715",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 79,
+                            datePurchase = new DateOnly(2023, 3, 4),
+                            purchasePrice = 219266.36f,
+                            salePrice = 190289.39f
                         },
                         new
                         {
                             Id = 22,
-                            Code = "9074498844317",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 40,
-                            datePurchase = new DateOnly(2022, 7, 23),
-                            purchasePrice = 197059.83f,
-                            salePrice = 235953.67f
+                            Code = "4050999657545",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 67,
+                            datePurchase = new DateOnly(2023, 4, 10),
+                            purchasePrice = 394598.94f,
+                            salePrice = 431775.94f
                         },
                         new
                         {
                             Id = 23,
-                            Code = "7292441046065",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Quantity = 76,
-                            datePurchase = new DateOnly(2022, 11, 14),
-                            purchasePrice = 222555.92f,
-                            salePrice = 379658.75f
+                            Code = "6835486004082",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Quantity = 61,
+                            datePurchase = new DateOnly(2022, 11, 29),
+                            purchasePrice = 358523.84f,
+                            salePrice = 153682.67f
                         },
                         new
                         {
                             Id = 24,
-                            Code = "4154404413563",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Quantity = 77,
-                            datePurchase = new DateOnly(2023, 2, 16),
-                            purchasePrice = 294825.16f,
-                            salePrice = 364477.2f
+                            Code = "9868271270123",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 39,
+                            datePurchase = new DateOnly(2022, 9, 27),
+                            purchasePrice = 147734.25f,
+                            salePrice = 203183.34f
                         },
                         new
                         {
                             Id = 25,
-                            Code = "7039740643126",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 25,
-                            datePurchase = new DateOnly(2022, 7, 15),
-                            purchasePrice = 241403.88f,
-                            salePrice = 242448.2f
+                            Code = "6490838919201",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 8,
+                            datePurchase = new DateOnly(2022, 6, 18),
+                            purchasePrice = 296858.1f,
+                            salePrice = 388304.8f
                         },
                         new
                         {
                             Id = 26,
-                            Code = "4311772104978",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 69,
-                            datePurchase = new DateOnly(2023, 4, 15),
-                            purchasePrice = 444772.9f,
-                            salePrice = 366652.8f
+                            Code = "6110665927797",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Quantity = 15,
+                            datePurchase = new DateOnly(2022, 6, 21),
+                            purchasePrice = 169968.52f,
+                            salePrice = 393640.34f
                         },
                         new
                         {
                             Id = 27,
-                            Code = "8901346021204",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 10,
-                            datePurchase = new DateOnly(2023, 2, 17),
-                            purchasePrice = 455508.62f,
-                            salePrice = 135305.89f
+                            Code = "6299569104739",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 31,
+                            datePurchase = new DateOnly(2022, 12, 20),
+                            purchasePrice = 278338.38f,
+                            salePrice = 433353.97f
                         },
                         new
                         {
                             Id = 28,
-                            Code = "7894656602885",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 64,
-                            datePurchase = new DateOnly(2022, 4, 20),
-                            purchasePrice = 250932.69f,
-                            salePrice = 497144.38f
+                            Code = "0044226907767",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 21,
+                            datePurchase = new DateOnly(2023, 3, 24),
+                            purchasePrice = 111212.14f,
+                            salePrice = 243571.48f
                         },
                         new
                         {
                             Id = 29,
-                            Code = "0174888271125",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 26,
-                            datePurchase = new DateOnly(2022, 5, 15),
-                            purchasePrice = 177417.42f,
-                            salePrice = 463545.22f
+                            Code = "6254800090813",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 66,
+                            datePurchase = new DateOnly(2023, 2, 8),
+                            purchasePrice = 378166.53f,
+                            salePrice = 438886.84f
                         },
                         new
                         {
                             Id = 30,
-                            Code = "0001856961149",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 50,
-                            datePurchase = new DateOnly(2022, 8, 5),
-                            purchasePrice = 284772.88f,
-                            salePrice = 242293.9f
+                            Code = "3961071391770",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 11,
+                            datePurchase = new DateOnly(2022, 9, 14),
+                            purchasePrice = 216337.5f,
+                            salePrice = 112929.36f
                         },
                         new
                         {
                             Id = 31,
-                            Code = "5666592487817",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 67,
-                            datePurchase = new DateOnly(2022, 5, 5),
-                            purchasePrice = 373343.3f,
-                            salePrice = 137447.9f
+                            Code = "5010128755558",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 15,
+                            datePurchase = new DateOnly(2022, 8, 16),
+                            purchasePrice = 214530.16f,
+                            salePrice = 260840.83f
                         },
                         new
                         {
                             Id = 32,
-                            Code = "6675154127329",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 28,
-                            datePurchase = new DateOnly(2022, 5, 29),
-                            purchasePrice = 128839.266f,
-                            salePrice = 307266.47f
+                            Code = "8851069903144",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 57,
+                            datePurchase = new DateOnly(2023, 3, 29),
+                            purchasePrice = 398067.06f,
+                            salePrice = 318930.06f
                         },
                         new
                         {
                             Id = 33,
-                            Code = "6318343236104",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 62,
-                            datePurchase = new DateOnly(2022, 5, 13),
-                            purchasePrice = 274716.1f,
-                            salePrice = 327759.97f
+                            Code = "4599171572981",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 58,
+                            datePurchase = new DateOnly(2022, 5, 19),
+                            purchasePrice = 159325.97f,
+                            salePrice = 232004.84f
                         },
                         new
                         {
                             Id = 34,
-                            Code = "1603785343516",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 13,
-                            datePurchase = new DateOnly(2022, 9, 19),
-                            purchasePrice = 147391.8f,
-                            salePrice = 465522.78f
+                            Code = "6674426354784",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 53,
+                            datePurchase = new DateOnly(2023, 4, 9),
+                            purchasePrice = 340184.4f,
+                            salePrice = 268450.75f
                         },
                         new
                         {
                             Id = 35,
-                            Code = "1128704499087",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 74,
-                            datePurchase = new DateOnly(2022, 5, 3),
-                            purchasePrice = 213704.48f,
-                            salePrice = 102321.59f
+                            Code = "0925744741869",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 6,
+                            datePurchase = new DateOnly(2022, 6, 20),
+                            purchasePrice = 418707.84f,
+                            salePrice = 432126.1f
                         },
                         new
                         {
                             Id = 36,
-                            Code = "9645604785192",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 40,
-                            datePurchase = new DateOnly(2022, 9, 27),
-                            purchasePrice = 247119.39f,
-                            salePrice = 277746.44f
+                            Code = "4078960254913",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Quantity = 5,
+                            datePurchase = new DateOnly(2022, 9, 10),
+                            purchasePrice = 258607.08f,
+                            salePrice = 364488.9f
                         },
                         new
                         {
                             Id = 37,
-                            Code = "6174893795528",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 14,
-                            datePurchase = new DateOnly(2022, 6, 30),
-                            purchasePrice = 140630.5f,
-                            salePrice = 325168.75f
+                            Code = "9787328838188",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 29,
+                            datePurchase = new DateOnly(2023, 3, 4),
+                            purchasePrice = 491091.88f,
+                            salePrice = 415132.2f
                         },
                         new
                         {
                             Id = 38,
-                            Code = "3010681373178",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 58,
-                            datePurchase = new DateOnly(2022, 11, 16),
-                            purchasePrice = 226606.56f,
-                            salePrice = 239782.47f
+                            Code = "6483962174677",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 38,
+                            datePurchase = new DateOnly(2023, 2, 19),
+                            purchasePrice = 479725.72f,
+                            salePrice = 210406.55f
                         },
                         new
                         {
                             Id = 39,
-                            Code = "9160004857985",
+                            Code = "9638305517025",
                             Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 6,
-                            datePurchase = new DateOnly(2022, 7, 27),
-                            purchasePrice = 241806.95f,
-                            salePrice = 101642.6f
+                            Quantity = 37,
+                            datePurchase = new DateOnly(2022, 11, 23),
+                            purchasePrice = 317665.22f,
+                            salePrice = 428221.56f
                         },
                         new
                         {
                             Id = 40,
-                            Code = "7840073100725",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 22,
-                            datePurchase = new DateOnly(2022, 5, 16),
-                            purchasePrice = 104754.52f,
-                            salePrice = 181212.84f
+                            Code = "8332142473841",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 16,
+                            datePurchase = new DateOnly(2022, 8, 24),
+                            purchasePrice = 422400.84f,
+                            salePrice = 139446.4f
                         },
                         new
                         {
                             Id = 41,
-                            Code = "7817021196642",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 13,
-                            datePurchase = new DateOnly(2023, 3, 9),
-                            purchasePrice = 191617.19f,
-                            salePrice = 201608.52f
+                            Code = "6110906478279",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 31,
+                            datePurchase = new DateOnly(2022, 11, 13),
+                            purchasePrice = 102074.125f,
+                            salePrice = 137718.89f
                         },
                         new
                         {
                             Id = 42,
-                            Code = "8139203068813",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 60,
-                            datePurchase = new DateOnly(2023, 2, 11),
-                            purchasePrice = 335817.84f,
-                            salePrice = 442349.25f
+                            Code = "8949639228558",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 21,
+                            datePurchase = new DateOnly(2023, 2, 20),
+                            purchasePrice = 367691.1f,
+                            salePrice = 102756.34f
                         },
                         new
                         {
                             Id = 43,
-                            Code = "5158445966971",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 59,
-                            datePurchase = new DateOnly(2023, 1, 27),
-                            purchasePrice = 392792.88f,
-                            salePrice = 239041.64f
+                            Code = "3659126900533",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 26,
+                            datePurchase = new DateOnly(2022, 7, 19),
+                            purchasePrice = 136456.67f,
+                            salePrice = 260525.83f
                         },
                         new
                         {
                             Id = 44,
-                            Code = "9438921964278",
+                            Code = "8202240123583",
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 7,
-                            datePurchase = new DateOnly(2023, 1, 20),
-                            purchasePrice = 251759.12f,
-                            salePrice = 481270.9f
+                            Quantity = 36,
+                            datePurchase = new DateOnly(2022, 12, 30),
+                            purchasePrice = 252143.34f,
+                            salePrice = 217784.7f
                         },
                         new
                         {
                             Id = 45,
-                            Code = "2118744782545",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 60,
-                            datePurchase = new DateOnly(2022, 11, 3),
-                            purchasePrice = 271913.8f,
-                            salePrice = 177537.89f
+                            Code = "6491829932032",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 73,
+                            datePurchase = new DateOnly(2022, 4, 27),
+                            purchasePrice = 109673.59f,
+                            salePrice = 293352.66f
                         },
                         new
                         {
                             Id = 46,
-                            Code = "7650233820901",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 54,
-                            datePurchase = new DateOnly(2022, 4, 16),
-                            purchasePrice = 257746.95f,
-                            salePrice = 151112.83f
+                            Code = "5365524225366",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 12,
+                            datePurchase = new DateOnly(2022, 9, 1),
+                            purchasePrice = 103152.94f,
+                            salePrice = 109187.38f
                         },
                         new
                         {
                             Id = 47,
-                            Code = "8800638103621",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 76,
-                            datePurchase = new DateOnly(2022, 10, 7),
-                            purchasePrice = 148171.75f,
-                            salePrice = 432038.1f
+                            Code = "5079014347444",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 35,
+                            datePurchase = new DateOnly(2023, 2, 3),
+                            purchasePrice = 367716.62f,
+                            salePrice = 345428.44f
                         },
                         new
                         {
                             Id = 48,
-                            Code = "5693933518374",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 68,
-                            datePurchase = new DateOnly(2023, 4, 11),
-                            purchasePrice = 447902.06f,
-                            salePrice = 489942.94f
+                            Code = "1215120039321",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Quantity = 34,
+                            datePurchase = new DateOnly(2022, 8, 2),
+                            purchasePrice = 349054.5f,
+                            salePrice = 319003.12f
                         },
                         new
                         {
                             Id = 49,
-                            Code = "0812005171698",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 36,
-                            datePurchase = new DateOnly(2022, 8, 15),
-                            purchasePrice = 191565.19f,
-                            salePrice = 110762.016f
+                            Code = "5276715833638",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Quantity = 33,
+                            datePurchase = new DateOnly(2022, 5, 21),
+                            purchasePrice = 367988.12f,
+                            salePrice = 227737.6f
                         },
                         new
                         {
                             Id = 50,
-                            Code = "0146539307873",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 63,
-                            datePurchase = new DateOnly(2023, 4, 13),
-                            purchasePrice = 488710.1f,
-                            salePrice = 260049.58f
+                            Code = "6621663657444",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 77,
+                            datePurchase = new DateOnly(2022, 7, 7),
+                            purchasePrice = 208324.62f,
+                            salePrice = 429961.25f
                         },
                         new
                         {
                             Id = 51,
-                            Code = "9711306592946",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 24,
-                            datePurchase = new DateOnly(2022, 8, 13),
-                            purchasePrice = 438060.03f,
-                            salePrice = 237617.86f
+                            Code = "8918438232509",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 48,
+                            datePurchase = new DateOnly(2022, 7, 17),
+                            purchasePrice = 441848.5f,
+                            salePrice = 461857.25f
                         },
                         new
                         {
                             Id = 52,
-                            Code = "0677251381709",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 19,
-                            datePurchase = new DateOnly(2022, 12, 10),
-                            purchasePrice = 384269.62f,
-                            salePrice = 482313.97f
+                            Code = "4212688566433",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 76,
+                            datePurchase = new DateOnly(2023, 3, 25),
+                            purchasePrice = 499565.47f,
+                            salePrice = 102849.56f
                         },
                         new
                         {
                             Id = 53,
-                            Code = "3256274819634",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 28,
-                            datePurchase = new DateOnly(2022, 6, 17),
-                            purchasePrice = 384046.16f,
-                            salePrice = 174145.83f
+                            Code = "1991825661264",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 59,
+                            datePurchase = new DateOnly(2023, 1, 21),
+                            purchasePrice = 114041.72f,
+                            salePrice = 141871.16f
                         },
                         new
                         {
                             Id = 54,
-                            Code = "5276763282037",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 64,
-                            datePurchase = new DateOnly(2022, 5, 29),
-                            purchasePrice = 171781.92f,
-                            salePrice = 245066.34f
+                            Code = "5661604881669",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 67,
+                            datePurchase = new DateOnly(2022, 12, 7),
+                            purchasePrice = 441382.9f,
+                            salePrice = 119464.05f
                         },
                         new
                         {
                             Id = 55,
-                            Code = "8556406081652",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 43,
-                            datePurchase = new DateOnly(2022, 11, 19),
-                            purchasePrice = 319225.5f,
-                            salePrice = 285216.6f
+                            Code = "4023110379930",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 57,
+                            datePurchase = new DateOnly(2022, 9, 5),
+                            purchasePrice = 211478.36f,
+                            salePrice = 446230.28f
                         },
                         new
                         {
                             Id = 56,
-                            Code = "5185659149739",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Quantity = 29,
-                            datePurchase = new DateOnly(2023, 2, 24),
-                            purchasePrice = 223485.84f,
-                            salePrice = 404259.94f
+                            Code = "7992951415237",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 1,
+                            datePurchase = new DateOnly(2023, 1, 14),
+                            purchasePrice = 276361.1f,
+                            salePrice = 489447.06f
                         },
                         new
                         {
                             Id = 57,
-                            Code = "7908030738418",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 10,
-                            datePurchase = new DateOnly(2022, 4, 20),
-                            purchasePrice = 400033.25f,
-                            salePrice = 142963.88f
+                            Code = "0414932076536",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Quantity = 76,
+                            datePurchase = new DateOnly(2022, 6, 5),
+                            purchasePrice = 281617.34f,
+                            salePrice = 104003.94f
                         },
                         new
                         {
                             Id = 58,
-                            Code = "9985876925002",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Quantity = 48,
-                            datePurchase = new DateOnly(2023, 2, 10),
-                            purchasePrice = 346510.47f,
-                            salePrice = 457045.2f
+                            Code = "6558844693352",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 40,
+                            datePurchase = new DateOnly(2023, 2, 4),
+                            purchasePrice = 418174.3f,
+                            salePrice = 331011.72f
                         },
                         new
                         {
                             Id = 59,
-                            Code = "1582378859941",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 6,
-                            datePurchase = new DateOnly(2022, 11, 7),
-                            purchasePrice = 147133.19f,
-                            salePrice = 164906.83f
+                            Code = "2463680912014",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 11,
+                            datePurchase = new DateOnly(2022, 5, 4),
+                            purchasePrice = 438748.47f,
+                            salePrice = 147692.06f
                         },
                         new
                         {
                             Id = 60,
-                            Code = "7892949518714",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 26,
-                            datePurchase = new DateOnly(2022, 8, 16),
-                            purchasePrice = 132272.83f,
-                            salePrice = 302950.9f
+                            Code = "7807080497323",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 6,
+                            datePurchase = new DateOnly(2022, 9, 13),
+                            purchasePrice = 352897.47f,
+                            salePrice = 287707.53f
                         },
                         new
                         {
                             Id = 61,
-                            Code = "9846329539439",
+                            Code = "6216115687676",
                             Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 30,
-                            datePurchase = new DateOnly(2023, 1, 10),
-                            purchasePrice = 119359.59f,
-                            salePrice = 361579.12f
+                            Quantity = 22,
+                            datePurchase = new DateOnly(2023, 3, 23),
+                            purchasePrice = 246990.66f,
+                            salePrice = 217197.42f
                         },
                         new
                         {
                             Id = 62,
-                            Code = "0814264768961",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 13,
-                            datePurchase = new DateOnly(2022, 8, 4),
-                            purchasePrice = 369746.1f,
-                            salePrice = 109399.09f
+                            Code = "0381292819694",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 57,
+                            datePurchase = new DateOnly(2023, 2, 13),
+                            purchasePrice = 161729.16f,
+                            salePrice = 478820.62f
                         },
                         new
                         {
                             Id = 63,
-                            Code = "4473931079838",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 70,
-                            datePurchase = new DateOnly(2022, 9, 20),
-                            purchasePrice = 405766.53f,
-                            salePrice = 251525.56f
+                            Code = "4403807261456",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Quantity = 63,
+                            datePurchase = new DateOnly(2023, 3, 23),
+                            purchasePrice = 167446.84f,
+                            salePrice = 480598.88f
                         },
                         new
                         {
                             Id = 64,
-                            Code = "9317510688781",
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Quantity = 36,
-                            datePurchase = new DateOnly(2022, 11, 22),
-                            purchasePrice = 228684.47f,
-                            salePrice = 367749.22f
+                            Code = "0856660409321",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 79,
+                            datePurchase = new DateOnly(2022, 12, 16),
+                            purchasePrice = 419001.8f,
+                            salePrice = 381383.9f
                         },
                         new
                         {
                             Id = 65,
-                            Code = "1518661451165",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 78,
-                            datePurchase = new DateOnly(2023, 2, 3),
-                            purchasePrice = 353540.78f,
-                            salePrice = 303684.25f
+                            Code = "3969651547708",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Quantity = 29,
+                            datePurchase = new DateOnly(2022, 12, 5),
+                            purchasePrice = 440641.22f,
+                            salePrice = 135171.03f
                         },
                         new
                         {
                             Id = 66,
-                            Code = "4626972754466",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Quantity = 54,
-                            datePurchase = new DateOnly(2022, 9, 15),
-                            purchasePrice = 296807.28f,
-                            salePrice = 133874.89f
+                            Code = "2528023730776",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 76,
+                            datePurchase = new DateOnly(2022, 11, 15),
+                            purchasePrice = 400762f,
+                            salePrice = 399903.97f
                         },
                         new
                         {
                             Id = 67,
-                            Code = "5577427346042",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 52,
-                            datePurchase = new DateOnly(2022, 9, 6),
-                            purchasePrice = 269515.66f,
-                            salePrice = 203364.31f
+                            Code = "6096028337383",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 22,
+                            datePurchase = new DateOnly(2022, 5, 21),
+                            purchasePrice = 149023.25f,
+                            salePrice = 206885.28f
                         },
                         new
                         {
                             Id = 68,
-                            Code = "6837164099359",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 23,
-                            datePurchase = new DateOnly(2022, 11, 20),
-                            purchasePrice = 380775.3f,
-                            salePrice = 292039f
+                            Code = "7914163465848",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 38,
+                            datePurchase = new DateOnly(2022, 12, 26),
+                            purchasePrice = 142126.7f,
+                            salePrice = 294420.84f
                         },
                         new
                         {
                             Id = 69,
-                            Code = "6467904202338",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 42,
-                            datePurchase = new DateOnly(2022, 6, 15),
-                            purchasePrice = 358070.88f,
-                            salePrice = 191309.67f
+                            Code = "8313088372474",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 78,
+                            datePurchase = new DateOnly(2022, 7, 29),
+                            purchasePrice = 402477.8f,
+                            salePrice = 158849.78f
                         },
                         new
                         {
                             Id = 70,
-                            Code = "0564731508599",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 16,
-                            datePurchase = new DateOnly(2023, 1, 30),
-                            purchasePrice = 199359.31f,
-                            salePrice = 140080.39f
+                            Code = "3271356156759",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 49,
+                            datePurchase = new DateOnly(2022, 9, 13),
+                            purchasePrice = 470728.72f,
+                            salePrice = 202139.34f
                         },
                         new
                         {
                             Id = 71,
-                            Code = "6858342057664",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 34,
-                            datePurchase = new DateOnly(2023, 1, 22),
-                            purchasePrice = 420741.7f,
-                            salePrice = 356572.53f
+                            Code = "3188054467226",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 20,
+                            datePurchase = new DateOnly(2022, 4, 24),
+                            purchasePrice = 150697.83f,
+                            salePrice = 261842.8f
                         },
                         new
                         {
                             Id = 72,
-                            Code = "4737076170752",
+                            Code = "0911130991147",
                             Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 10,
-                            datePurchase = new DateOnly(2022, 12, 3),
-                            purchasePrice = 384542.78f,
-                            salePrice = 414026.4f
+                            Quantity = 38,
+                            datePurchase = new DateOnly(2022, 5, 1),
+                            purchasePrice = 355398f,
+                            salePrice = 346640.97f
                         },
                         new
                         {
                             Id = 73,
-                            Code = "8080480407461",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 4,
-                            datePurchase = new DateOnly(2022, 6, 16),
-                            purchasePrice = 118101.35f,
-                            salePrice = 462400.34f
+                            Code = "3953251664781",
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Quantity = 43,
+                            datePurchase = new DateOnly(2022, 7, 17),
+                            purchasePrice = 430479.06f,
+                            salePrice = 241198.95f
                         },
                         new
                         {
                             Id = 74,
-                            Code = "9826965811250",
+                            Code = "6235177629769",
                             Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Quantity = 46,
-                            datePurchase = new DateOnly(2023, 3, 3),
-                            purchasePrice = 185268.1f,
-                            salePrice = 153739.45f
+                            Quantity = 11,
+                            datePurchase = new DateOnly(2022, 6, 23),
+                            purchasePrice = 474476.5f,
+                            salePrice = 382367.03f
                         },
                         new
                         {
                             Id = 75,
-                            Code = "6467149828928",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 22,
-                            datePurchase = new DateOnly(2022, 12, 10),
-                            purchasePrice = 121820.47f,
-                            salePrice = 391179.9f
+                            Code = "9781630102227",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Quantity = 30,
+                            datePurchase = new DateOnly(2022, 12, 21),
+                            purchasePrice = 267268.78f,
+                            salePrice = 337876.62f
                         },
                         new
                         {
                             Id = 76,
-                            Code = "5010483171741",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 80,
-                            datePurchase = new DateOnly(2022, 8, 5),
-                            purchasePrice = 476827.78f,
-                            salePrice = 264304.47f
+                            Code = "1895577128955",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 58,
+                            datePurchase = new DateOnly(2022, 11, 16),
+                            purchasePrice = 183918.03f,
+                            salePrice = 237018.34f
                         },
                         new
                         {
                             Id = 77,
-                            Code = "8740780834823",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Quantity = 66,
-                            datePurchase = new DateOnly(2023, 1, 13),
-                            purchasePrice = 320767.1f,
-                            salePrice = 340496.9f
+                            Code = "2579142408671",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Quantity = 26,
+                            datePurchase = new DateOnly(2022, 12, 12),
+                            purchasePrice = 147464.75f,
+                            salePrice = 437424.56f
                         },
                         new
                         {
                             Id = 78,
-                            Code = "2832307648542",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 80,
-                            datePurchase = new DateOnly(2022, 6, 27),
-                            purchasePrice = 232693.84f,
-                            salePrice = 181270.56f
+                            Code = "0067929456356",
+                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+                            Quantity = 77,
+                            datePurchase = new DateOnly(2022, 9, 8),
+                            purchasePrice = 385252.4f,
+                            salePrice = 357746.2f
                         },
                         new
                         {
                             Id = 79,
-                            Code = "5633319278249",
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Quantity = 48,
-                            datePurchase = new DateOnly(2023, 1, 3),
-                            purchasePrice = 489120.03f,
-                            salePrice = 349868.3f
+                            Code = "1712095700725",
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Quantity = 65,
+                            datePurchase = new DateOnly(2023, 2, 6),
+                            purchasePrice = 495193.7f,
+                            salePrice = 271917.2f
                         },
                         new
                         {
                             Id = 80,
-                            Code = "0824755532209",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 32,
-                            datePurchase = new DateOnly(2023, 3, 26),
-                            purchasePrice = 389512.25f,
-                            salePrice = 251623.58f
+                            Code = "8077901404581",
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Quantity = 38,
+                            datePurchase = new DateOnly(2022, 10, 15),
+                            purchasePrice = 325837.03f,
+                            salePrice = 493740f
                         },
                         new
                         {
                             Id = 81,
-                            Code = "2909043165715",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 47,
-                            datePurchase = new DateOnly(2022, 9, 13),
-                            purchasePrice = 296455f,
-                            salePrice = 188543.39f
+                            Code = "2328549609316",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 56,
+                            datePurchase = new DateOnly(2022, 10, 27),
+                            purchasePrice = 335727.16f,
+                            salePrice = 193545.69f
                         },
                         new
                         {
                             Id = 82,
-                            Code = "8763552586140",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 15,
-                            datePurchase = new DateOnly(2022, 4, 24),
-                            purchasePrice = 159396.72f,
-                            salePrice = 158549.1f
+                            Code = "9960520062241",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 51,
+                            datePurchase = new DateOnly(2023, 4, 6),
+                            purchasePrice = 361188.84f,
+                            salePrice = 317510.66f
                         },
                         new
                         {
                             Id = 83,
-                            Code = "2198210529119",
+                            Code = "3007304426670",
                             Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 33,
-                            datePurchase = new DateOnly(2023, 1, 30),
-                            purchasePrice = 409212.03f,
-                            salePrice = 390554.97f
+                            Quantity = 69,
+                            datePurchase = new DateOnly(2022, 7, 30),
+                            purchasePrice = 328083.38f,
+                            salePrice = 273931.38f
                         },
                         new
                         {
                             Id = 84,
-                            Code = "1693775871822",
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Quantity = 55,
-                            datePurchase = new DateOnly(2023, 1, 18),
-                            purchasePrice = 451909.22f,
-                            salePrice = 216252.8f
+                            Code = "3948987786685",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 17,
+                            datePurchase = new DateOnly(2023, 4, 1),
+                            purchasePrice = 398337.12f,
+                            salePrice = 163422.34f
                         },
                         new
                         {
                             Id = 85,
-                            Code = "5147630835833",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 27,
-                            datePurchase = new DateOnly(2022, 11, 16),
-                            purchasePrice = 239506.28f,
-                            salePrice = 239860.22f
+                            Code = "6818674529093",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 21,
+                            datePurchase = new DateOnly(2022, 12, 24),
+                            purchasePrice = 267030.62f,
+                            salePrice = 337358.47f
                         },
                         new
                         {
                             Id = 86,
-                            Code = "3754173866365",
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Quantity = 77,
-                            datePurchase = new DateOnly(2022, 8, 26),
-                            purchasePrice = 203085.98f,
-                            salePrice = 281722.78f
+                            Code = "3758826383766",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Quantity = 11,
+                            datePurchase = new DateOnly(2022, 7, 28),
+                            purchasePrice = 182959.78f,
+                            salePrice = 326996.44f
                         },
                         new
                         {
                             Id = 87,
-                            Code = "3450321622622",
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Quantity = 47,
-                            datePurchase = new DateOnly(2023, 4, 3),
-                            purchasePrice = 145283.28f,
-                            salePrice = 405541.6f
+                            Code = "8315820703812",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Quantity = 51,
+                            datePurchase = new DateOnly(2022, 12, 10),
+                            purchasePrice = 355414.28f,
+                            salePrice = 203715.61f
                         },
                         new
                         {
                             Id = 88,
-                            Code = "6169815181121",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 4,
-                            datePurchase = new DateOnly(2022, 12, 14),
-                            purchasePrice = 163290.17f,
-                            salePrice = 412120.94f
+                            Code = "1759680505983",
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Quantity = 50,
+                            datePurchase = new DateOnly(2023, 3, 22),
+                            purchasePrice = 232810.25f,
+                            salePrice = 357811.12f
                         },
                         new
                         {
                             Id = 89,
-                            Code = "4375045647579",
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Quantity = 58,
-                            datePurchase = new DateOnly(2022, 4, 23),
-                            purchasePrice = 140312.9f,
-                            salePrice = 331902.16f
+                            Code = "9792694981888",
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Quantity = 56,
+                            datePurchase = new DateOnly(2023, 1, 20),
+                            purchasePrice = 329206.1f,
+                            salePrice = 170164.14f
                         },
                         new
                         {
                             Id = 90,
-                            Code = "7320111484685",
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 58,
-                            datePurchase = new DateOnly(2023, 3, 13),
-                            purchasePrice = 148901.39f,
-                            salePrice = 450651.16f
+                            Code = "1780356886518",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Quantity = 38,
+                            datePurchase = new DateOnly(2022, 6, 10),
+                            purchasePrice = 375925.22f,
+                            salePrice = 152222.8f
                         },
                         new
                         {
                             Id = 91,
-                            Code = "0778595761421",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Quantity = 74,
-                            datePurchase = new DateOnly(2022, 12, 15),
-                            purchasePrice = 176762.5f,
-                            salePrice = 454866.72f
+                            Code = "8491547819774",
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Quantity = 33,
+                            datePurchase = new DateOnly(2022, 7, 7),
+                            purchasePrice = 108136.195f,
+                            salePrice = 198665.14f
                         },
                         new
                         {
                             Id = 92,
-                            Code = "4328096621081",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Quantity = 3,
-                            datePurchase = new DateOnly(2022, 10, 18),
-                            purchasePrice = 348316.22f,
-                            salePrice = 395608.94f
+                            Code = "9999765340623",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 44,
+                            datePurchase = new DateOnly(2023, 2, 15),
+                            purchasePrice = 236880.62f,
+                            salePrice = 338672.06f
                         },
                         new
                         {
                             Id = 93,
-                            Code = "8479350669311",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Quantity = 76,
-                            datePurchase = new DateOnly(2023, 3, 13),
-                            purchasePrice = 474720.16f,
-                            salePrice = 480887.88f
+                            Code = "3807375566790",
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Quantity = 8,
+                            datePurchase = new DateOnly(2022, 5, 26),
+                            purchasePrice = 163049.12f,
+                            salePrice = 209702.64f
                         },
                         new
                         {
                             Id = 94,
-                            Code = "5903065528302",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 23,
-                            datePurchase = new DateOnly(2022, 5, 11),
-                            purchasePrice = 327537.53f,
-                            salePrice = 142610.3f
+                            Code = "8855531428210",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 13,
+                            datePurchase = new DateOnly(2022, 12, 17),
+                            purchasePrice = 138329.89f,
+                            salePrice = 383927.66f
                         },
                         new
                         {
                             Id = 95,
-                            Code = "9411935657152",
+                            Code = "7927062775932",
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Quantity = 79,
-                            datePurchase = new DateOnly(2022, 9, 2),
-                            purchasePrice = 204206.28f,
-                            salePrice = 472613.97f
+                            Quantity = 23,
+                            datePurchase = new DateOnly(2022, 11, 12),
+                            purchasePrice = 186282.64f,
+                            salePrice = 147122.39f
                         },
                         new
                         {
                             Id = 96,
-                            Code = "0584373744421",
-                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            Quantity = 41,
-                            datePurchase = new DateOnly(2023, 2, 22),
-                            purchasePrice = 200956.17f,
-                            salePrice = 406354.5f
+                            Code = "7776041317577",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 28,
+                            datePurchase = new DateOnly(2022, 11, 12),
+                            purchasePrice = 410637.62f,
+                            salePrice = 450815.44f
                         },
                         new
                         {
                             Id = 97,
-                            Code = "5785521739831",
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Quantity = 58,
-                            datePurchase = new DateOnly(2022, 12, 26),
-                            purchasePrice = 381816.97f,
-                            salePrice = 461173.78f
+                            Code = "0952164595468",
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Quantity = 23,
+                            datePurchase = new DateOnly(2022, 10, 19),
+                            purchasePrice = 156742.83f,
+                            salePrice = 335117.75f
                         },
                         new
                         {
                             Id = 98,
-                            Code = "0773815051054",
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Quantity = 46,
-                            datePurchase = new DateOnly(2022, 9, 30),
-                            purchasePrice = 272562.47f,
-                            salePrice = 109750.22f
+                            Code = "7280378943533",
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Quantity = 10,
+                            datePurchase = new DateOnly(2023, 2, 20),
+                            purchasePrice = 352156.84f,
+                            salePrice = 239878.64f
                         },
                         new
                         {
                             Id = 99,
-                            Code = "5882654196606",
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Quantity = 63,
-                            datePurchase = new DateOnly(2023, 3, 3),
-                            purchasePrice = 166643.73f,
-                            salePrice = 298786.72f
+                            Code = "7865353268605",
+                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            Quantity = 60,
+                            datePurchase = new DateOnly(2023, 3, 23),
+                            purchasePrice = 373812.4f,
+                            salePrice = 176855.7f
                         },
                         new
                         {
                             Id = 100,
-                            Code = "9681751642988",
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Quantity = 3,
-                            datePurchase = new DateOnly(2022, 11, 23),
-                            purchasePrice = 350027.53f,
-                            salePrice = 428258.75f
+                            Code = "3236622925088",
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Quantity = 12,
+                            datePurchase = new DateOnly(2023, 1, 23),
+                            purchasePrice = 329649.47f,
+                            salePrice = 403294.5f
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.recepcionists", b =>
+            modelBuilder.Entity("Domain.Entities.Recepcionist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2907,1006 +2907,1006 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "Películas",
-                            Email = "Marcela.Kanzaki@yahoo.com",
-                            Name = "Marcela",
-                            Phone = "590.573.944",
-                            Salary = 1587737.8f,
-                            Surname = "Kanzaki"
+                            Address = "Música & Hogar",
+                            Email = "LuisMiguel.Sanabria7@yahoo.com",
+                            Name = "Luis Miguel",
+                            Phone = "590932635",
+                            Salary = 3344341f,
+                            Surname = "Sanabria"
                         },
                         new
                         {
                             Id = 2,
-                            Address = "Industrial, Salud & Herramientas",
-                            Email = "Aaron20@gmail.com",
-                            Name = "Aarón",
-                            Phone = "592701520",
-                            Salary = 3963263.5f,
-                            Surname = "Sánchez"
+                            Address = "Ropa",
+                            Email = "Norma74@yahoo.com",
+                            Name = "Norma",
+                            Phone = "5416-453-641",
+                            Salary = 2862372.5f,
+                            Surname = "Padilla"
                         },
                         new
                         {
                             Id = 3,
-                            Address = "Belleza, Música & Automoción",
-                            Email = "Debora52@nearbpo.com",
-                            Name = "Débora",
-                            Phone = "563 089 055",
-                            Salary = 3558622f,
-                            Surname = "Nava"
+                            Address = "Juguetes",
+                            Email = "Micaela74@corpfolder.com",
+                            Name = "Micaela",
+                            Phone = "567 267 648",
+                            Salary = 4576945.5f,
+                            Surname = "Guillen"
                         },
                         new
                         {
                             Id = 4,
-                            Address = "Salud, Joyería & Ropa",
-                            Email = "Daniela80@yahoo.com",
-                            Name = "Daniela",
-                            Phone = "571081679",
-                            Salary = 3976238.8f,
-                            Surname = "Casares"
+                            Address = "Música",
+                            Email = "Andrea.Orozco@corpfolder.com",
+                            Name = "Andrea",
+                            Phone = "5027-887-733",
+                            Salary = 4440222.5f,
+                            Surname = "Orozco"
                         },
                         new
                         {
                             Id = 5,
-                            Address = "Jardín, Zapatos & Ordenadores",
-                            Email = "Jorge33@corpfolder.com",
-                            Name = "Jorge",
-                            Phone = "5929-450-470",
-                            Salary = 4868625.5f,
-                            Surname = "Casas"
+                            Address = "Libros",
+                            Email = "Teresa68@nearbpo.com",
+                            Name = "Teresa",
+                            Phone = "5834-988-471",
+                            Salary = 3103499f,
+                            Surname = "Esparza"
                         },
                         new
                         {
                             Id = 6,
-                            Address = "Kids & Música",
-                            Email = "Samuel96@hotmail.com",
-                            Name = "Samuel",
-                            Phone = "5635-607-116",
-                            Salary = 2172748f,
-                            Surname = "Quintero"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Address = "Libros",
-                            Email = "Isabel.Lerma@corpfolder.com",
-                            Name = "Isabel",
-                            Phone = "518.328.298",
-                            Salary = 3778585.5f,
-                            Surname = "Lerma"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Address = "Baby",
-                            Email = "Josefina_Mendez4@nearbpo.com",
-                            Name = "Josefina",
-                            Phone = "519.366.873",
-                            Salary = 2095112.2f,
-                            Surname = "Méndez"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Address = "Deportes & Joyería",
-                            Email = "Mateo42@yahoo.com",
-                            Name = "Mateo",
-                            Phone = "552924766",
-                            Salary = 3277556.5f,
-                            Surname = "Quintanilla"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Address = "Juguetes",
-                            Email = "Esteban.Zaragoza75@yahoo.com",
-                            Name = "Esteban",
-                            Phone = "565 551 520",
-                            Salary = 1853939.5f,
-                            Surname = "Zaragoza"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Address = "Ultramarinos, Hogar & Herramientas",
-                            Email = "Leonardo.Montero86@yahoo.com",
-                            Name = "Leonardo",
-                            Phone = "526876810",
-                            Salary = 1343990.2f,
-                            Surname = "Montero"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Address = "Kids",
-                            Email = "Leonor67@hotmail.com",
-                            Name = "Leonor",
-                            Phone = "5783-885-231",
-                            Salary = 4201379.5f,
-                            Surname = "Rodarte"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Address = "Salud",
-                            Email = "Cristina.Aguirre93@gmail.com",
-                            Name = "Cristina",
-                            Phone = "519137703",
-                            Salary = 2747944.5f,
-                            Surname = "Aguirre"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Address = "Música",
-                            Email = "JuanPablo_Rosado20@nearbpo.com",
-                            Name = "Juan Pablo",
-                            Phone = "5428-331-741",
-                            Salary = 3166076.5f,
-                            Surname = "Rosado"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Address = "Electrónica & Kids",
-                            Email = "Debora61@nearbpo.com",
-                            Name = "Débora",
-                            Phone = "583839877",
-                            Salary = 2030090.1f,
-                            Surname = "Kano"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Address = "Zapatos, Películas & Libros",
-                            Email = "Carlota.Gomez@corpfolder.com",
-                            Name = "Carlota",
-                            Phone = "533 445 013",
-                            Salary = 4768420.5f,
-                            Surname = "Gómez"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Address = "Automoción",
-                            Email = "Rebeca_Rodarte68@nearbpo.com",
-                            Name = "Rebeca",
-                            Phone = "5347-517-780",
-                            Salary = 2314357f,
-                            Surname = "Rodarte"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Address = "Juguetes & Ordenadores",
-                            Email = "Clemente31@hotmail.com",
-                            Name = "Clemente",
-                            Phone = "562646932",
-                            Salary = 3630237f,
-                            Surname = "Alemán"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Address = "Música, Ordenadores & Ropa",
-                            Email = "Uriel_Covarrubias@hotmail.com",
-                            Name = "Uriel",
-                            Phone = "550 007 841",
-                            Salary = 1593438.2f,
-                            Surname = "Covarrubias"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Address = "Jardín & Juegos",
-                            Email = "Alicia54@corpfolder.com",
-                            Name = "Alicia",
-                            Phone = "5051-066-733",
-                            Salary = 4552149.5f,
-                            Surname = "Lucero"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Address = "Joyería, Ordenadores & Ropa",
-                            Email = "Luis86@yahoo.com",
-                            Name = "Luis",
-                            Phone = "586.131.643",
-                            Salary = 2148650f,
-                            Surname = "Elizondo"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Address = "Deportes, Juguetes & Juegos",
-                            Email = "Paulina_Mateo60@corpfolder.com",
-                            Name = "Paulina",
-                            Phone = "547.085.866",
-                            Salary = 3296711.2f,
-                            Surname = "Mateo"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Address = "Ultramarinos & Zapatos",
-                            Email = "Diego_Barraza4@yahoo.com",
-                            Name = "Diego",
-                            Phone = "503.900.685",
-                            Salary = 2995120f,
-                            Surname = "Barraza"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Address = "Hogar, Música & Kids",
-                            Email = "Natalia_Baeza83@gmail.com",
-                            Name = "Natalia",
-                            Phone = "548 670 772",
-                            Salary = 3734936.5f,
-                            Surname = "Baeza"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Address = "Belleza, Ropa & Herramientas",
-                            Email = "Federico_Uribe52@gmail.com",
-                            Name = "Federico",
-                            Phone = "5174-522-395",
-                            Salary = 1244879.1f,
-                            Surname = "Uribe"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Address = "Deportes & Kids",
-                            Email = "Ivanna_Sedillo@nearbpo.com",
-                            Name = "Ivanna",
-                            Phone = "568730392",
-                            Salary = 3241749.2f,
-                            Surname = "Sedillo"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Address = "Libros, Aire libre & Belleza",
-                            Email = "Diego_Montero53@hotmail.com",
-                            Name = "Diego",
-                            Phone = "5483-136-467",
-                            Salary = 4862345f,
-                            Surname = "Montero"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Address = "Música & Electrónica",
-                            Email = "Nicole_Mendoza@corpfolder.com",
-                            Name = "Nicole",
-                            Phone = "511 231 438",
-                            Salary = 2608791.8f,
-                            Surname = "Mendoza"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Address = "Deportes, Películas & Jardín",
-                            Email = "AngelDaniel_Sisneros@hotmail.com",
-                            Name = "Ángel Daniel",
-                            Phone = "5399-214-078",
-                            Salary = 3249403f,
-                            Surname = "Sisneros"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Address = "Industrial",
-                            Email = "Alexis.Bernal@nearbpo.com",
-                            Name = "Alexis",
-                            Phone = "589.069.571",
-                            Salary = 2700340f,
-                            Surname = "Bernal"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Address = "Kids, Deportes & Kids",
-                            Email = "Raul.Campos@hotmail.com",
-                            Name = "Raúl",
-                            Phone = "513 000 390",
-                            Salary = 3687562.2f,
-                            Surname = "Campos"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Address = "Automoción, Herramientas & Ropa",
-                            Email = "Diego71@gmail.com",
-                            Name = "Diego",
-                            Phone = "507683413",
-                            Salary = 3131789f,
-                            Surname = "Montemayor"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Address = "Herramientas & Belleza",
-                            Email = "Guillermo.Benavidez54@gmail.com",
-                            Name = "Guillermo",
-                            Phone = "550986282",
-                            Salary = 2380567f,
-                            Surname = "Benavídez"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Address = "Baby",
-                            Email = "Camila.Caban@nearbpo.com",
-                            Name = "Camila",
-                            Phone = "508 929 386",
-                            Salary = 4496497f,
-                            Surname = "Cabán"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Address = "Aire libre, Baby & Ropa",
-                            Email = "Olivia_Montoya@yahoo.com",
-                            Name = "Olivia",
-                            Phone = "575 106 125",
-                            Salary = 4411072f,
-                            Surname = "Montoya"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Address = "Electrónica, Juegos & Herramientas",
-                            Email = "Sofia.Ortega11@corpfolder.com",
-                            Name = "Sofia",
-                            Phone = "507877708",
-                            Salary = 4792640f,
-                            Surname = "Ortega"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Address = "Industrial & Industrial",
-                            Email = "Josefina_Alarcon@gmail.com",
-                            Name = "Josefina",
-                            Phone = "569.571.663",
-                            Salary = 3124735.5f,
-                            Surname = "Alarcón"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Address = "Ropa, Juegos & Películas",
-                            Email = "Luis.Ulibarri@gmail.com",
-                            Name = "Luis",
-                            Phone = "546369855",
-                            Salary = 2015612.8f,
-                            Surname = "Ulibarri"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Address = "Herramientas & Hogar",
-                            Email = "Abigail.Tejada@corpfolder.com",
-                            Name = "Abigail",
-                            Phone = "563.426.777",
-                            Salary = 4475276.5f,
-                            Surname = "Tejada"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Address = "Industrial & Juguetes",
-                            Email = "AngelDaniel.Becerra80@yahoo.com",
-                            Name = "Ángel Daniel",
-                            Phone = "582223820",
-                            Salary = 4302560f,
-                            Surname = "Becerra"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Address = "Belleza, Kids & Herramientas",
-                            Email = "DulceMaria_Razo1@nearbpo.com",
-                            Name = "Dulce María",
-                            Phone = "5699-452-857",
-                            Salary = 2609991.5f,
-                            Surname = "Razo"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Address = "Automoción & Deportes",
-                            Email = "Ricardo.Korta7@corpfolder.com",
-                            Name = "Ricardo",
-                            Phone = "574.018.615",
-                            Salary = 2126058f,
-                            Surname = "Korta"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Address = "Hogar",
-                            Email = "Isaac.Botello4@corpfolder.com",
-                            Name = "Isaac",
-                            Phone = "573 917 474",
-                            Salary = 1909435.5f,
-                            Surname = "Botello"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Address = "Electrónica",
-                            Email = "Felipe_Olmos29@hotmail.com",
-                            Name = "Felipe",
-                            Phone = "579 222 803",
-                            Salary = 4510507.5f,
-                            Surname = "Olmos"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Address = "Juguetes, Juguetes & Industrial",
-                            Email = "Elizabeth99@hotmail.com",
-                            Name = "Elizabeth",
-                            Phone = "546045413",
-                            Salary = 4483140f,
-                            Surname = "Guajardo"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Address = "Juguetes & Electrónica",
-                            Email = "Maricarmen_Cazares51@gmail.com",
-                            Name = "Maricarmen",
-                            Phone = "514 979 820",
-                            Salary = 1541965.4f,
-                            Surname = "Cazares"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Address = "Libros, Ordenadores & Electrónica",
-                            Email = "Francisca86@corpfolder.com",
-                            Name = "Francisca",
-                            Phone = "5913-184-323",
-                            Salary = 1320601.2f,
-                            Surname = "Pineda"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Address = "Ultramarinos",
-                            Email = "JuanCarlos89@corpfolder.com",
-                            Name = "Juan Carlos",
-                            Phone = "511 031 784",
-                            Salary = 1692512.9f,
-                            Surname = "Brito"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Address = "Música, Deportes & Deportes",
-                            Email = "Abril_Bernal19@yahoo.com",
-                            Name = "Abril",
-                            Phone = "5844-305-921",
-                            Salary = 3929658.8f,
-                            Surname = "Bernal"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Address = "Ordenadores & Zapatos",
-                            Email = "Monica_Hurtado42@corpfolder.com",
-                            Name = "Mónica",
-                            Phone = "565 210 072",
-                            Salary = 4397325f,
-                            Surname = "Hurtado"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Address = "Aire libre, Automoción & Electrónica",
-                            Email = "Elizabeth50@corpfolder.com",
-                            Name = "Elizabeth",
-                            Phone = "544 600 749",
-                            Salary = 4292902.5f,
-                            Surname = "Ávalos"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Address = "Ropa",
-                            Email = "Homero.Teran56@hotmail.com",
-                            Name = "Homero",
-                            Phone = "555 915 741",
-                            Salary = 2057651.1f,
-                            Surname = "Terán"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Address = "Juguetes & Jardín",
-                            Email = "Regina_Torres@yahoo.com",
-                            Name = "Regina",
-                            Phone = "5216-945-442",
-                            Salary = 1138387.9f,
-                            Surname = "Torres"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Address = "Hogar",
-                            Email = "Carmen_Romero@nearbpo.com",
-                            Name = "Carmen",
-                            Phone = "5026-220-442",
-                            Salary = 1206896.5f,
-                            Surname = "Romero"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Address = "Ropa, Aire libre & Libros",
-                            Email = "Amalia91@gmail.com",
-                            Name = "Amalia",
-                            Phone = "561995736",
-                            Salary = 4414497f,
-                            Surname = "Menchaca"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Address = "Música, Hogar & Ultramarinos",
-                            Email = "Jesus_Holguin@yahoo.com",
-                            Name = "Jesús",
-                            Phone = "566459996",
-                            Salary = 1021434.8f,
-                            Surname = "Holguín"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Address = "Juegos, Jardín & Aire libre",
-                            Email = "Ivanna_Lebron@hotmail.com",
-                            Name = "Ivanna",
-                            Phone = "559 207 683",
-                            Salary = 1989030f,
-                            Surname = "Lebrón"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Address = "Música, Juguetes & Electrónica",
-                            Email = "Rosalia.Saenz39@corpfolder.com",
-                            Name = "Rosalia",
-                            Phone = "574.103.388",
-                            Salary = 2980335.5f,
-                            Surname = "Sáenz"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Address = "Ultramarinos",
-                            Email = "MariaLuisa_Kamat@nearbpo.com",
-                            Name = "María Luisa",
-                            Phone = "511.384.842",
-                            Salary = 3252305.5f,
-                            Surname = "Kamat"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Address = "Hogar",
-                            Email = "Alexander43@hotmail.com",
-                            Name = "Alexander",
-                            Phone = "592878350",
-                            Salary = 1798195f,
-                            Surname = "Villalobos"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Address = "Baby, Baby & Libros",
-                            Email = "Magdalena.Rodrigez@hotmail.com",
-                            Name = "Magdalena",
-                            Phone = "595.013.618",
-                            Salary = 4129104.8f,
-                            Surname = "Rodrígez"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            Address = "Ordenadores & Libros",
-                            Email = "Laura_Ponce@hotmail.com",
-                            Name = "Laura",
-                            Phone = "594.710.828",
-                            Salary = 4189123.2f,
-                            Surname = "Ponce"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Address = "Películas",
-                            Email = "Leonor91@nearbpo.com",
-                            Name = "Leonor",
-                            Phone = "543 828 963",
-                            Salary = 3569109.8f,
-                            Surname = "Pantoja"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Address = "Ropa & Baby",
-                            Email = "Benjamin.Griego@gmail.com",
-                            Name = "Benjamín",
-                            Phone = "522710207",
-                            Salary = 3309980.2f,
-                            Surname = "Griego"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Address = "Aire libre, Jardín & Aire libre",
-                            Email = "Vicente_Valladares@yahoo.com",
-                            Name = "Vicente",
-                            Phone = "513 980 200",
-                            Salary = 2769818f,
-                            Surname = "Valladares"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            Address = "Automoción",
-                            Email = "Ivanna98@gmail.com",
-                            Name = "Ivanna",
-                            Phone = "597 129 376",
-                            Salary = 2713666.5f,
-                            Surname = "Gracia"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            Address = "Ropa & Joyería",
-                            Email = "Carmen71@hotmail.com",
-                            Name = "Carmen",
-                            Phone = "595 422 313",
-                            Salary = 3220511.5f,
-                            Surname = "Ortiz"
-                        },
-                        new
-                        {
-                            Id = 68,
-                            Address = "Ultramarinos, Ordenadores & Aire libre",
-                            Email = "Emily42@yahoo.com",
-                            Name = "Emily",
-                            Phone = "542 866 827",
-                            Salary = 2585152.8f,
-                            Surname = "Rosales"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            Address = "Libros & Juguetes",
-                            Email = "Mariana_Hinojosa56@corpfolder.com",
-                            Name = "Mariana",
-                            Phone = "518713072",
-                            Salary = 3337758.2f,
-                            Surname = "Hinojosa"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            Address = "Salud & Joyería",
-                            Email = "Emilio16@corpfolder.com",
-                            Name = "Emilio",
-                            Phone = "566.550.852",
-                            Salary = 4408327.5f,
-                            Surname = "Batista"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            Address = "Películas, Electrónica & Libros",
-                            Email = "Regina89@hotmail.com",
-                            Name = "Regina",
-                            Phone = "508907521",
-                            Salary = 1491906.4f,
-                            Surname = "Zavala"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            Address = "Herramientas",
-                            Email = "MarcoAntonio47@yahoo.com",
-                            Name = "Marco Antonio",
-                            Phone = "584708134",
-                            Salary = 1593693.6f,
-                            Surname = "Loera"
-                        },
-                        new
-                        {
-                            Id = 73,
-                            Address = "Ropa",
-                            Email = "Benjamin_Montalvo@yahoo.com",
-                            Name = "Benjamín",
-                            Phone = "5644-459-437",
-                            Salary = 3068733.8f,
-                            Surname = "Montalvo"
-                        },
-                        new
-                        {
-                            Id = 74,
-                            Address = "Electrónica, Joyería & Electrónica",
-                            Email = "Uriel_Carvajal@hotmail.com",
-                            Name = "Uriel",
-                            Phone = "524.564.010",
-                            Salary = 1829883.5f,
-                            Surname = "Carvajal"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            Address = "Ultramarinos",
-                            Email = "RosaMaria.Montez@yahoo.com",
-                            Name = "Rosa María",
-                            Phone = "545 877 446",
-                            Salary = 2470503f,
+                            Address = "Juegos",
+                            Email = "Julio21@nearbpo.com",
+                            Name = "Julio",
+                            Phone = "535.408.920",
+                            Salary = 3598543.8f,
                             Surname = "Montez"
                         },
                         new
                         {
-                            Id = 76,
-                            Address = "Industrial & Ordenadores",
-                            Email = "Sara78@hotmail.com",
-                            Name = "Sara",
-                            Phone = "512139486",
-                            Salary = 2751506f,
-                            Surname = "Orosco"
+                            Id = 7,
+                            Address = "Aire libre & Música",
+                            Email = "Emily_Rangel83@yahoo.com",
+                            Name = "Emily",
+                            Phone = "5774-756-535",
+                            Salary = 1507349.2f,
+                            Surname = "Rangel"
                         },
                         new
                         {
-                            Id = 77,
-                            Address = "Industrial",
-                            Email = "Timoteo_Lucio@hotmail.com",
-                            Name = "Timoteo",
-                            Phone = "594343546",
-                            Salary = 4686976f,
-                            Surname = "Lucio"
+                            Id = 8,
+                            Address = "Herramientas, Herramientas & Libros",
+                            Email = "Abigail_Tafoya@corpfolder.com",
+                            Name = "Abigail",
+                            Phone = "5055-872-066",
+                            Salary = 2023094.6f,
+                            Surname = "Tafoya"
                         },
                         new
                         {
-                            Id = 78,
-                            Address = "Joyería, Películas & Jardín",
-                            Email = "Marilu_Barrera75@nearbpo.com",
-                            Name = "Marilu",
-                            Phone = "581.807.023",
-                            Salary = 1069137.1f,
-                            Surname = "Barrera"
+                            Id = 9,
+                            Address = "Salud, Aire libre & Jardín",
+                            Email = "Carlota86@corpfolder.com",
+                            Name = "Carlota",
+                            Phone = "5056-496-958",
+                            Salary = 2819078.5f,
+                            Surname = "Peres"
                         },
                         new
                         {
-                            Id = 79,
-                            Address = "Baby & Ropa",
-                            Email = "Vicente_deJesus@yahoo.com",
-                            Name = "Vicente",
-                            Phone = "534336926",
-                            Salary = 4558110.5f,
-                            Surname = "de Jesús"
+                            Id = 10,
+                            Address = "Baby, Hogar & Industrial",
+                            Email = "Santiago74@yahoo.com",
+                            Name = "Santiago",
+                            Phone = "593.725.643",
+                            Salary = 4102555.8f,
+                            Surname = "Cazares"
                         },
                         new
                         {
-                            Id = 80,
-                            Address = "Belleza, Industrial & Herramientas",
-                            Email = "Isaac.Anguiano@nearbpo.com",
-                            Name = "Isaac",
-                            Phone = "583.831.796",
-                            Salary = 2537708.2f,
-                            Surname = "Anguiano"
+                            Id = 11,
+                            Address = "Ultramarinos",
+                            Email = "Luz87@corpfolder.com",
+                            Name = "Luz",
+                            Phone = "514.718.581",
+                            Salary = 1181729.9f,
+                            Surname = "Castañeda"
                         },
                         new
                         {
-                            Id = 81,
-                            Address = "Belleza, Joyería & Ropa",
-                            Email = "Ruben.Ortega86@hotmail.com",
-                            Name = "Rubén",
-                            Phone = "523.652.924",
-                            Salary = 3161501.5f,
-                            Surname = "Ortega"
-                        },
-                        new
-                        {
-                            Id = 82,
-                            Address = "Ordenadores & Salud",
-                            Email = "Magdalena.Pulido97@hotmail.com",
-                            Name = "Magdalena",
-                            Phone = "563147774",
-                            Salary = 1069509.2f,
-                            Surname = "Pulido"
-                        },
-                        new
-                        {
-                            Id = 83,
-                            Address = "Jardín, Jardín & Herramientas",
-                            Email = "Rebeca.Solorio41@nearbpo.com",
-                            Name = "Rebeca",
-                            Phone = "527.594.184",
-                            Salary = 3259546.8f,
-                            Surname = "Solorio"
-                        },
-                        new
-                        {
-                            Id = 84,
-                            Address = "Belleza",
-                            Email = "Alejandra.Delafuente3@nearbpo.com",
-                            Name = "Alejandra",
-                            Phone = "561.451.443",
-                            Salary = 2333069.5f,
-                            Surname = "Delafuente"
-                        },
-                        new
-                        {
-                            Id = 85,
-                            Address = "Ultramarinos, Libros & Juguetes",
-                            Email = "JoseAntonio2@yahoo.com",
-                            Name = "José Antonio",
-                            Phone = "5904-461-985",
-                            Salary = 3099861.8f,
-                            Surname = "Hidalgo"
-                        },
-                        new
-                        {
-                            Id = 86,
-                            Address = "Kids & Música",
-                            Email = "Rafael.Montero@gmail.com",
-                            Name = "Rafael",
-                            Phone = "582520056",
-                            Salary = 3973415.8f,
-                            Surname = "Montero"
-                        },
-                        new
-                        {
-                            Id = 87,
-                            Address = "Automoción & Deportes",
-                            Email = "Teresa.Arroyo5@hotmail.com",
-                            Name = "Teresa",
-                            Phone = "5570-652-632",
-                            Salary = 4287891.5f,
-                            Surname = "Arroyo"
-                        },
-                        new
-                        {
-                            Id = 88,
+                            Id = 12,
                             Address = "Herramientas",
-                            Email = "MarcoAntonio_Gurule@corpfolder.com",
-                            Name = "Marco Antonio",
-                            Phone = "503.692.256",
-                            Salary = 3335424.5f,
-                            Surname = "Gurule"
+                            Email = "Alexis82@yahoo.com",
+                            Name = "Alexis",
+                            Phone = "579 399 112",
+                            Salary = 2995004f,
+                            Surname = "Colunga"
                         },
                         new
                         {
-                            Id = 89,
-                            Address = "Películas & Electrónica",
-                            Email = "Cristobal.Robledo93@corpfolder.com",
-                            Name = "Cristobal",
-                            Phone = "576.725.716",
-                            Salary = 2518813.2f,
-                            Surname = "Robledo"
+                            Id = 13,
+                            Address = "Hogar, Belleza & Electrónica",
+                            Email = "Gregorio_Bahena@corpfolder.com",
+                            Name = "Gregorio",
+                            Phone = "585 312 638",
+                            Salary = 2181367.2f,
+                            Surname = "Bahena"
                         },
                         new
                         {
-                            Id = 90,
-                            Address = "Hogar",
-                            Email = "MariaCristina23@gmail.com",
-                            Name = "María Cristina",
-                            Phone = "577168296",
-                            Salary = 4496561f,
-                            Surname = "Orellana"
+                            Id = 14,
+                            Address = "Jardín",
+                            Email = "Leticia31@yahoo.com",
+                            Name = "Leticia",
+                            Phone = "554.152.500",
+                            Salary = 3468281.5f,
+                            Surname = "Rendón"
                         },
                         new
                         {
-                            Id = 91,
-                            Address = "Ultramarinos & Herramientas",
-                            Email = "Berta21@corpfolder.com",
-                            Name = "Berta",
-                            Phone = "557299893",
-                            Salary = 3693085.2f,
-                            Surname = "Terrazas"
+                            Id = 15,
+                            Address = "Ultramarinos",
+                            Email = "DulceMaria0@nearbpo.com",
+                            Name = "Dulce María",
+                            Phone = "574527805",
+                            Salary = 1711319.6f,
+                            Surname = "Medrano"
                         },
                         new
                         {
-                            Id = 92,
-                            Address = "Automoción, Electrónica & Baby",
-                            Email = "Ruben.Kara35@nearbpo.com",
-                            Name = "Rubén",
-                            Phone = "520.650.159",
-                            Salary = 1344610.9f,
-                            Surname = "Kara"
+                            Id = 16,
+                            Address = "Herramientas, Kids & Ordenadores",
+                            Email = "Armando.Lara8@yahoo.com",
+                            Name = "Armando",
+                            Phone = "5356-234-751",
+                            Salary = 3722268.2f,
+                            Surname = "Lara"
                         },
                         new
                         {
-                            Id = 93,
-                            Address = "Salud & Automoción",
-                            Email = "Naomi.Robles@gmail.com",
-                            Name = "Naomi",
-                            Phone = "560 039 597",
-                            Salary = 3056216.8f,
-                            Surname = "Robles"
+                            Id = 17,
+                            Address = "Ropa, Kids & Electrónica",
+                            Email = "Melany_Karem@corpfolder.com",
+                            Name = "Melany",
+                            Phone = "585 614 352",
+                            Salary = 3693321.8f,
+                            Surname = "Karem"
                         },
                         new
                         {
-                            Id = 94,
-                            Address = "Kids",
-                            Email = "JorgeLuis_Calvillo@yahoo.com",
-                            Name = "Jorge Luis",
-                            Phone = "587.429.700",
-                            Salary = 4798847f,
-                            Surname = "Calvillo"
+                            Id = 18,
+                            Address = "Electrónica & Belleza",
+                            Email = "Diego_Huerta45@gmail.com",
+                            Name = "Diego",
+                            Phone = "576.729.808",
+                            Salary = 4079490.5f,
+                            Surname = "Huerta"
                         },
                         new
                         {
-                            Id = 95,
-                            Address = "Ropa, Automoción & Juegos",
-                            Email = "Uriel.Venegas92@hotmail.com",
-                            Name = "Uriel",
-                            Phone = "538 823 800",
-                            Salary = 4710579.5f,
-                            Surname = "Venegas"
+                            Id = 19,
+                            Address = "Belleza",
+                            Email = "AnaVictoria.Baca@hotmail.com",
+                            Name = "Ana Victoria",
+                            Phone = "520625161",
+                            Salary = 4114957.8f,
+                            Surname = "Baca"
                         },
                         new
                         {
-                            Id = 96,
-                            Address = "Ultramarinos, Deportes & Libros",
-                            Email = "Regina.Rivera@nearbpo.com",
-                            Name = "Regina",
-                            Phone = "535.709.238",
-                            Salary = 3843742.5f,
-                            Surname = "Rivera"
-                        },
-                        new
-                        {
-                            Id = 97,
-                            Address = "Joyería",
-                            Email = "Roberto_Quinonez@yahoo.com",
-                            Name = "Roberto",
-                            Phone = "562725094",
-                            Salary = 4762023f,
-                            Surname = "Quiñónez"
-                        },
-                        new
-                        {
-                            Id = 98,
-                            Address = "Ropa, Herramientas & Electrónica",
-                            Email = "MariaJose.Aponte63@yahoo.com",
-                            Name = "María José",
-                            Phone = "589.817.545",
-                            Salary = 3950236.2f,
+                            Id = 20,
+                            Address = "Herramientas, Joyería & Deportes",
+                            Email = "Iker.Aponte6@gmail.com",
+                            Name = "Iker",
+                            Phone = "557 987 485",
+                            Salary = 3641827.5f,
                             Surname = "Aponte"
                         },
                         new
                         {
+                            Id = 21,
+                            Address = "Baby, Música & Baby",
+                            Email = "Zoe_Nevarez@yahoo.com",
+                            Name = "Zoe",
+                            Phone = "500.672.580",
+                            Salary = 4389526f,
+                            Surname = "Nevárez"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Address = "Salud & Joyería",
+                            Email = "JoseDaniel.Contreras@hotmail.com",
+                            Name = "Jose Daniel",
+                            Phone = "5114-144-163",
+                            Salary = 4650963f,
+                            Surname = "Contreras"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Address = "Hogar & Música",
+                            Email = "Maximiliano.Salas@hotmail.com",
+                            Name = "Maximiliano",
+                            Phone = "5364-927-998",
+                            Salary = 4061240.5f,
+                            Surname = "Salas"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Address = "Ropa, Kids & Música",
+                            Email = "Zoe16@corpfolder.com",
+                            Name = "Zoe",
+                            Phone = "532 467 121",
+                            Salary = 1250422.8f,
+                            Surname = "Muñiz"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Address = "Kids & Joyería",
+                            Email = "Lucas75@hotmail.com",
+                            Name = "Lucas",
+                            Phone = "558278466",
+                            Salary = 4129644.5f,
+                            Surname = "Serna"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Address = "Ordenadores",
+                            Email = "David.Bonilla@gmail.com",
+                            Name = "David",
+                            Phone = "5614-205-448",
+                            Salary = 2222976.5f,
+                            Surname = "Bonilla"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Address = "Zapatos & Juguetes",
+                            Email = "Luis_Contreras@nearbpo.com",
+                            Name = "Luis",
+                            Phone = "5757-008-842",
+                            Salary = 4212256f,
+                            Surname = "Contreras"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Address = "Aire libre",
+                            Email = "Araceli_Zarate69@nearbpo.com",
+                            Name = "Araceli",
+                            Phone = "589103951",
+                            Salary = 2471221.5f,
+                            Surname = "Zarate"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Address = "Aire libre & Hogar",
+                            Email = "Santiago80@nearbpo.com",
+                            Name = "Santiago",
+                            Phone = "5925-607-099",
+                            Salary = 2350499f,
+                            Surname = "Benavídez"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Address = "Música & Joyería",
+                            Email = "MariaLuisa23@yahoo.com",
+                            Name = "María Luisa",
+                            Phone = "573 095 445",
+                            Salary = 2270015.2f,
+                            Surname = "Jimínez"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Address = "Juguetes & Electrónica",
+                            Email = "Julia_Pichardo69@gmail.com",
+                            Name = "Julia",
+                            Phone = "5986-112-863",
+                            Salary = 1869529.9f,
+                            Surname = "Pichardo"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Address = "Jardín",
+                            Email = "Miranda.Lozano76@hotmail.com",
+                            Name = "Miranda",
+                            Phone = "544239147",
+                            Salary = 2433427.2f,
+                            Surname = "Lozano"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Address = "Libros & Baby",
+                            Email = "MariaJose10@yahoo.com",
+                            Name = "María José",
+                            Phone = "552 280 133",
+                            Salary = 1065947.9f,
+                            Surname = "León"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Address = "Automoción",
+                            Email = "Roberto25@yahoo.com",
+                            Name = "Roberto",
+                            Phone = "595970186",
+                            Salary = 1926613f,
+                            Surname = "Serrato"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Address = "Juegos, Ultramarinos & Ropa",
+                            Email = "Andrea54@nearbpo.com",
+                            Name = "Andrea",
+                            Phone = "526.997.251",
+                            Salary = 4884844f,
+                            Surname = "Tovar"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Address = "Películas & Joyería",
+                            Email = "JoseLuis.Vega6@corpfolder.com",
+                            Name = "José Luis",
+                            Phone = "5181-953-431",
+                            Salary = 2621992.8f,
+                            Surname = "Vega"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Address = "Libros, Hogar & Jardín",
+                            Email = "Marcos51@gmail.com",
+                            Name = "Marcos",
+                            Phone = "5270-013-425",
+                            Salary = 2762903.2f,
+                            Surname = "Loera"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Address = "Automoción",
+                            Email = "Antonia92@yahoo.com",
+                            Name = "Antonia",
+                            Phone = "519 377 660",
+                            Salary = 3900063f,
+                            Surname = "Guevara"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Address = "Salud, Jardín & Ultramarinos",
+                            Email = "Jaime22@gmail.com",
+                            Name = "Jaime",
+                            Phone = "543.740.657",
+                            Salary = 1810223.6f,
+                            Surname = "Huixtlacatl"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Address = "Música",
+                            Email = "Ruben.Tafoya@corpfolder.com",
+                            Name = "Rubén",
+                            Phone = "518232125",
+                            Salary = 3040319.2f,
+                            Surname = "Tafoya"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Address = "Música",
+                            Email = "MariaJose89@nearbpo.com",
+                            Name = "María José",
+                            Phone = "521802748",
+                            Salary = 4401424f,
+                            Surname = "Grijalva"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Address = "Salud",
+                            Email = "FernandoJavier_Cerda28@corpfolder.com",
+                            Name = "Fernando Javier",
+                            Phone = "552 003 908",
+                            Salary = 2056180.4f,
+                            Surname = "Cerda"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Address = "Belleza, Automoción & Ultramarinos",
+                            Email = "VictorManuel.Mata@gmail.com",
+                            Name = "Victor Manuel",
+                            Phone = "535 333 648",
+                            Salary = 4259977.5f,
+                            Surname = "Mata"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Address = "Industrial & Música",
+                            Email = "Sofia_Granado86@yahoo.com",
+                            Name = "Sofia",
+                            Phone = "547.134.365",
+                            Salary = 1622369.5f,
+                            Surname = "Granado"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Address = "Kids, Herramientas & Películas",
+                            Email = "Rafael.Delacruz@nearbpo.com",
+                            Name = "Rafael",
+                            Phone = "597.216.487",
+                            Salary = 4231816f,
+                            Surname = "Delacrúz"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Address = "Herramientas",
+                            Email = "Sebastian.Aguayo90@yahoo.com",
+                            Name = "Sebastian",
+                            Phone = "511 999 679",
+                            Salary = 1092244.6f,
+                            Surname = "Aguayo"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Address = "Música, Deportes & Kids",
+                            Email = "AlondraRomina.Pizarro59@gmail.com",
+                            Name = "Alondra Romina",
+                            Phone = "590.380.611",
+                            Salary = 4997500f,
+                            Surname = "Pizarro"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Address = "Baby",
+                            Email = "Pedro_Fierro23@hotmail.com",
+                            Name = "Pedro",
+                            Phone = "598.500.621",
+                            Salary = 4720072f,
+                            Surname = "Fierro"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Address = "Zapatos & Herramientas",
+                            Email = "Soledad.Quinta@nearbpo.com",
+                            Name = "Soledad",
+                            Phone = "5007-857-931",
+                            Salary = 3137144.8f,
+                            Surname = "Quinta"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Address = "Ropa, Ropa & Aire libre",
+                            Email = "Mateo45@hotmail.com",
+                            Name = "Mateo",
+                            Phone = "575 786 429",
+                            Salary = 2826909.5f,
+                            Surname = "Arias"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Address = "Hogar",
+                            Email = "Luisa_Borrego@yahoo.com",
+                            Name = "Luisa",
+                            Phone = "559.805.237",
+                            Salary = 3967011.5f,
+                            Surname = "Borrego"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Address = "Películas",
+                            Email = "MariadelosAngeles.Angulo95@gmail.com",
+                            Name = "María de los Ángeles",
+                            Phone = "544378655",
+                            Salary = 4671467.5f,
+                            Surname = "Angulo"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Address = "Jardín & Ordenadores",
+                            Email = "MariaGuadalupe_Morales94@gmail.com",
+                            Name = "María Guadalupe",
+                            Phone = "534 968 481",
+                            Salary = 1728256.1f,
+                            Surname = "Morales"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Address = "Industrial & Industrial",
+                            Email = "Reina_Enriquez@gmail.com",
+                            Name = "Reina",
+                            Phone = "507.054.843",
+                            Salary = 1213287.9f,
+                            Surname = "Enríquez"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Address = "Aire libre & Ropa",
+                            Email = "Irene.Cordero@corpfolder.com",
+                            Name = "Irene",
+                            Phone = "5557-113-120",
+                            Salary = 2413249.8f,
+                            Surname = "Cordero"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Address = "Música, Jardín & Hogar",
+                            Email = "Antonia_Murillo30@yahoo.com",
+                            Name = "Antonia",
+                            Phone = "574265680",
+                            Salary = 1968218.2f,
+                            Surname = "Murillo"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Address = "Zapatos & Industrial",
+                            Email = "Julieta.Banuelos64@gmail.com",
+                            Name = "Julieta",
+                            Phone = "5342-929-504",
+                            Salary = 2497761.5f,
+                            Surname = "Bañuelos"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Address = "Automoción, Electrónica & Salud",
+                            Email = "Maricarmen.Trevino@gmail.com",
+                            Name = "Maricarmen",
+                            Phone = "5626-936-670",
+                            Salary = 1782358.6f,
+                            Surname = "Treviño"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Address = "Salud, Ropa & Herramientas",
+                            Email = "Elvira_Munguia@gmail.com",
+                            Name = "Elvira",
+                            Phone = "515.308.180",
+                            Salary = 1867616.5f,
+                            Surname = "Munguía"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Address = "Belleza & Salud",
+                            Email = "Miranda1@yahoo.com",
+                            Name = "Miranda",
+                            Phone = "532930278",
+                            Salary = 1449123.8f,
+                            Surname = "Razo"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Address = "Música",
+                            Email = "Raul58@nearbpo.com",
+                            Name = "Raúl",
+                            Phone = "567.109.177",
+                            Salary = 2628510.2f,
+                            Surname = "Laureano"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Address = "Kids & Zapatos",
+                            Email = "Brayan11@yahoo.com",
+                            Name = "Brayan",
+                            Phone = "591 813 619",
+                            Salary = 2110438.2f,
+                            Surname = "Kamat"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Address = "Música, Música & Ordenadores",
+                            Email = "Abraham75@corpfolder.com",
+                            Name = "Abraham",
+                            Phone = "5450-649-213",
+                            Salary = 1783650.1f,
+                            Surname = "Correa"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Address = "Deportes",
+                            Email = "MariaEugenia.Rodarte12@hotmail.com",
+                            Name = "María Eugenia",
+                            Phone = "5727-355-373",
+                            Salary = 2845921.5f,
+                            Surname = "Rodarte"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Address = "Belleza, Aire libre & Juegos",
+                            Email = "Carla.Amaya5@yahoo.com",
+                            Name = "Carla",
+                            Phone = "586 510 200",
+                            Salary = 4930593f,
+                            Surname = "Amaya"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Address = "Juegos & Música",
+                            Email = "Regina_Zamora@nearbpo.com",
+                            Name = "Regina",
+                            Phone = "551909782",
+                            Salary = 4557411.5f,
+                            Surname = "Zamora"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Address = "Ultramarinos & Joyería",
+                            Email = "Raul.Pabon3@corpfolder.com",
+                            Name = "Raúl",
+                            Phone = "5368-678-006",
+                            Salary = 2077262.4f,
+                            Surname = "Pabón"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Address = "Herramientas & Zapatos",
+                            Email = "Pilar5@yahoo.com",
+                            Name = "Pilar",
+                            Phone = "511 785 686",
+                            Salary = 4632154.5f,
+                            Surname = "Ulloa"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Address = "Automoción, Automoción & Juguetes",
+                            Email = "Gabriel68@gmail.com",
+                            Name = "Gabriel",
+                            Phone = "591 304 033",
+                            Salary = 4659205.5f,
+                            Surname = "Herrera"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Address = "Ordenadores, Herramientas & Hogar",
+                            Email = "Marisol_Krauelnatera4@nearbpo.com",
+                            Name = "Marisol",
+                            Phone = "578459396",
+                            Salary = 4527480.5f,
+                            Surname = "Krauel natera"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Address = "Hogar",
+                            Email = "Felipe.Reyes@hotmail.com",
+                            Name = "Felipe",
+                            Phone = "5039-172-548",
+                            Salary = 1595479.8f,
+                            Surname = "Reyes"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Address = "Ultramarinos & Juguetes",
+                            Email = "Gabriela.Barreto@corpfolder.com",
+                            Name = "Gabriela",
+                            Phone = "564.220.653",
+                            Salary = 4906975f,
+                            Surname = "Barreto"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Address = "Joyería, Ordenadores & Electrónica",
+                            Email = "Francisca34@gmail.com",
+                            Name = "Francisca",
+                            Phone = "529 789 197",
+                            Salary = 3599184.2f,
+                            Surname = "Mateo"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Address = "Juegos, Juegos & Jardín",
+                            Email = "Paulina6@hotmail.com",
+                            Name = "Paulina",
+                            Phone = "526 973 069",
+                            Salary = 4331747f,
+                            Surname = "Ramón"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Address = "Jardín, Aire libre & Belleza",
+                            Email = "Florencia50@gmail.com",
+                            Name = "Florencia",
+                            Phone = "505140823",
+                            Salary = 2427350f,
+                            Surname = "Cortés"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Address = "Música & Industrial",
+                            Email = "Octavio67@hotmail.com",
+                            Name = "Octavio",
+                            Phone = "5390-500-162",
+                            Salary = 4437613.5f,
+                            Surname = "Collazo"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Address = "Salud & Ultramarinos",
+                            Email = "Guillermo38@nearbpo.com",
+                            Name = "Guillermo",
+                            Phone = "566 475 290",
+                            Salary = 1406368.2f,
+                            Surname = "Soliz"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Address = "Automoción",
+                            Email = "Cesar.Leon@corpfolder.com",
+                            Name = "César",
+                            Phone = "553 951 401",
+                            Salary = 2188773.8f,
+                            Surname = "León"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Address = "Juguetes, Libros & Salud",
+                            Email = "Felipe49@nearbpo.com",
+                            Name = "Felipe",
+                            Phone = "568 135 046",
+                            Salary = 1385498.6f,
+                            Surname = "Cano"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            Address = "Baby",
+                            Email = "Barbara65@hotmail.com",
+                            Name = "Barbara",
+                            Phone = "557 160 460",
+                            Salary = 3540160.5f,
+                            Surname = "Vela"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Address = "Kids",
+                            Email = "Dorotea.Velasco12@hotmail.com",
+                            Name = "Dorotea",
+                            Phone = "586.164.377",
+                            Salary = 1783329.2f,
+                            Surname = "Velasco"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Address = "Zapatos, Ordenadores & Juegos",
+                            Email = "Bernardo_Jaramillo89@yahoo.com",
+                            Name = "Bernardo",
+                            Phone = "506652662",
+                            Salary = 3003817.5f,
+                            Surname = "Jaramillo"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Address = "Deportes",
+                            Email = "JoseLuis.Villareal5@gmail.com",
+                            Name = "José Luis",
+                            Phone = "512943228",
+                            Salary = 1898144.2f,
+                            Surname = "Villareal"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Address = "Electrónica & Salud",
+                            Email = "Soledad.Henriquez@nearbpo.com",
+                            Name = "Soledad",
+                            Phone = "507 203 011",
+                            Salary = 3554952.2f,
+                            Surname = "Henríquez"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            Address = "Belleza",
+                            Email = "Bernardo_Garrido@gmail.com",
+                            Name = "Bernardo",
+                            Phone = "563 250 368",
+                            Salary = 4929252.5f,
+                            Surname = "Garrido"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Address = "Salud & Libros",
+                            Email = "Nicolas_Kindelan@gmail.com",
+                            Name = "Nicolás",
+                            Phone = "565 609 425",
+                            Salary = 1176448.9f,
+                            Surname = "Kindelan"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Address = "Deportes & Electrónica",
+                            Email = "Irene64@gmail.com",
+                            Name = "Irene",
+                            Phone = "528556629",
+                            Salary = 3119015.2f,
+                            Surname = "Jiménez"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            Address = "Ordenadores, Juguetes & Zapatos",
+                            Email = "Jennifer_Jasso36@nearbpo.com",
+                            Name = "Jennifer",
+                            Phone = "519 259 928",
+                            Salary = 3901784.8f,
+                            Surname = "Jasso"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Address = "Belleza",
+                            Email = "Manuela_Rosas@nearbpo.com",
+                            Name = "Manuela",
+                            Phone = "5759-738-625",
+                            Salary = 4422274.5f,
+                            Surname = "Rosas"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Address = "Automoción & Jardín",
+                            Email = "Jacobo_Toledo@nearbpo.com",
+                            Name = "Jacobo",
+                            Phone = "548 084 120",
+                            Salary = 3562358f,
+                            Surname = "Toledo"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Address = "Electrónica & Herramientas",
+                            Email = "Leonardo.Marin@corpfolder.com",
+                            Name = "Leonardo",
+                            Phone = "578.239.857",
+                            Salary = 2442775.2f,
+                            Surname = "Marín"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Address = "Herramientas, Automoción & Baby",
+                            Email = "Elsa_Leon@hotmail.com",
+                            Name = "Elsa",
+                            Phone = "599872976",
+                            Salary = 3270241.5f,
+                            Surname = "León"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Address = "Ultramarinos & Kids",
+                            Email = "Florencia22@corpfolder.com",
+                            Name = "Florencia",
+                            Phone = "5651-465-941",
+                            Salary = 1815150.9f,
+                            Surname = "Orta"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            Address = "Ordenadores & Joyería",
+                            Email = "Jaime.Meraz@hotmail.com",
+                            Name = "Jaime",
+                            Phone = "582224666",
+                            Salary = 3380431f,
+                            Surname = "Meraz"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Address = "Libros, Música & Juguetes",
+                            Email = "Juana_Iglesias@corpfolder.com",
+                            Name = "Juana",
+                            Phone = "555 478 876",
+                            Salary = 2129863f,
+                            Surname = "Iglesias"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            Address = "Automoción & Aire libre",
+                            Email = "Santiago88@yahoo.com",
+                            Name = "Santiago",
+                            Phone = "522837559",
+                            Salary = 2004569.2f,
+                            Surname = "Regalado"
+                        },
+                        new
+                        {
+                            Id = 97,
+                            Address = "Industrial, Industrial & Películas",
+                            Email = "Debora38@hotmail.com",
+                            Name = "Débora",
+                            Phone = "536.226.874",
+                            Salary = 3617531.5f,
+                            Surname = "Leyva"
+                        },
+                        new
+                        {
+                            Id = 98,
+                            Address = "Deportes",
+                            Email = "Yolanda.Vallejo@corpfolder.com",
+                            Name = "Yolanda",
+                            Phone = "5951-697-544",
+                            Salary = 1182938.6f,
+                            Surname = "Vallejo"
+                        },
+                        new
+                        {
                             Id = 99,
-                            Address = "Juegos, Deportes & Juegos",
-                            Email = "Brandon_Corrales@nearbpo.com",
-                            Name = "Brandon",
-                            Phone = "5933-547-549",
-                            Salary = 2566709.5f,
-                            Surname = "Corrales"
+                            Address = "Música, Aire libre & Ultramarinos",
+                            Email = "Barbara.Lebron@corpfolder.com",
+                            Name = "Barbara",
+                            Phone = "580 083 143",
+                            Salary = 4668426.5f,
+                            Surname = "Lebrón"
                         },
                         new
                         {
                             Id = 100,
-                            Address = "Juegos",
-                            Email = "Ivan.Pedraza@gmail.com",
-                            Name = "Ivan",
-                            Phone = "577129436",
-                            Salary = 2746685.2f,
-                            Surname = "Pedraza"
+                            Address = "Industrial",
+                            Email = "Sancho_Kamat@hotmail.com",
+                            Name = "Sancho",
+                            Phone = "575153357",
+                            Salary = 4168409.8f,
+                            Surname = "Kamat"
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.reports", b =>
+            modelBuilder.Entity("Domain.Entities.Report", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -3926,17 +3926,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Type = "Nómina"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 2,
-                            Type = "Nómina"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 3,
-                            Type = "Nómina"
+                            Type = "Vehiculos"
                         },
                         new
                         {
@@ -3946,7 +3946,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 5,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -3956,52 +3956,52 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 7,
-                            Type = "Nómina"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 8,
-                            Type = "Clientes"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Type = "Nómina"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Type = "Nómina"
-                        },
-                        new
-                        {
-                            Id = 11,
                             Type = "Vehiculos"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = 9,
+                            Type = "Clientes"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Type = "Inventario"
+                        },
+                        new
+                        {
+                            Id = 11,
                             Type = "Nómina"
                         },
                         new
                         {
+                            Id = 12,
+                            Type = "Inventario"
+                        },
+                        new
+                        {
                             Id = 13,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 14,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 15,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 16,
-                            Type = "Clientes"
+                            Type = "Inventario"
                         },
                         new
                         {
@@ -4011,7 +4011,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 18,
-                            Type = "Nómina"
+                            Type = "Inventario"
                         },
                         new
                         {
@@ -4021,7 +4021,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 20,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4031,7 +4031,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 22,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4041,17 +4041,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 24,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 25,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 26,
-                            Type = "Nómina"
+                            Type = "Clientes"
                         },
                         new
                         {
@@ -4061,7 +4061,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 28,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
@@ -4081,7 +4081,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 32,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4091,17 +4091,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 34,
-                            Type = "Clientes"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 35,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 36,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4111,42 +4111,42 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 38,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 39,
-                            Type = "Nómina"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 40,
-                            Type = "Nómina"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 41,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 42,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 43,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 44,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 45,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4171,22 +4171,22 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 50,
-                            Type = "Nómina"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 51,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 52,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 53,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
@@ -4196,17 +4196,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 55,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 56,
-                            Type = "Nómina"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 57,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
@@ -4216,32 +4216,32 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 59,
-                            Type = "Nómina"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Type = "Vehiculos"
-                        },
-                        new
-                        {
-                            Id = 61,
                             Type = "Inventario"
                         },
                         new
                         {
-                            Id = 62,
+                            Id = 60,
                             Type = "Clientes"
                         },
                         new
                         {
-                            Id = 63,
+                            Id = 61,
+                            Type = "Clientes"
+                        },
+                        new
+                        {
+                            Id = 62,
                             Type = "Nómina"
                         },
                         new
                         {
+                            Id = 63,
+                            Type = "Clientes"
+                        },
+                        new
+                        {
                             Id = 64,
-                            Type = "Nómina"
+                            Type = "Vehiculos"
                         },
                         new
                         {
@@ -4251,7 +4251,7 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 66,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
@@ -4261,17 +4261,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 68,
-                            Type = "Vehiculos"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 69,
-                            Type = "Clientes"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 70,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
@@ -4281,12 +4281,12 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 72,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 73,
-                            Type = "Inventario"
+                            Type = "Vehiculos"
                         },
                         new
                         {
@@ -4296,17 +4296,17 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 75,
-                            Type = "Nómina"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 76,
-                            Type = "Nómina"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 77,
-                            Type = "Nómina"
+                            Type = "Clientes"
                         },
                         new
                         {
@@ -4316,32 +4316,32 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 79,
-                            Type = "Clientes"
-                        },
-                        new
-                        {
-                            Id = 80,
-                            Type = "Inventario"
-                        },
-                        new
-                        {
-                            Id = 81,
-                            Type = "Clientes"
-                        },
-                        new
-                        {
-                            Id = 82,
                             Type = "Nómina"
                         },
                         new
                         {
+                            Id = 80,
+                            Type = "Vehiculos"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            Type = "Nómina"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Type = "Inventario"
+                        },
+                        new
+                        {
                             Id = 83,
-                            Type = "Clientes"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 84,
-                            Type = "Vehiculos"
+                            Type = "Inventario"
                         },
                         new
                         {
@@ -4351,27 +4351,27 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 86,
-                            Type = "Vehiculos"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 87,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 88,
-                            Type = "Inventario"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 89,
-                            Type = "Vehiculos"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 90,
-                            Type = "Vehiculos"
+                            Type = "Inventario"
                         },
                         new
                         {
@@ -4381,37 +4381,37 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 92,
-                            Type = "Vehiculos"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 93,
-                            Type = "Inventario"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 94,
-                            Type = "Inventario"
+                            Type = "Clientes"
                         },
                         new
                         {
                             Id = 95,
-                            Type = "Clientes"
+                            Type = "Nómina"
                         },
                         new
                         {
                             Id = 96,
-                            Type = "Inventario"
+                            Type = "Vehiculos"
                         },
                         new
                         {
                             Id = 97,
-                            Type = "Clientes"
+                            Type = "Inventario"
                         },
                         new
                         {
                             Id = 98,
-                            Type = "Clientes"
+                            Type = "Inventario"
                         },
                         new
                         {
@@ -4425,7 +4425,7 @@ namespace RestServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.suppliers", b =>
+            modelBuilder.Entity("Domain.Entities.Supplier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -4475,1106 +4475,1106 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "Automoción & Herramientas",
-                            Company = "Cenaoscuras",
-                            Email = "Estela.Ocampo91@gmail.com",
-                            Name = "Estela",
-                            Nit = "256079340",
-                            Phone = "5517-378-896",
-                            SurName = "Ocampo"
+                            Address = "Kids",
+                            Company = "Descensión",
+                            Email = "Esmeralda26@corpfolder.com",
+                            Name = "Esmeralda",
+                            Nit = "247816353",
+                            Phone = "5897-735-114",
+                            SurName = "Piña"
                         },
                         new
                         {
                             Id = 2,
-                            Address = "Ordenadores",
-                            Company = "Engarberar",
-                            Email = "Ramiro62@yahoo.com",
+                            Address = "Música",
+                            Company = "Fichero",
+                            Email = "Ramiro.Frias8@nearbpo.com",
                             Name = "Ramiro",
-                            Nit = "201531704",
-                            Phone = "5245-500-647",
-                            SurName = "Gutiérrez"
+                            Nit = "121009203",
+                            Phone = "529285149",
+                            SurName = "Frías"
                         },
                         new
                         {
                             Id = 3,
-                            Address = "Kids",
-                            Company = "Increpar",
-                            Email = "Natalia4@gmail.com",
+                            Address = "Industrial",
+                            Company = "Engarberar",
+                            Email = "Natalia_Velazquez15@yahoo.com",
                             Name = "Natalia",
-                            Nit = "209466723",
-                            Phone = "508 731 643",
-                            SurName = "Rascón"
+                            Nit = "194064689",
+                            Phone = "5033-906-525",
+                            SurName = "Velázquez"
                         },
                         new
                         {
                             Id = 4,
-                            Address = "Jardín & Libros",
-                            Company = "Descerebrado",
-                            Email = "Gonzalo.Montes17@nearbpo.com",
-                            Name = "Gonzalo",
-                            Nit = "254140025",
-                            Phone = "5396-678-494",
-                            SurName = "Montes"
+                            Address = "Kids, Kids & Electrónica",
+                            Company = "Cendalí",
+                            Email = "Victoria.Ocampo@hotmail.com",
+                            Name = "Victoria",
+                            Nit = "207443262",
+                            Phone = "571.663.611",
+                            SurName = "Ocampo"
                         },
                         new
                         {
                             Id = 5,
-                            Address = "Ropa, Música & Juguetes",
-                            Company = "Incremento",
-                            Email = "Camila72@nearbpo.com",
-                            Name = "Camila",
-                            Nit = "289333466",
-                            Phone = "5365-362-741",
-                            SurName = "Sandoval"
+                            Address = "Ordenadores",
+                            Company = "Descerebrar",
+                            Email = "LuisMiguel_Mota@gmail.com",
+                            Name = "Luis Miguel",
+                            Nit = "258778946",
+                            Phone = "533822142",
+                            SurName = "Mota"
                         },
                         new
                         {
                             Id = 6,
-                            Address = "Automoción",
-                            Company = "Cenaoscuras",
-                            Email = "Anita.Tellez90@nearbpo.com",
-                            Name = "Anita",
-                            Nit = "168960834",
-                            Phone = "574.502.891",
-                            SurName = "Téllez"
+                            Address = "Baby",
+                            Company = "Cenestesia",
+                            Email = "Sancho_Laboy@nearbpo.com",
+                            Name = "Sancho",
+                            Nit = "200119060",
+                            Phone = "5248-207-676",
+                            SurName = "Laboy"
                         },
                         new
                         {
                             Id = 7,
-                            Address = "Electrónica, Industrial & Juguetes",
-                            Company = "Gemología",
-                            Email = "Jennifer_Arenas@hotmail.com",
-                            Name = "Jennifer",
-                            Nit = "185687113",
-                            Phone = "506.822.601",
-                            SurName = "Arenas"
+                            Address = "Juguetes & Jardín",
+                            Company = "Cencellada",
+                            Email = "JulioCesar_Yanez58@yahoo.com",
+                            Name = "Julio César",
+                            Nit = "168925770",
+                            Phone = "576795586",
+                            SurName = "Yáñez"
                         },
                         new
                         {
                             Id = 8,
-                            Address = "Hogar, Juguetes & Zapatos",
-                            Company = "Abaldonamiento",
-                            Email = "Emilia91@corpfolder.com",
-                            Name = "Emilia",
-                            Nit = "280463960",
-                            Phone = "541473027",
-                            SurName = "Reyna"
+                            Address = "Deportes & Deportes",
+                            Company = "Deschavetado",
+                            Email = "Gerardo_Rosales@hotmail.com",
+                            Name = "Gerardo",
+                            Nit = "290472563",
+                            Phone = "511 790 696",
+                            SurName = "Rosales"
                         },
                         new
                         {
                             Id = 9,
-                            Address = "Baby",
-                            Company = "Descentralización",
-                            Email = "Juan.Garica@corpfolder.com",
-                            Name = "Juan",
-                            Nit = "103423419",
-                            Phone = "514 118 950",
-                            SurName = "Garica"
+                            Address = "Kids, Ultramarinos & Juegos",
+                            Company = "Descepar",
+                            Email = "Elias.Pedraza@gmail.com",
+                            Name = "Elías",
+                            Nit = "222014156",
+                            Phone = "570.678.379",
+                            SurName = "Pedraza"
                         },
                         new
                         {
                             Id = 10,
-                            Address = "Juguetes, Joyería & Herramientas",
-                            Company = "Engarzadura",
-                            Email = "Isaac88@yahoo.com",
-                            Name = "Isaac",
-                            Nit = "259095893",
-                            Phone = "561905383",
-                            SurName = "Ortega"
+                            Address = "Libros",
+                            Company = "Incrédulo",
+                            Email = "Rebeca_Peralta88@yahoo.com",
+                            Name = "Rebeca",
+                            Nit = "277307414",
+                            Phone = "517 933 525",
+                            SurName = "Peralta"
                         },
                         new
                         {
                             Id = 11,
-                            Address = "Herramientas",
-                            Company = "Engargantar",
-                            Email = "JoseEmilio.Zambrano@yahoo.com",
-                            Name = "José Emilio",
-                            Nit = "161763944",
-                            Phone = "567.079.816",
-                            SurName = "Zambrano"
+                            Address = "Belleza & Zapatos",
+                            Company = "Fidelísimo",
+                            Email = "Ramiro23@corpfolder.com",
+                            Name = "Ramiro",
+                            Nit = "167488341",
+                            Phone = "5366-013-614",
+                            SurName = "Feliciano"
                         },
                         new
                         {
                             Id = 12,
-                            Address = "Electrónica & Electrónica",
-                            Company = "Descimbrar",
-                            Email = "FranciscoJavier.Miranda@nearbpo.com",
-                            Name = "Francisco Javier",
-                            Nit = "218346336",
-                            Phone = "553 933 928",
-                            SurName = "Miranda"
+                            Address = "Automoción & Juguetes",
+                            Company = "Cendalí",
+                            Email = "Florencia_Tamayo@nearbpo.com",
+                            Name = "Florencia",
+                            Nit = "100087795",
+                            Phone = "5095-173-979",
+                            SurName = "Tamayo"
                         },
                         new
                         {
                             Id = 13,
-                            Address = "Juegos",
-                            Company = "Abalar",
-                            Email = "MariadeJesus.Calvillo81@yahoo.com",
-                            Name = "María de Jesús",
-                            Nit = "141329254",
-                            Phone = "5960-624-647",
-                            SurName = "Calvillo"
+                            Address = "Electrónica",
+                            Company = "Incriminar",
+                            Email = "JoseMiguel_Perales95@nearbpo.com",
+                            Name = "José Miguel",
+                            Nit = "175563233",
+                            Phone = "548 421 526",
+                            SurName = "Perales"
                         },
                         new
                         {
                             Id = 14,
-                            Address = "Juguetes",
-                            Company = "Incorruptible",
-                            Email = "Isaias52@yahoo.com",
-                            Name = "Isaias",
-                            Nit = "128186283",
-                            Phone = "536 697 024",
-                            SurName = "Franco"
+                            Address = "Deportes",
+                            Company = "Cencerrillas",
+                            Email = "Alexa.Mireles@gmail.com",
+                            Name = "Alexa",
+                            Nit = "230572030",
+                            Phone = "571515573",
+                            SurName = "Mireles"
                         },
                         new
                         {
                             Id = 15,
-                            Address = "Jardín & Ordenadores",
-                            Company = "Abaldonamiento",
-                            Email = "Carlos.Archuleta@yahoo.com",
-                            Name = "Carlos",
-                            Nit = "284493554",
-                            Phone = "524 372 633",
-                            SurName = "Archuleta"
+                            Address = "Jardín & Música",
+                            Company = "Incrédulo",
+                            Email = "Elizabeth.Briones@hotmail.com",
+                            Name = "Elizabeth",
+                            Nit = "217702481",
+                            Phone = "550.133.889",
+                            SurName = "Briones"
                         },
                         new
                         {
                             Id = 16,
-                            Address = "Libros & Automoción",
-                            Company = "Genealógico",
-                            Email = "JoseDaniel_Olvera@corpfolder.com",
-                            Name = "Jose Daniel",
-                            Nit = "245170979",
-                            Phone = "564.691.738",
-                            SurName = "Olvera"
+                            Address = "Salud",
+                            Company = "Cencerra",
+                            Email = "Elvira31@corpfolder.com",
+                            Name = "Elvira",
+                            Nit = "161406351",
+                            Phone = "507 051 324",
+                            SurName = "Águilar"
                         },
                         new
                         {
                             Id = 17,
-                            Address = "Hogar, Baby & Juegos",
-                            Company = "Cencha",
-                            Email = "Magdalena_Terrazas80@hotmail.com",
-                            Name = "Magdalena",
-                            Nit = "101655169",
-                            Phone = "5841-452-865",
-                            SurName = "Terrazas"
+                            Address = "Ropa",
+                            Company = "Fidedigno",
+                            Email = "Luis_Kaplan62@gmail.com",
+                            Name = "Luis",
+                            Nit = "181050200",
+                            Phone = "5126-984-869",
+                            SurName = "Kaplan"
                         },
                         new
                         {
                             Id = 18,
-                            Address = "Industrial & Aire libre",
-                            Company = "Batallador",
-                            Email = "Monica.Pizarro55@gmail.com",
-                            Name = "Mónica",
-                            Nit = "281905584",
-                            Phone = "504 246 753",
-                            SurName = "Pizarro"
+                            Address = "Juguetes, Deportes & Películas",
+                            Company = "Engargolado",
+                            Email = "Salvador_Rivero@hotmail.com",
+                            Name = "Salvador",
+                            Nit = "221799907",
+                            Phone = "5059-792-402",
+                            SurName = "Rivero"
                         },
                         new
                         {
                             Id = 19,
-                            Address = "Ultramarinos, Zapatos & Kids",
-                            Company = "Engargantadura",
-                            Email = "Zoe.Jiminez@gmail.com",
-                            Name = "Zoe",
-                            Nit = "179145401",
-                            Phone = "541 406 730",
-                            SurName = "Jimínez"
+                            Address = "Música",
+                            Company = "Descercar",
+                            Email = "Alan81@corpfolder.com",
+                            Name = "Alan",
+                            Nit = "163514151",
+                            Phone = "510.640.746",
+                            SurName = "Benítez"
                         },
                         new
                         {
                             Id = 20,
-                            Address = "Juegos & Libros",
-                            Company = "Ficción",
-                            Email = "Hernan_Barrientos@yahoo.com",
-                            Name = "Hernán",
-                            Nit = "188085858",
-                            Phone = "534195356",
-                            SurName = "Barrientos"
+                            Address = "Hogar",
+                            Company = "Generala",
+                            Email = "Arturo_Ramos@gmail.com",
+                            Name = "Arturo",
+                            Nit = "286139421",
+                            Phone = "563.115.259",
+                            SurName = "Ramos"
                         },
                         new
                         {
                             Id = 21,
-                            Address = "Automoción",
-                            Company = "Incriminación",
-                            Email = "Gabriela45@nearbpo.com",
-                            Name = "Gabriela",
-                            Nit = "242799280",
-                            Phone = "5179-853-577",
-                            SurName = "Figueroa"
+                            Address = "Juguetes & Kids",
+                            Company = "Fidalgo",
+                            Email = "Gonzalo_Rico@corpfolder.com",
+                            Name = "Gonzalo",
+                            Nit = "267849362",
+                            Phone = "582073450",
+                            SurName = "Rico"
                         },
                         new
                         {
                             Id = 22,
-                            Address = "Deportes, Industrial & Ropa",
-                            Company = "Cenal",
-                            Email = "Raul.Samaniego50@hotmail.com",
-                            Name = "Raúl",
-                            Nit = "168386763",
-                            Phone = "558328353",
-                            SurName = "Samaniego"
+                            Address = "Joyería, Jardín & Baby",
+                            Company = "Engarrafar",
+                            Email = "Julio.Zamarripa@nearbpo.com",
+                            Name = "Julio",
+                            Nit = "227473949",
+                            Phone = "507 553 233",
+                            SurName = "Zamarripa"
                         },
                         new
                         {
                             Id = 23,
-                            Address = "Música, Deportes & Hogar",
-                            Company = "Cendal",
-                            Email = "Oscar.Cordova31@gmail.com",
-                            Name = "Óscar",
-                            Nit = "165196718",
-                            Phone = "554.676.093",
-                            SurName = "Córdova"
+                            Address = "Herramientas, Hogar & Ultramarinos",
+                            Company = "Descimbrar",
+                            Email = "Tadeo.Lopez61@yahoo.com",
+                            Name = "Tadeo",
+                            Nit = "275717437",
+                            Phone = "574 958 918",
+                            SurName = "López"
                         },
                         new
                         {
                             Id = 24,
-                            Address = "Deportes",
-                            Company = "Bateaguas",
-                            Email = "RosaMaria_Montanez88@gmail.com",
-                            Name = "Rosa María",
-                            Nit = "267112939",
-                            Phone = "500.721.948",
-                            SurName = "Montañez"
+                            Address = "Salud, Ropa & Juegos",
+                            Company = "Generación",
+                            Email = "MariaElena.Berrios90@yahoo.com",
+                            Name = "María Elena",
+                            Nit = "232964629",
+                            Phone = "5911-179-206",
+                            SurName = "Berríos"
                         },
                         new
                         {
                             Id = 25,
-                            Address = "Aire libre",
-                            Company = "Bátavo",
-                            Email = "Ximena80@hotmail.com",
-                            Name = "Ximena",
-                            Nit = "111257484",
-                            Phone = "541 754 111",
-                            SurName = "Carrero"
+                            Address = "Jardín & Juguetes",
+                            Company = "Engaritar",
+                            Email = "Veronica.Guajardo@gmail.com",
+                            Name = "Verónica",
+                            Nit = "201935937",
+                            Phone = "545.008.897",
+                            SurName = "Guajardo"
                         },
                         new
                         {
                             Id = 26,
-                            Address = "Salud",
-                            Company = "Cendolilla",
-                            Email = "Raquel_Cornejo@hotmail.com",
-                            Name = "Raquel",
-                            Nit = "246957794",
-                            Phone = "565 535 288",
-                            SurName = "Cornejo"
+                            Address = "Jardín & Juegos",
+                            Company = "Engastar",
+                            Email = "David30@yahoo.com",
+                            Name = "David",
+                            Nit = "251629139",
+                            Phone = "5493-286-222",
+                            SurName = "Kyra"
                         },
                         new
                         {
                             Id = 27,
-                            Address = "Películas",
-                            Company = "Gemólogo",
-                            Email = "Ivanna.Rojo68@corpfolder.com",
-                            Name = "Ivanna",
-                            Nit = "140818774",
-                            Phone = "516.599.139",
-                            SurName = "Rojo"
+                            Address = "Electrónica",
+                            Company = "Engarmarse",
+                            Email = "Valeria0@corpfolder.com",
+                            Name = "Valeria",
+                            Nit = "210175311",
+                            Phone = "572 472 713",
+                            SurName = "Linares"
                         },
                         new
                         {
                             Id = 28,
-                            Address = "Ordenadores",
-                            Company = "Generalato",
-                            Email = "Anita_Lozada85@gmail.com",
-                            Name = "Anita",
-                            Nit = "272031046",
-                            Phone = "558.270.009",
-                            SurName = "Lozada"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Address = "Aire libre",
-                            Company = "Fidecomiso",
-                            Email = "Ramiro50@nearbpo.com",
-                            Name = "Ramiro",
-                            Nit = "173354718",
-                            Phone = "5123-680-444",
-                            SurName = "Leal"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Address = "Herramientas & Aire libre",
+                            Address = "Belleza",
                             Company = "Increpar",
-                            Email = "Isabela48@hotmail.com",
-                            Name = "Isabela",
-                            Nit = "211764795",
-                            Phone = "553.427.590",
-                            SurName = "Girón"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Address = "Salud",
-                            Company = "Cencerrada",
-                            Email = "Debora.Sevilla23@nearbpo.com",
-                            Name = "Débora",
-                            Nit = "186226799",
-                            Phone = "5633-394-327",
-                            SurName = "Sevilla"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Address = "Aire libre",
-                            Company = "Descerrar",
-                            Email = "Brayan_Garay17@nearbpo.com",
-                            Name = "Brayan",
-                            Nit = "135965020",
-                            Phone = "5573-755-630",
-                            SurName = "Garay"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Address = "Belleza, Joyería & Hogar",
-                            Company = "Gemíparo",
-                            Email = "Rebeca.Paz@corpfolder.com",
-                            Name = "Rebeca",
-                            Nit = "106247697",
-                            Phone = "555438974",
-                            SurName = "Paz"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Address = "Kids & Música",
-                            Company = "Abad",
-                            Email = "Marta.Malave35@hotmail.com",
-                            Name = "Marta",
-                            Nit = "136861695",
-                            Phone = "590115588",
-                            SurName = "Malave"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Address = "Películas & Películas",
-                            Company = "Incorporación",
-                            Email = "Isabel.Castaneda88@gmail.com",
-                            Name = "Isabel",
-                            Nit = "137891040",
-                            Phone = "567.498.490",
-                            SurName = "Castañeda"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Address = "Electrónica, Ropa & Ropa",
-                            Company = "Increíblemente",
-                            Email = "Florencia59@hotmail.com",
-                            Name = "Florencia",
-                            Nit = "224462199",
-                            Phone = "532 902 636",
-                            SurName = "Rosario"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Address = "Baby, Hogar & Hogar",
-                            Company = "Incruento",
-                            Email = "Araceli_Camacho70@hotmail.com",
-                            Name = "Araceli",
-                            Nit = "292418914",
-                            Phone = "552.525.502",
-                            SurName = "Camacho"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Address = "Música, Ordenadores & Baby",
-                            Company = "Abacial",
-                            Email = "Raquel.Perea@corpfolder.com",
-                            Name = "Raquel",
-                            Nit = "188292349",
-                            Phone = "500 216 770",
-                            SurName = "Perea"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Address = "Salud, Juguetes & Libros",
-                            Company = "Basurear",
-                            Email = "Jesus.Cordova6@yahoo.com",
-                            Name = "Jesús",
-                            Nit = "114802149",
-                            Phone = "589.628.826",
-                            SurName = "Córdova"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Address = "Automoción",
-                            Company = "Gemiquear",
-                            Email = "Eva77@corpfolder.com",
-                            Name = "Eva",
-                            Nit = "106238655",
-                            Phone = "5359-048-745",
-                            SurName = "Griego"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Address = "Salud",
-                            Company = "Gendarme",
-                            Email = "Salvador.Villarreal88@nearbpo.com",
-                            Name = "Salvador",
-                            Nit = "207242763",
-                            Phone = "511.906.068",
-                            SurName = "Villarreal"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Address = "Música & Jardín",
-                            Company = "Batavia",
-                            Email = "Alberto_Karem83@corpfolder.com",
-                            Name = "Alberto",
-                            Nit = "180253310",
-                            Phone = "545.054.419",
-                            SurName = "Karem"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Address = "Jardín",
-                            Company = "Géminis",
-                            Email = "Elena61@corpfolder.com",
-                            Name = "Elena",
-                            Nit = "276688538",
-                            Phone = "551 306 863",
-                            SurName = "Mata"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Address = "Libros, Ultramarinos & Zapatos",
-                            Company = "Batanar",
-                            Email = "Uriel84@yahoo.com",
-                            Name = "Uriel",
-                            Nit = "224534491",
-                            Phone = "5070-654-997",
-                            SurName = "Huerta"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Address = "Ultramarinos, Joyería & Ordenadores",
-                            Company = "Geminación",
-                            Email = "Graciela_Kranzsans@hotmail.com",
-                            Name = "Graciela",
-                            Nit = "260099716",
-                            Phone = "5213-600-995",
+                            Email = "Leonor9@hotmail.com",
+                            Name = "Leonor",
+                            Nit = "250041685",
+                            Phone = "562 644 604",
                             SurName = "Kranz sans"
                         },
                         new
                         {
+                            Id = 29,
+                            Address = "Juguetes",
+                            Company = "Generalato",
+                            Email = "Carlos17@hotmail.com",
+                            Name = "Carlos",
+                            Nit = "248394959",
+                            Phone = "521.623.021",
+                            SurName = "Arce"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Address = "Industrial, Baby & Kids",
+                            Company = "Incriminación",
+                            Email = "Clara20@gmail.com",
+                            Name = "Clara",
+                            Nit = "257612840",
+                            Phone = "5618-260-500",
+                            SurName = "Caldera"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Address = "Libros",
+                            Company = "Generalato",
+                            Email = "Iker_Karem70@nearbpo.com",
+                            Name = "Iker",
+                            Nit = "202304701",
+                            Phone = "502.532.617",
+                            SurName = "Karem"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Address = "Hogar & Kids",
+                            Company = "Descifrable",
+                            Email = "Emilio74@hotmail.com",
+                            Name = "Emilio",
+                            Nit = "244115192",
+                            Phone = "570778511",
+                            SurName = "Heredia"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Address = "Ropa",
+                            Company = "Incruentamente",
+                            Email = "Adela36@corpfolder.com",
+                            Name = "Adela",
+                            Nit = "205094481",
+                            Phone = "575 582 600",
+                            SurName = "Leyva"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Address = "Libros, Ultramarinos & Hogar",
+                            Company = "Increíble",
+                            Email = "Fernando.Lara10@corpfolder.com",
+                            Name = "Fernando",
+                            Nit = "244164061",
+                            Phone = "544 303 656",
+                            SurName = "Lara"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Address = "Salud & Juguetes",
+                            Company = "Cendrado",
+                            Email = "Pilar_Manzanares14@nearbpo.com",
+                            Name = "Pilar",
+                            Nit = "179666010",
+                            Phone = "5197-377-603",
+                            SurName = "Manzanares"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Address = "Jardín",
+                            Company = "Increpar",
+                            Email = "AlondraRomina.Gaytan17@corpfolder.com",
+                            Name = "Alondra Romina",
+                            Nit = "153835184",
+                            Phone = "529.757.315",
+                            SurName = "Gaytán"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Address = "Salud",
+                            Company = "Descimbramiento",
+                            Email = "JoseEduardo.Porras40@hotmail.com",
+                            Name = "José Eduardo",
+                            Nit = "116140160",
+                            Phone = "570.171.505",
+                            SurName = "Porras"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Address = "Baby & Belleza",
+                            Company = "Ficticio",
+                            Email = "Carmen.Teran@corpfolder.com",
+                            Name = "Carmen",
+                            Nit = "155664824",
+                            Phone = "540 953 682",
+                            SurName = "Terán"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Address = "Juegos & Juguetes",
+                            Company = "Genealógico",
+                            Email = "Marcos32@gmail.com",
+                            Name = "Marcos",
+                            Nit = "105288047",
+                            Phone = "587790769",
+                            SurName = "Galván"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Address = "Herramientas",
+                            Company = "Fideicomiso",
+                            Email = "Blanca_Gastelum17@hotmail.com",
+                            Name = "Blanca",
+                            Nit = "236848380",
+                            Phone = "552.332.656",
+                            SurName = "Gastélum"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Address = "Belleza & Automoción",
+                            Company = "Fidedigno",
+                            Email = "AnaSofia_Davila17@yahoo.com",
+                            Name = "Ana Sofía",
+                            Nit = "175043302",
+                            Phone = "599.252.014",
+                            SurName = "Dávila"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Address = "Aire libre & Hogar",
+                            Company = "Batanear",
+                            Email = "AngelGabriel_Padilla68@nearbpo.com",
+                            Name = "Ángel Gabriel",
+                            Nit = "181036622",
+                            Phone = "504613633",
+                            SurName = "Padilla"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Address = "Baby",
+                            Company = "Descifrable",
+                            Email = "Lola.Kamal@nearbpo.com",
+                            Name = "Lola",
+                            Nit = "208857338",
+                            Phone = "5246-235-688",
+                            SurName = "Kamal"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Address = "Baby",
+                            Company = "Abacial",
+                            Email = "Estefania7@nearbpo.com",
+                            Name = "Estefanía",
+                            Nit = "209204982",
+                            Phone = "569639497",
+                            SurName = "Holguín"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Address = "Automoción, Baby & Salud",
+                            Company = "Cendrazo",
+                            Email = "Estefania33@nearbpo.com",
+                            Name = "Estefanía",
+                            Nit = "282514872",
+                            Phone = "501882454",
+                            SurName = "Zamarripa"
+                        },
+                        new
+                        {
                             Id = 46,
-                            Address = "Baby, Belleza & Aire libre",
-                            Company = "Cencero",
-                            Email = "Esperanza.Armas@corpfolder.com",
-                            Name = "Esperanza",
-                            Nit = "237563401",
-                            Phone = "5129-263-753",
-                            SurName = "Armas"
+                            Address = "Hogar, Automoción & Libros",
+                            Company = "Batatazo",
+                            Email = "Ximena.Valverde@yahoo.com",
+                            Name = "Ximena",
+                            Nit = "269163212",
+                            Phone = "500371001",
+                            SurName = "Valverde"
                         },
                         new
                         {
                             Id = 47,
-                            Address = "Belleza",
-                            Company = "Cenagar",
-                            Email = "Teresa.Bermudez7@hotmail.com",
-                            Name = "Teresa",
-                            Nit = "115141111",
-                            Phone = "509.124.540",
-                            SurName = "Bermúdez"
+                            Address = "Zapatos, Ultramarinos & Jardín",
+                            Company = "Cencerrear",
+                            Email = "Israel.Rivero@yahoo.com",
+                            Name = "Israel",
+                            Nit = "113068360",
+                            Phone = "523820022",
+                            SurName = "Rivero"
                         },
                         new
                         {
                             Id = 48,
-                            Address = "Ultramarinos, Herramientas & Libros",
-                            Company = "Gemólogo",
-                            Email = "Elvira.Merino18@corpfolder.com",
-                            Name = "Elvira",
-                            Nit = "289364035",
-                            Phone = "584799176",
-                            SurName = "Merino"
+                            Address = "Zapatos",
+                            Company = "Cendradilla",
+                            Email = "Elsa.Mateo@hotmail.com",
+                            Name = "Elsa",
+                            Nit = "218762283",
+                            Phone = "558 914 073",
+                            SurName = "Mateo"
                         },
                         new
                         {
                             Id = 49,
-                            Address = "Belleza & Salud",
-                            Company = "Descepar",
-                            Email = "Lucia_Solorio@nearbpo.com",
-                            Name = "Lucia",
-                            Nit = "198557086",
-                            Phone = "537.392.173",
-                            SurName = "Solorio"
+                            Address = "Jardín & Baby",
+                            Company = "Bastonazo",
+                            Email = "Carmen_Mena28@hotmail.com",
+                            Name = "Carmen",
+                            Nit = "182915913",
+                            Phone = "5071-500-200",
+                            SurName = "Mena"
                         },
                         new
                         {
                             Id = 50,
                             Address = "Música",
-                            Company = "Fice",
-                            Email = "Adela_Morales@hotmail.com",
-                            Name = "Adela",
-                            Nit = "216211352",
-                            Phone = "547 351 533",
-                            SurName = "Morales"
+                            Company = "Engarzar",
+                            Email = "Elena_Galvez31@hotmail.com",
+                            Name = "Elena",
+                            Nit = "250500906",
+                            Phone = "5775-244-011",
+                            SurName = "Gálvez"
                         },
                         new
                         {
                             Id = 51,
-                            Address = "Ultramarinos",
-                            Company = "Gemir",
-                            Email = "Victor_Perea@corpfolder.com",
-                            Name = "Víctor",
-                            Nit = "120485516",
-                            Phone = "591 621 546",
-                            SurName = "Perea"
+                            Address = "Belleza & Zapatos",
+                            Company = "Descifre",
+                            Email = "JoseAntonio.Krasnova@yahoo.com",
+                            Name = "José Antonio",
+                            Nit = "158662474",
+                            Phone = "588906692",
+                            SurName = "Krasnova"
                         },
                         new
                         {
                             Id = 52,
-                            Address = "Electrónica, Kids & Joyería",
-                            Company = "Batallón",
-                            Email = "Monserrat.Alcaraz84@yahoo.com",
-                            Name = "Monserrat",
-                            Nit = "187355533",
-                            Phone = "584 832 350",
-                            SurName = "Alcaraz"
+                            Address = "Salud, Joyería & Belleza",
+                            Company = "Gemíparo",
+                            Email = "Alan25@corpfolder.com",
+                            Name = "Alan",
+                            Nit = "260664944",
+                            Phone = "528 165 199",
+                            SurName = "Alba"
                         },
                         new
                         {
                             Id = 53,
-                            Address = "Ordenadores, Kids & Ropa",
-                            Company = "Gencianeo",
-                            Email = "Mauricio_Valadez59@nearbpo.com",
-                            Name = "Mauricio",
-                            Nit = "225561603",
-                            Phone = "594 451 817",
-                            SurName = "Valadez"
+                            Address = "Aire libre & Industrial",
+                            Company = "Bateaguas",
+                            Email = "Erick.Arredondo55@corpfolder.com",
+                            Name = "Erick",
+                            Nit = "224824759",
+                            Phone = "5260-523-340",
+                            SurName = "Arredondo"
                         },
                         new
                         {
                             Id = 54,
-                            Address = "Ultramarinos",
-                            Company = "Incorregible",
-                            Email = "Isabela52@corpfolder.com",
-                            Name = "Isabela",
-                            Nit = "298934264",
-                            Phone = "506335144",
-                            SurName = "Lebrón"
+                            Address = "Joyería & Jardín",
+                            Company = "Descerrajar",
+                            Email = "Claudio.Sierra18@corpfolder.com",
+                            Name = "Claudio",
+                            Nit = "227858387",
+                            Phone = "591 637 513",
+                            SurName = "Sierra"
                         },
                         new
                         {
                             Id = 55,
-                            Address = "Juegos & Kids",
-                            Company = "Geneático",
-                            Email = "AnaVictoria44@gmail.com",
+                            Address = "Deportes, Películas & Deportes",
+                            Company = "Ficha",
+                            Email = "AnaVictoria60@nearbpo.com",
                             Name = "Ana Victoria",
-                            Nit = "209073225",
-                            Phone = "586 189 983",
-                            SurName = "Garrido"
+                            Nit = "158195280",
+                            Phone = "5563-476-994",
+                            SurName = "Munguía"
                         },
                         new
                         {
                             Id = 56,
-                            Address = "Automoción & Ordenadores",
-                            Company = "Geminación",
-                            Email = "Mariano39@nearbpo.com",
-                            Name = "Mariano",
-                            Nit = "162588097",
-                            Phone = "510101520",
-                            SurName = "Alvarado"
+                            Address = "Juegos & Hogar",
+                            Company = "Incrustación",
+                            Email = "Amalia92@hotmail.com",
+                            Name = "Amalia",
+                            Nit = "242572944",
+                            Phone = "595546393",
+                            SurName = "Valdivia"
                         },
                         new
                         {
                             Id = 57,
-                            Address = "Salud & Joyería",
-                            Company = "Engarmarse",
-                            Email = "Victoria.Mena@nearbpo.com",
-                            Name = "Victoria",
-                            Nit = "101820658",
-                            Phone = "549 750 682",
-                            SurName = "Mena"
+                            Address = "Películas, Jardín & Aire libre",
+                            Company = "Bástulo",
+                            Email = "Ignacio_Grijalva75@corpfolder.com",
+                            Name = "Ignacio",
+                            Nit = "211531545",
+                            Phone = "582497430",
+                            SurName = "Grijalva"
                         },
                         new
                         {
                             Id = 58,
-                            Address = "Aire libre, Industrial & Música",
-                            Company = "Fichero",
-                            Email = "Amalia62@gmail.com",
-                            Name = "Amalia",
-                            Nit = "205190294",
-                            Phone = "508 972 238",
-                            SurName = "Ayala"
+                            Address = "Joyería, Salud & Ultramarinos",
+                            Company = "Engarmarse",
+                            Email = "Yamileth_Karan@yahoo.com",
+                            Name = "Yamileth",
+                            Nit = "254551726",
+                            Phone = "540.098.200",
+                            SurName = "Karan"
                         },
                         new
                         {
                             Id = 59,
-                            Address = "Libros & Ultramarinos",
-                            Company = "Batalloso",
-                            Email = "MariaElena.Jasso75@gmail.com",
-                            Name = "María Elena",
-                            Nit = "154049395",
-                            Phone = "558.866.091",
-                            SurName = "Jasso"
+                            Address = "Aire libre, Deportes & Electrónica",
+                            Company = "Fiducia",
+                            Email = "Horacio.Reyna@corpfolder.com",
+                            Name = "Horacio",
+                            Nit = "107499568",
+                            Phone = "506.055.498",
+                            SurName = "Reyna"
                         },
                         new
                         {
                             Id = 60,
-                            Address = "Hogar & Zapatos",
-                            Company = "Geminado",
-                            Email = "Pedro_Rendon65@yahoo.com",
-                            Name = "Pedro",
-                            Nit = "248132490",
-                            Phone = "557578792",
-                            SurName = "Rendón"
+                            Address = "Belleza",
+                            Company = "Desciframiento",
+                            Email = "JoseEduardo47@hotmail.com",
+                            Name = "José Eduardo",
+                            Nit = "234237287",
+                            Phone = "527627189",
+                            SurName = "Espinal"
                         },
                         new
                         {
                             Id = 61,
-                            Address = "Deportes",
-                            Company = "Increado",
-                            Email = "Fatima.Hernadez29@nearbpo.com",
-                            Name = "Fatima",
-                            Nit = "200281950",
-                            Phone = "5925-584-935",
-                            SurName = "Hernádez"
+                            Address = "Juegos, Joyería & Belleza",
+                            Company = "Bateador",
+                            Email = "Sara.Negron@nearbpo.com",
+                            Name = "Sara",
+                            Nit = "245824065",
+                            Phone = "504.812.427",
+                            SurName = "Negrón"
                         },
                         new
                         {
                             Id = 62,
-                            Address = "Joyería & Joyería",
-                            Company = "Céndea",
-                            Email = "Zoe_Valverde@gmail.com",
-                            Name = "Zoe",
-                            Nit = "260516074",
-                            Phone = "589.140.882",
-                            SurName = "Valverde"
+                            Address = "Herramientas",
+                            Company = "Engarrar",
+                            Email = "Claudio.Acevedo@nearbpo.com",
+                            Name = "Claudio",
+                            Nit = "232978182",
+                            Phone = "588.146.127",
+                            SurName = "Acevedo"
                         },
                         new
                         {
                             Id = 63,
-                            Address = "Ropa, Juegos & Películas",
-                            Company = "Batallona",
-                            Email = "Maricarmen_Alvarado74@nearbpo.com",
-                            Name = "Maricarmen",
-                            Nit = "171323173",
-                            Phone = "5557-858-248",
-                            SurName = "Alvarado"
+                            Address = "Zapatos & Salud",
+                            Company = "Cenceño",
+                            Email = "Camila.Cortez@nearbpo.com",
+                            Name = "Camila",
+                            Nit = "222974583",
+                            Phone = "522 310 790",
+                            SurName = "Cortez"
                         },
                         new
                         {
                             Id = 64,
-                            Address = "Joyería",
-                            Company = "Gemonias",
-                            Email = "Irene6@hotmail.com",
-                            Name = "Irene",
-                            Nit = "225611783",
-                            Phone = "540 326 045",
-                            SurName = "Aranda"
+                            Address = "Baby, Zapatos & Baby",
+                            Company = "Incruentamente",
+                            Email = "Esmeralda.Quiroz24@nearbpo.com",
+                            Name = "Esmeralda",
+                            Nit = "101011210",
+                            Phone = "553797441",
+                            SurName = "Quiroz"
                         },
                         new
                         {
                             Id = 65,
-                            Address = "Zapatos",
-                            Company = "Abajar",
-                            Email = "Alberto_Prieto@nearbpo.com",
-                            Name = "Alberto",
-                            Nit = "159053668",
-                            Phone = "5294-901-541",
-                            SurName = "Prieto"
+                            Address = "Libros",
+                            Company = "Batalloso",
+                            Email = "Kimberly.Escobedo@yahoo.com",
+                            Name = "Kimberly",
+                            Nit = "206875320",
+                            Phone = "5395-024-330",
+                            SurName = "Escobedo"
                         },
                         new
                         {
                             Id = 66,
-                            Address = "Ordenadores",
-                            Company = "Fichero",
-                            Email = "Mayte_Mireles77@hotmail.com",
-                            Name = "Mayte",
-                            Nit = "210745819",
-                            Phone = "5998-688-020",
-                            SurName = "Mireles"
+                            Address = "Juegos, Juegos & Joyería",
+                            Company = "Ficticio",
+                            Email = "Lilia.Vaca68@gmail.com",
+                            Name = "Lilia",
+                            Nit = "224627619",
+                            Phone = "573 637 910",
+                            SurName = "Vaca"
                         },
                         new
                         {
                             Id = 67,
-                            Address = "Salud",
-                            Company = "Cenero",
-                            Email = "Luz54@gmail.com",
-                            Name = "Luz",
-                            Nit = "126414335",
-                            Phone = "5359-434-688",
-                            SurName = "Palomo"
+                            Address = "Jardín & Aire libre",
+                            Company = "Incorporar",
+                            Email = "Hugo.Aleman1@hotmail.com",
+                            Name = "Hugo",
+                            Nit = "197176259",
+                            Phone = "5384-542-047",
+                            SurName = "Alemán"
                         },
                         new
                         {
                             Id = 68,
-                            Address = "Música, Jardín & Juguetes",
-                            Company = "Céndea",
-                            Email = "Isaac2@nearbpo.com",
-                            Name = "Isaac",
-                            Nit = "148704336",
-                            Phone = "508285702",
-                            SurName = "Korta"
+                            Address = "Deportes, Salud & Libros",
+                            Company = "Engarbullar",
+                            Email = "Alfredo_Nazario42@nearbpo.com",
+                            Name = "Alfredo",
+                            Nit = "206219148",
+                            Phone = "546.816.289",
+                            SurName = "Nazario"
                         },
                         new
                         {
                             Id = 69,
-                            Address = "Ropa, Música & Automoción",
-                            Company = "Engastar",
-                            Email = "Roberto85@nearbpo.com",
-                            Name = "Roberto",
-                            Nit = "164474455",
-                            Phone = "549 259 080",
-                            SurName = "Rodrígez"
+                            Address = "Joyería",
+                            Company = "Abadí",
+                            Email = "Liliana28@nearbpo.com",
+                            Name = "Liliana",
+                            Nit = "216905567",
+                            Phone = "510048914",
+                            SurName = "Lebrón"
                         },
                         new
                         {
                             Id = 70,
-                            Address = "Deportes",
-                            Company = "Genciana",
-                            Email = "Carmen_Saldivar37@hotmail.com",
-                            Name = "Carmen",
-                            Nit = "291655165",
-                            Phone = "512.578.020",
-                            SurName = "Saldivar"
+                            Address = "Automoción & Música",
+                            Company = "Fiducia",
+                            Email = "Mario_Angulo61@yahoo.com",
+                            Name = "Mario",
+                            Nit = "194462544",
+                            Phone = "5874-093-188",
+                            SurName = "Angulo"
                         },
                         new
                         {
                             Id = 71,
-                            Address = "Belleza & Zapatos",
-                            Company = "Descentralizar",
-                            Email = "Veronica89@gmail.com",
-                            Name = "Verónica",
-                            Nit = "151951306",
-                            Phone = "586634002",
-                            SurName = "Meléndez"
+                            Address = "Música & Hogar",
+                            Company = "Descerar",
+                            Email = "JoseAntonio.Leal@corpfolder.com",
+                            Name = "José Antonio",
+                            Nit = "295951206",
+                            Phone = "520.572.600",
+                            SurName = "Leal"
                         },
                         new
                         {
                             Id = 72,
-                            Address = "Automoción & Herramientas",
-                            Company = "Incorrupto",
-                            Email = "Marcela_Ruelas@gmail.com",
-                            Name = "Marcela",
-                            Nit = "219314276",
-                            Phone = "506 488 811",
-                            SurName = "Ruelas"
+                            Address = "Electrónica & Música",
+                            Company = "Fichaje",
+                            Email = "MariaFernanda23@nearbpo.com",
+                            Name = "María Fernanda",
+                            Nit = "208660062",
+                            Phone = "533 612 019",
+                            SurName = "Montañez"
                         },
                         new
                         {
                             Id = 73,
-                            Address = "Herramientas",
-                            Company = "Abajeño",
-                            Email = "Teodoro.Saldana89@gmail.com",
-                            Name = "Teodoro",
-                            Nit = "214633772",
-                            Phone = "5870-575-362",
-                            SurName = "Saldaña"
+                            Address = "Ordenadores & Música",
+                            Company = "Gemiquear",
+                            Email = "Jeronimo_Soria33@nearbpo.com",
+                            Name = "Jerónimo",
+                            Nit = "277192960",
+                            Phone = "5996-798-550",
+                            SurName = "Soria"
                         },
                         new
                         {
                             Id = 74,
-                            Address = "Zapatos & Baby",
-                            Company = "Descentralizador",
-                            Email = "Sonia.Medrano@nearbpo.com",
-                            Name = "Sonia",
-                            Nit = "241510104",
-                            Phone = "591.078.940",
-                            SurName = "Medrano"
+                            Address = "Electrónica & Baby",
+                            Company = "Genealogía",
+                            Email = "DulceMaria41@nearbpo.com",
+                            Name = "Dulce María",
+                            Nit = "234553669",
+                            Phone = "595.037.311",
+                            SurName = "Galindo"
                         },
                         new
                         {
                             Id = 75,
-                            Address = "Kids & Deportes",
-                            Company = "Descentrar",
-                            Email = "JuanPablo.Mercado48@gmail.com",
-                            Name = "Juan Pablo",
-                            Nit = "106043951",
-                            Phone = "594623285",
-                            SurName = "Mercado"
+                            Address = "Kids, Música & Juguetes",
+                            Company = "Incristalizable",
+                            Email = "MariadelCarmen33@corpfolder.com",
+                            Name = "María del Carmen",
+                            Nit = "179303961",
+                            Phone = "539.866.487",
+                            SurName = "Cazares"
                         },
                         new
                         {
                             Id = 76,
-                            Address = "Ultramarinos",
-                            Company = "Incorporar",
-                            Email = "Alexis70@yahoo.com",
-                            Name = "Alexis",
-                            Nit = "160345545",
-                            Phone = "576 242 863",
-                            SurName = "Baeza"
+                            Address = "Jardín, Zapatos & Kids",
+                            Company = "Cencerro",
+                            Email = "Vanessa.Suarez@nearbpo.com",
+                            Name = "Vanessa",
+                            Nit = "252754115",
+                            Phone = "523 810 275",
+                            SurName = "Suárez"
                         },
                         new
                         {
                             Id = 77,
-                            Address = "Juegos",
-                            Company = "Abacorar",
-                            Email = "JoseMaria.Granados@nearbpo.com",
-                            Name = "José María",
-                            Nit = "296830372",
-                            Phone = "5162-179-200",
-                            SurName = "Granados"
+                            Address = "Automoción & Ultramarinos",
+                            Company = "Cencapa",
+                            Email = "Antonia53@yahoo.com",
+                            Name = "Antonia",
+                            Nit = "209707461",
+                            Phone = "5058-017-153",
+                            SurName = "Corona"
                         },
                         new
                         {
                             Id = 78,
-                            Address = "Joyería",
-                            Company = "Deschavetarse",
-                            Email = "Estefania_Carrasco86@gmail.com",
-                            Name = "Estefanía",
-                            Nit = "205666990",
-                            Phone = "5472-443-237",
-                            SurName = "Carrasco"
+                            Address = "Películas, Zapatos & Jardín",
+                            Company = "Abacería",
+                            Email = "Emilio_Casas@yahoo.com",
+                            Name = "Emilio",
+                            Nit = "106184350",
+                            Phone = "560981912",
+                            SurName = "Casas"
                         },
                         new
                         {
                             Id = 79,
-                            Address = "Hogar",
-                            Company = "Descervigamiento",
-                            Email = "Mauricio.Rivas@nearbpo.com",
-                            Name = "Mauricio",
-                            Nit = "202406687",
-                            Phone = "547.929.349",
-                            SurName = "Rivas"
+                            Address = "Jardín & Zapatos",
+                            Company = "Gemiquear",
+                            Email = "Estefania96@nearbpo.com",
+                            Name = "Estefanía",
+                            Nit = "189671726",
+                            Phone = "593.994.909",
+                            SurName = "Maestas"
                         },
                         new
                         {
                             Id = 80,
-                            Address = "Joyería & Ultramarinos",
-                            Company = "Gemíparo",
-                            Email = "Regina.Borrego@nearbpo.com",
-                            Name = "Regina",
-                            Nit = "205201326",
-                            Phone = "516 447 746",
-                            SurName = "Borrego"
-                        },
-                        new
-                        {
-                            Id = 81,
-                            Address = "Zapatos & Salud",
-                            Company = "Descifrador",
-                            Email = "Laura_Hernadez@corpfolder.com",
-                            Name = "Laura",
-                            Nit = "203160282",
-                            Phone = "544 647 096",
-                            SurName = "Hernádez"
-                        },
-                        new
-                        {
-                            Id = 82,
-                            Address = "Hogar",
-                            Company = "Incorregibilidad",
-                            Email = "Juan.Karam@corpfolder.com",
-                            Name = "Juan",
-                            Nit = "196853915",
-                            Phone = "522580775",
-                            SurName = "Karam"
-                        },
-                        new
-                        {
-                            Id = 83,
-                            Address = "Electrónica & Música",
-                            Company = "Bataola",
-                            Email = "AngelGabriel96@gmail.com",
-                            Name = "Ángel Gabriel",
-                            Nit = "294503889",
-                            Phone = "526.509.550",
-                            SurName = "Muñoz"
-                        },
-                        new
-                        {
-                            Id = 84,
-                            Address = "Deportes & Jardín",
-                            Company = "Cendradilla",
-                            Email = "Maximiliano.Calvillo9@corpfolder.com",
-                            Name = "Maximiliano",
-                            Nit = "230469582",
-                            Phone = "571744558",
-                            SurName = "Calvillo"
-                        },
-                        new
-                        {
-                            Id = 85,
-                            Address = "Automoción",
-                            Company = "Descharchar",
-                            Email = "MariaCristina47@corpfolder.com",
-                            Name = "María Cristina",
-                            Nit = "115809783",
-                            Phone = "535.537.643",
-                            SurName = "Laboy"
-                        },
-                        new
-                        {
-                            Id = 86,
-                            Address = "Juegos",
-                            Company = "Descerebrar",
-                            Email = "Rosario_Colon57@nearbpo.com",
-                            Name = "Rosario",
-                            Nit = "145895858",
-                            Phone = "563 031 115",
-                            SurName = "Colón"
-                        },
-                        new
-                        {
-                            Id = 87,
-                            Address = "Baby, Jardín & Kids",
-                            Company = "Abada",
-                            Email = "Mariana23@corpfolder.com",
-                            Name = "Mariana",
-                            Nit = "117141720",
-                            Phone = "5038-729-627",
-                            SurName = "Serrato"
-                        },
-                        new
-                        {
-                            Id = 88,
-                            Address = "Herramientas & Deportes",
-                            Company = "Cenceño",
-                            Email = "Ivan.Cortes78@corpfolder.com",
-                            Name = "Ivan",
-                            Nit = "276789466",
-                            Phone = "566098330",
-                            SurName = "Cortés"
-                        },
-                        new
-                        {
-                            Id = 89,
-                            Address = "Juguetes",
-                            Company = "Bataola",
-                            Email = "Sergio69@gmail.com",
-                            Name = "Sergio",
-                            Nit = "128380110",
-                            Phone = "501.229.880",
-                            SurName = "Bernal"
-                        },
-                        new
-                        {
-                            Id = 90,
-                            Address = "Kids, Juguetes & Electrónica",
-                            Company = "Gendarmería",
-                            Email = "Andres.Valentin@yahoo.com",
-                            Name = "Andrés",
-                            Nit = "112693946",
-                            Phone = "578.123.869",
-                            SurName = "Valentín"
-                        },
-                        new
-                        {
-                            Id = 91,
-                            Address = "Salud & Electrónica",
-                            Company = "Gemiquear",
-                            Email = "Ivanna.Camarillo@yahoo.com",
-                            Name = "Ivanna",
-                            Nit = "205404006",
-                            Phone = "567.521.923",
-                            SurName = "Camarillo"
-                        },
-                        new
-                        {
-                            Id = 92,
-                            Address = "Jardín, Salud & Juguetes",
-                            Company = "Cenero",
-                            Email = "Valeria_Kanea86@corpfolder.com",
-                            Name = "Valeria",
-                            Nit = "224450697",
-                            Phone = "590304230",
-                            SurName = "Kanea"
-                        },
-                        new
-                        {
-                            Id = 93,
-                            Address = "Electrónica & Belleza",
-                            Company = "Fideo",
-                            Email = "Monserrat1@nearbpo.com",
-                            Name = "Monserrat",
-                            Nit = "217345387",
-                            Phone = "536065526",
-                            SurName = "Márquez"
-                        },
-                        new
-                        {
-                            Id = 94,
-                            Address = "Electrónica",
-                            Company = "Genealogista",
-                            Email = "Emily8@hotmail.com",
-                            Name = "Emily",
-                            Nit = "198168802",
-                            Phone = "575 983 692",
-                            SurName = "Tejeda"
-                        },
-                        new
-                        {
-                            Id = 95,
-                            Address = "Herramientas, Automoción & Electrónica",
-                            Company = "Batayola",
-                            Email = "Leonor98@yahoo.com",
-                            Name = "Leonor",
-                            Nit = "139214968",
-                            Phone = "502227645",
+                            Address = "Aire libre, Deportes & Belleza",
+                            Company = "Ficción",
+                            Email = "Claudia.Arenas@gmail.com",
+                            Name = "Claudia",
+                            Nit = "233174559",
+                            Phone = "5459-494-609",
                             SurName = "Arenas"
                         },
                         new
                         {
+                            Id = 81,
+                            Address = "Música",
+                            Company = "Cenegar",
+                            Email = "Eloisa.Koenig@corpfolder.com",
+                            Name = "Eloisa",
+                            Nit = "201666839",
+                            Phone = "548 160 568",
+                            SurName = "Koenig"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            Address = "Aire libre",
+                            Company = "Cenestesia",
+                            Email = "FranciscoJavier51@nearbpo.com",
+                            Name = "Francisco Javier",
+                            Nit = "107892154",
+                            Phone = "504.393.272",
+                            SurName = "Sanabria"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            Address = "Electrónica & Juegos",
+                            Company = "Ceneque",
+                            Email = "MariaTeresa.Alcaraz@hotmail.com",
+                            Name = "María Teresa",
+                            Nit = "155040626",
+                            Phone = "561873928",
+                            SurName = "Alcaraz"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            Address = "Ropa, Aire libre & Baby",
+                            Company = "Abaldonamiento",
+                            Email = "Tomas_Kortajarena20@hotmail.com",
+                            Name = "Tomás",
+                            Nit = "189909374",
+                            Phone = "502420802",
+                            SurName = "Kortajarena"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            Address = "Baby, Deportes & Libros",
+                            Company = "Descerco",
+                            Email = "Araceli81@yahoo.com",
+                            Name = "Araceli",
+                            Nit = "145184870",
+                            Phone = "5562-747-434",
+                            SurName = "Ceja"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Address = "Baby",
+                            Company = "Cencerrillas",
+                            Email = "Isaac_Alvarado59@corpfolder.com",
+                            Name = "Isaac",
+                            Nit = "165080329",
+                            Phone = "572.305.060",
+                            SurName = "Alvarado"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Address = "Baby",
+                            Company = "Increpación",
+                            Email = "Cecilia49@gmail.com",
+                            Name = "Cecilia",
+                            Nit = "174288565",
+                            Phone = "5686-436-730",
+                            SurName = "Cisneros"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            Address = "Deportes, Joyería & Joyería",
+                            Company = "Incorporal",
+                            Email = "LuisAngel68@corpfolder.com",
+                            Name = "Luis Ángel",
+                            Nit = "113432151",
+                            Phone = "5649-626-657",
+                            SurName = "Arenas"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Address = "Herramientas & Juguetes",
+                            Company = "Incremento",
+                            Email = "Ruben_Sevilla@yahoo.com",
+                            Name = "Rubén",
+                            Nit = "284007315",
+                            Phone = "518860279",
+                            SurName = "Sevilla"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Address = "Juegos & Hogar",
+                            Company = "Cencerreo",
+                            Email = "Luz.Robles43@gmail.com",
+                            Name = "Luz",
+                            Nit = "246649577",
+                            Phone = "507795075",
+                            SurName = "Robles"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Address = "Juguetes, Herramientas & Aire libre",
+                            Company = "Géminis",
+                            Email = "Enrique.Suarez@hotmail.com",
+                            Name = "Enrique",
+                            Nit = "164101675",
+                            Phone = "509 587 194",
+                            SurName = "Suárez"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Address = "Zapatos",
+                            Company = "Engarrafar",
+                            Email = "Ester.Urena67@corpfolder.com",
+                            Name = "Ester",
+                            Nit = "115070680",
+                            Phone = "577739930",
+                            SurName = "Ureña"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Address = "Jardín, Belleza & Hogar",
+                            Company = "Descifrar",
+                            Email = "Jennifer28@hotmail.com",
+                            Name = "Jennifer",
+                            Nit = "238601030",
+                            Phone = "556.732.826",
+                            SurName = "Solorzano"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            Address = "Aire libre, Kids & Ordenadores",
+                            Company = "Gencianáceo",
+                            Email = "David75@nearbpo.com",
+                            Name = "David",
+                            Nit = "179342258",
+                            Phone = "5980-063-508",
+                            SurName = "Preciado"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            Address = "Libros, Música & Ordenadores",
+                            Company = "Cenefa",
+                            Email = "Elsa_Kanaria98@hotmail.com",
+                            Name = "Elsa",
+                            Nit = "151824410",
+                            Phone = "570 179 044",
+                            SurName = "Kanaria"
+                        },
+                        new
+                        {
                             Id = 96,
-                            Address = "Belleza & Herramientas",
-                            Company = "Abadiato",
-                            Email = "Julia42@corpfolder.com",
-                            Name = "Julia",
-                            Nit = "272242454",
-                            Phone = "522 854 183",
-                            SurName = "Marín"
+                            Address = "Kids, Hogar & Jardín",
+                            Company = "Geminación",
+                            Email = "Erick_Escobedo29@gmail.com",
+                            Name = "Erick",
+                            Nit = "186366426",
+                            Phone = "518323287",
+                            SurName = "Escobedo"
                         },
                         new
                         {
                             Id = 97,
-                            Address = "Películas, Ropa & Aire libre",
-                            Company = "Ficción",
-                            Email = "Isabela.Romo24@nearbpo.com",
-                            Name = "Isabela",
-                            Nit = "275790380",
-                            Phone = "5320-334-139",
-                            SurName = "Romo"
+                            Address = "Kids, Películas & Kids",
+                            Company = "Engarrafador",
+                            Email = "Adan17@corpfolder.com",
+                            Name = "Adán",
+                            Nit = "228639760",
+                            Phone = "5396-754-548",
+                            SurName = "Razo"
                         },
                         new
                         {
                             Id = 98,
-                            Address = "Aire libre, Industrial & Salud",
-                            Company = "Generalato",
-                            Email = "Salvador_Nino48@nearbpo.com",
-                            Name = "Salvador",
-                            Nit = "162869622",
-                            Phone = "538877835",
-                            SurName = "Niño"
+                            Address = "Películas",
+                            Company = "Cencapa",
+                            Email = "Victoria40@corpfolder.com",
+                            Name = "Victoria",
+                            Nit = "172081971",
+                            Phone = "565405517",
+                            SurName = "Cruz"
                         },
                         new
                         {
                             Id = 99,
-                            Address = "Juguetes & Juegos",
-                            Company = "Engarrafador",
-                            Email = "AngelGabriel_Olivo@nearbpo.com",
-                            Name = "Ángel Gabriel",
-                            Nit = "245202340",
-                            Phone = "502 377 111",
-                            SurName = "Olivo"
+                            Address = "Herramientas",
+                            Company = "Gémino",
+                            Email = "Margarita91@corpfolder.com",
+                            Name = "Margarita",
+                            Nit = "130219487",
+                            Phone = "519.018.304",
+                            SurName = "Casares"
                         },
                         new
                         {
                             Id = 100,
-                            Address = "Juguetes",
-                            Company = "Basural",
-                            Email = "Caridad26@yahoo.com",
-                            Name = "Caridad",
-                            Nit = "223240028",
-                            Phone = "510836302",
-                            SurName = "Carreón"
+                            Address = "Joyería & Deportes",
+                            Company = "Cenal",
+                            Email = "Elsa_Munoz43@corpfolder.com",
+                            Name = "Elsa",
+                            Nit = "166166898",
+                            Phone = "542 752 934",
+                            SurName = "Muñoz"
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.users", b =>
+            modelBuilder.Entity("Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -5604,721 +5604,721 @@ namespace RestServer.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "Abigail79@hotmail.com",
-                            Password = "Fideísmo",
-                            Role = "Mechanic"
+                            Email = "Lorenzo.Arteaga41@gmail.com",
+                            Password = "Abacorar",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 2,
-                            Email = "Diego.Venegas83@gmail.com",
-                            Password = "Batacazo",
-                            Role = "Recepcionist"
+                            Email = "Evelyn_Velasquez47@nearbpo.com",
+                            Password = "Batalán",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 3,
-                            Email = "AngelGabriel.Venegas@hotmail.com",
-                            Password = "Generacional",
+                            Email = "Patricia_Sanches@gmail.com",
+                            Password = "Gen",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 4,
-                            Email = "Ines_Delvalle@yahoo.com",
-                            Password = "Fiducia",
-                            Role = "Recepcionist"
+                            Email = "Raul_Angulo@hotmail.com",
+                            Password = "Cencido",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 5,
-                            Email = "MarcoAntonio.Nava@corpfolder.com",
-                            Password = "Incrementar",
+                            Email = "Cristian85@corpfolder.com",
+                            Password = "Ficha",
                             Role = "Recepcionist"
                         },
                         new
                         {
                             Id = 6,
-                            Email = "AngelDaniel29@nearbpo.com",
-                            Password = "Incorporalmente",
+                            Email = "Melany_Baeza@nearbpo.com",
+                            Password = "Engarrafar",
                             Role = "Mechanic"
                         },
                         new
                         {
                             Id = 7,
-                            Email = "Esmeralda.Gollum@gmail.com",
-                            Password = "Cencerrear",
-                            Role = "Mechanic"
+                            Email = "Elisa.Montero@hotmail.com",
+                            Password = "Descifre",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 8,
-                            Email = "Emiliano80@yahoo.com",
-                            Password = "Cendalí",
-                            Role = "Recepcionist"
+                            Email = "Kevin.Guerrero@nearbpo.com",
+                            Password = "Batanero",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 9,
-                            Email = "Victoria_Rangel6@nearbpo.com",
-                            Password = "Batanero",
-                            Role = "Recepcionist"
+                            Email = "Vanessa.Robles80@corpfolder.com",
+                            Password = "Engarbullar",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 10,
-                            Email = "Benito56@yahoo.com",
-                            Password = "Batallaroso",
+                            Email = "Graciela.Rincon93@hotmail.com",
+                            Password = "Desceñir",
                             Role = "Recepcionist"
                         },
                         new
                         {
                             Id = 11,
-                            Email = "Marcos0@hotmail.com",
-                            Password = "Batatazo",
-                            Role = "Administrator"
+                            Email = "Israel.Matias86@gmail.com",
+                            Password = "Generalidad",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 12,
-                            Email = "Florencia44@yahoo.com",
-                            Password = "Incorrupto",
+                            Email = "JoseMaria.Carrion82@corpfolder.com",
+                            Password = "Fideicomisario",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 13,
-                            Email = "Olivia.Caballero57@corpfolder.com",
-                            Password = "Incorrupto",
+                            Email = "JuanPablo_Quintanilla57@gmail.com",
+                            Password = "Céndea",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 14,
-                            Email = "Magdalena_Zavala@nearbpo.com",
-                            Password = "Engarzadura",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Email = "Elizabeth_Laboy@corpfolder.com",
-                            Password = "Cencío",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Email = "Brandon_Trevino@yahoo.com",
-                            Password = "Batanero",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Email = "Alfredo.Vera@gmail.com",
-                            Password = "Batallona",
+                            Email = "Ignacio_Cantu@gmail.com",
+                            Password = "Desciframiento",
                             Role = "Mechanic"
                         },
                         new
                         {
-                            Id = 18,
-                            Email = "Liliana.Zapata@nearbpo.com",
+                            Id = 15,
+                            Email = "Emilia.Montano87@hotmail.com",
                             Password = "Bataola",
                             Role = "Mechanic"
                         },
                         new
                         {
-                            Id = 19,
-                            Email = "Daniela_Bonilla79@corpfolder.com",
-                            Password = "Abacero",
+                            Id = 16,
+                            Email = "Oscar16@hotmail.com",
+                            Password = "Basurero",
                             Role = "Recepcionist"
                         },
                         new
                         {
+                            Id = 17,
+                            Email = "David23@yahoo.com",
+                            Password = "Gemoterapia",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Email = "Tadeo26@hotmail.com",
+                            Password = "Batanear",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Email = "David.Castaneda@yahoo.com",
+                            Password = "Abadía",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
                             Id = 20,
-                            Email = "AlondraRomina41@yahoo.com",
-                            Password = "Abadesa",
-                            Role = "Mechanic"
+                            Email = "Daniel_Briseno@hotmail.com",
+                            Password = "Desciframiento",
+                            Role = "Recepcionist"
                         },
                         new
                         {
                             Id = 21,
-                            Email = "Evelyn52@nearbpo.com",
-                            Password = "Cendra",
+                            Email = "Julia_Aguilera42@nearbpo.com",
+                            Password = "Engargolado",
                             Role = "Mechanic"
                         },
                         new
                         {
                             Id = 22,
-                            Email = "Juana9@corpfolder.com",
-                            Password = "Incorruptamente",
+                            Email = "Soledad64@nearbpo.com",
+                            Password = "Cencerril",
                             Role = "Mechanic"
                         },
                         new
                         {
                             Id = 23,
-                            Email = "Iker_Saldana@corpfolder.com",
-                            Password = "Generable",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Email = "Carlos_Lozada79@nearbpo.com",
-                            Password = "Basurero",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Email = "Benito53@nearbpo.com",
-                            Password = "Ficción",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Email = "Luisa_Ojeda51@gmail.com",
-                            Password = "Cencerrada",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Email = "Regina_Xiana@gmail.com",
-                            Password = "Engargantar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Email = "Federico.Zamarripa51@hotmail.com",
-                            Password = "Engaritar",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Email = "Oscar_Gracia24@hotmail.com",
-                            Password = "Deschavetado",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Email = "Carmen.Guerra63@yahoo.com",
-                            Password = "Descepar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Email = "Tadeo.Dominguez@nearbpo.com",
-                            Password = "Engastar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Email = "Alberto_Heredia27@yahoo.com",
-                            Password = "Incorruptibilidad",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Email = "AnaVictoria.Espinosa96@yahoo.com",
-                            Password = "Incorregiblemente",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Email = "Mariano_Cavazos@nearbpo.com",
-                            Password = "Abacora",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Email = "Aaron.Delatorre@gmail.com",
-                            Password = "Increado",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Email = "Paulina_Beltran16@corpfolder.com",
-                            Password = "Cenata",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Email = "Ariadna.Henriquez64@gmail.com",
-                            Password = "Generacional",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Email = "Adela.Gutierrez18@hotmail.com",
-                            Password = "Incredibilidad",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Email = "Esperanza_Olivares@hotmail.com",
-                            Password = "Incorporalmente",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Email = "Juana.Valverde@nearbpo.com",
-                            Password = "Abadía",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Email = "Alexander78@gmail.com",
-                            Password = "Geminado",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Email = "Sergio45@corpfolder.com",
-                            Password = "Gemiqueo",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Email = "Teresa92@corpfolder.com",
-                            Password = "Gémino",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Email = "Norma.Polanco@hotmail.com",
-                            Password = "Batalla",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Email = "Ramona44@yahoo.com",
-                            Password = "Abajar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Email = "Aaron93@yahoo.com",
-                            Password = "Deschuponar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Email = "AnaMaria_Correa17@gmail.com",
-                            Password = "Abadía",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Email = "Concepcion_Quesada@gmail.com",
-                            Password = "Cenco",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Email = "Marcela79@corpfolder.com",
-                            Password = "Descifre",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Email = "Berta_Lerma@nearbpo.com",
-                            Password = "Incorregibilidad",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Email = "Jose_Ulibarri94@hotmail.com",
-                            Password = "Fidedigno",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Email = "Sergio.Otero@yahoo.com",
-                            Password = "Descensión",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Email = "Sancho31@yahoo.com",
-                            Password = "Abaco",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Email = "Isabela21@nearbpo.com",
-                            Password = "Abajamiento",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Email = "Aaron.Perales@gmail.com",
-                            Password = "Batanga",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Email = "Monserrat.Xiana18@yahoo.com",
-                            Password = "Incrementar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Email = "Teresa_Jurado@gmail.com",
-                            Password = "Incorpóreo",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Email = "Camila.Jaimes@yahoo.com",
-                            Password = "Generalidad",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Email = "JoseEmilio55@hotmail.com",
-                            Password = "Bastonear",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Email = "Jimena.Montes10@gmail.com",
-                            Password = "Generala",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Email = "Conchita97@yahoo.com",
-                            Password = "Incruentamente",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            Email = "Marta.Figueroa38@corpfolder.com",
-                            Password = "Cencerra",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Email = "Ramona_Muniz@yahoo.com",
-                            Password = "Incorporalmente",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Email = "Damian50@hotmail.com",
-                            Password = "Cenestesia",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Email = "LuisMiguel94@nearbpo.com",
-                            Password = "Batallar",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            Email = "Melissa75@nearbpo.com",
+                            Email = "Juana35@yahoo.com",
                             Password = "Cencerrillas",
                             Role = "Administrator"
                         },
                         new
                         {
-                            Id = 67,
-                            Email = "Antonio29@hotmail.com",
-                            Password = "Incorporar",
+                            Id = 24,
+                            Email = "XimenaGuadalupe.Almonte72@yahoo.com",
+                            Password = "Engarronar",
                             Role = "Recepcionist"
                         },
                         new
                         {
-                            Id = 68,
-                            Email = "Natalia_Aguirre@corpfolder.com",
-                            Password = "Abajadero",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            Email = "Pablo.Chacon@corpfolder.com",
-                            Password = "Fidelísimo",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            Email = "Martin_Velasco61@hotmail.com",
-                            Password = "Engasgarse",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            Email = "Diego_Ferrer@yahoo.com",
-                            Password = "Incorporeidad",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            Email = "Jacobo.Quiros@gmail.com",
-                            Password = "Descentralización",
+                            Id = 25,
+                            Email = "Adan_Lovato@corpfolder.com",
+                            Password = "Géminis",
                             Role = "Mechanic"
                         },
                         new
                         {
-                            Id = 73,
-                            Email = "Guadalupe_Caraballo@gmail.com",
-                            Password = "Increíblemente",
-                            Role = "Administrator"
+                            Id = 26,
+                            Email = "Iker31@hotmail.com",
+                            Password = "Incorregible",
+                            Role = "Mechanic"
                         },
                         new
                         {
-                            Id = 74,
-                            Email = "Monica.Quinterodelacruz@gmail.com",
-                            Password = "Abadiato",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            Email = "Horacio27@nearbpo.com",
-                            Password = "Incrédulo",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 76,
-                            Email = "JoseDaniel20@nearbpo.com",
+                            Id = 27,
+                            Email = "Alexander26@hotmail.com",
                             Password = "Abacería",
                             Role = "Mechanic"
                         },
                         new
                         {
-                            Id = 77,
-                            Email = "Pilar_Anguiano86@gmail.com",
-                            Password = "Abajo",
+                            Id = 28,
+                            Email = "Hernan_Caban28@hotmail.com",
+                            Password = "Cencerreo",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Email = "Emilia18@nearbpo.com",
+                            Password = "Incremento",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Email = "Raul.Tejada@yahoo.com",
+                            Password = "Engastadura",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Email = "Felipe.Leon@gmail.com",
+                            Password = "Descentralizar",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Email = "Mario77@hotmail.com",
+                            Password = "Genealógico",
                             Role = "Mechanic"
                         },
                         new
                         {
+                            Id = 33,
+                            Email = "Naomi25@hotmail.com",
+                            Password = "Gemíparo",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Email = "Angela.Reyna@yahoo.com",
+                            Password = "Abalar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Email = "Evelyn.Kortajarena@gmail.com",
+                            Password = "Geminar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Email = "MariadelosAngeles36@nearbpo.com",
+                            Password = "Incruento",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Email = "Rodrigo_Zambrano55@gmail.com",
+                            Password = "Abalada",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Email = "Timoteo_Sisneros44@nearbpo.com",
+                            Password = "Genealogía",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Email = "Dolores.Negrete@corpfolder.com",
+                            Password = "Fichar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Email = "Natalia89@yahoo.com",
+                            Password = "Cenal",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Email = "Micaela11@hotmail.com",
+                            Password = "Bátavo",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Email = "Sergio.Duran65@hotmail.com",
+                            Password = "Abadía",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Email = "Cesar36@nearbpo.com",
+                            Password = "Geminación",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Email = "Sebastian_Fonseca99@nearbpo.com",
+                            Password = "Descharchar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Email = "Fatima79@gmail.com",
+                            Password = "Descerrar",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Email = "Melany.Atencio@nearbpo.com",
+                            Password = "Generala",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Email = "LuisAngel64@hotmail.com",
+                            Password = "Batata",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Email = "MariadelCarmen1@yahoo.com",
+                            Password = "Incorrecto",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Email = "Virginia_Saavedra62@hotmail.com",
+                            Password = "Abajadero",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Email = "Adriana_Caraballo@corpfolder.com",
+                            Password = "Incorruptibilidad",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Email = "JorgeLuis_Berrios71@nearbpo.com",
+                            Password = "Engaritar",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Email = "Esteban.Rosales50@gmail.com",
+                            Password = "Descerebrar",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Email = "Maria.Avila49@hotmail.com",
+                            Password = "Cendrada",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Email = "Virginia87@yahoo.com",
+                            Password = "Ficticio",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Email = "Mario_Luna40@corpfolder.com",
+                            Password = "Engaste",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Email = "Adela_Avalos65@hotmail.com",
+                            Password = "Basurear",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Email = "MariaElena17@corpfolder.com",
+                            Password = "Batanear",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Email = "AngelGabriel_Marroquin86@corpfolder.com",
+                            Password = "General",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Email = "Axel72@yahoo.com",
+                            Password = "Cencerril",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Email = "Marcela64@gmail.com",
+                            Password = "Batato",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Email = "Horacio.Saiz@nearbpo.com",
+                            Password = "Cenefa",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Email = "AngelGabriel_Jimenez@nearbpo.com",
+                            Password = "Bastonada",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Email = "Patricio.Matias@nearbpo.com",
+                            Password = "Cenco",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Email = "Josefina25@nearbpo.com",
+                            Password = "Engastar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Email = "Gerardo4@hotmail.com",
+                            Password = "Engaritar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Email = "JorgeLuis.Vega50@corpfolder.com",
+                            Password = "Engargolado",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Email = "Zoe_Marroquin57@corpfolder.com",
+                            Password = "Cenal",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Email = "Amalia99@corpfolder.com",
+                            Password = "Cenefa",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Email = "Ivan.Toledo@corpfolder.com",
+                            Password = "Incorporal",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Email = "MariaTeresa_Rincon@corpfolder.com",
+                            Password = "Engarnio",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Email = "AnaMaria_Meza@nearbpo.com",
+                            Password = "Deschuponar",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Email = "Cristina_Delapaz45@corpfolder.com",
+                            Password = "Abacial",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Email = "FranciscoJavier18@nearbpo.com",
+                            Password = "Engastadura",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Email = "Vanessa_Alcaraz91@nearbpo.com",
+                            Password = "Céndea",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Email = "Diego.Camacho52@yahoo.com",
+                            Password = "Batata",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Email = "Isabel97@nearbpo.com",
+                            Password = "Abad",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Email = "JoseLuis.Montalvo@corpfolder.com",
+                            Password = "Engarmarse",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
                             Id = 78,
-                            Email = "VictorManuel85@hotmail.com",
-                            Password = "Incrementar",
+                            Email = "Cecilia.Longoria36@yahoo.com",
+                            Password = "Generala",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 79,
-                            Email = "Benito_Mejia@nearbpo.com",
-                            Password = "Incorrecto",
-                            Role = "Mechanic"
+                            Email = "Emiliano_Guzman23@yahoo.com",
+                            Password = "Cencha",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 80,
-                            Email = "Yamileth.Solorzano@corpfolder.com",
-                            Password = "Incorrupto",
-                            Role = "Recepcionist"
+                            Email = "Ana.Giron88@yahoo.com",
+                            Password = "Engaste",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 81,
-                            Email = "Jennifer.Delacruz@nearbpo.com",
-                            Password = "Engarce",
-                            Role = "Recepcionist"
+                            Email = "Samuel73@yahoo.com",
+                            Password = "Bateaguas",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 82,
-                            Email = "Miguel.Gallegos16@corpfolder.com",
-                            Password = "Descervigar",
-                            Role = "Mechanic"
+                            Email = "Marcela26@hotmail.com",
+                            Password = "Descifre",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 83,
-                            Email = "Beatriz_Pabon@nearbpo.com",
-                            Password = "Batalloso",
-                            Role = "Administrator"
+                            Email = "Elena.Ulloa27@yahoo.com",
+                            Password = "Fido",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 84,
-                            Email = "Kevin5@yahoo.com",
-                            Password = "Gencianáceo",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 85,
-                            Email = "Octavio.Menchaca@yahoo.com",
-                            Password = "Descepar",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 86,
-                            Email = "Elena.Menchaca11@hotmail.com",
-                            Password = "Cendrada",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 87,
-                            Email = "Sofia42@gmail.com",
-                            Password = "Gemología",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 88,
-                            Email = "Claudio52@nearbpo.com",
-                            Password = "Basurero",
-                            Role = "Mechanic"
-                        },
-                        new
-                        {
-                            Id = 89,
-                            Email = "Beatriz85@nearbpo.com",
-                            Password = "Incriminación",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 90,
-                            Email = "Zoe50@gmail.com",
-                            Password = "Engarbullar",
-                            Role = "Recepcionist"
-                        },
-                        new
-                        {
-                            Id = 91,
-                            Email = "Marilu.Gaona71@hotmail.com",
-                            Password = "Increíble",
-                            Role = "Administrator"
-                        },
-                        new
-                        {
-                            Id = 92,
-                            Email = "Victor75@gmail.com",
+                            Email = "MariaFernanda.Martinez@hotmail.com",
                             Password = "Engastador",
                             Role = "Recepcionist"
                         },
                         new
                         {
-                            Id = 93,
-                            Email = "Jacobo24@gmail.com",
-                            Password = "Cencuate",
+                            Id = 85,
+                            Email = "Guadalupe_Lucio@corpfolder.com",
+                            Password = "Batahola",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            Email = "Maricarmen20@hotmail.com",
+                            Password = "Incrasar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            Email = "Fatima30@gmail.com",
+                            Password = "Engaste",
                             Role = "Administrator"
                         },
                         new
                         {
+                            Id = 88,
+                            Email = "Marilu_Barreto89@nearbpo.com",
+                            Password = "Abadiado",
+                            Role = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            Email = "Fernando.Gastelum@yahoo.com",
+                            Password = "Descepar",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            Email = "Pilar_Ontiveros@nearbpo.com",
+                            Password = "Descerebrar",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            Email = "Adela72@corpfolder.com",
+                            Password = "Engargantar",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            Email = "Eva.Oquendo57@corpfolder.com",
+                            Password = "Céndea",
+                            Role = "Recepcionist"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            Email = "AnaMaria44@nearbpo.com",
+                            Password = "Descerco",
+                            Role = "Mechanic"
+                        },
+                        new
+                        {
                             Id = 94,
-                            Email = "Damian.Toro@corpfolder.com",
-                            Password = "Batallador",
+                            Email = "Luis_Osorio40@gmail.com",
+                            Password = "Incorrupción",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 95,
-                            Email = "Fatima50@nearbpo.com",
-                            Password = "Descerezar",
-                            Role = "Recepcionist"
+                            Email = "Agustin32@corpfolder.com",
+                            Password = "Engarbarse",
+                            Role = "Administrator"
                         },
                         new
                         {
                             Id = 96,
-                            Email = "Claudio.Mora58@corpfolder.com",
-                            Password = "Cendrado",
+                            Email = "Emilio.Monroy@gmail.com",
+                            Password = "Cencerril",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 97,
-                            Email = "Norma73@nearbpo.com",
-                            Password = "Ficoideo",
+                            Email = "Isabel81@hotmail.com",
+                            Password = "Engarrafar",
                             Role = "Administrator"
                         },
                         new
                         {
                             Id = 98,
-                            Email = "Carla.Barajas@yahoo.com",
-                            Password = "Batallar",
-                            Role = "Mechanic"
+                            Email = "Ivanna.Botello6@gmail.com",
+                            Password = "Incorregiblemente",
+                            Role = "Recepcionist"
                         },
                         new
                         {
                             Id = 99,
-                            Email = "JuanManuel_Delagarza2@hotmail.com",
-                            Password = "Fideísmo",
-                            Role = "Administrator"
+                            Email = "Vanessa14@gmail.com",
+                            Password = "Descepar",
+                            Role = "Mechanic"
                         },
                         new
                         {
                             Id = 100,
-                            Email = "VictorManuel25@hotmail.com",
-                            Password = "Cencerreo",
+                            Email = "Ximena.Munguia@gmail.com",
+                            Password = "Fidalgo",
                             Role = "Recepcionist"
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.administrators", b =>
+            modelBuilder.Entity("Domain.Entities.Administrator", b =>
                 {
-                    b.HasOne("Domain.Entities.users", "User")
+                    b.HasOne("Domain.Entities.User", "User")
                         .WithOne("Administrator")
-                        .HasForeignKey("Domain.Entities.administrators", "UserId");
+                        .HasForeignKey("Domain.Entities.Administrator", "UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.Entities.purchases", b =>
+            modelBuilder.Entity("Domain.Entities.Purchase", b =>
                 {
-                    b.HasOne("Domain.Entities.products", "Product")
+                    b.HasOne("Domain.Entities.Product", "Product")
                         .WithMany("purchases")
                         .HasForeignKey("ProductId");
 
-                    b.HasOne("Domain.Entities.suppliers", "Supplier")
+                    b.HasOne("Domain.Entities.Supplier", "Supplier")
                         .WithMany("purchases")
                         .HasForeignKey("SupplierId");
 
@@ -6327,26 +6327,26 @@ namespace RestServer.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Domain.Entities.recepcionists", b =>
+            modelBuilder.Entity("Domain.Entities.Recepcionist", b =>
                 {
-                    b.HasOne("Domain.Entities.users", "User")
+                    b.HasOne("Domain.Entities.User", "User")
                         .WithOne("Recepcionist")
-                        .HasForeignKey("Domain.Entities.recepcionists", "UserId");
+                        .HasForeignKey("Domain.Entities.Recepcionist", "UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.Entities.products", b =>
+            modelBuilder.Entity("Domain.Entities.Product", b =>
                 {
                     b.Navigation("purchases");
                 });
 
-            modelBuilder.Entity("Domain.Entities.suppliers", b =>
+            modelBuilder.Entity("Domain.Entities.Supplier", b =>
                 {
                     b.Navigation("purchases");
                 });
 
-            modelBuilder.Entity("Domain.Entities.users", b =>
+            modelBuilder.Entity("Domain.Entities.User", b =>
                 {
                     b.Navigation("Administrator");
 

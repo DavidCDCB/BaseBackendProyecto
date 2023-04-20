@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class users
+    [Table("users")]
+    public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,7 +20,7 @@ namespace Domain.Entities
         [Column("role")]
         public string? Role { get; set; }
 
-        public administrators? Administrator { get; set; }
-        public recepcionists? Recepcionist { get; set; }
+        public Administrator? Administrator { get; set; }
+        public Recepcionist? Recepcionist { get; set; }
     }
 }
