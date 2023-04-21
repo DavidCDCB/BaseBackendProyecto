@@ -99,6 +99,13 @@ namespace RestServer.Repositories
             }
             return encontrado;
         }
+        async Task<List<Payroll>> IPayrollRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<Payroll> payrolls = await this.dbContext.Payrolls!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)payrolls.Count / pageSize);
+            return (page <= totalPages) ? payrolls.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Payroll>();
+        }
 
     }
 }

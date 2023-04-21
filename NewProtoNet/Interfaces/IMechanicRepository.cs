@@ -11,5 +11,6 @@ namespace RestServer.Interfaces
         Task<Mechanic> UpdateMechanic(int id, MechanicDTO mechanic);
         Task<Mechanic> DeleteMechanic(int id);
         List<Mechanic> SeedMechanics(int size);
+        Task<List<Mechanic>> GetByPage(int page);
     }
 }

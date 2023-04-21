@@ -95,5 +95,11 @@ namespace RestServer.Controllers
             return Ok(eliminado);
 
         }
+        [HttpGet("page/{num}")]
+        public async Task<ActionResult> GetMechanicsByPage(int num)
+        {
+            List<Mechanic> mechanics = await this.mechanicRepository.GetByPage(num);
+            return mechanics.Count > 0 ? Ok(mechanics) : NoContent();
+        }
     }
 }

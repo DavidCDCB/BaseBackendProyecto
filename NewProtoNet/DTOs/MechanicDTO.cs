@@ -13,7 +13,7 @@ namespace RestServer.DTOs
         public double Commission { get; set; }
         public double Salary { get; set; }
         public int UserId { get; set; }
-        public ICollection<Payroll> Payrolls { get; set; }
-        public ICollection<Request> Requests { get; set; }
+        //public ICollection<Payroll> Payrolls { get; set; }
+        //public ICollection<Request> Requests { get; set; }
     }
 }

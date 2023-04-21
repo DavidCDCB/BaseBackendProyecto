@@ -103,5 +103,12 @@ namespace RestServer.Repositories
             return encontrado;
         }
 
+        async Task<List<Inconvenient>> IInconvenientRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<Inconvenient> inconvenients = await this.dbContext.Inconvenients!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)inconvenients.Count / pageSize);
+            return (page <= totalPages) ? inconvenients.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Inconvenient>();
+        }
     }
 }

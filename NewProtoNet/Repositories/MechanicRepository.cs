@@ -69,8 +69,8 @@ namespace RestServer.Repositories
                 Commission = mechanic.Commission,
                 Salary = mechanic.Salary,
                 UserId = mechanic.UserId,
-                Payrolls = mechanic.Payrolls,
-                Requests = mechanic.Requests
+                //Payrolls = mechanic.Payrolls,
+                //Requests = mechanic.Requests
             };
 
             await this.dbContext.Mechanics!.AddAsync(newMechanic);
@@ -96,8 +96,8 @@ namespace RestServer.Repositories
             encontrado.Commission = mechanic.Commission;
             encontrado.Salary = mechanic.Salary;
             encontrado.UserId = mechanic.UserId;
-            encontrado.Payrolls = mechanic.Payrolls;
-            encontrado.Requests = mechanic.Requests;
+            //encontrado.Payrolls = mechanic.Payrolls;
+            //encontrado.Requests = mechanic.Requests;
             await this.dbContext.SaveChangesAsync();
 
             return encontrado;
@@ -112,6 +112,13 @@ namespace RestServer.Repositories
                 this.dbContext.SaveChanges();
             }
             return encontrado;
+        }
+        async Task<List<Mechanic>> IMechanicRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<Mechanic> mechanics = await this.dbContext.Mechanics!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)mechanics.Count / pageSize);
+            return (page <= totalPages) ? mechanics.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Mechanic>();
         }
 
     }
