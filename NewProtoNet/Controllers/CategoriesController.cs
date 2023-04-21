@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RestServer.Data;
 using Domain.Entities.Base;
 
-namespace NewProtoNet.Controllers
+namespace RestServer.Controllers
 {
     public class CategoriesController : Controller
     {

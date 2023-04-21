@@ -30,6 +30,11 @@ builder.Services.AddSwaggerGen();
 
 // Se establece la inyección de dependencias para desacoplar el medio de persistencia
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<ISupplierRepository, SupplierRepository>();
+builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
+builder.Services.AddTransient<IClientRepository, ClientRepository>();
+builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
+builder.Services.AddTransient<IRequestRepository, RequestRepository>();
 builder.Services.AddTransient<IMechanicRepository, MechanicRepository>();
 builder.Services.AddTransient<IPayrollRepository, PayrollRepository>();
 builder.Services.AddTransient<IInconvenientRepository, InconvenientRepository>();

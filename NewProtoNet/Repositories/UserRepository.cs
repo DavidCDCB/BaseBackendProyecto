@@ -27,7 +27,7 @@ namespace RestServer.Repositories
           .RuleFor(m => m.Email, f => f.Person.Email)
           .RuleFor(m => m.Phone, f => f.Random.Number(100, 10000));
 
-      this.dbContext.RemoveRange(dbContext.Users);
+      this.dbContext.RemoveRange(dbContext.Users!);
 
       List<User> seedData = fakeData.Generate(size);
 
@@ -64,7 +64,7 @@ namespace RestServer.Repositories
       return usuario;
     }
 
-    async Task<User> IUserRepository.UpdateUser(int id, UserDTO user)
+    async Task<User?> IUserRepository.UpdateUser(int id, UserDTO user)
     {
       User? encontrado = await this.dbContext.Users!.FindAsync(id);
       if (encontrado == null)
