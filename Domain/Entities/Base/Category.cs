@@ -13,3 +13,4 @@ namespace Domain.Entities.Base
         public ICollection<Course>? Course { get; set; }
     }
 }
+>>>>>>> main
