@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuración para permitir el almacenamiento de elementos JSON anidados
+// Configuraciï¿½n para permitir el almacenamiento de elementos JSON anidados
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
     x.JsonSerializerOptions.WriteIndented = true;
@@ -17,7 +17,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 
-// Configuración promiscua de los CORS
+// Configuraciï¿½n promiscua de los CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
@@ -28,9 +28,16 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Se establece la inyección de dependencias para desacoplar el medio de persistencia
+// Se establece la inyecciï¿½n de dependencias para desacoplar el medio de persistencia
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IAdministratorRepository, AdministratorRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IPurchaseRepository, PurchaseRepository>();
+builder.Services.AddTransient<IRecepcionistRepository, RecepcionistRepository>();
 builder.Services.AddTransient<ISupplierRepository, SupplierRepository>();
+builder.Services.AddTransient<IReportRepository, ReportRepository>();
+
+//Dependencias externas David - Robin
 builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
 builder.Services.AddTransient<IClientRepository, ClientRepository>();
 builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
@@ -39,7 +46,7 @@ builder.Services.AddTransient<IMechanicRepository, MechanicRepository>();
 builder.Services.AddTransient<IPayrollRepository, PayrollRepository>();
 builder.Services.AddTransient<IInconvenientRepository, InconvenientRepository>();
 
-// Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
+// Se configura la librerï¿½a que usa el motor de la BD segï¿½n la cadena que hay en settings.json
 /*
 builder.Services.AddDbContext<BaseDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectString"))

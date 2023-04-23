@@ -39,25 +39,44 @@ namespace RestServer.Data
         {
         }
 
+        public DbSet<User>? Users { get; set; }
+        public DbSet<Report>? Reports { get; set; }
+        public DbSet<Administrator>? Administrators { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<Purchase>? Purchases { get; set; }
+        public DbSet<Recepcionist>? Recepcionists { get; set; }
+        public DbSet<Supplier>? Suppliers { get; set; }
+
+        // Se declaran las entidades externas David - Robin
         public DbSet<Client>? Clients { get; set; }
         public DbSet<Vehicle>? Vehicles { get; set; }
         public DbSet<Request>? Requests { get; set; }
         public DbSet<Service>? Services { get; set; }
-        public DbSet<Supplier>? Suppliers { get; set; }
-
-        public DbSet<User>? Users { get; set; }
-        public DbSet<Course>? Courses { get; set; }
-        public DbSet<Category>? Categories { get; set; }
-
         public DbSet<Mechanic>? Mechanics { get; set; }
         public DbSet<Inconvenient>? Inconvenients { get; set; }
         public DbSet<Payroll>? Payrolls { get; set; }
 
 
-
         // Se define cada una de la relaciones en cada migración
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Administrator>()
+                .HasOne(v => v.User)
+                .WithOne(c => c.Administrator);
+
+            modelBuilder.Entity<Recepcionist>()
+                .HasOne(v => v.User)
+                .WithOne(c => c.Recepcionist);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(v => v.purchases)
+                .WithOne(c => c.Product);
+
+            modelBuilder.Entity<Supplier>()
+                .HasMany(v => v.purchases)
+                .WithOne(c => c.Supplier);
+
+            //Relaciones de migración David - Robin
             // Cliente->Vehiculos
             modelBuilder.Entity<Client>()
               .HasMany(v => v.Vehicles)
@@ -94,29 +113,116 @@ namespace RestServer.Data
                 .WithOne(c => c.Request);
 
 
-            // Preveedor->Compras
-            // ...
-
-            modelBuilder.Entity<Client>().HasData(this.SeedClients());
+            modelBuilder.Entity<User>().HasData(this.SeedUsers());
             modelBuilder.Entity<Supplier>().HasData(this.SeedSuppliers());
+            modelBuilder.Entity<Report>().HasData(this.SeedReports());
+            modelBuilder.Entity<Administrator>().HasData(this.SeedAdministrators());
+            modelBuilder.Entity<Recepcionist>().HasData(this.SeedRecepcionists());
+            modelBuilder.Entity<Product>().HasData(this.SeedProducts());
+            modelBuilder.Entity<Purchase>().HasData(this.SeedPurchases());
+
+            //SearchOption declaran los model builder externos David - Robin
+            modelBuilder.Entity<Client>().HasData(this.SeedClients());
             modelBuilder.Entity<Vehicle>().HasData(this.SeedVehicles());
             modelBuilder.Entity<Service>().HasData(this.SeedServices());
             modelBuilder.Entity<Request>().HasData(this.SeedRequests());
-
             modelBuilder.Entity<Mechanic>().HasData(this.SeedMechanics());
             modelBuilder.Entity<Inconvenient>().HasData(this.SeedInconvenients());
             modelBuilder.Entity<Payroll>().HasData(this.SeedPayrolls());
-            /*
-            modelBuilder.Entity<User>()
-              .HasMany(c => c.Courses)
-              .WithMany(s => s.Users)
-              .UsingEntity(j => j.ToTable("UserCourses"));
-
-            // Se usa en caso de usar datos por defecto cuando se hace una migración
-            modelBuilder.Entity<User>().HasData(this.SeedUsers());*/
         }
 
-        // https://github.com/bchavez/Bogus
+
+        List<User> SeedUsers()
+        {
+            int ids = 1;
+            var rol = new[] { "Recepcionist", "Administrator", "Mechanic" };
+            Faker<User> fakeData = new Faker<User>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Email, f => f.Person.Email)
+              .RuleFor(m => m.Password, f => f.Lorem.Word())
+              .RuleFor(m => m.Role, f => f.PickRandom(rol));
+            return fakeData.Generate(100);
+        }
+
+        List<Supplier> SeedSuppliers()
+        {
+            int ids = 1;
+            Faker<Supplier> fakeData = new Faker<Supplier>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Nit, f => f.Person.Nif())
+              .RuleFor(m => m.Name, f => f.Person.FirstName)
+              .RuleFor(m => m.Company, f => f.Lorem.Word())
+              .RuleFor(m => m.SurName, f => f.Person.LastName)
+              .RuleFor(m => m.Phone, f => f.Person.Phone)
+              .RuleFor(m => m.Email, f => f.Person.Email)
+              .RuleFor(m => m.Address, f => f.Commerce.Department());
+            return fakeData.Generate(100);
+        }
+
+        List<Report> SeedReports()
+        {
+            int ids = 1;
+            var types = new[] { "Nómina", "Inventario", "Clientes", "Vehiculos" };
+            Faker<Report> fakeData = new Faker<Report>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Type, f => f.PickRandom(types));
+            return fakeData.Generate(100);
+        }
+
+        List<Administrator> SeedAdministrators()
+        {
+            int ids = 1;
+            Faker<Administrator> fakeData = new Faker<Administrator>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Name, f => f.Person.FirstName)
+              .RuleFor(m => m.Surname, f => f.Person.LastName)
+              .RuleFor(m => m.Phone, f => f.Person.Phone);
+            return fakeData.Generate(100);
+        }
+
+        List<Recepcionist> SeedRecepcionists()
+        {
+            int ids = 1;
+            Faker<Recepcionist> fakeData = new Faker<Recepcionist>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Name, f => f.Person.FirstName)
+              .RuleFor(m => m.Surname, f => f.Person.LastName)
+              .RuleFor(m => m.Phone, f => f.Person.Phone)
+              .RuleFor(m => m.Address, f => f.Commerce.Department())
+              .RuleFor(m => m.Salary, f => f.Random.Float(1000000, 5000000))
+              .RuleFor(m => m.Email, f => f.Person.Email);
+            return fakeData.Generate(100);
+        }
+
+        List<Product> SeedProducts()
+        {
+            int ids = 1;
+            Faker<Product> fakeData = new Faker<Product>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.Name, f => f.Commerce.ProductName())
+              .RuleFor(m => m.Code, f => f.Commerce.Ean13())
+              .RuleFor(m => m.Brand, f => f.Commerce.ProductAdjective())
+              .RuleFor(m => m.salePrice, f => f.Random.Float(300000, 700000))
+              .RuleFor(m => m.Quantity, f => f.Random.Int(1, 80))
+              .RuleFor(m => m.Description, f => f.Commerce.ProductDescription());
+            return fakeData.Generate(100);
+        }
+
+        List<Purchase> SeedPurchases()
+        {
+            int ids = 1;
+            Faker<Purchase> fakeData = new Faker<Purchase>("es_MX")
+              .RuleFor(m => m.Id, f => ids++)
+              .RuleFor(m => m.purchasePrice, f => f.Random.Float(100000, 500000))
+              .RuleFor(m => m.salePrice, f => f.Random.Float(100000, 500000))
+              .RuleFor(m => m.Quantity, f => f.Random.Int(1, 80))
+              .RuleFor(m => m.Description, f => f.Commerce.ProductDescription())
+              .RuleFor(m => m.Code, f => f.Commerce.Ean13())
+              .RuleFor(m => m.datePurchase, f => DateOnly.FromDateTime(f.Date.Past()));
+            return fakeData.Generate(100);
+        }
+
+        // Se crean las listas externas David - Robin
         List<Client> SeedClients()
         {
             int ids = 1;
@@ -128,21 +234,6 @@ namespace RestServer.Data
               .RuleFor(m => m.Email, f => f.Person.Email)
               .RuleFor(m => m.Address, f => f.Person.Address.Street)
               .RuleFor(m => m.Type, f => f.Lorem.Word());
-            return fakeData.Generate(100);
-        }
-
-        List<Supplier> SeedSuppliers()
-        {
-            int ids = 1;
-            Faker<Supplier> fakeData = new Faker<Supplier>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Nit, f => f.Random.Number(100, 1000).ToString())
-              .RuleFor(m => m.Name, f => f.Person.FirstName)
-              .RuleFor(m => m.SurName, f => f.Person.LastName)
-              .RuleFor(m => m.Phone, f => f.Person.Phone)
-              .RuleFor(m => m.Email, f => f.Person.Email)
-              .RuleFor(m => m.Address, f => f.Person.Address.Street)
-              .RuleFor(m => m.Company, f => f.Company.CompanyName());
             return fakeData.Generate(100);
         }
 
@@ -237,3 +328,4 @@ namespace RestServer.Data
         }
     }
 }
+

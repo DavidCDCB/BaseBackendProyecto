@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "NewProtoNet": {
+    "RestServer": {
       "commandName": "Project",
       "launchUrl": "swagger",
       "environmentVariables": {
