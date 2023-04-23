@@ -37,6 +37,15 @@ builder.Services.AddTransient<IRecepcionistRepository, RecepcionistRepository>()
 builder.Services.AddTransient<ISupplierRepository, SupplierRepository>();
 builder.Services.AddTransient<IReportRepository, ReportRepository>();
 
+//Dependencias externas David - Robin
+builder.Services.AddTransient<IVehicleRepository, VehicleRepository>();
+builder.Services.AddTransient<IClientRepository, ClientRepository>();
+builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
+builder.Services.AddTransient<IRequestRepository, RequestRepository>();
+builder.Services.AddTransient<IMechanicRepository, MechanicRepository>();
+builder.Services.AddTransient<IPayrollRepository, PayrollRepository>();
+builder.Services.AddTransient<IInconvenientRepository, InconvenientRepository>();
+
 // Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
 /*
 builder.Services.AddDbContext<BaseDbContext>(options => 
