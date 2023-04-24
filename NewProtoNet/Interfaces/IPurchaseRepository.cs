@@ -5,12 +5,12 @@ namespace RestServer.Interfaces
 {
     public interface IPurchaseRepository
     {
-        Task<List<Purchase>> GetPurchases();
+        Task<List<PurchaseDTO>> GetPurchases();
         Task<List<Purchase>> GetByPage(int page);
 
-        Task<Purchase> GetPurchase(int id);
-        Task<Purchase> PostPurchase(PurchaseDTO Purchase);
-        Task<Purchase> UpdatePurchase(int id, PurchaseDTO Purchase);
-        Task<Purchase> DeletePurchase(int id);
+        Task<PurchaseDTO> GetPurchase(int id);
+        Task<PurchaseDTO> PostPurchase(PurchaseDTO Purchase);
+        Task<PurchaseDTO> UpdatePurchase(int id, PurchaseDTO Purchase);
+        Task<PurchaseDTO> DeletePurchase(int id);
     }
 }

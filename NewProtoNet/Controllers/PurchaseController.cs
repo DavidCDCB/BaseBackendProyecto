@@ -22,17 +22,10 @@ namespace RestServer.Controllers
             return Ok(await this.PurchaseRepository.GetPurchases());
         }
 
-        [HttpGet("page/{num}")]
-        public async Task<ActionResult> GetPurchasesByPage(int num)
-        {
-            List<Purchase> Purchases = await this.PurchaseRepository.GetByPage(num);
-            return Purchases.Count > 0 ? Ok(Purchases) : NoContent();
-        }
-
         [HttpGet("{id}")]
         public async Task<ActionResult> GetPurchase(int id)
         {
-            Purchase? encontrado = await this.PurchaseRepository.GetPurchase(id);
+            PurchaseDTO? encontrado = await this.PurchaseRepository.GetPurchase(id);
 
             if (encontrado == null)
             {
@@ -41,6 +34,14 @@ namespace RestServer.Controllers
 
             return Ok(encontrado);
         }
+
+        [HttpGet("page/{num}")]
+        public async Task<ActionResult> GetPurchaseByPage(int num)
+        {
+            List<Purchase> purchases = await this.PurchaseRepository.GetByPage(num);
+            return purchases.Count > 0 ? Ok(purchases) : NoContent();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> PostPurchase(PurchaseDTO PurchaseDTO)
@@ -56,10 +57,11 @@ namespace RestServer.Controllers
             }
         }
 
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPurchase(int id, PurchaseDTO PurchaseDTO)
         {
-            Purchase? actualizado = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
+            PurchaseDTO? actualizado = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
 
             if (actualizado == null)
             {
@@ -71,7 +73,7 @@ namespace RestServer.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePurchase(int id)
         {
-            Purchase? eliminado = await this.PurchaseRepository.DeletePurchase(id);
+            PurchaseDTO? eliminado = await this.PurchaseRepository.DeletePurchase(id);
 
             if (eliminado == null)
             {

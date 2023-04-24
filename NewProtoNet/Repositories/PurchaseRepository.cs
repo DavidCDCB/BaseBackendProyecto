@@ -8,86 +8,112 @@ namespace RestServer.Repositories
 {
     public class PurchaseRepository : IPurchaseRepository
     {
-
         private readonly BaseDbContext dbContext;
 
+        private PurchaseDTO MapPurchase(Purchase p)
+        {
+            return new PurchaseDTO
+            {
+                purchasePrice = p.purchasePrice,
+                salePrice = p.salePrice,
+                Quantity = p.Quantity,
+                Code = p.Code,
+                Description = p.Description,
+                datePurchase = p.datePurchase.ToString(),
+                ProductId = p.ProductId,
+                SupplierId = p.SupplierId
+            };
+        }
+
+        private List<PurchaseDTO> ChangeDates(List<Purchase> purchases)
+        {
+            List<PurchaseDTO> purchasesDto = new List<PurchaseDTO>();
+            purchases.ForEach(p =>
+            {
+                purchasesDto.Add(MapPurchase(p));
+            });
+
+            return purchasesDto;
+        }
         public PurchaseRepository(BaseDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
-        async Task<List<Purchase>> IPurchaseRepository.GetPurchases()
+        async Task<List<PurchaseDTO>> IPurchaseRepository.GetPurchases()
         {
-            return await this.dbContext.Purchases!.ToListAsync();
+            List<Purchase> purchases = await this.dbContext.Purchases!.ToListAsync();
+            return await Task.FromResult(ChangeDates(purchases));
         }
 
-        async Task<Purchase?> IPurchaseRepository.GetPurchase(int id)
+        async Task<PurchaseDTO?> IPurchaseRepository.GetPurchase(int id)
         {
-            Purchase? Purchase = await dbContext.Purchases!.FirstOrDefaultAsync(m => m.Id == id);
-            return (Purchase != null) ? Purchase : null;
+            Purchase? purchase = await dbContext.Purchases!.FirstOrDefaultAsync(m => m.Id == id);
+            return (purchase != null) ? MapPurchase(purchase) : null;
         }
 
-        async Task<Purchase> IPurchaseRepository.PostPurchase(PurchaseDTO PurchaseDTO)
+        async Task<PurchaseDTO> IPurchaseRepository.PostPurchase(PurchaseDTO purchaseDTO)
         {
-            DateTime datePurchaseConversion = DateTime.ParseExact(PurchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-
-            Purchase Purchase = new Purchase()
+            DateTime postDatePurchase = DateTime.ParseExact(purchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            Purchase purchase = new Purchase()
             {
-                purchasePrice = PurchaseDTO.purchasePrice,
-                salePrice = PurchaseDTO.salePrice,
-                Quantity = PurchaseDTO.Quantity,
-                Description = PurchaseDTO.Description,
-                Code = PurchaseDTO.Code,
-                datePurchase = DateOnly.FromDateTime(datePurchaseConversion),
+                purchasePrice = purchaseDTO.purchasePrice,
+                salePrice = purchaseDTO.salePrice,
+                Quantity = purchaseDTO.Quantity,
+                Code = purchaseDTO.Code,
+                Description = purchaseDTO.Description,
+                datePurchase = DateOnly.FromDateTime(postDatePurchase),
+                ProductId = purchaseDTO.ProductId,
+                SupplierId = purchaseDTO.SupplierId
             };
 
-            await this.dbContext.Purchases!.AddAsync(Purchase);
+            await this.dbContext.Purchases!.AddAsync(purchase);
             await this.dbContext.SaveChangesAsync();
 
-            return Purchase;
+            return MapPurchase(purchase);
         }
 
-        async Task<Purchase?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO PurchaseDTO)
+        async Task<PurchaseDTO?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO purchaseDTO)
         {
             Purchase? encontrado = await this.dbContext.Purchases!.FindAsync(id);
             if (encontrado == null)
             {
-                return encontrado;
+                return null;
             }
-            DateTime datePurchaseConversion = DateTime.ParseExact(PurchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime postDatePurchase = DateTime.ParseExact(purchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            encontrado.purchasePrice = PurchaseDTO.purchasePrice;
-            encontrado.salePrice = PurchaseDTO.salePrice;
-            encontrado.Quantity = PurchaseDTO.Quantity;
-            encontrado.Description = PurchaseDTO.Description;
-            encontrado.Code = PurchaseDTO.Code;
-            encontrado.datePurchase = DateOnly.FromDateTime(datePurchaseConversion);
-            encontrado.ProductId = PurchaseDTO.ProductId;
-            encontrado.SupplierId = PurchaseDTO.SupplierId;
-            
+            encontrado.purchasePrice = purchaseDTO.purchasePrice;
+            encontrado.salePrice = purchaseDTO.salePrice;
+            encontrado.Quantity = purchaseDTO.Quantity;
+            encontrado.Code = purchaseDTO.Code;
+            encontrado.Description = purchaseDTO.Description;
+            encontrado.datePurchase = DateOnly.FromDateTime(postDatePurchase);
+            encontrado.ProductId = purchaseDTO.ProductId;
+            encontrado.SupplierId = purchaseDTO.SupplierId;
+
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return MapPurchase(encontrado);
         }
 
-        async Task<Purchase?> IPurchaseRepository.DeletePurchase(int id)
+        async Task<PurchaseDTO?> IPurchaseRepository.DeletePurchase(int id)
         {
             Purchase? encontrado = await dbContext.Purchases!.FindAsync(id);
             if (encontrado != null)
             {
                 this.dbContext.Remove(encontrado);
                 this.dbContext.SaveChanges();
+                return MapPurchase(encontrado);
             }
-            return encontrado!;
+            return null;
         }
 
         async Task<List<Purchase>> IPurchaseRepository.GetByPage(int page)
         {
             const int pageSize = 10;
-            List<Purchase> Purchases = await this.dbContext.Purchases!.ToListAsync();
-            int totalPages = (int)Math.Ceiling((double)Purchases.Count / pageSize);
-            return (page <= totalPages) ? Purchases.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Purchase>();
+            List<Purchase> purchases = await this.dbContext.Purchases!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)purchases.Count / pageSize);
+            return (page <= totalPages) ? purchases.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Purchase>();
         }
     }
 }
