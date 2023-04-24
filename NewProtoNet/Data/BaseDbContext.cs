@@ -4,6 +4,7 @@ using Domain.Entities.Base;
 using Domain.Entities;
 using System.Security.Policy;
 using System.Data;
+using Bogus.Extensions.Portugal;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
