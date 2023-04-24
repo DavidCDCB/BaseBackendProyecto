@@ -4,6 +4,7 @@ using Domain.Entities.Base;
 using Domain.Entities;
 using System.Security.Policy;
 using System.Data;
+using Bogus.Extensions.Portugal;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -75,6 +76,18 @@ namespace RestServer.Data
             modelBuilder.Entity<Supplier>()
                 .HasMany(v => v.purchases)
                 .WithOne(c => c.Supplier);
+
+            modelBuilder.Entity<Mechanic>()
+                .HasOne(v => v.User)
+                .WithOne(c => c.Mechanic);
+
+            modelBuilder.Entity<Client>()
+                .HasOne(v => v.User)
+                .WithOne(c => c.Client);
+
+            modelBuilder.Entity<Request>()
+                .HasMany(v => v.Products)
+                .WithMany(c => c.Requests);
 
             //Relaciones de migración David - Robin
             // Cliente->Vehiculos
@@ -291,8 +304,7 @@ namespace RestServer.Data
               .RuleFor(m => m.Email, f => f.Person.Email)
               .RuleFor(m => m.Address, f => f.Person.Address.Street)
               .RuleFor(m => m.Commission, f => f.PickRandom(commision))
-              .RuleFor(m => m.Salary, f => (double)f.Finance.Amount())
-              .RuleFor(m => m.UserId, f => f.Random.Number(1, 99));
+              .RuleFor(m => m.Salary, f => (double)f.Finance.Amount());
             return fakeData.Generate(100);
         }
 

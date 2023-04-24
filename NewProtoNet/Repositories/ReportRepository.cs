@@ -32,7 +32,6 @@ namespace RestServer.Repositories
         {
             Report Report = new Report()
             {
-                Id = ReportDTO.Id,
                 Type = ReportDTO.Type,
             };
 
@@ -50,7 +49,6 @@ namespace RestServer.Repositories
                 return encontrado;
             }
 
-            encontrado.Id = Report.Id;
             encontrado.Type = Report.Type;
             await this.dbContext.SaveChangesAsync();
 

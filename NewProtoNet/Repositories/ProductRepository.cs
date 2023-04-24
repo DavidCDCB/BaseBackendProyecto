@@ -32,7 +32,6 @@ namespace RestServer.Repositories
         {
             Product Product = new Product()
             {
-                Id = ProductDTO.Id,
                 Name = ProductDTO.Name,
                 Code = ProductDTO.Code,
                 Brand = ProductDTO.Brand,
@@ -55,7 +54,6 @@ namespace RestServer.Repositories
                 return encontrado;
             }
 
-            encontrado.Id = Product.Id;
             encontrado.Name = Product.Name;
             encontrado.Code = Product.Code;
             encontrado.Brand = Product.Brand;

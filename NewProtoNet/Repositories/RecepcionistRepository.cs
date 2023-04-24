@@ -32,13 +32,13 @@ namespace RestServer.Repositories
         {
             Recepcionist Recepcionist = new Recepcionist()
             {
-                Id = RecepcionistDTO.Id,
                 Name = RecepcionistDTO.Name,
                 Surname = RecepcionistDTO.Surname,
                 Phone = RecepcionistDTO.Phone,
                 Address = RecepcionistDTO.Address,
                 Salary = RecepcionistDTO.Salary,
                 Email = RecepcionistDTO.Email,
+                UserId = RecepcionistDTO.UserId,
             };
 
             await this.dbContext.Recepcionists!.AddAsync(Recepcionist);
@@ -54,14 +54,13 @@ namespace RestServer.Repositories
             {
                 return encontrado;
             }
-
-            encontrado.Id = Recepcionist.Id;
             encontrado.Name = Recepcionist.Name;
             encontrado.Surname = Recepcionist.Surname;
             encontrado.Phone = Recepcionist.Phone;
             encontrado.Address = Recepcionist.Address;
             encontrado.Salary = Recepcionist.Salary;
             encontrado.Email = Recepcionist.Email;
+            encontrado.UserId = Recepcionist.UserId;
 
             await this.dbContext.SaveChangesAsync();
 

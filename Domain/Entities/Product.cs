@@ -30,6 +30,6 @@ namespace Domain.Entities
         public string? Description { get; set; }
 
         public ICollection<Purchase>? purchases { get; set; }
-
+        public ICollection<Request>? Requests { get; set; }
     }
 }

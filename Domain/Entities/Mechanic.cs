@@ -34,10 +34,10 @@ namespace Domain.Entities
         [Required]
         [Column("salary")]
         public double? Salary { get; set; }
-        [Required]
         [Column("user_id")]
         public int? UserId { get; set; }
 
+        public User User { get; set; }
         public ICollection<Payroll>? Payrolls { get; set; }
         public ICollection<Request>? Requests { get; set; } 
 

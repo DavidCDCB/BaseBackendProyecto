@@ -32,7 +32,6 @@ namespace RestServer.Repositories
         {
             User User = new User()
             {
-                Id = UserDTO.Id,
                 Email = UserDTO.Email,
                 Password = UserDTO.Password,
                 Role = UserDTO.Role,
@@ -51,8 +50,6 @@ namespace RestServer.Repositories
             {
                 return encontrado;
             }
-
-            encontrado.Id = User.Id;
             encontrado.Email = User.Email;
             encontrado.Password = User.Password;
             encontrado.Role = User.Role;

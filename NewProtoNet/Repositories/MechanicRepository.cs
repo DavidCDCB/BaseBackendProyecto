@@ -32,8 +32,7 @@ namespace RestServer.Repositories
                     .RuleFor(m => m.Email, f => f.Person.Email)
                     .RuleFor(m => m.Address, f => f.Person.Address.Street)
                     .RuleFor(m => m.Commission, f => f.PickRandom(commision))
-                    .RuleFor(m => m.Salary, f => (double)f.Finance.Amount())
-                    .RuleFor(m => m.UserId, f => f.Random.Number(1, 99));
+                    .RuleFor(m => m.Salary, f => (double)f.Finance.Amount());
 
             this.dbContext.RemoveRange(dbContext.Mechanics);
 
@@ -68,7 +67,6 @@ namespace RestServer.Repositories
                 Address = mechanic.Address,
                 Commission = mechanic.Commission,
                 Salary = mechanic.Salary,
-                UserId = mechanic.UserId,
                 //Payrolls = mechanic.Payrolls,
                 //Requests = mechanic.Requests
             };
@@ -95,7 +93,6 @@ namespace RestServer.Repositories
             encontrado.Address = mechanic.Address;
             encontrado.Commission = mechanic.Commission;
             encontrado.Salary = mechanic.Salary;
-            encontrado.UserId = mechanic.UserId;
             //encontrado.Payrolls = mechanic.Payrolls;
             //encontrado.Requests = mechanic.Requests;
             await this.dbContext.SaveChangesAsync();

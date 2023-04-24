@@ -32,10 +32,10 @@ namespace RestServer.Repositories
         {
             Administrator Administrator = new Administrator()
             {
-                Id = AdministratorDTO.Id,
                 Name = AdministratorDTO.Name,
                 Surname = AdministratorDTO.Surname,
                 Phone = AdministratorDTO.Phone,
+                UserId = AdministratorDTO.UserId,
             };
 
             await this.dbContext.Administrators!.AddAsync(Administrator);
@@ -52,10 +52,10 @@ namespace RestServer.Repositories
                 return encontrado;
             }
 
-            encontrado.Id = Administrator.Id;
             encontrado.Name = Administrator.Name;
             encontrado.Surname = Administrator.Surname;
             encontrado.Phone = Administrator.Phone;
+            encontrado.UserId = Administrator.UserId;
             await this.dbContext.SaveChangesAsync();
 
             return encontrado;

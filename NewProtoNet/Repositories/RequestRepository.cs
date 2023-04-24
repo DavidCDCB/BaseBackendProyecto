@@ -14,7 +14,6 @@ namespace RestServer.Repositories
     {
       return new RequestDTO
       {
-        Id = r.Id,
         StarDate = r.StarDate.ToString(),
         EndDate = r.EndDate.ToString(),
         State = r.State,
@@ -77,7 +76,7 @@ namespace RestServer.Repositories
         return null;
       }
       DateTime fechaInicio = DateTime.ParseExact(requestDTO.StarDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-      DateTime fechaFin = DateTime.ParseExact(requestDTO.StarDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+      DateTime fechaFin = DateTime.ParseExact(requestDTO.EndDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
       
       encontrado.StarDate = DateOnly.FromDateTime(fechaInicio);
       encontrado.EndDate = DateOnly.FromDateTime(fechaFin);

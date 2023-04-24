@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using RestServer.Data;
 using RestServer.DTOs;
 using RestServer.Interfaces;
-using System.Drawing.Printing;
 
 namespace RestServer.Repositories
 {
@@ -30,15 +29,17 @@ namespace RestServer.Repositories
 
         async Task<Purchase> IPurchaseRepository.PostPurchase(PurchaseDTO PurchaseDTO)
         {
+            DateTime datePurchaseConversion = DateTime.ParseExact(PurchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+
             Purchase Purchase = new Purchase()
             {
-                Id = PurchaseDTO.Id,
                 purchasePrice = PurchaseDTO.purchasePrice,
                 salePrice = PurchaseDTO.salePrice,
                 Quantity = PurchaseDTO.Quantity,
                 Description = PurchaseDTO.Description,
                 Code = PurchaseDTO.Code,
-                datePurchase = PurchaseDTO.datePurchase,
+                datePurchase = DateOnly.FromDateTime(datePurchaseConversion),
             };
 
             await this.dbContext.Purchases!.AddAsync(Purchase);
@@ -47,21 +48,23 @@ namespace RestServer.Repositories
             return Purchase;
         }
 
-        async Task<Purchase?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO Purchase)
+        async Task<Purchase?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO PurchaseDTO)
         {
             Purchase? encontrado = await this.dbContext.Purchases!.FindAsync(id);
             if (encontrado == null)
             {
                 return encontrado;
             }
+            DateTime datePurchaseConversion = DateTime.ParseExact(PurchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            encontrado.Id = Purchase.Id;
-            encontrado.purchasePrice = Purchase.purchasePrice;
-            encontrado.salePrice = Purchase.salePrice;
-            encontrado.Quantity = Purchase.Quantity;
-            encontrado.Description = Purchase.Description;
-            encontrado.Code = Purchase.Code;
-            encontrado.datePurchase = Purchase.datePurchase;
+            encontrado.purchasePrice = PurchaseDTO.purchasePrice;
+            encontrado.salePrice = PurchaseDTO.salePrice;
+            encontrado.Quantity = PurchaseDTO.Quantity;
+            encontrado.Description = PurchaseDTO.Description;
+            encontrado.Code = PurchaseDTO.Code;
+            encontrado.datePurchase = DateOnly.FromDateTime(datePurchaseConversion);
+            encontrado.ProductId = PurchaseDTO.ProductId;
+            encontrado.SupplierId = PurchaseDTO.SupplierId;
             
             await this.dbContext.SaveChangesAsync();
 
