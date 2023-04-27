@@ -46,32 +46,32 @@ namespace RestServer.Repositories
 
     async Task<Vehicle?> IVehicleRepository.UpdateVehicle(int id, VehicleDTO Vehicle)
     {
-      Vehicle? encontrado = await this.dbContext.Vehicles!.FindAsync(id);
-      if (encontrado == null)
+      Vehicle? find = await this.dbContext.Vehicles!.FindAsync(id);
+      if (find == null)
       {
-        return encontrado;
+        return find;
       }
 
-      encontrado.Plate = Vehicle.Plate;
-      encontrado.Model = Vehicle.Model;
-      encontrado.Year = Vehicle.Year;
-      encontrado.Description = Vehicle.Description;
-      encontrado.Color = Vehicle.Color;
+      find.Plate = Vehicle.Plate;
+      find.Model = Vehicle.Model;
+      find.Year = Vehicle.Year;
+      find.Description = Vehicle.Description;
+      find.Color = Vehicle.Color;
 
       await this.dbContext.SaveChangesAsync();
 
-      return encontrado;
+      return find;
     }
 
     async Task<Vehicle?> IVehicleRepository.DeleteVehicle(int id)
     {
-      Vehicle? encontrado = await dbContext.Vehicles!.FindAsync(id);
-      if (encontrado != null)
+      Vehicle? find = await dbContext.Vehicles!.FindAsync(id);
+      if (find != null)
       {
-        this.dbContext.Remove(encontrado);
+        this.dbContext.Remove(find);
         this.dbContext.SaveChanges();
       }
-      return encontrado;
+      return find;
     }
 
     async Task<List<Vehicle>> IVehicleRepository.GetVehiclesByClient(int id)

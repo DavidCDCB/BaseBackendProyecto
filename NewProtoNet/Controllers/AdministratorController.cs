@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
+
+    [Authorize(Policy = "Administrator")]
     [ApiController]
     [Route("api/[controller]")]
     public class AdministratorController : Controller
@@ -32,14 +35,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetAdministrator(int id)
         {
-            Administrator? encontrado = await this.AdministratorRepository.GetAdministrator(id);
+            Administrator? find = await this.AdministratorRepository.GetAdministrator(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         [HttpPost]
@@ -59,25 +62,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAdministrator(int id, AdministratorDTO AdministratorDTO)
         {
-            Administrator? actualizado = await this.AdministratorRepository.UpdateAdministrator(id, AdministratorDTO);
+            Administrator? updated = await this.AdministratorRepository.UpdateAdministrator(id, AdministratorDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveAdministrator(int id)
         {
-            Administrator? eliminado = await this.AdministratorRepository.DeleteAdministrator(id);
+            Administrator? eliminated = await this.AdministratorRepository.DeleteAdministrator(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
     }

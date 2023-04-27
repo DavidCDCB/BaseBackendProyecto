@@ -49,34 +49,34 @@ namespace RestServer.Repositories
 
         async Task<Purchase?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO Purchase)
         {
-            Purchase? encontrado = await this.dbContext.Purchases!.FindAsync(id);
-            if (encontrado == null)
+            Purchase? find = await this.dbContext.Purchases!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Id = Purchase.Id;
-            encontrado.purchasePrice = Purchase.purchasePrice;
-            encontrado.salePrice = Purchase.salePrice;
-            encontrado.Quantity = Purchase.Quantity;
-            encontrado.Description = Purchase.Description;
-            encontrado.Code = Purchase.Code;
-            encontrado.datePurchase = Purchase.datePurchase;
+            find.Id = Purchase.Id;
+            find.purchasePrice = Purchase.purchasePrice;
+            find.salePrice = Purchase.salePrice;
+            find.Quantity = Purchase.Quantity;
+            find.Description = Purchase.Description;
+            find.Code = Purchase.Code;
+            find.datePurchase = Purchase.datePurchase;
             
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Purchase?> IPurchaseRepository.DeletePurchase(int id)
         {
-            Purchase? encontrado = await dbContext.Purchases!.FindAsync(id);
-            if (encontrado != null)
+            Purchase? find = await dbContext.Purchases!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Purchase>> IPurchaseRepository.GetByPage(int page)

@@ -32,14 +32,14 @@ namespace RestServer.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult> GetClient(int id)
     {
-      Client? encontrado = await this.clientRepository.GetClient(id);
+      Client? find = await this.clientRepository.GetClient(id);
 
-      if (encontrado == null)
+      if (find == null)
       {
         return NotFound();
       }
 
-      return Ok(encontrado);
+      return Ok(find);
     }
 
     [HttpPost]
@@ -59,25 +59,25 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutClient(int id, ClientDTO ClientDTO)
     {
-      Client? actualizado = await this.clientRepository.UpdateClient(id, ClientDTO);
+      Client? updated = await this.clientRepository.UpdateClient(id, ClientDTO);
 
-      if (actualizado == null)
+      if (updated == null)
       {
         return NotFound();
       }
-      return Ok(actualizado);
+      return Ok(updated);
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveClient(int id)
     {
-      Client? eliminado = await this.clientRepository.DeleteClient(id);
+      Client? eliminated = await this.clientRepository.DeleteClient(id);
 
-      if (eliminado == null)
+      if (eliminated == null)
       {
         return NotFound();
       }
-      return Ok(eliminado);
+      return Ok(eliminated);
 
     }
   }

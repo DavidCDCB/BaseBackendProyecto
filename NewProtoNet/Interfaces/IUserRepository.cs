@@ -11,5 +11,7 @@ namespace RestServer.Interfaces
         Task<User> PostUser(UserDTO user);
         Task<User> UpdateUser(int id, UserDTO user);
         Task<User> DeleteUser(int id);
+        Task<User> GetUserCredentials(LoginDTO login);
+        
     }
 }

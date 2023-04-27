@@ -44,31 +44,31 @@ namespace RestServer.Repositories
 
     async Task<Service?> IServiceRepository.UpdateService(int id, ServiceDTO Service)
     {
-      Service? encontrado = await this.dbContext.Services!.FindAsync(id);
-      if (encontrado == null)
+      Service? find = await this.dbContext.Services!.FindAsync(id);
+      if (find == null)
       {
-        return encontrado;
+        return find;
       }
 
-      encontrado.Name = Service.Name;
-      encontrado.Price = Service.Price;
-      encontrado.Description = Service.Description;
-      encontrado.Category = Service.Category;
+      find.Name = Service.Name;
+      find.Price = Service.Price;
+      find.Description = Service.Description;
+      find.Category = Service.Category;
 
       await this.dbContext.SaveChangesAsync();
 
-      return encontrado;
+      return find;
     }
 
     async Task<Service?> IServiceRepository.DeleteService(int id)
     {
-      Service? encontrado = await dbContext.Services!.FindAsync(id);
-      if (encontrado != null)
+      Service? find = await dbContext.Services!.FindAsync(id);
+      if (find != null)
       {
-        this.dbContext.Remove(encontrado);
+        this.dbContext.Remove(find);
         this.dbContext.SaveChanges();
       }
-      return encontrado;
+      return find;
     }
 
     async Task<List<Service>> IServiceRepository.GetByPage(int page)

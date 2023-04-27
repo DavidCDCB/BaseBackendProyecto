@@ -25,14 +25,14 @@ namespace RestServer.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult> GetVehicle(int id)
     {
-      Vehicle? encontrado = await this.VehicleRepository.GetVehicle(id);
+      Vehicle? find = await this.VehicleRepository.GetVehicle(id);
 
-      if (encontrado == null)
+      if (find == null)
       {
         return NotFound();
       }
 
-      return Ok(encontrado);
+      return Ok(find);
     }
 
     [HttpGet("client/{id}")]
@@ -58,25 +58,25 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutVehicle(int id, VehicleDTO VehicleDTO)
     {
-      Vehicle? actualizado = await this.VehicleRepository.UpdateVehicle(id, VehicleDTO);
+      Vehicle? updated = await this.VehicleRepository.UpdateVehicle(id, VehicleDTO);
 
-      if (actualizado == null)
+      if (updated == null)
       {
         return NotFound();
       }
-      return Ok(actualizado);
+      return Ok(updated);
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveVehicle(int id)
     {
-      Vehicle? eliminado = await this.VehicleRepository.DeleteVehicle(id);
+      Vehicle? eliminated = await this.VehicleRepository.DeleteVehicle(id);
 
-      if (eliminado == null)
+      if (eliminated == null)
       {
         return NotFound();
       }
-      return Ok(eliminado);
+      return Ok(eliminated);
 
     }
   }

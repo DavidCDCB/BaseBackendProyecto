@@ -49,33 +49,33 @@ namespace RestServer.Repositories
 
         async Task<Product?> IProductRepository.UpdateProduct(int id, ProductDTO Product)
         {
-            Product? encontrado = await this.dbContext.Products!.FindAsync(id);
-            if (encontrado == null)
+            Product? find = await this.dbContext.Products!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Id = Product.Id;
-            encontrado.Name = Product.Name;
-            encontrado.Code = Product.Code;
-            encontrado.Brand = Product.Brand;
-            encontrado.salePrice = Product.salePrice;
-            encontrado.Quantity = Product.Quantity;
-            encontrado.Description = Product.Description;
+            find.Id = Product.Id;
+            find.Name = Product.Name;
+            find.Code = Product.Code;
+            find.Brand = Product.Brand;
+            find.salePrice = Product.salePrice;
+            find.Quantity = Product.Quantity;
+            find.Description = Product.Description;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Product?> IProductRepository.DeleteProduct(int id)
         {
-            Product? encontrado = await dbContext.Products!.FindAsync(id);
-            if (encontrado != null)
+            Product? find = await dbContext.Products!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Product>> IProductRepository.GetByPage(int page)

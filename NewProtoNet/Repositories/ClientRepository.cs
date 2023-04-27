@@ -46,33 +46,33 @@ namespace RestServer.Repositories
 
     async Task<Client?> IClientRepository.UpdateClient(int id, ClientDTO client)
     {
-      Client? encontrado = await this.dbContext.Clients!.FindAsync(id);
-      if (encontrado == null)
+      Client? find = await this.dbContext.Clients!.FindAsync(id);
+      if (find == null)
       {
-        return encontrado;
+        return find;
       }
 
-      encontrado.Name = client.Name;
-      encontrado.Surname = client.Surname;
-      encontrado.Phone = client.Phone;
-      encontrado.Type = client.Type;
-      encontrado.Email = client.Email;
-      encontrado.Address = client.Address;
+      find.Name = client.Name;
+      find.Surname = client.Surname;
+      find.Phone = client.Phone;
+      find.Type = client.Type;
+      find.Email = client.Email;
+      find.Address = client.Address;
 
       await this.dbContext.SaveChangesAsync();
 
-      return encontrado;
+      return find;
     }
 
     async Task<Client?> IClientRepository.DeleteClient(int id)
     {
-      Client? encontrado = await dbContext.Clients!.FindAsync(id);
-      if (encontrado != null)
+      Client? find = await dbContext.Clients!.FindAsync(id);
+      if (find != null)
       {
-        this.dbContext.Remove(encontrado);
+        this.dbContext.Remove(find);
         this.dbContext.SaveChanges();
       }
-      return encontrado;
+      return find;
     }
 
     async Task<List<Client>> IClientRepository.GetByPage(int page)

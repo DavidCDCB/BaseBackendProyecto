@@ -34,14 +34,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetPayroll(int id)
         {
-            Payroll encontrado = await this.payrollRepository.GetPayroll(id);
+            Payroll find = await this.payrollRepository.GetPayroll(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         /*
@@ -75,25 +75,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPayroll(int id, PayrollDTO payroll)
         {
-            Payroll actualizado = await this.payrollRepository.UpdatePayroll(id, payroll);
+            Payroll updated = await this.payrollRepository.UpdatePayroll(id, payroll);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePayroll(int id)
         {
-            Payroll eliminado = await this.payrollRepository.DeletePayroll(id);
+            Payroll eliminated = await this.payrollRepository.DeletePayroll(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
         [HttpGet("page/{num}")]

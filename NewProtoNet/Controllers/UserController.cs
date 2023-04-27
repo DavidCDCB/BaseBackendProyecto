@@ -2,18 +2,31 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using NuGet.Protocol.Plugins;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
     [ApiController]
+    
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        private readonly IUserRepository UserRepository;
+        
 
-        public UserController(IUserRepository UserRepository)
+        private readonly IUserRepository UserRepository;
+        private IConfiguration config;
+
+        public UserController(IUserRepository UserRepository, IConfiguration config)
         {
             this.UserRepository = UserRepository;
+            this.config = config;
         }
 
         [HttpGet]
@@ -22,6 +35,7 @@ namespace RestServer.Controllers
             return Ok(await this.UserRepository.GetUsers());
         }
 
+        [Authorize]
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetUsersByPage(int num)
         {
@@ -29,19 +43,22 @@ namespace RestServer.Controllers
             return Users.Count > 0 ? Ok(Users) : NoContent();
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUser(int id)
         {
-            User? encontrado = await this.UserRepository.GetUser(id);
+            User? find = await this.UserRepository.GetUser(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
+
+        [Authorize(Policy = "Recepcionist")]
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO UserDTO)
         {
@@ -56,29 +73,63 @@ namespace RestServer.Controllers
             }
         }
 
+        [Authorize(Policy = "Recepcionist")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserDTO UserDTO)
         {
-            User? actualizado = await this.UserRepository.UpdateUser(id, UserDTO);
+            User? updated = await this.UserRepository.UpdateUser(id, UserDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
+        [Authorize(Policy = "Recepcionist")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveUser(int id)
         {
-            User? eliminado = await this.UserRepository.DeleteUser(id);
+            User? eliminated = await this.UserRepository.DeleteUser(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDTO userDTO)
+        {
+            User? user = await this.UserRepository.GetUserCredentials(userDTO);
+            if (user == null)
+            {
+                return BadRequest(new {Message = "Invalid credentials"});
+            }
+            string jwt = GenerateToken(user);
+            return Ok(new {token = jwt});
+        }
+        
+        private string GenerateToken(User user)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, user.Email),
+                new Claim("Roles", user.Role)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("JWT:Key").Value));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var securityToken = new JwtSecurityToken(
+                               claims: claims,
+                               expires: DateTime.Now.AddMinutes(60),
+                               signingCredentials: creds);
+
+            string token = new JwtSecurityTokenHandler().WriteToken(securityToken); 
+            return token;
         }
     }
 }

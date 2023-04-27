@@ -25,14 +25,14 @@ namespace RestServer.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult> GetRequest(int id)
     {
-      RequestDTO? encontrado = await this.requestRepository.GetRequest(id);
+      RequestDTO? find = await this.requestRepository.GetRequest(id);
 
-      if (encontrado == null)
+      if (find == null)
       {
         return NotFound();
       }
 
-      return Ok(encontrado);
+      return Ok(find);
     }
 
     [HttpGet("service/{id}")]
@@ -64,25 +64,25 @@ namespace RestServer.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> PutRequest(int id, RequestDTO RequestDTO)
     {
-      RequestDTO? actualizado = await this.requestRepository.UpdateRequest(id, RequestDTO);
+      RequestDTO? updated = await this.requestRepository.UpdateRequest(id, RequestDTO);
 
-      if (actualizado == null)
+      if (updated == null)
       {
         return NotFound();
       }
-      return Ok(actualizado);
+      return Ok(updated);
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveRequest(int id)
     {
-      RequestDTO? eliminado = await this.requestRepository.DeleteRequest(id);
+      RequestDTO? eliminated = await this.requestRepository.DeleteRequest(id);
 
-      if (eliminado == null)
+      if (eliminated == null)
       {
         return NotFound();
       }
-      return Ok(eliminado);
+      return Ok(eliminated);
 
     }
   }

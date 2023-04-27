@@ -32,14 +32,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetSupplier(int id)
         {
-            Supplier? encontrado = await this.supplierRepository.GetSupplier(id);
+            Supplier? find = await this.supplierRepository.GetSupplier(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         [HttpPost]
@@ -59,25 +59,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSupplier(int id, SupplierDTO supplierDTO)
         {
-            Supplier? actualizado = await this.supplierRepository.UpdateSupplier(id, supplierDTO);
+            Supplier? updated = await this.supplierRepository.UpdateSupplier(id, supplierDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveSupplier(int id)
         {
-            Supplier? eliminado = await this.supplierRepository.DeleteSupplier(id);
+            Supplier? eliminated = await this.supplierRepository.DeleteSupplier(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
     }
