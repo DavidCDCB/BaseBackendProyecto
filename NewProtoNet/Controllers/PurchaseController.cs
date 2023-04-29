@@ -26,7 +26,7 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetPurchase(int id)
         {
-            Purchase? find = await this.PurchaseRepository.GetPurchase(id);
+            PurchaseDTO? find = await this.PurchaseRepository.GetPurchase(id);
 
             if (find == null)
             {
@@ -62,7 +62,7 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPurchase(int id, PurchaseDTO PurchaseDTO)
         {
-            Purchase? updated = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
+            PurchaseDTO? updated = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
 
             if (updated == null)
             {
@@ -74,7 +74,7 @@ namespace RestServer.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePurchase(int id)
         {
-            Purchase? eliminated = await this.PurchaseRepository.DeletePurchase(id);
+            PurchaseDTO? eliminated = await this.PurchaseRepository.DeletePurchase(id);
 
             if (eliminated == null)
             {
