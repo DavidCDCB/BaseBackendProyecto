@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
-    [Authorize(Policy = "Administrator")]
     [ApiController]
     [Route("api/[controller]")]
     public class PurchaseController : Controller

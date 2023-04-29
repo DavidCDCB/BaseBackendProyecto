@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.DTOs;
 using RestServer.Interfaces;
@@ -6,6 +7,7 @@ using RestServer.Interfaces;
 // https://localhost:7204/swagger/index.html
 namespace RestServer.Controllers
 {
+    [Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")] // https://localhost:7204/api/Inconvenient
     public class InconvenientController : Controller

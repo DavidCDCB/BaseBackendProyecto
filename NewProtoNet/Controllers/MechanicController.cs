@@ -1,10 +1,12 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.DTOs;
 using RestServer.Interfaces;
 
 namespace RestServer.Controllers
 {
+    [Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]// https://localhost:7204/api/Mechanic
     public class MechanicController : Controller

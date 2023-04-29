@@ -75,9 +75,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Administrator", policy => policy.RequireClaim("Roles", "Administrator"));
-    options.AddPolicy("Recepcionist", policy => policy.RequireClaim("Roles", "Recepcionist"));
-    options.AddPolicy("Mechanic", policy => policy.RequireClaim("Roles", "Mechanic"));
+    options.AddPolicy("SuperUser", policy => policy.RequireClaim("Roles", "Administrator"));
+    options.AddPolicy("PayrollLimit", policy => policy.RequireClaim("Roles", "Recepcionist","Administrator"));
+    options.AddPolicy("MechanicService", policy => policy.RequireClaim("Roles", "Mechanic", "Administrator", "Recepcionist"));
 });
 
 

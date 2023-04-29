@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
+    [Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]
     public class SupplierController : Controller

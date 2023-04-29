@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace RestServer.Controllers
 {
     [ApiController]
-    
+
     [Route("api/[controller]")]
     public class UserController : Controller
     {
@@ -29,13 +29,14 @@ namespace RestServer.Controllers
             this.config = config;
         }
 
+        [Authorize(Policy = "PayrollLimit")]
         [HttpGet]
         public async Task<ActionResult> GetUsers()
         {
             return Ok(await this.UserRepository.GetUsers());
         }
 
-        [Authorize]
+        [Authorize(Policy = "PayrollLimit")]
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetUsersByPage(int num)
         {
@@ -43,7 +44,7 @@ namespace RestServer.Controllers
             return Users.Count > 0 ? Ok(Users) : NoContent();
         }
 
-        [Authorize]
+        [Authorize(Policy = "PayrollLimit")]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUser(int id)
         {
@@ -57,8 +58,7 @@ namespace RestServer.Controllers
             return Ok(find);
         }
 
-
-        [Authorize(Policy = "Recepcionist")]
+        [Authorize(Policy = "PayrollLimit")]
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO UserDTO)
         {
@@ -73,7 +73,7 @@ namespace RestServer.Controllers
             }
         }
 
-        [Authorize(Policy = "Recepcionist")]
+        [Authorize(Policy = "PayrollLimit")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserDTO UserDTO)
         {
@@ -86,7 +86,7 @@ namespace RestServer.Controllers
             return Ok(updated);
         }
 
-        [Authorize(Policy = "Recepcionist")]
+        [Authorize(Policy = "PayrollLimit")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveUser(int id)
         {
