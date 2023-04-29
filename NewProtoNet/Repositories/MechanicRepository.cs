@@ -79,36 +79,36 @@ namespace RestServer.Repositories
 
         async Task<Mechanic> IMechanicRepository.UpdateMechanic(int id, MechanicDTO mechanic)
         {
-            Mechanic? encontrado = await this.dbContext.Mechanics!.FindAsync(id);
-            if (encontrado == null)
+            Mechanic? find = await this.dbContext.Mechanics!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Name = mechanic.Name;
-            encontrado.SurName = mechanic.SurName;
-            encontrado.Phone = mechanic.Phone;
-            encontrado.Role = mechanic.Role;
-            encontrado.Email = mechanic.Email;
-            encontrado.Address = mechanic.Address;
-            encontrado.Commission = mechanic.Commission;
-            encontrado.Salary = mechanic.Salary;
-            //encontrado.Payrolls = mechanic.Payrolls;
-            //encontrado.Requests = mechanic.Requests;
+            find.Name = mechanic.Name;
+            find.SurName = mechanic.SurName;
+            find.Phone = mechanic.Phone;
+            find.Role = mechanic.Role;
+            find.Email = mechanic.Email;
+            find.Address = mechanic.Address;
+            find.Commission = mechanic.Commission;
+            find.Salary = mechanic.Salary;
+            //find.Payrolls = mechanic.Payrolls;
+            //find.Requests = mechanic.Requests;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Mechanic> IMechanicRepository.DeleteMechanic(int id)
         {
-            Mechanic? encontrado = await dbContext.Mechanics!.FindAsync(id);
-            if (encontrado != null)
+            Mechanic? find = await dbContext.Mechanics!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado;
+            return find;
         }
         async Task<List<Mechanic>> IMechanicRepository.GetByPage(int page)
         {

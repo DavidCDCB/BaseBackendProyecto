@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
+
     [ApiController]
     [Route("api/[controller]")]
     public class ProductController : Controller
@@ -32,14 +34,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetProduct(int id)
         {
-            Product? encontrado = await this.ProductRepository.GetProduct(id);
+            Product? find = await this.ProductRepository.GetProduct(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         [HttpPost]
@@ -59,25 +61,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, ProductDTO ProductDTO)
         {
-            Product? actualizado = await this.ProductRepository.UpdateProduct(id, ProductDTO);
+            Product? updated = await this.ProductRepository.UpdateProduct(id, ProductDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveProduct(int id)
         {
-            Product? eliminado = await this.ProductRepository.DeleteProduct(id);
+            Product? eliminated = await this.ProductRepository.DeleteProduct(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
     }

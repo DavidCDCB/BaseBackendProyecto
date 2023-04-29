@@ -46,30 +46,29 @@ namespace RestServer.Repositories
 
         async Task<Administrator?> IAdministratorRepository.UpdateAdministrator(int id, AdministratorDTO Administrator)
         {
-            Administrator? encontrado = await this.dbContext.Administrators!.FindAsync(id);
-            if (encontrado == null)
+            Administrator? find = await this.dbContext.Administrators!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
-
-            encontrado.Name = Administrator.Name;
-            encontrado.Surname = Administrator.Surname;
-            encontrado.Phone = Administrator.Phone;
-            encontrado.UserId = Administrator.UserId;
+            find.Name = Administrator.Name;
+            find.Surname = Administrator.Surname;
+            find.Phone = Administrator.Phone;
+            find.UserId = Administrator.UserId;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Administrator?> IAdministratorRepository.DeleteAdministrator(int id)
         {
-            Administrator? encontrado = await dbContext.Administrators!.FindAsync(id);
-            if (encontrado != null)
+            Administrator? find = await dbContext.Administrators!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Administrator>> IAdministratorRepository.GetByPage(int page)

@@ -49,33 +49,33 @@ namespace RestServer.Repositories
 
         async Task<Supplier?> ISupplierRepository.UpdateSupplier(int id, SupplierDTO supplier)
         {
-            Supplier? encontrado = await this.dbContext.Suppliers!.FindAsync(id);
-            if (encontrado == null)
+            Supplier? find = await this.dbContext.Suppliers!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Name = supplier.Name;
-            encontrado.SurName = supplier.SurName;
-            encontrado.Company = supplier.Company;
-            encontrado.Nit = supplier.Nit;
-            encontrado.Phone = supplier.Phone;
-            encontrado.Email = supplier.Email;
-            encontrado.Address = supplier.Address;
+            find.Name = supplier.Name;
+            find.SurName = supplier.SurName;
+            find.Company = supplier.Company;
+            find.Nit = supplier.Nit;
+            find.Phone = supplier.Phone;
+            find.Email = supplier.Email;
+            find.Address = supplier.Address;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Supplier?> ISupplierRepository.DeleteSupplier(int id)
         {
-            Supplier? encontrado = await dbContext.Suppliers!.FindAsync(id);
-            if (encontrado != null)
+            Supplier? find = await dbContext.Suppliers!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Supplier>> ISupplierRepository.GetByPage(int page)

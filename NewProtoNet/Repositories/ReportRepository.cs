@@ -43,27 +43,27 @@ namespace RestServer.Repositories
 
         async Task<Report?> IReportRepository.UpdateReport(int id, ReportDTO Report)
         {
-            Report? encontrado = await this.dbContext.Reports!.FindAsync(id);
-            if (encontrado == null)
+            Report? find = await this.dbContext.Reports!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Type = Report.Type;
+            find.Type = Report.Type;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Report?> IReportRepository.DeleteReport(int id)
         {
-            Report? encontrado = await dbContext.Reports!.FindAsync(id);
-            if (encontrado != null)
+            Report? find = await dbContext.Reports!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Report>> IReportRepository.GetByPage(int page)
