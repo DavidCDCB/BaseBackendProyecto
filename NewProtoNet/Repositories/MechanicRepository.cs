@@ -26,7 +26,7 @@ namespace RestServer.Repositories
             Faker<Mechanic> fakeData = new Faker<Mechanic>()
                 .RuleFor(m => m.Id, f => ids++)
                     .RuleFor(m => m.Name, f => f.Person.FirstName)
-                    .RuleFor(m => m.SurName, f => f.Person.LastName)
+                    .RuleFor(m => m.Surname, f => f.Person.LastName)
                     .RuleFor(m => m.Phone, f => f.Person.Phone)
                     .RuleFor(m => m.Role, f => f.PickRandom(roles))
                     .RuleFor(m => m.Email, f => f.Person.Email)
@@ -60,7 +60,7 @@ namespace RestServer.Repositories
             Mechanic newMechanic = new Mechanic()
             {
                 Name = mechanic.Name,
-                SurName = mechanic.SurName,
+                Surname = mechanic.SurName,
                 Phone = mechanic.Phone,
                 Role = mechanic.Role,
                 Email = mechanic.Email,
@@ -86,7 +86,7 @@ namespace RestServer.Repositories
             }
 
             encontrado.Name = mechanic.Name;
-            encontrado.SurName = mechanic.SurName;
+            encontrado.Surname = mechanic.SurName;
             encontrado.Phone = mechanic.Phone;
             encontrado.Role = mechanic.Role;
             encontrado.Email = mechanic.Email;

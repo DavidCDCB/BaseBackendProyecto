@@ -298,7 +298,7 @@ namespace RestServer.Data
             Faker<Mechanic> fakeData = new Faker<Mechanic>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Name, f => f.Person.FirstName)
-              .RuleFor(m => m.SurName, f => f.Person.LastName)
+              .RuleFor(m => m.Surname, f => f.Person.LastName)
               .RuleFor(m => m.Phone, f => f.Person.Phone)
               .RuleFor(m => m.Role, f => f.PickRandom(roles))
               .RuleFor(m => m.Email, f => f.Person.Email)
