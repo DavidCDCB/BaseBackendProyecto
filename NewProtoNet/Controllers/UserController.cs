@@ -129,7 +129,7 @@ namespace RestServer.Controllers
                                signingCredentials: creds);
 
             string token = new JwtSecurityTokenHandler().WriteToken(securityToken); 
-            return token;
+            return token + ' ' + user.Role;
         }
     }
 }
