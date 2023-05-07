@@ -62,8 +62,7 @@ namespace RestServer.Repositories
                 DaysDelay = inconvenient.DaysDelay,
                 ServiceRequesedId = inconvenient.ServiceRequesedId,
                 Seen = inconvenient.Seen,
-                Description = inconvenient.Description,
-                RequestID = inconvenient.RequestID
+                Description = inconvenient.Description
             };
 
             await this.dbContext.Inconvenients!.AddAsync(usuario);
@@ -86,7 +85,7 @@ namespace RestServer.Repositories
             encontrado.ServiceRequesedId = inconvenient.ServiceRequesedId;
             encontrado.Seen = inconvenient.Seen;
             encontrado.Description = inconvenient.Description;
-            encontrado.RequestID = inconvenient.RequestID;
+            //encontrado.RequestID = inconvenient.RequestID;
             await this.dbContext.SaveChangesAsync();
 
             return encontrado;
