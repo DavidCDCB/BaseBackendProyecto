@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
@@ -25,14 +26,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetPurchase(int id)
         {
-            PurchaseDTO? encontrado = await this.PurchaseRepository.GetPurchase(id);
+            PurchaseDTO? find = await this.PurchaseRepository.GetPurchase(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         [HttpGet("page/{num}")]
@@ -61,25 +62,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPurchase(int id, PurchaseDTO PurchaseDTO)
         {
-            PurchaseDTO? actualizado = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
+            PurchaseDTO? updated = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePurchase(int id)
         {
-            PurchaseDTO? eliminado = await this.PurchaseRepository.DeletePurchase(id);
+            PurchaseDTO? eliminated = await this.PurchaseRepository.DeletePurchase(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
     }

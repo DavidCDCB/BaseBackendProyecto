@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
+
     [ApiController]
     [Route("api/[controller]")]
     public class RecepcionistController : Controller
@@ -32,14 +34,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetRecepcionist(int id)
         {
-            Recepcionist? encontrado = await this.RecepcionistRepository.GetRecepcionist(id);
+            Recepcionist? find = await this.RecepcionistRepository.GetRecepcionist(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         [HttpPost]
@@ -59,25 +61,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRecepcionist(int id, RecepcionistDTO RecepcionistDTO)
         {
-            Recepcionist? actualizado = await this.RecepcionistRepository.UpdateRecepcionist(id, RecepcionistDTO);
+            Recepcionist? updated = await this.RecepcionistRepository.UpdateRecepcionist(id, RecepcionistDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveRecepcionist(int id)
         {
-            Recepcionist? eliminado = await this.RecepcionistRepository.DeleteRecepcionist(id);
+            Recepcionist? eliminated = await this.RecepcionistRepository.DeleteRecepcionist(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
     }

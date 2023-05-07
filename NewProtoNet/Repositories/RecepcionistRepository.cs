@@ -49,33 +49,34 @@ namespace RestServer.Repositories
 
         async Task<Recepcionist?> IRecepcionistRepository.UpdateRecepcionist(int id, RecepcionistDTO Recepcionist)
         {
-            Recepcionist? encontrado = await this.dbContext.Recepcionists!.FindAsync(id);
-            if (encontrado == null)
+            Recepcionist? find = await this.dbContext.Recepcionists!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
-            encontrado.Name = Recepcionist.Name;
-            encontrado.Surname = Recepcionist.Surname;
-            encontrado.Phone = Recepcionist.Phone;
-            encontrado.Address = Recepcionist.Address;
-            encontrado.Salary = Recepcionist.Salary;
-            encontrado.Email = Recepcionist.Email;
-            encontrado.UserId = Recepcionist.UserId;
+
+            find.Name = Recepcionist.Name;
+            find.Surname = Recepcionist.Surname;
+            find.Phone = Recepcionist.Phone;
+            find.Address = Recepcionist.Address;
+            find.Salary = Recepcionist.Salary;
+            find.Email = Recepcionist.Email;
+            find.UserId = Recepcionist.UserId;
 
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Recepcionist?> IRecepcionistRepository.DeleteRecepcionist(int id)
         {
-            Recepcionist? encontrado = await dbContext.Recepcionists!.FindAsync(id);
-            if (encontrado != null)
+            Recepcionist? find = await dbContext.Recepcionists!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Recepcionist>> IRecepcionistRepository.GetByPage(int page)

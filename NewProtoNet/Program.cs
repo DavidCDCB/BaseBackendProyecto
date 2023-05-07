@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using RestServer.Data;
 using RestServer.Interfaces;
 using RestServer.Repositories;
+using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -58,6 +61,26 @@ builder.Services.AddDbContext<BaseDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SuperUser", policy => policy.RequireClaim("Roles", "Administrator"));
+    options.AddPolicy("PayrollLimit", policy => policy.RequireClaim("Roles", "Recepcionist","Administrator"));
+    options.AddPolicy("MechanicService", policy => policy.RequireClaim("Roles", "Mechanic", "Administrator", "Recepcionist"));
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -69,6 +92,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

@@ -75,35 +75,35 @@ namespace RestServer.Repositories
 
         async Task<PurchaseDTO?> IPurchaseRepository.UpdatePurchase(int id, PurchaseDTO purchaseDTO)
         {
-            Purchase? encontrado = await this.dbContext.Purchases!.FindAsync(id);
-            if (encontrado == null)
+            Purchase? find = await this.dbContext.Purchases!.FindAsync(id);
+            if (find == null)
             {
                 return null;
             }
             DateTime postDatePurchase = DateTime.ParseExact(purchaseDTO.datePurchase!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            encontrado.purchasePrice = purchaseDTO.purchasePrice;
-            encontrado.salePrice = purchaseDTO.salePrice;
-            encontrado.Quantity = purchaseDTO.Quantity;
-            encontrado.Code = purchaseDTO.Code;
-            encontrado.Description = purchaseDTO.Description;
-            encontrado.datePurchase = DateOnly.FromDateTime(postDatePurchase);
-            encontrado.ProductId = purchaseDTO.ProductId;
-            encontrado.SupplierId = purchaseDTO.SupplierId;
+            find.purchasePrice = purchaseDTO.purchasePrice;
+            find.salePrice = purchaseDTO.salePrice;
+            find.Quantity = purchaseDTO.Quantity;
+            find.Code = purchaseDTO.Code;
+            find.Description = purchaseDTO.Description;
+            find.datePurchase = DateOnly.FromDateTime(postDatePurchase);
+            find.ProductId = purchaseDTO.ProductId;
+            find.SupplierId = purchaseDTO.SupplierId;
 
             await this.dbContext.SaveChangesAsync();
 
-            return MapPurchase(encontrado);
+            return MapPurchase(find);
         }
 
         async Task<PurchaseDTO?> IPurchaseRepository.DeletePurchase(int id)
         {
-            Purchase? encontrado = await dbContext.Purchases!.FindAsync(id);
-            if (encontrado != null)
+            Purchase? find = await dbContext.Purchases!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
-                return MapPurchase(encontrado);
+                return MapPurchase(find);
             }
             return null;
         }

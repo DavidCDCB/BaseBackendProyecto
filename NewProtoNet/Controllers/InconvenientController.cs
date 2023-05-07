@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.DTOs;
 using RestServer.Interfaces;
@@ -6,6 +7,7 @@ using RestServer.Interfaces;
 // https://localhost:7204/swagger/index.html
 namespace RestServer.Controllers
 {
+    [Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")] // https://localhost:7204/api/Inconvenient
     public class InconvenientController : Controller
@@ -34,14 +36,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetInconvenient(int id)
         {
-            Inconvenient encontrado = await this.inconvenientRepository.GetInconvenient(id);
+            Inconvenient find = await this.inconvenientRepository.GetInconvenient(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         /*
@@ -75,25 +77,25 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutInconvenient(int id, InconvenientDTO inconvenient)
         {
-            Inconvenient actualizado = await this.inconvenientRepository.UpdateInconvenient(id, inconvenient);
+            Inconvenient updated = await this.inconvenientRepository.UpdateInconvenient(id, inconvenient);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveInconvenient(int id)
         {
-            Inconvenient eliminado = await this.inconvenientRepository.DeleteInconvenient(id);
+            Inconvenient eliminated = await this.inconvenientRepository.DeleteInconvenient(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
         [HttpGet("page/{num}")]
