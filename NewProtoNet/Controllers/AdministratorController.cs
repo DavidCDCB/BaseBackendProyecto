@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace RestServer.Controllers
 {
 
-    [Authorize(Policy = "PayrollLimit")]
+    //[Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]
     public class AdministratorController : Controller

@@ -1,15 +1,12 @@
-﻿using RestServer.DTOs;
+﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using RestServer.Interfaces;
-using Domain.Entities;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using NuGet.Protocol.Plugins;
+using RestServer.DTOs;
+using RestServer.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
@@ -29,14 +26,14 @@ namespace RestServer.Controllers
             this.config = config;
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpGet]
         public async Task<ActionResult> GetUsers()
         {
             return Ok(await this.UserRepository.GetUsers());
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetUsersByPage(int num)
         {
@@ -44,7 +41,7 @@ namespace RestServer.Controllers
             return Users.Count > 0 ? Ok(Users) : NoContent();
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUser(int id)
         {
@@ -58,7 +55,7 @@ namespace RestServer.Controllers
             return Ok(find);
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO UserDTO)
         {
@@ -73,7 +70,7 @@ namespace RestServer.Controllers
             }
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserDTO UserDTO)
         {
@@ -86,7 +83,7 @@ namespace RestServer.Controllers
             return Ok(updated);
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveUser(int id)
         {

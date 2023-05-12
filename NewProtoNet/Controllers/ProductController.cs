@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using RestServer.Data;
 
 namespace RestServer.Controllers
 {
@@ -82,5 +83,6 @@ namespace RestServer.Controllers
             return Ok(eliminated);
 
         }
-    }
+
+            }
 }

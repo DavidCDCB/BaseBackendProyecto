@@ -30,6 +30,7 @@ namespace RestServer.Repositories
 
         async Task<Product> IProductRepository.PostProduct(ProductDTO ProductDTO)
         {
+
             Product Product = new Product()
             {
                 Name = ProductDTO.Name,
@@ -37,7 +38,7 @@ namespace RestServer.Repositories
                 Brand = ProductDTO.Brand,
                 salePrice = ProductDTO.salePrice,
                 Quantity = ProductDTO.Quantity,
-                Description = ProductDTO.Description,
+                Description = ProductDTO.Description,             
             };
 
             await this.dbContext.Products!.AddAsync(Product);

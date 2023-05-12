@@ -30,6 +30,12 @@ namespace RestServer.Repositories
 
         async Task<Recepcionist> IRecepcionistRepository.PostRecepcionist(RecepcionistDTO RecepcionistDTO)
         {
+            User? findUser = await this.dbContext.Users!.FindAsync(RecepcionistDTO.UserId);
+            if (findUser == null || (findUser.Role != "Recepcionist"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de recepcionista asignado");
+            }
+
             Recepcionist Recepcionist = new Recepcionist()
             {
                 Name = RecepcionistDTO.Name,
@@ -53,6 +59,12 @@ namespace RestServer.Repositories
             if (find == null)
             {
                 return find;
+            }
+
+            User? findUser = await this.dbContext.Users!.FindAsync(Recepcionist.UserId);
+            if (findUser == null || (findUser.Role != "Recepcionist"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de recepcionista asignado");
             }
 
             find.Name = Recepcionist.Name;

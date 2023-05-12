@@ -30,6 +30,12 @@ namespace RestServer.Repositories
 
         async Task<Administrator> IAdministratorRepository.PostAdministrator(AdministratorDTO AdministratorDTO)
         {
+            User? findUser = await this.dbContext.Users!.FindAsync(AdministratorDTO.UserId);
+            if (findUser == null || (findUser.Role != "Administrator"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de administrador asignado");
+            }
+
             Administrator Administrator = new Administrator()
             {
                 Name = AdministratorDTO.Name,
@@ -51,6 +57,13 @@ namespace RestServer.Repositories
             {
                 return find;
             }
+
+            User? findUser = await this.dbContext.Users!.FindAsync(Administrator.UserId);
+            if (findUser == null || (findUser.Role != "Administrator"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de administrador asignado");
+            }
+
             find.Name = Administrator.Name;
             find.Surname = Administrator.Surname;
             find.Phone = Administrator.Phone;

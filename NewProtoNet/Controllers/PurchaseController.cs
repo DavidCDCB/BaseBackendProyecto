@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using RestServer.Repositories;
+using RestServer.Data;
 
 namespace RestServer.Controllers
 {
@@ -11,6 +13,8 @@ namespace RestServer.Controllers
     public class PurchaseController : Controller
     {
         private readonly IPurchaseRepository PurchaseRepository;
+        private readonly IProductRepository ProductRepository;
+        private readonly BaseDbContext dbContext;
 
         public PurchaseController(IPurchaseRepository PurchaseRepository)
         {
@@ -47,9 +51,10 @@ namespace RestServer.Controllers
         [HttpPost]
         public async Task<IActionResult> PostPurchase(PurchaseDTO PurchaseDTO)
         {
+
             try
             {
-                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));
+                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));           
             }
             catch (Exception e)
             {
@@ -83,5 +88,8 @@ namespace RestServer.Controllers
             return Ok(eliminated);
 
         }
+
+
+       
     }
 }
