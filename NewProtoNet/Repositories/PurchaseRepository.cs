@@ -149,6 +149,7 @@ namespace RestServer.Repositories
             if (findProduct != null)
             {
                 findProduct.salePrice = purchase.salePrice;
+                findProduct.Quantity += purchase.Quantity;
             }
             await this.dbContext.SaveChangesAsync();
         }
