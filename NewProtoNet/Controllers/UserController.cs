@@ -106,10 +106,16 @@ namespace RestServer.Controllers
             User? user = await this.UserRepository.GetUserCredentials(userDTO);
             if (user == null)
             {
-                return BadRequest(new {Message = "Invalid credentials"});
+                return Ok(new {
+                    status = "not found",
+                    result = "Invalid credentials"
+                });
             }
             string jwt = GenerateToken(user);
-            return Ok(new {token = jwt});
+            return Ok(new { 
+                status = "ok",
+                result = jwt
+            });
         }
         
         private string GenerateToken(User user)
@@ -128,8 +134,9 @@ namespace RestServer.Controllers
                                expires: DateTime.Now.AddMinutes(60),
                                signingCredentials: creds);
 
-            string token = new JwtSecurityTokenHandler().WriteToken(securityToken); 
-            return token + ' ' + user.Role;
+            string token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+            return token;
+            //return token + ' ' + user.Role;
         }
     }
 }
