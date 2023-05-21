@@ -1,11 +1,7 @@
-<<<<<<<<< Temporary merge branch 1
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Bogus;
 using Domain.Entities.Base;
 using Domain.Entities;
-using System.Security.Policy;
-using System.Data;
-using Bogus.Extensions.Portugal;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -35,34 +31,26 @@ using Bogus.Extensions.Portugal;
 
 namespace RestServer.Data
 {
-    public class BaseDbContext : DbContext
+  public class BaseDbContext : DbContext
+  {
+    public BaseDbContext(DbContextOptions options) : base(options)
     {
-        public BaseDbContext(DbContextOptions options) : base(options)
-        {
-        }
+    }
 
     public DbSet<Client>? Clients { get; set; }
     public DbSet<Vehicle>? Vehicles { get; set; }
     public DbSet<Request>? Requests { get; set; }
     public DbSet<Service>? Services { get; set; }
     public DbSet<Supplier>? Suppliers { get; set; }
-        public DbSet<User>? Users { get; set; }
-        public DbSet<Report>? Reports { get; set; }
-        public DbSet<Administrator>? Administrators { get; set; }
-        public DbSet<Product>? Products { get; set; }
-        public DbSet<Purchase>? Purchases { get; set; }
-        public DbSet<Recepcionist>? Recepcionists { get; set; }
-        public DbSet<Supplier>? Suppliers { get; set; }
-
     public DbSet<User>? Users { get; set; }
-    public DbSet<Course>? Courses { get; set; }
-    public DbSet<Category>? Categories { get; set; }
     public DbSet<Report>? Reports { get; set; }
     public DbSet<Administrator>? Administrators { get; set; }
     public DbSet<Product>? Products { get; set; }
     public DbSet<Purchase>? Purchases { get; set; }
     public DbSet<Recepcionist>? Recepcionists { get; set; }
 
+    public DbSet<Course>? Courses { get; set; }
+    public DbSet<Category>? Categories { get; set; }
     public DbSet<Mechanic>? Mechanics { get; set; }
     public DbSet<Inconvenient>? Inconvenients { get; set; }
     public DbSet<Payroll>? Payrolls { get; set; }
@@ -74,21 +62,17 @@ namespace RestServer.Data
         .HasMany(v => v.Vehicles)
         .WithOne(c => c.Client);
 
-        public DbSet<Mechanic>? Mechanics { get; set; }
-        public DbSet<Inconvenient>? Inconvenients { get; set; }
-        public DbSet<Payroll>? Payrolls { get; set; }
+      modelBuilder.Entity<Administrator>()
+          .HasOne(v => v.User)
+          .WithOne(c => c.Administrator);
 
-            modelBuilder.Entity<Administrator>()
-                .HasOne(v => v.User)
-                .WithOne(c => c.Administrator);
+      modelBuilder.Entity<Recepcionist>()
+          .HasOne(v => v.User)
+          .WithOne(c => c.Recepcionist);
 
-            modelBuilder.Entity<Recepcionist>()
-                .HasOne(v => v.User)
-                .WithOne(c => c.Recepcionist);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(v => v.purchases)
-                .WithOne(c => c.Product);
+      modelBuilder.Entity<Product>()
+          .HasMany(v => v.purchases)
+          .WithOne(c => c.Product);
 
       // Servicio->Solicitudes
       modelBuilder.Entity<Service>()
@@ -147,10 +131,6 @@ namespace RestServer.Data
       modelBuilder.Entity<Administrator>().HasData(this.SeedAdministrators());
       modelBuilder.Entity<Recepcionist>().HasData(this.SeedRecepcionists());
       modelBuilder.Entity<Product>().HasData(this.SeedProducts());
-      modelBuilder.Entity<Purchase>().HasData(this.SeedPurchases());
-      modelBuilder.Entity<Mechanic>().HasData(this.SeedMechanics());
-      modelBuilder.Entity<Inconvenient>().HasData(this.SeedInconvenients());
-      modelBuilder.Entity<Payroll>().HasData(this.SeedPayrolls());
 
     }
 
@@ -347,124 +327,6 @@ namespace RestServer.Data
 
     }
 
-
-        List<Purchase> SeedPurchases()
-        {
-            int ids = 1;
-            Faker<Purchase> fakeData = new Faker<Purchase>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.purchasePrice, f => f.Random.Float(100000, 500000))
-              .RuleFor(m => m.salePrice, f => f.Random.Float(100000, 500000))
-              .RuleFor(m => m.Quantity, f => f.Random.Int(1, 80))
-              .RuleFor(m => m.Description, f => f.Commerce.ProductDescription())
-              .RuleFor(m => m.Code, f => f.Commerce.Ean13())
-              .RuleFor(m => m.datePurchase, f => DateOnly.FromDateTime(f.Date.Past()));
-            return fakeData.Generate(100);
-        }
-
-        // Se crean las listas externas David - Robin
-        List<Client> SeedClients()
-        {
-            int ids = 1;
-            Faker<Client> fakeData = new Faker<Client>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Name, f => f.Person.FirstName)
-              .RuleFor(m => m.Surname, f => f.Person.LastName)
-              .RuleFor(m => m.Phone, f => f.Person.Phone)
-              .RuleFor(m => m.Email, f => f.Person.Email)
-              .RuleFor(m => m.Address, f => f.Person.Address.Street)
-              .RuleFor(m => m.Type, f => f.Lorem.Word());
-            return fakeData.Generate(100);
-        }
-
-        List<Vehicle> SeedVehicles()
-        {
-            int ids = 1;
-            var years = new[] { "2020", "2021", "2019", "2018", "2015" };
-            Faker<Vehicle> fakeData = new Faker<Vehicle>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Plate, f => f.Vehicle.Vin())
-              .RuleFor(m => m.Model, f => f.Vehicle.Model())
-              .RuleFor(m => m.Year, f => f.PickRandom(years))
-              .RuleFor(m => m.Description, f => f.Vehicle.Type())
-              .RuleFor(m => m.Color, f => f.Commerce.Color())
-              .RuleFor(m => m.ClientId, f => f.Random.Number(1, 99));
-            return fakeData.Generate(100);
-        }
-
-        List<Service> SeedServices()
-        {
-            int ids = 1;
-            Faker<Service> fakeData = new Faker<Service>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Name, f => f.Lorem.Word())
-              .RuleFor(m => m.Category, f => f.Lorem.Word())
-              .RuleFor(m => m.Description, f => f.Lorem.Sentence(5))
-              .RuleFor(m => m.Price, f => (double)f.Finance.Amount());
-            return fakeData.Generate(100);
-        }
-
-        List<Request> SeedRequests()
-        {
-            int ids = 1;
-            var states = new[] { "Activo", "Terminado" };
-            Faker<Request> fakeData = new Faker<Request>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.StarDate, f => DateOnly.FromDateTime(f.Date.Past()))
-              .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Past()))
-              .RuleFor(m => m.State, f => f.PickRandom(states))
-              .RuleFor(m => m.ServiceId, f => f.Random.Number(1, 99));
-            return fakeData.Generate(100);
-        }
-
-        List<Mechanic> SeedMechanics()
-        {
-            int ids = 1;
-            var roles = new[] { "Master", "Junior", "Aprendiz" };
-            var commision = new[] { 20, 30, 40 };
-            Faker<Mechanic> fakeData = new Faker<Mechanic>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Name, f => f.Person.FirstName)
-              .RuleFor(m => m.SurName, f => f.Person.LastName)
-              .RuleFor(m => m.Phone, f => f.Person.Phone)
-              .RuleFor(m => m.Role, f => f.PickRandom(roles))
-              .RuleFor(m => m.Email, f => f.Person.Email)
-              .RuleFor(m => m.Address, f => f.Person.Address.Street)
-              .RuleFor(m => m.Commission, f => f.PickRandom(commision))
-              .RuleFor(m => m.Salary, f => (double)f.Finance.Amount());
-            return fakeData.Generate(100);
-        }
-
-        List<Inconvenient> SeedInconvenients()
-        {
-            int ids = 1;
-            var states = new[] { "Mecanico", "Financiero", "Social", "Tiempo" };
-            Faker<Inconvenient> fakedata = new Faker<Inconvenient>("es_MX")
-              .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.DateAct, f => DateOnly.FromDateTime(f.Date.Past()))
-              .RuleFor(m => m.State, f => f.PickRandom(states))
-              .RuleFor(m => m.DaysDelay, f => f.Random.Number(1, 20))
-              .RuleFor(m => m.ServiceRequesedId, f => f.Random.Number(1, 99))
-              .RuleFor(m => m.Seen, f => f.Random.Bool())
-              .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
-              .RuleFor(m => m.RequestID, f => f.Random.Number(1, 99));
-            return fakedata.Generate(100);
-        }
-
-        List<Payroll> SeedPayrolls()
-        {
-            int ids = 1;
-            Faker<Payroll> fakedata = new Faker<Payroll>("es_MX")
-                .RuleFor(m => m.Id, f => ids++)
-                .RuleFor(m => m.StarDate, f => DateOnly.FromDateTime(f.Date.Past()))
-                .RuleFor(m => m.EndDate, f => DateOnly.FromDateTime(f.Date.Past()))
-                .RuleFor(m => m.Description, f => f.Name.JobDescriptor())
-                .RuleFor(m => m.Accruals, f => (double)f.Finance.Amount())
-                .RuleFor(m => m.Deductions, f => (double)f.Finance.Amount())
-                .RuleFor(m => m.Settlement, f => (double)f.Finance.Amount());
-            return fakedata.Generate(100);
-
-        }
-    }
+  }
 }
 
