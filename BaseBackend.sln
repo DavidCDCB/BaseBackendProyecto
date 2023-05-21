@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplication", "Aplication\Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{05891259-74E5-4A6B-AA28-EC6083DDEFDF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application layer", "Application layer", "{95792B2D-B162-460E-BDB4-6CC0EEAD680A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain layer", "Domain layer", "{BFC4D176-6AB8-4986-88D2-E0FCA29E0B13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestServer layer", "RestServer layer", "{4F098632-B700-4ACA-9A3D-D865137E2D63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C8D500D-21BF-43D0-AD84-6CAD1B58333D} = {4F098632-B700-4ACA-9A3D-D865137E2D63}
+		{81675CAE-C21D-4BF1-9AE7-5D1036A1B82C} = {95792B2D-B162-460E-BDB4-6CC0EEAD680A}
+		{05891259-74E5-4A6B-AA28-EC6083DDEFDF} = {BFC4D176-6AB8-4986-88D2-E0FCA29E0B13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A03004BB-42D7-4D98-90EA-AE1E551EBB3D}

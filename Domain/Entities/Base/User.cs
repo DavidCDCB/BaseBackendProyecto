@@ -1,26 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-// https://www.entityframeworktutorial.net/code-first/column-dataannotations-attribute-in-code-first.aspx
-namespace Domain.Entities.Base
+namespace Domain.Entities
 {
-  [Table("users")]
-  public class User
-  {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("id")]
-    public int Id { get; set; }
-    [Required]
-    [Column("full_name")]
-    public string FullName { get; set; }
-    [Required]
-    [Column("email")]
-    public string Email { get; set; }
-    [Required]
-    [Column("phone")]
-    public long Phone { get; set; }
+    [Table("users")]
+    public class User
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
+        public int Id { get; set; }
+        [Required]
+        [Column("email")]
+        public string? Email { get; set; }
+        [Required]
+        [Column("password")]
+        public string? Password { get; set; }
+        [Required]
+        [Column("role")]
+        public string? Role { get; set; }
 
-    public ICollection<Course>? Courses { get; set; }
-  }
+        public Administrator? Administrator { get; set; }
+        public Recepcionist? Recepcionist { get; set; }
+    }
 }
