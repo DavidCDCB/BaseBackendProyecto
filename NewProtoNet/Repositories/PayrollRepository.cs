@@ -72,32 +72,39 @@ namespace RestServer.Repositories
 
         async Task<Payroll> IPayrollRepository.UpdatePayroll(int id, PayrollDTO payroll)
         {
-            Payroll? encontrado = await this.dbContext.Payrolls!.FindAsync(id);
-            if (encontrado == null)
+            Payroll? find = await this.dbContext.Payrolls!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.StarDate = payroll.StarDate;
-            encontrado.EndDate = payroll.EndDate;
-            encontrado.Description = payroll.Description;
-            encontrado.Accruals = payroll.Accruals;
-            encontrado.Deductions = payroll.Deductions;
-            encontrado.Settlement = payroll.Settlement;
+            find.StarDate = payroll.StarDate;
+            find.EndDate = payroll.EndDate;
+            find.Description = payroll.Description;
+            find.Accruals = payroll.Accruals;
+            find.Deductions = payroll.Deductions;
+            find.Settlement = payroll.Settlement;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Payroll> IPayrollRepository.DeletePayroll(int id)
         {
-            Payroll? encontrado = await dbContext.Payrolls!.FindAsync(id);
-            if (encontrado != null)
+            Payroll? find = await dbContext.Payrolls!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado;
+            return find;
+        }
+        async Task<List<Payroll>> IPayrollRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<Payroll> payrolls = await this.dbContext.Payrolls!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)payrolls.Count / pageSize);
+            return (page <= totalPages) ? payrolls.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Payroll>();
         }
 
     }

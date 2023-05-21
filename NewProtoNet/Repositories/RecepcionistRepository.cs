@@ -30,15 +30,21 @@ namespace RestServer.Repositories
 
         async Task<Recepcionist> IRecepcionistRepository.PostRecepcionist(RecepcionistDTO RecepcionistDTO)
         {
+            User? findUser = await this.dbContext.Users!.FindAsync(RecepcionistDTO.UserId);
+            if (findUser == null || (findUser.Role != "Recepcionist"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de recepcionista asignado");
+            }
+
             Recepcionist Recepcionist = new Recepcionist()
             {
-                Id = RecepcionistDTO.Id,
                 Name = RecepcionistDTO.Name,
                 Surname = RecepcionistDTO.Surname,
                 Phone = RecepcionistDTO.Phone,
                 Address = RecepcionistDTO.Address,
                 Salary = RecepcionistDTO.Salary,
                 Email = RecepcionistDTO.Email,
+                UserId = RecepcionistDTO.UserId,
             };
 
             await this.dbContext.Recepcionists!.AddAsync(Recepcionist);
@@ -49,34 +55,40 @@ namespace RestServer.Repositories
 
         async Task<Recepcionist?> IRecepcionistRepository.UpdateRecepcionist(int id, RecepcionistDTO Recepcionist)
         {
-            Recepcionist? encontrado = await this.dbContext.Recepcionists!.FindAsync(id);
-            if (encontrado == null)
+            Recepcionist? find = await this.dbContext.Recepcionists!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Id = Recepcionist.Id;
-            encontrado.Name = Recepcionist.Name;
-            encontrado.Surname = Recepcionist.Surname;
-            encontrado.Phone = Recepcionist.Phone;
-            encontrado.Address = Recepcionist.Address;
-            encontrado.Salary = Recepcionist.Salary;
-            encontrado.Email = Recepcionist.Email;
+            User? findUser = await this.dbContext.Users!.FindAsync(Recepcionist.UserId);
+            if (findUser == null || (findUser.Role != "Recepcionist"))
+            {
+                throw new KeyNotFoundException("El usuario no existe o no tiene un rol de recepcionista asignado");
+            }
+
+            find.Name = Recepcionist.Name;
+            find.Surname = Recepcionist.Surname;
+            find.Phone = Recepcionist.Phone;
+            find.Address = Recepcionist.Address;
+            find.Salary = Recepcionist.Salary;
+            find.Email = Recepcionist.Email;
+            find.UserId = Recepcionist.UserId;
 
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Recepcionist?> IRecepcionistRepository.DeleteRecepcionist(int id)
         {
-            Recepcionist? encontrado = await dbContext.Recepcionists!.FindAsync(id);
-            if (encontrado != null)
+            Recepcionist? find = await dbContext.Recepcionists!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Recepcionist>> IRecepcionistRepository.GetByPage(int page)

@@ -1,7 +1,8 @@
-﻿using RestServer.DTOs;
+﻿using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using RestServer.Data;
+using RestServer.DTOs;
 using RestServer.Interfaces;
-using Domain.Entities;
 
 namespace RestServer.Controllers
 {
@@ -22,32 +23,34 @@ namespace RestServer.Controllers
             return Ok(await this.PurchaseRepository.GetPurchases());
         }
 
-        [HttpGet("page/{num}")]
-        public async Task<ActionResult> GetPurchasesByPage(int num)
-        {
-            List<Purchase> Purchases = await this.PurchaseRepository.GetByPage(num);
-            return Purchases.Count > 0 ? Ok(Purchases) : NoContent();
-        }
-
         [HttpGet("{id}")]
         public async Task<ActionResult> GetPurchase(int id)
         {
-            Purchase? encontrado = await this.PurchaseRepository.GetPurchase(id);
+            PurchaseDTO? find = await this.PurchaseRepository.GetPurchase(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
+
+        [HttpGet("page/{num}")]
+        public async Task<ActionResult> GetPurchaseByPage(int num)
+        {
+            List<Purchase> purchases = await this.PurchaseRepository.GetByPage(num);
+            return purchases.Count > 0 ? Ok(purchases) : NoContent();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> PostPurchase(PurchaseDTO PurchaseDTO)
         {
+
             try
             {
-                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));
+                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));           
             }
             catch (Exception e)
             {
@@ -56,29 +59,33 @@ namespace RestServer.Controllers
             }
         }
 
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPurchase(int id, PurchaseDTO PurchaseDTO)
         {
-            Purchase? actualizado = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
+            PurchaseDTO? updated = await this.PurchaseRepository.UpdatePurchase(id, PurchaseDTO);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePurchase(int id)
         {
-            Purchase? eliminado = await this.PurchaseRepository.DeletePurchase(id);
+            PurchaseDTO? eliminated = await this.PurchaseRepository.DeletePurchase(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
         }
+
+
+       
     }
 }

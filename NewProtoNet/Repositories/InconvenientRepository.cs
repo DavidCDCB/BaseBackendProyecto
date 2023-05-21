@@ -74,34 +74,41 @@ namespace RestServer.Repositories
 
         async Task<Inconvenient> IInconvenientRepository.UpdateInconvenient(int id, InconvenientDTO inconvenient)
         {
-            Inconvenient? encontrado = await this.dbContext.Inconvenients!.FindAsync(id);
-            if (encontrado == null)
+            Inconvenient? find = await this.dbContext.Inconvenients!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.DateAct = inconvenient.DateAct;
-            encontrado.State = inconvenient.State;
-            encontrado.DaysDelay = inconvenient.DaysDelay;
-            encontrado.ServiceRequesedId = inconvenient.ServiceRequesedId;
-            encontrado.Seen = inconvenient.Seen;
-            encontrado.Description = inconvenient.Description;
-            encontrado.RequestID = inconvenient.RequestID;
+            find.DateAct = inconvenient.DateAct;
+            find.State = inconvenient.State;
+            find.DaysDelay = inconvenient.DaysDelay;
+            find.ServiceRequesedId = inconvenient.ServiceRequesedId;
+            find.Seen = inconvenient.Seen;
+            find.Description = inconvenient.Description;
+            find.RequestID = inconvenient.RequestID;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Inconvenient> IInconvenientRepository.DeleteInconvenient(int id)
         {
-            Inconvenient? encontrado = await dbContext.Inconvenients!.FindAsync(id);
-            if (encontrado != null)
+            Inconvenient? find = await dbContext.Inconvenients!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado;
+            return find;
         }
 
+        async Task<List<Inconvenient>> IInconvenientRepository.GetByPage(int page)
+        {
+            const int pageSize = 10;
+            List<Inconvenient> inconvenients = await this.dbContext.Inconvenients!.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)inconvenients.Count / pageSize);
+            return (page <= totalPages) ? inconvenients.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Inconvenient>();
+        }
     }
 }

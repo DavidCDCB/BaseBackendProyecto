@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {

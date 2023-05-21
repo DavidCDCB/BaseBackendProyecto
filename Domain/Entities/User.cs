@@ -22,5 +22,8 @@ namespace Domain.Entities
 
         public Administrator? Administrator { get; set; }
         public Recepcionist? Recepcionist { get; set; }
+
+        public Mechanic? Mechanic { get; set; }
+        public Client? Client { get; set; }
     }
 }

@@ -11,6 +11,6 @@ namespace RestServer.DTOs
         public double? Accruals { get; set; }
         public double? Deductions { get; set; }
         public double? Settlement { get; set; }
-        public ICollection<Mechanic>? Mechanics { get; set; }
+        //public ICollection<Mechanic>? Mechanics { get; set; }
     }
 }

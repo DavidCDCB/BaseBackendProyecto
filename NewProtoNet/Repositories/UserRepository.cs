@@ -32,7 +32,6 @@ namespace RestServer.Repositories
         {
             User User = new User()
             {
-                Id = UserDTO.Id,
                 Email = UserDTO.Email,
                 Password = UserDTO.Password,
                 Role = UserDTO.Role,
@@ -46,30 +45,28 @@ namespace RestServer.Repositories
 
         async Task<User?> IUserRepository.UpdateUser(int id, UserDTO User)
         {
-            User? encontrado = await this.dbContext.Users!.FindAsync(id);
-            if (encontrado == null)
+            User? find = await this.dbContext.Users!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
-
-            encontrado.Id = User.Id;
-            encontrado.Email = User.Email;
-            encontrado.Password = User.Password;
-            encontrado.Role = User.Role;
+            find.Email = User.Email;
+            find.Password = User.Password;
+            find.Role = User.Role;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<User?> IUserRepository.DeleteUser(int id)
         {
-            User? encontrado = await dbContext.Users!.FindAsync(id);
-            if (encontrado != null)
+            User? find = await dbContext.Users!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<User>> IUserRepository.GetByPage(int page)
@@ -78,6 +75,11 @@ namespace RestServer.Repositories
             List<User> Users = await this.dbContext.Users!.ToListAsync();
             int totalPages = (int)Math.Ceiling((double)Users.Count / pageSize);
             return (page <= totalPages) ? Users.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<User>();
+        }
+
+        async Task<User?> IUserRepository.GetUserCredentials(LoginDTO loginDto)
+        {
+            return  await dbContext.Users!.SingleOrDefaultAsync(m => m.Email == loginDto.Email && m.Password == loginDto.Password);            
         }
     }
 }

@@ -14,7 +14,6 @@ namespace RestServer.Repositories
     {
       return new RequestDTO
       {
-        Id = r.Id,
         StarDate = r.StarDate.ToString(),
         EndDate = r.EndDate.ToString(),
         State = r.State,
@@ -71,33 +70,33 @@ namespace RestServer.Repositories
 
     async Task<RequestDTO?> IRequestRepository.UpdateRequest(int id, RequestDTO requestDTO)
     {
-      Request? encontrado = await this.dbContext.Requests!.FindAsync(id);
-      if (encontrado == null)
+      Request? find = await this.dbContext.Requests!.FindAsync(id);
+      if (find == null)
       {
         return null;
       }
       DateTime fechaInicio = DateTime.ParseExact(requestDTO.StarDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-      DateTime fechaFin = DateTime.ParseExact(requestDTO.StarDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+      DateTime fechaFin = DateTime.ParseExact(requestDTO.EndDate!, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
       
-      encontrado.StarDate = DateOnly.FromDateTime(fechaInicio);
-      encontrado.EndDate = DateOnly.FromDateTime(fechaFin);
-      encontrado.State = requestDTO.State;
-      encontrado.ClientId = requestDTO.ClientId;
-      encontrado.ServiceId = requestDTO.ServiceId;
+      find.StarDate = DateOnly.FromDateTime(fechaInicio);
+      find.EndDate = DateOnly.FromDateTime(fechaFin);
+      find.State = requestDTO.State;
+      find.ClientId = requestDTO.ClientId;
+      find.ServiceId = requestDTO.ServiceId;
 
       await this.dbContext.SaveChangesAsync();
 
-      return MapRequest(encontrado);
+      return MapRequest(find);
     }
 
     async Task<RequestDTO?> IRequestRepository.DeleteRequest(int id)
     {
-      Request? encontrado = await dbContext.Requests!.FindAsync(id);
-      if (encontrado != null)
+      Request? find = await dbContext.Requests!.FindAsync(id);
+      if (find != null)
       {
-        this.dbContext.Remove(encontrado);
+        this.dbContext.Remove(find);
         this.dbContext.SaveChanges();
-        return MapRequest(encontrado);
+        return MapRequest(find);
       }
       return null;
     }

@@ -19,10 +19,8 @@ namespace Domain.Entities
         [Required]
         [Column("brand")]
         public string? Brand { get; set; }
-        [Required]
         [Column("saleprice")]
         public float? salePrice { get; set; }
-        [Required]
         [Column("quantity")]
         public int? Quantity { get; set; }
         [Required]
@@ -30,6 +28,6 @@ namespace Domain.Entities
         public string? Description { get; set; }
 
         public ICollection<Purchase>? purchases { get; set; }
-
+        public ICollection<Request>? Requests { get; set; }
     }
 }

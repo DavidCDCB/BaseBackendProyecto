@@ -30,15 +30,15 @@ namespace RestServer.Repositories
 
         async Task<Product> IProductRepository.PostProduct(ProductDTO ProductDTO)
         {
+
             Product Product = new Product()
             {
-                Id = ProductDTO.Id,
                 Name = ProductDTO.Name,
                 Code = ProductDTO.Code,
                 Brand = ProductDTO.Brand,
-                salePrice = ProductDTO.salePrice,
-                Quantity = ProductDTO.Quantity,
-                Description = ProductDTO.Description,
+                salePrice = 0,
+                Quantity = 0,
+                Description = ProductDTO.Description,             
             };
 
             await this.dbContext.Products!.AddAsync(Product);
@@ -49,33 +49,32 @@ namespace RestServer.Repositories
 
         async Task<Product?> IProductRepository.UpdateProduct(int id, ProductDTO Product)
         {
-            Product? encontrado = await this.dbContext.Products!.FindAsync(id);
-            if (encontrado == null)
+            Product? find = await this.dbContext.Products!.FindAsync(id);
+            if (find == null)
             {
-                return encontrado;
+                return find;
             }
 
-            encontrado.Id = Product.Id;
-            encontrado.Name = Product.Name;
-            encontrado.Code = Product.Code;
-            encontrado.Brand = Product.Brand;
-            encontrado.salePrice = Product.salePrice;
-            encontrado.Quantity = Product.Quantity;
-            encontrado.Description = Product.Description;
+            find.Name = Product.Name;
+            find.Code = Product.Code;
+            find.Brand = Product.Brand;
+            find.salePrice = 0;
+            find.Quantity = 0;
+            find.Description = Product.Description;
             await this.dbContext.SaveChangesAsync();
 
-            return encontrado;
+            return find;
         }
 
         async Task<Product?> IProductRepository.DeleteProduct(int id)
         {
-            Product? encontrado = await dbContext.Products!.FindAsync(id);
-            if (encontrado != null)
+            Product? find = await dbContext.Products!.FindAsync(id);
+            if (find != null)
             {
-                this.dbContext.Remove(encontrado);
+                this.dbContext.Remove(find);
                 this.dbContext.SaveChanges();
             }
-            return encontrado!;
+            return find!;
         }
 
         async Task<List<Product>> IProductRepository.GetByPage(int page)

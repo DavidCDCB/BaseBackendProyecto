@@ -1,10 +1,12 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.DTOs;
 using RestServer.Interfaces;
 
 namespace RestServer.Controllers
 {
+    [Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]// https://localhost:7204/api/Mechanic
     public class MechanicController : Controller
@@ -33,14 +35,14 @@ namespace RestServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetMechanic(int id)
         {
-            Mechanic encontrado = await this.mechanicRepository.GetMechanic(id);
+            Mechanic find = await this.mechanicRepository.GetMechanic(id);
 
-            if (encontrado == null)
+            if (find == null)
             {
                 return NotFound();
             }
 
-            return Ok(encontrado);
+            return Ok(find);
         }
 
         /*
@@ -74,26 +76,32 @@ namespace RestServer.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMechanic(int id, MechanicDTO mechanic)
         {
-            Mechanic actualizado = await this.mechanicRepository.UpdateMechanic(id, mechanic);
+            Mechanic updated = await this.mechanicRepository.UpdateMechanic(id, mechanic);
 
-            if (actualizado == null)
+            if (updated == null)
             {
                 return NotFound();
             }
-            return Ok(actualizado);
+            return Ok(updated);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveMechanic(int id)
         {
-            Mechanic eliminado = await this.mechanicRepository.DeleteMechanic(id);
+            Mechanic eliminated = await this.mechanicRepository.DeleteMechanic(id);
 
-            if (eliminado == null)
+            if (eliminated == null)
             {
                 return NotFound();
             }
-            return Ok(eliminado);
+            return Ok(eliminated);
 
+        }
+        [HttpGet("page/{num}")]
+        public async Task<ActionResult> GetMechanicsByPage(int num)
+        {
+            List<Mechanic> mechanics = await this.mechanicRepository.GetByPage(num);
+            return mechanics.Count > 0 ? Ok(mechanics) : NoContent();
         }
     }
 }
