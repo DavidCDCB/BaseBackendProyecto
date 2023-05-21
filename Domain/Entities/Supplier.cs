@@ -32,6 +32,6 @@ namespace Domain.Entities
     [Column("address")]
     public string? Address { get; set; }
 
-    // Compras ...
+    public ICollection<Purchase>? purchases { get; set; }
   }
 }
