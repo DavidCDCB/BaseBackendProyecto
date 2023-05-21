@@ -26,6 +26,9 @@ namespace Domain.Entities
     public Client? Client { get; set; }
     [Column("service_id")]
     public int? ServiceId { get; set; }
+
     public Service? Service { get; set; }
+    public ICollection<Inconvenient>? Inconvenients { get; set; }
+    public ICollection<Mechanic>? Mechanics { get; set; }
   }
 }

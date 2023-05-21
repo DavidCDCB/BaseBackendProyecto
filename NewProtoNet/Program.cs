@@ -40,6 +40,9 @@ builder.Services.AddTransient<IClientRepository, ClientRepository>();
 builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
 builder.Services.AddTransient<IRequestRepository, RequestRepository>();
 builder.Services.AddTransient<IReportRepository, ReportRepository>();
+builder.Services.AddTransient<IMechanicRepository, MechanicRepository>();
+builder.Services.AddTransient<IPayrollRepository, PayrollRepository>();
+builder.Services.AddTransient<IInconvenientRepository, InconvenientRepository>();
 
 // Se configura la librería que usa el motor de la BD según la cadena que hay en settings.json
 /*
