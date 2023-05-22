@@ -33,7 +33,7 @@ namespace RestServer.Repositories
             User User = new User()
             {
                 Email = UserDTO.Email,
-                Password = UserDTO.Password,
+                Password = EncodePasswordToBase64(UserDTO.Password),
                 Role = UserDTO.Role,
             };
 
@@ -51,7 +51,7 @@ namespace RestServer.Repositories
                 return find;
             }
             find.Email = User.Email;
-            find.Password = User.Password;
+            find.Password = EncodePasswordToBase64(User.Password);
             find.Role = User.Role;
             await this.dbContext.SaveChangesAsync();
 
@@ -79,7 +79,42 @@ namespace RestServer.Repositories
 
         async Task<User?> IUserRepository.GetUserCredentials(LoginDTO loginDto)
         {
+            loginDto.Password = EncodePasswordToBase64(loginDto.Password);
             return  await dbContext.Users!.SingleOrDefaultAsync(m => m.Email == loginDto.Email && m.Password == loginDto.Password);            
+        }
+
+        public string EncodePasswordToBase64(string password)
+        {
+            try
+            {
+                byte[] encData_byte = new byte[password.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Encode" + ex.Message);
+            }
+        }
+
+        public string DecodeFrom64(string encodedData)
+        {
+            try
+            {
+                System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
+                System.Text.Decoder utf8Decode = encoder.GetDecoder();
+                byte[] todecode_byte = Convert.FromBase64String(encodedData);
+                int charCount = utf8Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+                char[] decoded_char = new char[charCount];
+                utf8Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+                string result = new String(decoded_char);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in DecodeFrom64" + ex.Message);
+            }          
         }
     }
 }

@@ -1,7 +1,6 @@
-using Microsoft.EntityFrameworkCore;
 using Bogus;
-using Domain.Entities.Base;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -31,7 +30,7 @@ using Domain.Entities;
 
 namespace RestServer.Data
 {
-  public class BaseDbContext : DbContext
+    public class BaseDbContext : DbContext
   {
     public BaseDbContext(DbContextOptions options) : base(options)
     {
@@ -49,8 +48,6 @@ namespace RestServer.Data
     public DbSet<Purchase>? Purchases { get; set; }
     public DbSet<Recepcionist>? Recepcionists { get; set; }
 
-    public DbSet<Course>? Courses { get; set; }
-    public DbSet<Category>? Categories { get; set; }
     public DbSet<Mechanic>? Mechanics { get; set; }
     public DbSet<Inconvenient>? Inconvenients { get; set; }
     public DbSet<Payroll>? Payrolls { get; set; }

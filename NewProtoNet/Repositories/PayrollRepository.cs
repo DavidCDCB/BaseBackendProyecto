@@ -1,10 +1,9 @@
-﻿using RestServer.Data;
-using RestServer.Interfaces;
-using RestServer.DTOs;
-using Bogus;
-using Microsoft.EntityFrameworkCore;
-using Domain.Entities.Base;
+﻿using Bogus;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using RestServer.Data;
+using RestServer.DTOs;
+using RestServer.Interfaces;
 
 // La lógica de negocio debe estar en la capa de aplicacion sin usar el context
 
