@@ -108,14 +108,48 @@ namespace RestServer.Controllers
             {
                 return Ok(new {
                     status = "not found",
-                    result = "Invalid credentials"
+                    result = "Invalid credentials",
+                    role = "none"
                 });
             }
             string jwt = GenerateToken(user);
             return Ok(new { 
                 status = "ok",
-                result = jwt
+                result = jwt,
+                role = user.Role
             });
+        }
+
+        //validar que el token sea valido en el front
+        [HttpGet("validate/{token}")]
+        public async Task<IActionResult> ValidateToken(String token)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(config.GetSection("JWT:Key").Value);
+                tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateLifetime = true,
+                    ValidateAudience = false,
+                    ValidateIssuer = false
+                }, out SecurityToken validatedToken);
+                return Ok(new
+                {
+                    status = "ok",
+                    result = "Valid token"
+                });
+            }
+            catch (Exception)
+            {
+                return Ok(new
+                {
+                    status = "not found",
+                    result = "Invalid token"
+                });
+            }
         }
         
         private string GenerateToken(User user)
