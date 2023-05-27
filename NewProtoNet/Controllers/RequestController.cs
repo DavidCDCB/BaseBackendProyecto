@@ -6,7 +6,7 @@ using RestServer.Interfaces;
 
 namespace RestServer.Controllers
 {
-    [Authorize(Policy = "PayrollLimit")]
+    //[Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]
     public class RequestController : Controller

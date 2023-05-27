@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 // https://localhost:7204/swagger/index.html
 namespace RestServer.Controllers
 {
-    [Authorize(Policy = "SuperUser")]
+    //[Authorize(Policy = "SuperUser")]
     [ApiController]
     [Route("api/[controller]")] // https://localhost:7204/api/Payroll
     public class PayrollController : Controller
