@@ -46,7 +46,7 @@ namespace RestServer.Data
     public DbSet<Administrator>? Administrators { get; set; }
     public DbSet<Product>? Products { get; set; }
     public DbSet<Purchase>? Purchases { get; set; }
-    public DbSet<Recepcionist>? Recepcionists { get; set; }
+    public DbSet<Receptionist>? Receptionists { get; set; }
 
     public DbSet<Mechanic>? Mechanics { get; set; }
     public DbSet<Inconvenient>? Inconvenients { get; set; }
@@ -63,9 +63,9 @@ namespace RestServer.Data
           .HasOne(v => v.User)
           .WithOne(c => c.Administrator);
 
-      modelBuilder.Entity<Recepcionist>()
+      modelBuilder.Entity<Receptionist>()
           .HasOne(v => v.User)
-          .WithOne(c => c.Recepcionist);
+          .WithOne(c => c.Receptionist);
 
       modelBuilder.Entity<Product>()
           .HasMany(v => v.purchases)
@@ -91,10 +91,10 @@ namespace RestServer.Data
         .HasMany(v => v.Requests)
         .WithOne(c => c.Service);
 
-      // recepcionista -> usuario
-      modelBuilder.Entity<Recepcionist>()
+      // Receptionista -> usuario
+      modelBuilder.Entity<Receptionist>()
           .HasOne(v => v.User)
-          .WithOne(c => c.Recepcionist);
+          .WithOne(c => c.Receptionist);
 
       modelBuilder.Entity<Product>()
           .HasMany(v => v.purchases)
@@ -126,7 +126,7 @@ namespace RestServer.Data
       modelBuilder.Entity<User>().HasData(this.SeedUsers());
       modelBuilder.Entity<Report>().HasData(this.SeedReports());
       modelBuilder.Entity<Administrator>().HasData(this.SeedAdministrators());
-      modelBuilder.Entity<Recepcionist>().HasData(this.SeedRecepcionists());
+      modelBuilder.Entity<Receptionist>().HasData(this.SeedReceptionists());
       modelBuilder.Entity<Product>().HasData(this.SeedProducts());
 
     }
@@ -163,12 +163,12 @@ namespace RestServer.Data
     List<User> SeedUsers()
     {
       int ids = 1;
-      var rol = new[] { "Recepcionist", "Administrator", "Mechanic" };
+      var rol = new[] { "Receptionist", "Administrator", "Mechanic" };
       Faker<User> fakeData = new Faker<User>("es_MX")
         .RuleFor(m => m.Id, f => ids++)
         .RuleFor(m => m.Email, f => f.Person.Email)
         .RuleFor(m => m.Password, f => f.Lorem.Word())
-        .RuleFor(m => m.Role, f => f.PickRandom(rol));
+        .RuleFor(m => m.role, f => f.PickRandom(rol));
       return fakeData.Generate(100);
     }
     List<Service> SeedServices()
@@ -233,10 +233,10 @@ namespace RestServer.Data
       return fakeData.Generate(100);
     }
 
-    List<Recepcionist> SeedRecepcionists()
+    List<Receptionist> SeedReceptionists()
     {
       int ids = 1;
-      Faker<Recepcionist> fakeData = new Faker<Recepcionist>("es_MX")
+      Faker<Receptionist> fakeData = new Faker<Receptionist>("es_MX")
         .RuleFor(m => m.Id, f => ids++)
         .RuleFor(m => m.Name, f => f.Person.FirstName)
         .RuleFor(m => m.Surname, f => f.Person.LastName)
@@ -284,7 +284,7 @@ namespace RestServer.Data
         .RuleFor(m => m.Name, f => f.Person.FirstName)
         .RuleFor(m => m.SurName, f => f.Person.LastName)
         .RuleFor(m => m.Phone, f => f.Person.Phone)
-        .RuleFor(m => m.Role, f => f.PickRandom(roles))
+        .RuleFor(m => m.role, f => f.PickRandom(roles))
         .RuleFor(m => m.Email, f => f.Person.Email)
         .RuleFor(m => m.Address, f => f.Person.Address.Street)
         .RuleFor(m => m.Commission, f => f.PickRandom(commision))

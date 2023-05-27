@@ -18,10 +18,10 @@ namespace Domain.Entities
         public string? Password { get; set; }
         [Required]
         [Column("role")]
-        public string? Role { get; set; }
+        public string? role { get; set; }
 
         public Administrator? Administrator { get; set; }
-        public Recepcionist? Recepcionist { get; set; }
+        public Receptionist? Receptionist { get; set; }
 
         public Mechanic? Mechanic { get; set; }
         public Client? Client { get; set; }

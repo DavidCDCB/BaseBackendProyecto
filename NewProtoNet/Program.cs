@@ -36,7 +36,7 @@ builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IAdministratorRepository, AdministratorRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IPurchaseRepository, PurchaseRepository>();
-builder.Services.AddTransient<IRecepcionistRepository, RecepcionistRepository>();
+builder.Services.AddTransient<IReceptionistRepository, ReceptionistRepository>();
 builder.Services.AddTransient<ISupplierRepository, SupplierRepository>();
 builder.Services.AddTransient<IReportRepository, ReportRepository>();
 
@@ -76,9 +76,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("SuperUser", policy => policy.RequireClaim("Roles", "Administrator"));
-    options.AddPolicy("PayrollLimit", policy => policy.RequireClaim("Roles", "Recepcionist","Administrator"));
-    options.AddPolicy("MechanicService", policy => policy.RequireClaim("Roles", "Mechanic", "Administrator", "Recepcionist"));
+    options.AddPolicy("SuperUser", policy => policy.RequireClaim("roles", "Administrator"));
+    options.AddPolicy("PayrollLimit", policy => policy.RequireClaim("roles", "Receptionist","Administrator"));
+    options.AddPolicy("MechanicService", policy => policy.RequireClaim("roles", "Mechanic", "Administrator", "Receptionist"));
 });
 
 

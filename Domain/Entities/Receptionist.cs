@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    [Table("recepcionists")]
-    public class Recepcionist
+    [Table("receptionists")]
+    public class Receptionist
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,7 +29,7 @@ namespace Domain.Entities
         [Column("email")]
         public string? Email { get; set; }
 
-        [Column("userid")]
+        [Column("user_id")]
         public int? UserId { get; set; }
         public User? User { get; set; }
     }

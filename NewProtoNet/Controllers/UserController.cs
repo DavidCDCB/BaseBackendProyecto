@@ -112,7 +112,7 @@ namespace RestServer.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim("Roles", user.Role)
+                new Claim("roles", user.role)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWTAuthenticationHIGHsecuredPasswordVVVp1OH7Xzyr"));
@@ -124,7 +124,7 @@ namespace RestServer.Controllers
                                signingCredentials: creds);
 
             string token = new JwtSecurityTokenHandler().WriteToken(securityToken); 
-            return token + ' ' + user.Role;
+            return token + ' ' + user.role;
         }
     }
 }

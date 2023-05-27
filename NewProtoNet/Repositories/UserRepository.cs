@@ -34,7 +34,7 @@ namespace RestServer.Repositories
             {
                 Email = UserDTO.Email,
                 Password = EncodePasswordToBase64(UserDTO.Password),
-                Role = UserDTO.Role,
+                role = UserDTO.role,
             };
 
             await this.dbContext.Users!.AddAsync(User);
@@ -52,7 +52,7 @@ namespace RestServer.Repositories
             }
             find.Email = User.Email;
             find.Password = EncodePasswordToBase64(User.Password);
-            find.Role = User.Role;
+            find.role = User.role;
             await this.dbContext.SaveChangesAsync();
 
             return find;
