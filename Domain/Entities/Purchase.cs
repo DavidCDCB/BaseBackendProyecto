@@ -30,11 +30,11 @@ namespace Domain.Entities
         [Column("datepurchase")]
         public DateOnly? datePurchase { get; set; }
 
-        [Column("productid")]
+        [Column("product_id")]
         public int? ProductId { get; set; }
         public Product? Product { get; set; }
 
-        [Column("supplierid")]
+        [Column("supplier_id")]
         public int? SupplierId { get; set; }
         public Supplier? Supplier { get; set; }
 

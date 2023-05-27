@@ -33,8 +33,8 @@ namespace RestServer.Repositories
             User User = new User()
             {
                 Email = UserDTO.Email,
-                Password = UserDTO.Password,
-                Role = UserDTO.Role,
+                Password = EncodePasswordToBase64(UserDTO.Password),
+                role = UserDTO.role,
             };
 
             await this.dbContext.Users!.AddAsync(User);
@@ -51,8 +51,8 @@ namespace RestServer.Repositories
                 return find;
             }
             find.Email = User.Email;
-            find.Password = User.Password;
-            find.Role = User.Role;
+            find.Password = EncodePasswordToBase64(User.Password);
+            find.role = User.role;
             await this.dbContext.SaveChangesAsync();
 
             return find;
@@ -79,7 +79,25 @@ namespace RestServer.Repositories
 
         async Task<User?> IUserRepository.GetUserCredentials(LoginDTO loginDto)
         {
+            loginDto.Password = EncodePasswordToBase64(loginDto.Password);
             return  await dbContext.Users!.SingleOrDefaultAsync(m => m.Email == loginDto.Email && m.Password == loginDto.Password);            
         }
+
+        public string EncodePasswordToBase64(string password)
+        {
+            try
+            {
+                byte[] encData_byte = new byte[password.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Encode" + ex.Message);
+            }
+        }
+
+        
     }
 }

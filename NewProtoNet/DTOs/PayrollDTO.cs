@@ -1,7 +1,4 @@
-﻿using Domain.Entities;
-using Domain.Entities.Base;
-
-namespace RestServer.DTOs
+﻿namespace RestServer.DTOs
 {
     public class PayrollDTO
     {

@@ -43,14 +43,14 @@ namespace RestServer.Migrations
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int")
-                        .HasColumnName("userid");
+                        .HasColumnName("user_id");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("administrators");
+                    b.ToTable("admins");
 
                     b.HasData(
                         new
@@ -1846,9 +1846,9 @@ namespace RestServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("product_id");
 
-                    b.HasIndex("SupplierId");
+                    b.HasIndex("supplier_id");
 
                     b.ToTable("purchases");
 
@@ -2855,7 +2855,7 @@ namespace RestServer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.Recepcionist", b =>
+            modelBuilder.Entity("Domain.Entities.Receptionist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2894,14 +2894,14 @@ namespace RestServer.Migrations
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int")
-                        .HasColumnName("userid");
+                        .HasColumnName("user_id");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("recepcionists");
+                    b.ToTable("receptionists");
 
                     b.HasData(
                         new
@@ -5591,7 +5591,7 @@ namespace RestServer.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("password");
 
-                    b.Property<string>("Role")
+                    b.Property<string>("role")
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("role");
@@ -5606,700 +5606,700 @@ namespace RestServer.Migrations
                             Id = 1,
                             Email = "Lorenzo.Arteaga41@gmail.com",
                             Password = "Abacorar",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 2,
                             Email = "Evelyn_Velasquez47@nearbpo.com",
                             Password = "Batalán",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 3,
                             Email = "Patricia_Sanches@gmail.com",
                             Password = "Gen",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 4,
                             Email = "Raul_Angulo@hotmail.com",
                             Password = "Cencido",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 5,
                             Email = "Cristian85@corpfolder.com",
                             Password = "Ficha",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 6,
                             Email = "Melany_Baeza@nearbpo.com",
                             Password = "Engarrafar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 7,
                             Email = "Elisa.Montero@hotmail.com",
                             Password = "Descifre",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 8,
                             Email = "Kevin.Guerrero@nearbpo.com",
                             Password = "Batanero",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 9,
                             Email = "Vanessa.Robles80@corpfolder.com",
                             Password = "Engarbullar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 10,
                             Email = "Graciela.Rincon93@hotmail.com",
                             Password = "Desceñir",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 11,
                             Email = "Israel.Matias86@gmail.com",
                             Password = "Generalidad",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 12,
                             Email = "JoseMaria.Carrion82@corpfolder.com",
                             Password = "Fideicomisario",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 13,
                             Email = "JuanPablo_Quintanilla57@gmail.com",
                             Password = "Céndea",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 14,
                             Email = "Ignacio_Cantu@gmail.com",
                             Password = "Desciframiento",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 15,
                             Email = "Emilia.Montano87@hotmail.com",
                             Password = "Bataola",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 16,
                             Email = "Oscar16@hotmail.com",
                             Password = "Basurero",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 17,
                             Email = "David23@yahoo.com",
                             Password = "Gemoterapia",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 18,
                             Email = "Tadeo26@hotmail.com",
                             Password = "Batanear",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 19,
                             Email = "David.Castaneda@yahoo.com",
                             Password = "Abadía",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 20,
                             Email = "Daniel_Briseno@hotmail.com",
                             Password = "Desciframiento",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 21,
                             Email = "Julia_Aguilera42@nearbpo.com",
                             Password = "Engargolado",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 22,
                             Email = "Soledad64@nearbpo.com",
                             Password = "Cencerril",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 23,
                             Email = "Juana35@yahoo.com",
                             Password = "Cencerrillas",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 24,
                             Email = "XimenaGuadalupe.Almonte72@yahoo.com",
                             Password = "Engarronar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 25,
                             Email = "Adan_Lovato@corpfolder.com",
                             Password = "Géminis",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 26,
                             Email = "Iker31@hotmail.com",
                             Password = "Incorregible",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 27,
                             Email = "Alexander26@hotmail.com",
                             Password = "Abacería",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 28,
                             Email = "Hernan_Caban28@hotmail.com",
                             Password = "Cencerreo",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 29,
                             Email = "Emilia18@nearbpo.com",
                             Password = "Incremento",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 30,
                             Email = "Raul.Tejada@yahoo.com",
                             Password = "Engastadura",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 31,
                             Email = "Felipe.Leon@gmail.com",
                             Password = "Descentralizar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 32,
                             Email = "Mario77@hotmail.com",
                             Password = "Genealógico",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 33,
                             Email = "Naomi25@hotmail.com",
                             Password = "Gemíparo",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 34,
                             Email = "Angela.Reyna@yahoo.com",
                             Password = "Abalar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 35,
                             Email = "Evelyn.Kortajarena@gmail.com",
                             Password = "Geminar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 36,
                             Email = "MariadelosAngeles36@nearbpo.com",
                             Password = "Incruento",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 37,
                             Email = "Rodrigo_Zambrano55@gmail.com",
                             Password = "Abalada",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 38,
                             Email = "Timoteo_Sisneros44@nearbpo.com",
                             Password = "Genealogía",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 39,
                             Email = "Dolores.Negrete@corpfolder.com",
                             Password = "Fichar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 40,
                             Email = "Natalia89@yahoo.com",
                             Password = "Cenal",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 41,
                             Email = "Micaela11@hotmail.com",
                             Password = "Bátavo",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 42,
                             Email = "Sergio.Duran65@hotmail.com",
                             Password = "Abadía",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 43,
                             Email = "Cesar36@nearbpo.com",
                             Password = "Geminación",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 44,
                             Email = "Sebastian_Fonseca99@nearbpo.com",
                             Password = "Descharchar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 45,
                             Email = "Fatima79@gmail.com",
                             Password = "Descerrar",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 46,
                             Email = "Melany.Atencio@nearbpo.com",
                             Password = "Generala",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 47,
                             Email = "LuisAngel64@hotmail.com",
                             Password = "Batata",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 48,
                             Email = "MariadelCarmen1@yahoo.com",
                             Password = "Incorrecto",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 49,
                             Email = "Virginia_Saavedra62@hotmail.com",
                             Password = "Abajadero",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 50,
                             Email = "Adriana_Caraballo@corpfolder.com",
                             Password = "Incorruptibilidad",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 51,
                             Email = "JorgeLuis_Berrios71@nearbpo.com",
                             Password = "Engaritar",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 52,
                             Email = "Esteban.Rosales50@gmail.com",
                             Password = "Descerebrar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 53,
                             Email = "Maria.Avila49@hotmail.com",
                             Password = "Cendrada",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 54,
                             Email = "Virginia87@yahoo.com",
                             Password = "Ficticio",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 55,
                             Email = "Mario_Luna40@corpfolder.com",
                             Password = "Engaste",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 56,
                             Email = "Adela_Avalos65@hotmail.com",
                             Password = "Basurear",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 57,
                             Email = "MariaElena17@corpfolder.com",
                             Password = "Batanear",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 58,
                             Email = "AngelGabriel_Marroquin86@corpfolder.com",
                             Password = "General",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 59,
                             Email = "Axel72@yahoo.com",
                             Password = "Cencerril",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 60,
                             Email = "Marcela64@gmail.com",
                             Password = "Batato",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 61,
                             Email = "Horacio.Saiz@nearbpo.com",
                             Password = "Cenefa",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 62,
                             Email = "AngelGabriel_Jimenez@nearbpo.com",
                             Password = "Bastonada",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 63,
                             Email = "Patricio.Matias@nearbpo.com",
                             Password = "Cenco",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 64,
                             Email = "Josefina25@nearbpo.com",
                             Password = "Engastar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 65,
                             Email = "Gerardo4@hotmail.com",
                             Password = "Engaritar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 66,
                             Email = "JorgeLuis.Vega50@corpfolder.com",
                             Password = "Engargolado",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 67,
                             Email = "Zoe_Marroquin57@corpfolder.com",
                             Password = "Cenal",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 68,
                             Email = "Amalia99@corpfolder.com",
                             Password = "Cenefa",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 69,
                             Email = "Ivan.Toledo@corpfolder.com",
                             Password = "Incorporal",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 70,
                             Email = "MariaTeresa_Rincon@corpfolder.com",
                             Password = "Engarnio",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 71,
                             Email = "AnaMaria_Meza@nearbpo.com",
                             Password = "Deschuponar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 72,
                             Email = "Cristina_Delapaz45@corpfolder.com",
                             Password = "Abacial",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 73,
                             Email = "FranciscoJavier18@nearbpo.com",
                             Password = "Engastadura",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 74,
                             Email = "Vanessa_Alcaraz91@nearbpo.com",
                             Password = "Céndea",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 75,
                             Email = "Diego.Camacho52@yahoo.com",
                             Password = "Batata",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 76,
                             Email = "Isabel97@nearbpo.com",
                             Password = "Abad",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 77,
                             Email = "JoseLuis.Montalvo@corpfolder.com",
                             Password = "Engarmarse",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 78,
                             Email = "Cecilia.Longoria36@yahoo.com",
                             Password = "Generala",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 79,
                             Email = "Emiliano_Guzman23@yahoo.com",
                             Password = "Cencha",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 80,
                             Email = "Ana.Giron88@yahoo.com",
                             Password = "Engaste",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 81,
                             Email = "Samuel73@yahoo.com",
                             Password = "Bateaguas",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 82,
                             Email = "Marcela26@hotmail.com",
                             Password = "Descifre",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 83,
                             Email = "Elena.Ulloa27@yahoo.com",
                             Password = "Fido",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 84,
                             Email = "MariaFernanda.Martinez@hotmail.com",
                             Password = "Engastador",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 85,
                             Email = "Guadalupe_Lucio@corpfolder.com",
                             Password = "Batahola",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 86,
                             Email = "Maricarmen20@hotmail.com",
                             Password = "Incrasar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 87,
                             Email = "Fatima30@gmail.com",
                             Password = "Engaste",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 88,
                             Email = "Marilu_Barreto89@nearbpo.com",
                             Password = "Abadiado",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 89,
                             Email = "Fernando.Gastelum@yahoo.com",
                             Password = "Descepar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 90,
                             Email = "Pilar_Ontiveros@nearbpo.com",
                             Password = "Descerebrar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 91,
                             Email = "Adela72@corpfolder.com",
                             Password = "Engargantar",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 92,
                             Email = "Eva.Oquendo57@corpfolder.com",
                             Password = "Céndea",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 93,
                             Email = "AnaMaria44@nearbpo.com",
                             Password = "Descerco",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 94,
                             Email = "Luis_Osorio40@gmail.com",
                             Password = "Incorrupción",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 95,
                             Email = "Agustin32@corpfolder.com",
                             Password = "Engarbarse",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 96,
                             Email = "Emilio.Monroy@gmail.com",
                             Password = "Cencerril",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 97,
                             Email = "Isabel81@hotmail.com",
                             Password = "Engarrafar",
-                            Role = "Administrator"
+                            role = "Administrator"
                         },
                         new
                         {
                             Id = 98,
                             Email = "Ivanna.Botello6@gmail.com",
                             Password = "Incorregiblemente",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         },
                         new
                         {
                             Id = 99,
                             Email = "Vanessa14@gmail.com",
                             Password = "Descepar",
-                            Role = "Mechanic"
+                            role = "Mechanic"
                         },
                         new
                         {
                             Id = 100,
                             Email = "Ximena.Munguia@gmail.com",
                             Password = "Fidalgo",
-                            Role = "Recepcionist"
+                            role = "Receptionist"
                         });
                 });
 
@@ -6327,11 +6327,11 @@ namespace RestServer.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Recepcionist", b =>
+            modelBuilder.Entity("Domain.Entities.Receptionist", b =>
                 {
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithOne("Recepcionist")
-                        .HasForeignKey("Domain.Entities.Recepcionist", "UserId");
+                        .WithOne("Receptionist")
+                        .HasForeignKey("Domain.Entities.Receptionist", "UserId");
 
                     b.Navigation("User");
                 });
@@ -6350,7 +6350,7 @@ namespace RestServer.Migrations
                 {
                     b.Navigation("Administrator");
 
-                    b.Navigation("Recepcionist");
+                    b.Navigation("Receptionist");
                 });
 #pragma warning restore 612, 618
         }

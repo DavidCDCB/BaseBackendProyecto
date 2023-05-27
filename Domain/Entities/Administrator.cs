@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    [Table("administrators")]
+    [Table("admins")]
     public class Administrator
     {
         [Key]
@@ -20,7 +20,7 @@ namespace Domain.Entities
         [Column("phone")]
         public string? Phone { get; set; }
 
-        [Column("userid")]
+        [Column("user_id")]
         public int? UserId { get; set; }
         public User? User { get; set; }
     }
