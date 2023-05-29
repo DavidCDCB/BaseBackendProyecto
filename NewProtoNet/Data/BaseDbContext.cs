@@ -56,6 +56,7 @@ namespace RestServer.Data
         public DbSet<Mechanic>? Mechanics { get; set; }
         public DbSet<Inconvenient>? Inconvenients { get; set; }
         public DbSet<Payroll>? Payrolls { get; set; }
+        //public DbSet<ProductRequest>? ProductRequests { get; set; }
 
 
         // Se define cada una de la relaciones en cada migración
@@ -87,7 +88,8 @@ namespace RestServer.Data
 
             modelBuilder.Entity<Request>()
                 .HasMany(v => v.Products)
-                .WithMany(c => c.Requests);
+                .WithMany(c => c.Requests)
+                .UsingEntity(j => j.ToTable("productrequest"));
 
             //Relaciones de migración David - Robin
             // Cliente->Vehiculos
@@ -142,6 +144,7 @@ namespace RestServer.Data
             modelBuilder.Entity<Mechanic>().HasData(this.SeedMechanics());
             modelBuilder.Entity<Inconvenient>().HasData(this.SeedInconvenients());
             modelBuilder.Entity<Payroll>().HasData(this.SeedPayrolls());
+            
         }
 
 

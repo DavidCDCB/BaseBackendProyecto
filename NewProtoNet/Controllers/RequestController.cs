@@ -6,7 +6,7 @@ using RestServer.Interfaces;
 
 namespace RestServer.Controllers
 {
-    [Authorize(Policy = "PayrollLimit")]
+    //[Authorize(Policy = "PayrollLimit")]
     [ApiController]
     [Route("api/[controller]")]
     public class RequestController : Controller
@@ -61,6 +61,21 @@ namespace RestServer.Controllers
                 Console.WriteLine(e);
                 return BadRequest(e);
             }
+        }
+
+        [HttpPost("products")]
+        public async Task<IActionResult> PostRequestProducts(ProductRequestDTO requestProducts)
+        {
+            try
+            {
+                return Ok(await this.requestRepository.PostRequestProducts(requestProducts));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest(e);
+            }
+
         }
 
         [HttpPut("{id}")]

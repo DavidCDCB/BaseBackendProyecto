@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using RestServer.Data;
 using RestServer.DTOs;
 using RestServer.Interfaces;
+using System.Collections.Generic;
 
 namespace RestServer.Repositories
 {
-  public class RequestRepository : IRequestRepository
+    public class RequestRepository : IRequestRepository
   {
     private readonly BaseDbContext dbContext;
 
@@ -43,7 +44,31 @@ namespace RestServer.Repositories
       return await Task.FromResult(ChangeDates(requests));
     }
 
-    async Task<RequestDTO?> IRequestRepository.GetRequest(int id)
+        async Task<List<Product>> IRequestRepository.PostRequestProducts(ProductRequestDTO requestProducts)
+        {
+            Request? request = await this.dbContext.Requests!.FindAsync(requestProducts.RequestsId);
+            List < Product > products = new List<Product>();
+            if (request == null)
+            {
+                return products;
+            }
+            foreach(int idProduct in requestProducts.ProductsId)
+            {
+                Product? product = await this.dbContext.Products!.FindAsync(idProduct);
+                if (product != null)
+                {
+                    products.Add(product);
+                }
+            }
+            //request.Products = products.Select(p => new Product { Id = p.Id }).ToList(); // Asignar la lista de productos al request
+            request.Products = products;
+            await this.dbContext.SaveChangesAsync();
+
+            return products;
+        }
+
+
+        async Task<RequestDTO?> IRequestRepository.GetRequest(int id)
     {
       Request? request = await dbContext.Requests!.FirstOrDefaultAsync(m => m.Id == id);
       return (request != null) ? MapRequest(request) : null;
