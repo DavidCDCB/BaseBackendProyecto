@@ -19,10 +19,8 @@ namespace Domain.Entities
         [Required]
         [Column("brand")]
         public string? Brand { get; set; }
-        [Required]
         [Column("saleprice")]
         public float? salePrice { get; set; }
-        [Required]
         [Column("quantity")]
         public int? Quantity { get; set; }
         [Required]

@@ -2,9 +2,7 @@
 using Bogus;
 using Domain.Entities.Base;
 using Domain.Entities;
-using System.Security.Policy;
-using System.Data;
-using Bogus.Extensions.Portugal;
+using Microsoft.EntityFrameworkCore;
 
 // Gestión de migraciones
 // https://www.entityframeworktutorial.net/code-first/code-based-migration-in-code-first.aspx
@@ -40,23 +38,28 @@ namespace RestServer.Data
         {
         }
 
-        public DbSet<User>? Users { get; set; }
-        public DbSet<Report>? Reports { get; set; }
-        public DbSet<Administrator>? Administrators { get; set; }
-        public DbSet<Product>? Products { get; set; }
-        public DbSet<Purchase>? Purchases { get; set; }
-        public DbSet<Recepcionist>? Recepcionists { get; set; }
-        public DbSet<Supplier>? Suppliers { get; set; }
+    public DbSet<Client>? Clients { get; set; }
+    public DbSet<Vehicle>? Vehicles { get; set; }
+    public DbSet<Request>? Requests { get; set; }
+    public DbSet<Service>? Services { get; set; }
+    public DbSet<Supplier>? Suppliers { get; set; }
+    public DbSet<User>? Users { get; set; }
+    public DbSet<Report>? Reports { get; set; }
+    public DbSet<Administrator>? Administrators { get; set; }
+    public DbSet<Product>? Products { get; set; }
+    public DbSet<Purchase>? Purchases { get; set; }
+    public DbSet<Receptionist>? Receptionists { get; set; }
 
-        // Se declaran las entidades externas David - Robin
-        public DbSet<Client>? Clients { get; set; }
-        public DbSet<Vehicle>? Vehicles { get; set; }
-        public DbSet<Request>? Requests { get; set; }
-        public DbSet<Service>? Services { get; set; }
-        public DbSet<Mechanic>? Mechanics { get; set; }
-        public DbSet<Inconvenient>? Inconvenients { get; set; }
-        public DbSet<Payroll>? Payrolls { get; set; }
-        //public DbSet<ProductRequest>? ProductRequests { get; set; }
+    public DbSet<Mechanic>? Mechanics { get; set; }
+    public DbSet<Inconvenient>? Inconvenients { get; set; }
+    public DbSet<Payroll>? Payrolls { get; set; }
+    // Se define cada una de la relaciones en cada migración
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      // Cliente->Vehiculos
+      modelBuilder.Entity<Client>()
+        .HasMany(v => v.Vehicles)
+        .WithOne(c => c.Client);
 
 
         // Se define cada una de la relaciones en cada migración
@@ -86,10 +89,10 @@ namespace RestServer.Data
                 .HasOne(v => v.User)
                 .WithOne(c => c.Client);
 
-            modelBuilder.Entity<Request>()
-                .HasMany(v => v.Products)
-                .WithMany(c => c.Requests)
-                .UsingEntity(j => j.ToTable("productrequest"));
+      // Receptionista -> usuario
+      modelBuilder.Entity<Receptionist>()
+          .HasOne(v => v.User)
+          .WithOne(c => c.Receptionist);
 
             //Relaciones de migración David - Robin
             // Cliente->Vehiculos

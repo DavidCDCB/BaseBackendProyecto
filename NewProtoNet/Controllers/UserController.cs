@@ -36,7 +36,7 @@ namespace RestServer.Controllers
             return Ok(await this.UserRepository.GetUsers());
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetUsersByPage(int num)
         {
@@ -44,7 +44,7 @@ namespace RestServer.Controllers
             return Users.Count > 0 ? Ok(Users) : NoContent();
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUser(int id)
         {
@@ -73,7 +73,7 @@ namespace RestServer.Controllers
             }
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserDTO UserDTO)
         {
@@ -86,7 +86,7 @@ namespace RestServer.Controllers
             return Ok(updated);
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveUser(int id)
         {

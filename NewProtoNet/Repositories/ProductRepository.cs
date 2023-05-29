@@ -30,14 +30,15 @@ namespace RestServer.Repositories
 
         async Task<Product> IProductRepository.PostProduct(ProductDTO ProductDTO)
         {
+
             Product Product = new Product()
             {
                 Name = ProductDTO.Name,
                 Code = ProductDTO.Code,
                 Brand = ProductDTO.Brand,
-                salePrice = ProductDTO.salePrice,
-                Quantity = ProductDTO.Quantity,
-                Description = ProductDTO.Description,
+                salePrice = 0,
+                Quantity = 0,
+                Description = ProductDTO.Description,             
             };
 
             await this.dbContext.Products!.AddAsync(Product);
@@ -57,8 +58,8 @@ namespace RestServer.Repositories
             find.Name = Product.Name;
             find.Code = Product.Code;
             find.Brand = Product.Brand;
-            find.salePrice = Product.salePrice;
-            find.Quantity = Product.Quantity;
+            find.salePrice = 0;
+            find.Quantity = 0;
             find.Description = Product.Description;
             await this.dbContext.SaveChangesAsync();
 

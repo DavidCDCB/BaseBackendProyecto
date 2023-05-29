@@ -1,8 +1,8 @@
-﻿using RestServer.DTOs;
+﻿using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using RestServer.Data;
+using RestServer.DTOs;
 using RestServer.Interfaces;
-using Domain.Entities;
-using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
@@ -47,9 +47,10 @@ namespace RestServer.Controllers
         [HttpPost]
         public async Task<IActionResult> PostPurchase(PurchaseDTO PurchaseDTO)
         {
+
             try
             {
-                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));
+                return Ok(await this.PurchaseRepository.PostPurchase(PurchaseDTO));           
             }
             catch (Exception e)
             {
@@ -83,5 +84,8 @@ namespace RestServer.Controllers
             return Ok(eliminated);
 
         }
+
+
+       
     }
 }

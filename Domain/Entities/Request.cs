@@ -28,8 +28,9 @@ namespace Domain.Entities
         public int? ServiceId { get; set; }
         public Service? Service { get; set; }
 
-        public ICollection<Product>? Products { get; set; }
-        public ICollection<Mechanic>? Mechanics { get; set; }
-        public ICollection<Inconvenient>? Inconvenients { get; set; }
-    }
+    public Service? Service { get; set; }
+    public ICollection<Inconvenient>? Inconvenients { get; set; }
+    public ICollection<Mechanic>? Mechanics { get; set; }  
+    public ICollection<Product> Products { get; set; }
+  }
 }

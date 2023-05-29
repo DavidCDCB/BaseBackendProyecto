@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestServer.DTOs
 {
-    public class RecepcionistDTO
+    public class ReceptionistDTO
     {
         public string? Name { get; set; }
         public string? Surname { get; set; }

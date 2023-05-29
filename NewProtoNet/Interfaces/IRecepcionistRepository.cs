@@ -3,14 +3,14 @@ using RestServer.DTOs;
 
 namespace RestServer.Interfaces
 {
-    public interface IRecepcionistRepository
+    public interface IReceptionistRepository
     {
-        Task<List<Recepcionist>> GetRecepcionists();
-        Task<List<Recepcionist>> GetByPage(int page);
+        Task<List<Receptionist>> GetReceptionists();
+        Task<List<Receptionist>> GetByPage(int page);
 
-        Task<Recepcionist> GetRecepcionist(int id);
-        Task<Recepcionist> PostRecepcionist(RecepcionistDTO Recepcionist);
-        Task<Recepcionist> UpdateRecepcionist(int id, RecepcionistDTO Recepcionist);
-        Task<Recepcionist> DeleteRecepcionist(int id);
+        Task<Receptionist> GetReceptionist(int id);
+        Task<Receptionist> PostReceptionist(ReceptionistDTO Receptionist);
+        Task<Receptionist> UpdateReceptionist(int id, ReceptionistDTO Receptionist);
+        Task<Receptionist> DeleteReceptionist(int id);
     }
 }

@@ -32,7 +32,7 @@ namespace Domain.Entities
         
         public ICollection<Mechanic>? Mechanics { get; set; }
 
-        //public ICollection<Recepcionist>? Recepcionist { get; set; }
+        //public ICollection<Receptionist>? Receptionist { get; set; }
 
     }
 }

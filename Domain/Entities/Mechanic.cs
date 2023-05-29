@@ -21,7 +21,7 @@ namespace Domain.Entities
         public string? Phone { get; set; }
         [Required]
         [Column("role")]
-        public string? Role { get; set; }
+        public string? role { get; set; }
         [Required]
         [Column("email")]
         public string? Email { get; set; }
