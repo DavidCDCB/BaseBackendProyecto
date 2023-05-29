@@ -8,6 +8,6 @@
         public int ServiceRequesedId { get; set; }
         public bool Seen { get; set; }
         public string? Description { get; set; }
-        public int? RequestID { get; set; }
+        //public int? RequestID { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace RestServer.Repositories
             Faker<Mechanic> fakeData = new Faker<Mechanic>()
                 .RuleFor(m => m.Id, f => ids++)
                     .RuleFor(m => m.Name, f => f.Person.FirstName)
-                    .RuleFor(m => m.SurName, f => f.Person.LastName)
+                    .RuleFor(m => m.Surname, f => f.Person.LastName)
                     .RuleFor(m => m.Phone, f => f.Person.Phone)
                     .RuleFor(m => m.role, f => f.PickRandom(roles))
                     .RuleFor(m => m.Email, f => f.Person.Email)
@@ -60,7 +60,7 @@ namespace RestServer.Repositories
             Mechanic newMechanic = new Mechanic()
             {
                 Name = mechanic.Name,
-                SurName = mechanic.SurName,
+                Surname = mechanic.SurName,
                 Phone = mechanic.Phone,
                 role = mechanic.role,
                 Email = mechanic.Email,
@@ -79,36 +79,36 @@ namespace RestServer.Repositories
 
         async Task<Mechanic> IMechanicRepository.UpdateMechanic(int id, MechanicDTO mechanic)
         {
-            Mechanic? find = await this.dbContext.Mechanics!.FindAsync(id);
-            if (find == null)
+            Mechanic? encontrado = await this.dbContext.Mechanics!.FindAsync(id);
+            if (encontrado == null)
             {
-                return find;
+                return encontrado;
             }
 
-            find.Name = mechanic.Name;
-            find.SurName = mechanic.SurName;
-            find.Phone = mechanic.Phone;
-            find.role = mechanic.role;
-            find.Email = mechanic.Email;
-            find.Address = mechanic.Address;
-            find.Commission = mechanic.Commission;
-            find.Salary = mechanic.Salary;
-            //find.Payrolls = mechanic.Payrolls;
-            //find.Requests = mechanic.Requests;
+            encontrado.Name = mechanic.Name;
+            encontrado.Surname = mechanic.SurName;
+            encontrado.Phone = mechanic.Phone;
+            encontrado.role = mechanic.role;
+            encontrado.Email = mechanic.Email;
+            encontrado.Address = mechanic.Address;
+            encontrado.Commission = mechanic.Commission;
+            encontrado.Salary = mechanic.Salary;
+            //encontrado.Payrolls = mechanic.Payrolls;
+            //encontrado.Requests = mechanic.Requests;
             await this.dbContext.SaveChangesAsync();
 
-            return find;
+            return encontrado;
         }
 
         async Task<Mechanic> IMechanicRepository.DeleteMechanic(int id)
         {
-            Mechanic? find = await dbContext.Mechanics!.FindAsync(id);
-            if (find != null)
+            Mechanic? encontrado = await dbContext.Mechanics!.FindAsync(id);
+            if (encontrado != null)
             {
-                this.dbContext.Remove(find);
+                this.dbContext.Remove(encontrado);
                 this.dbContext.SaveChanges();
             }
-            return find;
+            return encontrado;
         }
         async Task<List<Mechanic>> IMechanicRepository.GetByPage(int page)
         {

@@ -62,8 +62,7 @@ namespace RestServer.Repositories
                 DaysDelay = inconvenient.DaysDelay,
                 ServiceRequesedId = inconvenient.ServiceRequesedId,
                 Seen = inconvenient.Seen,
-                Description = inconvenient.Description,
-                RequestID = inconvenient.RequestID
+                Description = inconvenient.Description
             };
 
             await this.dbContext.Inconvenients!.AddAsync(usuario);
@@ -74,33 +73,33 @@ namespace RestServer.Repositories
 
         async Task<Inconvenient> IInconvenientRepository.UpdateInconvenient(int id, InconvenientDTO inconvenient)
         {
-            Inconvenient? find = await this.dbContext.Inconvenients!.FindAsync(id);
-            if (find == null)
+            Inconvenient? encontrado = await this.dbContext.Inconvenients!.FindAsync(id);
+            if (encontrado == null)
             {
-                return find;
+                return encontrado;
             }
 
-            find.DateAct = inconvenient.DateAct;
-            find.State = inconvenient.State;
-            find.DaysDelay = inconvenient.DaysDelay;
-            find.ServiceRequesedId = inconvenient.ServiceRequesedId;
-            find.Seen = inconvenient.Seen;
-            find.Description = inconvenient.Description;
-            find.RequestID = inconvenient.RequestID;
+            encontrado.DateAct = inconvenient.DateAct;
+            encontrado.State = inconvenient.State;
+            encontrado.DaysDelay = inconvenient.DaysDelay;
+            encontrado.ServiceRequesedId = inconvenient.ServiceRequesedId;
+            encontrado.Seen = inconvenient.Seen;
+            encontrado.Description = inconvenient.Description;
+            //encontrado.RequestID = inconvenient.RequestID;
             await this.dbContext.SaveChangesAsync();
 
-            return find;
+            return encontrado;
         }
 
         async Task<Inconvenient> IInconvenientRepository.DeleteInconvenient(int id)
         {
-            Inconvenient? find = await dbContext.Inconvenients!.FindAsync(id);
-            if (find != null)
+            Inconvenient? encontrado = await dbContext.Inconvenients!.FindAsync(id);
+            if (encontrado != null)
             {
-                this.dbContext.Remove(find);
+                this.dbContext.Remove(encontrado);
                 this.dbContext.SaveChanges();
             }
-            return find;
+            return encontrado;
         }
 
         async Task<List<Inconvenient>> IInconvenientRepository.GetByPage(int page)

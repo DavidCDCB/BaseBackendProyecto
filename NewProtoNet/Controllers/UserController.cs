@@ -1,25 +1,29 @@
 ﻿using RestServer.DTOs;
-﻿using Domain.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
-
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using NuGet.Protocol.Plugins;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestServer.Controllers
 {
     [ApiController]
+
     [Route("api/[controller]")]
     public class UserController : Controller
     {
+        
+
         private readonly IUserRepository UserRepository;
         private IConfiguration config;
 
-        public UserController(IUserRepository UserRepository)
+        public UserController(IUserRepository UserRepository, IConfiguration config)
         {
             this.UserRepository = UserRepository;
             this.config = config;
@@ -54,6 +58,7 @@ namespace RestServer.Controllers
             return Ok(find);
         }
 
+        [Authorize(Policy = "PayrollLimit")]
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO UserDTO)
         {
@@ -101,10 +106,50 @@ namespace RestServer.Controllers
             User? user = await this.UserRepository.GetUserCredentials(userDTO);
             if (user == null)
             {
-                return BadRequest(new {Message = "Invalid credentials"});
+                return Ok(new {
+                    status = "not found",
+                    result = "Invalid credentials",
+                    role = "none"
+                });
             }
             string jwt = GenerateToken(user);
-            return Ok(new {token = jwt});
+            return Ok(new { 
+                status = "ok",
+                result = jwt,
+                role = user.role
+            });
+        }
+
+        //validar que el token sea valido en el front
+        [HttpGet("validate/{token}")]
+        public async Task<IActionResult> ValidateToken(String token)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(config.GetSection("JWT:Key").Value);
+                tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateLifetime = true,
+                    ValidateAudience = false,
+                    ValidateIssuer = false
+                }, out SecurityToken validatedToken);
+                return Ok(new
+                {
+                    status = "ok",
+                    result = "Valid token"
+                });
+            }
+            catch (Exception)
+            {
+                return Ok(new
+                {
+                    status = "not found",
+                    result = "Invalid token"
+                });
+            }
         }
         
         private string GenerateToken(User user)
@@ -112,10 +157,10 @@ namespace RestServer.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim("roles", user.role)
+                new Claim("Roles", user.role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWTAuthenticationHIGHsecuredPasswordVVVp1OH7Xzyr"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("JWT:Key").Value));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var securityToken = new JwtSecurityToken(
@@ -123,8 +168,9 @@ namespace RestServer.Controllers
                                expires: DateTime.Now.AddMinutes(60),
                                signingCredentials: creds);
 
-            string token = new JwtSecurityTokenHandler().WriteToken(securityToken); 
-            return token + ' ' + user.role;
+            string token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+            return token;
+            //return token + ' ' + user.Role;
         }
     }
 }

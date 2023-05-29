@@ -63,6 +63,21 @@ namespace RestServer.Controllers
             }
         }
 
+        [HttpPost("products")]
+        public async Task<IActionResult> PostRequestProducts(ProductRequestDTO requestProducts)
+        {
+            try
+            {
+                return Ok(await this.requestRepository.PostRequestProducts(requestProducts));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest(e);
+            }
+
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRequest(int id, RequestDTO RequestDTO)
         {

@@ -15,7 +15,7 @@ namespace Domain.Entities
         public string? Name { get; set; }
         [Required]
         [Column("surname")]
-        public string? SurName { get; set; }
+        public string? Surname { get; set; }
         [Required]
         [Column("phone")]
         public string? Phone { get; set; }
