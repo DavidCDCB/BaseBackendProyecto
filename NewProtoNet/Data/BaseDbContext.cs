@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Bogus;
-using Domain.Entities.Base;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -54,13 +53,7 @@ namespace RestServer.Data
     public DbSet<Inconvenient>? Inconvenients { get; set; }
     public DbSet<Payroll>? Payrolls { get; set; }
     // Se define cada una de la relaciones en cada migración
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-      // Cliente->Vehiculos
-      modelBuilder.Entity<Client>()
-        .HasMany(v => v.Vehicles)
-        .WithOne(c => c.Client);
-
+    
 
         // Se define cada una de la relaciones en cada migración
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -69,9 +62,9 @@ namespace RestServer.Data
                 .HasOne(v => v.User)
                 .WithOne(c => c.Administrator);
 
-            modelBuilder.Entity<Recepcionist>()
+            modelBuilder.Entity<Receptionist>()
                 .HasOne(v => v.User)
-                .WithOne(c => c.Recepcionist);
+                .WithOne(c => c.Receptionist);
 
             modelBuilder.Entity<Product>()
                 .HasMany(v => v.purchases)
@@ -84,10 +77,6 @@ namespace RestServer.Data
             modelBuilder.Entity<Mechanic>()
                 .HasOne(v => v.User)
                 .WithOne(c => c.Mechanic);
-
-            modelBuilder.Entity<Client>()
-                .HasOne(v => v.User)
-                .WithOne(c => c.Client);
 
       // Receptionista -> usuario
       modelBuilder.Entity<Receptionist>()
@@ -135,7 +124,7 @@ namespace RestServer.Data
             modelBuilder.Entity<Supplier>().HasData(this.SeedSuppliers());
             modelBuilder.Entity<Report>().HasData(this.SeedReports());
             modelBuilder.Entity<Administrator>().HasData(this.SeedAdministrators());
-            modelBuilder.Entity<Recepcionist>().HasData(this.SeedRecepcionists());
+            modelBuilder.Entity<Receptionist>().HasData(this.SeedReceptionists());
             modelBuilder.Entity<Product>().HasData(this.SeedProducts());
             modelBuilder.Entity<Purchase>().HasData(this.SeedPurchases());
 
@@ -154,12 +143,12 @@ namespace RestServer.Data
         List<User> SeedUsers()
         {
             int ids = 1;
-            var rol = new[] { "Recepcionist", "Administrator", "Mechanic" };
+            var rol = new[] { "Receptionist", "Administrator", "Mechanic" };
             Faker<User> fakeData = new Faker<User>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Email, f => f.Person.Email)
               .RuleFor(m => m.Password, f => f.Lorem.Word())
-              .RuleFor(m => m.Role, f => f.PickRandom(rol));
+              .RuleFor(m => m.role, f => f.PickRandom(rol));
             return fakeData.Generate(100);
         }
 
@@ -168,7 +157,7 @@ namespace RestServer.Data
             int ids = 1;
             Faker<Supplier> fakeData = new Faker<Supplier>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
-              .RuleFor(m => m.Nit, f => f.Person.Nif())
+              .RuleFor(m => m.Nit, f => f.Random.Number(1, 999).ToString())
               .RuleFor(m => m.Name, f => f.Person.FirstName)
               .RuleFor(m => m.Company, f => f.Lorem.Word())
               .RuleFor(m => m.SurName, f => f.Person.LastName)
@@ -199,10 +188,10 @@ namespace RestServer.Data
             return fakeData.Generate(100);
         }
 
-        List<Recepcionist> SeedRecepcionists()
+        List<Receptionist> SeedReceptionists()
         {
             int ids = 1;
-            Faker<Recepcionist> fakeData = new Faker<Recepcionist>("es_MX")
+            Faker<Receptionist> fakeData = new Faker<Receptionist>("es_MX")
               .RuleFor(m => m.Id, f => ids++)
               .RuleFor(m => m.Name, f => f.Person.FirstName)
               .RuleFor(m => m.Surname, f => f.Person.LastName)
@@ -306,7 +295,7 @@ namespace RestServer.Data
               .RuleFor(m => m.Name, f => f.Person.FirstName)
               .RuleFor(m => m.Surname, f => f.Person.LastName)
               .RuleFor(m => m.Phone, f => f.Person.Phone)
-              .RuleFor(m => m.Role, f => f.PickRandom(roles))
+              .RuleFor(m => m.role, f => f.PickRandom(roles))
               .RuleFor(m => m.Email, f => f.Person.Email)
               .RuleFor(m => m.Address, f => f.Person.Address.Street)
               .RuleFor(m => m.Commission, f => f.PickRandom(commision))

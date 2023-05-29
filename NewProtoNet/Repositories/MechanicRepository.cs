@@ -28,7 +28,7 @@ namespace RestServer.Repositories
                     .RuleFor(m => m.Name, f => f.Person.FirstName)
                     .RuleFor(m => m.Surname, f => f.Person.LastName)
                     .RuleFor(m => m.Phone, f => f.Person.Phone)
-                    .RuleFor(m => m.Role, f => f.PickRandom(roles))
+                    .RuleFor(m => m.role, f => f.PickRandom(roles))
                     .RuleFor(m => m.Email, f => f.Person.Email)
                     .RuleFor(m => m.Address, f => f.Person.Address.Street)
                     .RuleFor(m => m.Commission, f => f.PickRandom(commision))
@@ -62,7 +62,7 @@ namespace RestServer.Repositories
                 Name = mechanic.Name,
                 Surname = mechanic.SurName,
                 Phone = mechanic.Phone,
-                Role = mechanic.Role,
+                role = mechanic.role,
                 Email = mechanic.Email,
                 Address = mechanic.Address,
                 Commission = mechanic.Commission,
@@ -88,7 +88,7 @@ namespace RestServer.Repositories
             encontrado.Name = mechanic.Name;
             encontrado.Surname = mechanic.SurName;
             encontrado.Phone = mechanic.Phone;
-            encontrado.Role = mechanic.Role;
+            encontrado.role = mechanic.role;
             encontrado.Email = mechanic.Email;
             encontrado.Address = mechanic.Address;
             encontrado.Commission = mechanic.Commission;
