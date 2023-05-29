@@ -46,26 +46,67 @@ namespace RestServer.Repositories
 
         async Task<List<Product>> IRequestRepository.PostRequestProducts(ProductRequestDTO requestProducts)
         {
+            //buscar la request 
             Request? request = await this.dbContext.Requests!.FindAsync(requestProducts.RequestsId);
-            List < Product > products = new List<Product>();
+            
             if (request == null)
             {
-                return products;
+                throw new KeyNotFoundException("La request no existe");
             }
-            foreach(int idProduct in requestProducts.ProductsId)
+
+            //adicionar mecanico a la request
+            List<Mechanic> mechanics = new List<Mechanic>();
+            foreach (Mechanic tempMechanic in requestProducts.Mechanics)
             {
-                Product? product = await this.dbContext.Products!.FindAsync(idProduct);
-                if (product != null)
+                Mechanic? mechanic = await this.dbContext.Mechanics!.FindAsync(tempMechanic.Id);
+                if (mechanic != null)
                 {
-                    products.Add(product);
+                    mechanics.Add(mechanic);
                 }
             }
-            //request.Products = products.Select(p => new Product { Id = p.Id }).ToList(); // Asignar la lista de productos al request
+            
+            request.Mechanics = mechanics;
+
+
+            //adicionar productos a la request
+            List<Product> products = new List<Product>();
+            foreach (Product tempProduct in requestProducts.Products)
+            {
+                Product? product = await this.dbContext.Products!.FindAsync(tempProduct.Id);
+                if (product != null)
+                {
+                   
+
+                    //if (product.Quantity >= tempProduct.Quantity)
+                    //{
+                    //    product.Quantity -= tempProduct.Quantity;
+                        
+                    //}
+                    //else
+                    //{
+                    //    product.Quantity = 0;
+                    //    //TODO: alerta de que no hay suficientes productos
+                    //}
+                    products.Add(product);
+
+                }
+            }
             request.Products = products;
             await this.dbContext.SaveChangesAsync();
 
             return products;
         }
+
+        //async Task ModifyProductAsync(Purchase purchase)
+        //{
+        //    Product? findProduct = await this.dbContext.Products.FindAsync(purchase.ProductId);
+        //    if (findProduct != null)
+        //    {
+        //        findProduct.salePrice = purchase.salePrice;
+        //        findProduct.Quantity += purchase.Quantity;
+        //    }
+        //    await this.dbContext.SaveChangesAsync();
+        //}
 
 
         async Task<RequestDTO?> IRequestRepository.GetRequest(int id)
