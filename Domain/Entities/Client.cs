@@ -28,6 +28,9 @@ namespace Domain.Entities
     [Required]
     [Column("address")]
     public string? Address { get; set; }
+    [Column("user_id")]
+    public int? UserId { get; set;}
+
     public ICollection<Vehicle>? Vehicles { get; set; }
 
     public ICollection<Request>? Requests { get; set; }

@@ -67,6 +67,7 @@ namespace RestServer.Repositories
                 Address = mechanic.Address,
                 Commission = mechanic.Commission,
                 Salary = mechanic.Salary,
+                UserId = mechanic.UserId
                 //Payrolls = mechanic.Payrolls,
                 //Requests = mechanic.Requests
             };
@@ -93,6 +94,7 @@ namespace RestServer.Repositories
             encontrado.Address = mechanic.Address;
             encontrado.Commission = mechanic.Commission;
             encontrado.Salary = mechanic.Salary;
+            encontrado.UserId = mechanic.UserId;
             //encontrado.Payrolls = mechanic.Payrolls;
             //encontrado.Requests = mechanic.Requests;
             await this.dbContext.SaveChangesAsync();
