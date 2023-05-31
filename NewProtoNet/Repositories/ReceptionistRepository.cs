@@ -22,6 +22,11 @@ namespace RestServer.Repositories
             return await this.dbContext.Receptionists!.ToListAsync();
         }
 
+        async Task<List<User>> IReceptionistRepository.GetReceptionistsUsers()
+        {
+            return await this.dbContext.Users!.Where(x => x.role == "Receptionist").ToListAsync();
+        }
+
         async Task<Receptionist?> IReceptionistRepository.GetReceptionist(int id)
         {
             Receptionist? Receptionist = await dbContext.Receptionists!.FirstOrDefaultAsync(m => m.Id == id);

@@ -14,7 +14,8 @@ namespace RestServer.Repositories
         {
 
             return new PurchaseDTO
-            {
+            {   
+                Id = p.Id,
                 purchasePrice = p.purchasePrice,
                 salePrice = p.salePrice,
                 Quantity = p.Quantity,

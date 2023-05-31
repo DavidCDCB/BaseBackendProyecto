@@ -24,6 +24,12 @@ namespace RestServer.Controllers
             return Ok(await this.ReceptionistRepository.GetReceptionists());
         }
 
+        [HttpGet("user_id")]
+        public async Task<ActionResult> GetReceptionistsUsers()
+        {
+            return Ok(await this.ReceptionistRepository.GetReceptionistsUsers());
+        }
+
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetReceptionistsByPage(int num)
         {
