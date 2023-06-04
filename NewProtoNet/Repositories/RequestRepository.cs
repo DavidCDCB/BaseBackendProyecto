@@ -4,6 +4,7 @@ using RestServer.Data;
 using RestServer.DTOs;
 using RestServer.Interfaces;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RestServer.Repositories
 {
@@ -44,76 +45,88 @@ namespace RestServer.Repositories
       List<Request> requests = await this.dbContext.Requests!.ToListAsync();
       return await Task.FromResult(ChangeDates(requests));
     }
-
-        async Task<List<Product>> IRequestRepository.PostRequestProducts(ProductRequestDTO requestProducts)
+        async Task<Request>  getRequestClass(int id)
         {
-            //buscar la request 
-            Request? request = await this.dbContext.Requests!.FindAsync(requestProducts.RequestsId);
-            
+            Request? request = await this.dbContext.Requests!.FindAsync(id);
             if (request == null)
             {
                 throw new KeyNotFoundException("La request no existe");
             }
+            return request;
+        }
 
-            //adicionar mecanico a la request
-            List<Mechanic> mechanics = new List<Mechanic>();
-            foreach (Mechanic tempMechanic in requestProducts.Mechanics)
+        async Task<List<Mechanic> > getMechanicsClass(List<Mechanic> mechanics)
+        {
+            if (mechanics == null || !mechanics.Any())
+            {
+                throw new KeyNotFoundException("lista de mecanicos vacios");
+            }
+            List<Mechanic> mechanicsList = new List<Mechanic>();
+            foreach (Mechanic tempMechanic in mechanics)
             {
                 Mechanic? mechanic = await this.dbContext.Mechanics!.FindAsync(tempMechanic.Id);
                 if (mechanic != null)
                 {
-                    //saber si el mecanico ya esta asignado a la request
-                    if (request.Mechanics != null &&
-                        request.Mechanics.Any(m => m.Id == mechanic.Id)) { 
-                        throw new KeyNotFoundException("El mecanico ya esta asignado a la request");
-                    }
-                    
-                    mechanics.Add(mechanic);
+                    mechanicsList.Add(mechanic);
                 }
+                else throw new KeyNotFoundException("No se encontraron los mecanicos");
             }
-            
-            request.Mechanics = mechanics;
+            return mechanicsList;
+        }
 
-
-            //adicionar productos a la request
-            List<Product> products = new List<Product>();
-            foreach (Product tempProduct in requestProducts.Products)
+        async Task<List<Product>> getProductsClass(List<Product> products)
+        {
+            if (products == null || !products.Any())
+            {
+                throw new KeyNotFoundException("lista de productos vacios");
+            }
+            List<Product> productsList = new List<Product>();
+            foreach (Product tempProduct in products)
             {
                 Product? product = await this.dbContext.Products!.FindAsync(tempProduct.Id);
                 if (product != null)
                 {
-                   
-
-                    //if (product.Quantity >= tempProduct.Quantity)
-                    //{
-                    //    product.Quantity -= tempProduct.Quantity;
-                        
-                    //}
-                    //else
-                    //{
-                    //    product.Quantity = 0;
-                    //    //TODO: alerta de que no hay suficientes productos
-                    //}
-                    products.Add(product);
-
+                    if (product.Quantity >= tempProduct.Quantity)
+                    {
+                        product.Quantity -= tempProduct.Quantity;
+                        productsList.Add(product);
+                    }
+                    else throw new KeyNotFoundException("No hay suficientes productos");
+                    
                 }
+                else throw new KeyNotFoundException("No se encontraron los productos");
             }
-            request.Products = products;
+            return productsList;
+        }
+
+        async Task<List<Product>> IRequestRepository.UpdateRequestProducts(ProductRequestDTO requestProducts)
+        {
+            //buscar la request 
+            Request? request = await this.getRequestClass(requestProducts.RequestsId);            
+
+            //validar que los mecanicos existan
+            List<Mechanic> mechanics = await this.getMechanicsClass(requestProducts.Mechanics);
+            //validar que si la request tiene mecanicos asignados
+            List<Mechanic> mechanicRequest = await this.dbContext.Requests!.Where(r => r.Id == requestProducts.RequestsId).SelectMany(r => r.Mechanics).ToListAsync();
+            if (mechanicRequest == null || !mechanicRequest.Any())
+            {
+                request.Mechanics = mechanics;                
+            }
+            else throw new KeyNotFoundException("La request ya tiene mecanicos asignados");
+
+            //adicionar productos a la request
+            List<Product> products = await this.getProductsClass(requestProducts.Products);
+            //validar que si la request tiene productos asignados
+            List<Product> productRequest = await this.dbContext.Requests!.Where(r => r.Id == requestProducts.RequestsId).SelectMany(r => r.Products).ToListAsync();
+            if (productRequest == null || !productRequest.Any())
+            {
+                request.Products = products;
+            }
+            else throw new KeyNotFoundException("La request ya tiene productos asignados");
             await this.dbContext.SaveChangesAsync();
 
             return products;
         }
-
-        //async Task ModifyProductAsync(Purchase purchase)
-        //{
-        //    Product? findProduct = await this.dbContext.Products.FindAsync(purchase.ProductId);
-        //    if (findProduct != null)
-        //    {
-        //        findProduct.salePrice = purchase.salePrice;
-        //        findProduct.Quantity += purchase.Quantity;
-        //    }
-        //    await this.dbContext.SaveChangesAsync();
-        //}
 
 
         async Task<RequestDTO?> IRequestRepository.GetRequest(int id)

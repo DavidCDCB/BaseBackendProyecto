@@ -30,6 +30,6 @@ namespace Domain.Entities
 
     public ICollection<Inconvenient>? Inconvenients { get; set; }
     public ICollection<Mechanic>? Mechanics { get; set; }  
-    public ICollection<Product> Products { get; set; }
+    public ICollection<Product>? Products { get; set; }
   }
 }
