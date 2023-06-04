@@ -103,7 +103,7 @@ namespace RestServer.Repositories
         {
             //buscar la request 
             Request? request = await this.getRequestClass(requestProducts.RequestsId);            
-
+            
             //validar que los mecanicos existan
             List<Mechanic> mechanics = await this.getMechanicsClass(requestProducts.Mechanics);
             //validar que si la request tiene mecanicos asignados

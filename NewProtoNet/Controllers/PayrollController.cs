@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using RestServer.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 // https://localhost:7204/swagger/index.html
 namespace RestServer.Controllers
@@ -103,6 +104,19 @@ namespace RestServer.Controllers
         {
             List<Payroll> payrolls = await this.payrollRepository.GetByPage(num);
             return payrolls.Count > 0 ? Ok(payrolls) : NoContent();
+        }
+
+        [HttpPost("mechanics")]
+        public async Task<IActionResult> UpdatePayrollMechanics(PayrollMechanicsDTO payrollMechanicsDTO)
+        {
+            try
+            {
+                return Ok(await this.payrollRepository.updatePayrollMechanics(payrollMechanicsDTO));
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }
