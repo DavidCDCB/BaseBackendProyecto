@@ -61,6 +61,12 @@ namespace RestServer.Repositories
                 Mechanic? mechanic = await this.dbContext.Mechanics!.FindAsync(tempMechanic.Id);
                 if (mechanic != null)
                 {
+                    //saber si el mecanico ya esta asignado a la request
+                    if (request.Mechanics != null &&
+                        request.Mechanics.Any(m => m.Id == mechanic.Id)) { 
+                        throw new KeyNotFoundException("El mecanico ya esta asignado a la request");
+                    }
+                    
                     mechanics.Add(mechanic);
                 }
             }
