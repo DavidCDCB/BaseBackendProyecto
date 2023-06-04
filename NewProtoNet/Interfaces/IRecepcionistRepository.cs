@@ -6,6 +6,8 @@ namespace RestServer.Interfaces
     public interface IReceptionistRepository
     {
         Task<List<Receptionist>> GetReceptionists();
+
+        Task<List<User>> GetReceptionistsUsers();
         Task<List<Receptionist>> GetByPage(int page);
 
         Task<Receptionist> GetReceptionist(int id);

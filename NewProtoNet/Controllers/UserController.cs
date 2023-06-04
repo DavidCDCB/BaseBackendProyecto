@@ -58,7 +58,7 @@ namespace RestServer.Controllers
             return Ok(find);
         }
 
-        [Authorize(Policy = "PayrollLimit")]
+        //[Authorize(Policy = "PayrollLimit")]
         [HttpPost]
         public async Task<IActionResult> PostUser(UserDTO UserDTO)
         {

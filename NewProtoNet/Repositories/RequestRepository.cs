@@ -15,6 +15,7 @@ namespace RestServer.Repositories
     {
       return new RequestDTO
       {
+        Id = r.Id,
         StarDate = r.StarDate.ToString(),
         EndDate = r.EndDate.ToString(),
         State = r.State,

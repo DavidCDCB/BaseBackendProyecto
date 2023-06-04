@@ -25,6 +25,7 @@ namespace RestServer.Controllers
             return Ok(await this.AdministratorRepository.GetAdministrators());
         }
 
+
         [HttpGet("page/{num}")]
         public async Task<ActionResult> GetAdministratorsByPage(int num)
         {

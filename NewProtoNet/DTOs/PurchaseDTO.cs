@@ -5,6 +5,7 @@ namespace RestServer.DTOs
 {
     public class PurchaseDTO
     {
+        public int? Id { get; set; }
         public float? purchasePrice { get; set; }
         public float? salePrice { get; set; }
         public int? Quantity { get; set; }
