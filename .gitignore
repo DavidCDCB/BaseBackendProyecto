@@ -480,5 +480,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-#/NewProtoNet/appsettings.json
-#/NewProtoNet/Migrations/BaseDbContextModelSnapshot.cs
+/NewProtoNet/appsettings.json
+/NewProtoNet/Migrations/BaseDbContextModelSnapshot.cs

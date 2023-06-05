@@ -12,6 +12,6 @@ namespace RestServer.Interfaces
     Task<RequestDTO?> DeleteRequest(int id);
     Task<List<RequestDTO>> GetRequestsByClient(int id);
     Task<List<RequestDTO>> GetRequestsByService(int id);
-    Task<List<Product>> PostRequestProducts(ProductRequestDTO requestProdcuts);
+    Task<List<Product>> UpdateRequestProducts(ProductRequestDTO requestProdcuts);
   }
 }

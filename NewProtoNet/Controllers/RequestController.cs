@@ -68,7 +68,7 @@ namespace RestServer.Controllers
         {
             try
             {
-                return Ok(await this.requestRepository.PostRequestProducts(requestProducts));
+                return Ok(await this.requestRepository.UpdateRequestProducts(requestProducts));
             }
             catch (Exception e)
             {

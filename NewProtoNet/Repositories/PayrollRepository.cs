@@ -106,5 +106,81 @@ namespace RestServer.Repositories
             return (page <= totalPages) ? payrolls.Skip((page - 1) * pageSize).Take(pageSize).ToList() : new List<Payroll>();
         }
 
+        async Task<Payroll> IPayrollRepository.updatePayrollMechanics(PayrollMechanicsDTO payrollMechanicsDTO)
+        {
+            Payroll payroll = await this.dbContext.Payrolls.FindAsync(payrollMechanicsDTO.idPayroll);
+            if (payroll == null)
+            {
+                throw new Exception("Payroll not found");
+            }
+            if (payrollMechanicsDTO.mechanics == null || payrollMechanicsDTO.mechanics.Count == 0)
+            {
+                throw new Exception("Mechanics list is empty");
+            }
+
+            payroll.Accruals = await calcularAccruals(payrollMechanicsDTO.mechanics, payroll);
+            payroll.Deductions = payrollMechanicsDTO.deductions;
+            payroll.Settlement = payroll.Accruals - payroll.Deductions;
+            payroll.Mechanics = payrollMechanicsDTO.mechanics;
+
+            await this.dbContext.SaveChangesAsync();
+
+            return payroll;
+        }
+
+        async Task<double> calcularAccruals(List<Mechanic> mechanics, Payroll payroll)
+        {
+            double accruals = 0;
+
+            foreach (var mechanic in mechanics)
+            {
+                List<Request> requests = await this.dbContext.Requests
+                    .Where(r => r.StarDate >= payroll.StarDate && r.EndDate <= payroll.EndDate)
+                    .Where(r => r.Mechanics.Any(m => m.Id == mechanic.Id))
+                    .ToListAsync();
+
+                if (requests == null || requests.Count == 0)
+                {
+                    throw new Exception("Requests not found");
+                }
+
+                double mechanicSalary = 0;
+
+                foreach (var request in requests)
+                {
+                    List<Service> services = await this.dbContext.Services
+                        .AsNoTracking() // Desactivar el rastreo de entidades
+                        .Where(s => s.Id == request.ServiceId)
+                        .ToListAsync();
+
+                    if (services == null || services.Count == 0)
+                    {
+                        throw new Exception("Services not found");
+                    }
+
+                    double requestSalary = services.Sum(service => service.Price ?? 0);
+                    mechanicSalary += requestSalary;
+                }
+
+                Mechanic existingMechanic = await this.dbContext.Mechanics.FindAsync(mechanic.Id);
+                if (existingMechanic == null)
+                {
+                    throw new Exception("Mechanic not found");
+                }
+
+                existingMechanic.Salary = mechanicSalary;
+                accruals += mechanicSalary;
+            }
+
+            // Avoid tracking Mechanic entities again
+            await this.dbContext.SaveChangesAsync();
+
+            return accruals;
+        }
+
+
+
+
+
     }
 }

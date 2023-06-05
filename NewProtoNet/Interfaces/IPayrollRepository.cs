@@ -12,6 +12,7 @@ namespace RestServer.Interfaces
         Task<Payroll> DeletePayroll(int id);
         List<Payroll> SeedPayrolls(int size);
         Task<List<Payroll>> GetByPage(int page);
+        Task<Payroll> updatePayrollMechanics(PayrollMechanicsDTO payrollMechanic);
 
     }
 }
