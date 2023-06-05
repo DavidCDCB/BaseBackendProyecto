@@ -108,7 +108,7 @@ namespace RestServer.Repositories
 
         async Task<Payroll> IPayrollRepository.updatePayrollMechanics(PayrollMechanicsDTO payrollMechanicsDTO)
         {
-            Payroll? payroll = await this.dbContext.Payrolls!.FindAsync(payrollMechanicsDTO.idPayroll);
+            Payroll payroll = await this.dbContext.Payrolls.FindAsync(payrollMechanicsDTO.idPayroll);
             if (payroll == null)
             {
                 throw new Exception("Payroll not found");
@@ -117,28 +117,20 @@ namespace RestServer.Repositories
             {
                 throw new Exception("Mechanics list is empty");
             }
-            //TODO: implementar metodo calcularAccruals y crear endpoint
-            payroll.Accruals = await calcularAccruals(payrollMechanicsDTO.mechanics,
-                payrollMechanicsDTO.idPayroll);
+
+            payroll.Accruals = await calcularAccruals(payrollMechanicsDTO.mechanics, payroll);
             payroll.Deductions = payrollMechanicsDTO.deductions;
             payroll.Settlement = payroll.Accruals - payroll.Deductions;
             payroll.Mechanics = payrollMechanicsDTO.mechanics;
+
             await this.dbContext.SaveChangesAsync();
 
             return payroll;
         }
-        //calcular el salary de los mecanicos por los request realizados
-        //, teniendo en cuenta la fecha de inicio y fin del periodo de pago
-        //, y la commision por cada request
-        async Task<double> calcularAccruals(List<Mechanic> mechanics, int idPayroll)
+
+        async Task<double> calcularAccruals(List<Mechanic> mechanics, Payroll payroll)
         {
-            Payroll? payroll = await this.dbContext.Payrolls.FindAsync(idPayroll);
-            if (payroll == null)
-            {
-                throw new Exception("Payroll not found");
-            }
             double accruals = 0;
-            double salary = 0;
 
             foreach (var mechanic in mechanics)
             {
@@ -146,38 +138,48 @@ namespace RestServer.Repositories
                     .Where(r => r.StarDate >= payroll.StarDate && r.EndDate <= payroll.EndDate)
                     .Where(r => r.Mechanics.Any(m => m.Id == mechanic.Id))
                     .ToListAsync();
+
                 if (requests == null || requests.Count == 0)
                 {
                     throw new Exception("Requests not found");
                 }
+
+                double mechanicSalary = 0;
+
                 foreach (var request in requests)
                 {
-                    //sacar los servicios del request y sumarlos
                     List<Service> services = await this.dbContext.Services
-                        .Where(s => s.Id== request.ServiceId)
+                        .AsNoTracking() // Desactivar el rastreo de entidades
+                        .Where(s => s.Id == request.ServiceId)
                         .ToListAsync();
+
                     if (services == null || services.Count == 0)
                     {
                         throw new Exception("Services not found");
                     }
-                    foreach (var service in services)
-                    {
-                        salary += service?.Price ?? 0;
-                    }
-                    //modificar salario al mecanico 
-                    Mechanic? find = await this.dbContext.Mechanics!.FindAsync(mechanic.Id);
-                    if (find == null)
-                    {
-                        throw new Exception("Mechanic not found");
-                    }
-                    find.Salary = salary;
-                    accruals += salary;
-                    await this.dbContext.SaveChangesAsync();
-                    salary = 0;
+
+                    double requestSalary = services.Sum(service => service.Price ?? 0);
+                    mechanicSalary += requestSalary;
                 }
+
+                Mechanic existingMechanic = await this.dbContext.Mechanics.FindAsync(mechanic.Id);
+                if (existingMechanic == null)
+                {
+                    throw new Exception("Mechanic not found");
+                }
+
+                existingMechanic.Salary = mechanicSalary;
+                accruals += mechanicSalary;
             }
+
+            // Avoid tracking Mechanic entities again
+            await this.dbContext.SaveChangesAsync();
+
             return accruals;
         }
+
+
+
 
 
     }

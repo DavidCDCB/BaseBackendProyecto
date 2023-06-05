@@ -113,9 +113,10 @@ namespace RestServer.Controllers
             {
                 return Ok(await this.payrollRepository.updatePayrollMechanics(payrollMechanicsDTO));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                Console.WriteLine(e);
+                return BadRequest(e);
             }
         }
     }
